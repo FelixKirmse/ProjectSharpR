@@ -29,7 +29,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="libtcod-net">
+      <HintPath>..\..\lib\libtcod-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -42,14 +63,20 @@
   <ItemGroup>
     <Compile Include="IObserveable.cs" />
     <Compile Include="IObserver.cs" />
+    <Compile Include="IState.cs" />
+    <Compile Include="IStateMachine.cs" />
     <Compile Include="ISynchronizeable.cs" />
     <Compile Include="ISynchronizer.cs" />
+    <Compile Include="Model\BattleMenuState.cs" />
     <Compile Include="Model\IMap.cs" />
+    <Compile Include="Model\IMenu.cs" />
+    <Compile Include="Model\IMenuModel.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\IRMap.cs" />
     <Compile Include="Model\IRModel.cs" />
     <Compile Include="Model\IStateMachineSynchronizer.cs" />
     <Compile Include="Model\ISubscribedFoVMap.cs" />
+    <Compile Include="Model\ITitleModel.cs" />
     <Compile Include="Model\RCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
