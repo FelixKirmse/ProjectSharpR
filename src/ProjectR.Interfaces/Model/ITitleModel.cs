@@ -4,6 +4,6 @@ namespace ProjectR.Interfaces.Model
 {
     public interface ITitleModel
     {
-        TCODImage GetTitleScreen();
+        TCODImage TitleScreen { get; }
     }
 }

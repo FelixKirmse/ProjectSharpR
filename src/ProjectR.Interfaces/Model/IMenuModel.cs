@@ -10,12 +10,12 @@ namespace ProjectR.Interfaces.Model
         BattleMenuState BattleMenuState { get; set; }
         int SelectedSwitchIndex { get; set; }
 
-        IMenu GetMainMenu();
-        IMenu GetOptionsMenu();
-        IMenu GetIngameMenu();
-        IMenu GetPartyMenu();
-        IMenu GetInventoryMenu();
-        IMenu GetCharSwitchMenu();
-        IMenu GetTargetSelectMenu();
+        IMenu MainMenu { get; }
+        IMenu OptionsMenu { get; }
+        IMenu IngameMenu { get; }
+        IMenu PartyMenu { get; }
+        IMenu InventoryMenu { get; }
+        IMenu CharSwitchMenu { get; }
+        IMenu TargetSelectMenu { get; }
     }
 }

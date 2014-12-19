@@ -4,23 +4,23 @@ namespace ProjectR.Interfaces.Model
     {
         string PlayerName { get; set; }
 
-        IRMap GetMap();
-        ITitleModel GetTitleModel();
-        IMenuModel GetMenuModel();
-        IOverworldModel GetOverworldModel();
-        IBattleModel GetBattleModel();
-        IPreGameModel GetPreGameModel();
-        IStatistics GetStatistics();
-        IRaceFactory GetRaceFactory();
-        ICharacterFactory GetCharacterFactory();
-        ISpellFactory GetSpellFactory();
-        IParty GetParty();
-        IAfflictionFactory GetAfflictionFactory();
-        IArcheTypeFactory GetArcheTypeFactory();
-        ISkillsetFactory GetSkillsetFactory();
-        ISignatureSpellFactory GetSignatureSpellFactory();
-        INormalAttackFactory GetNormalAttackFactory();
-        IMobPackManager GetMobPackManager();
+        IRMap Map { get; }
+        ITitleModel TitleModel { get; }
+        IMenuModel MenuModel { get; }
+        IOverworldModel OverworldModel { get; }
+        IBattleModel BattleModel { get; }
+        IPreGameModel PreGameModel { get; }
+        IStatistics Statistics { get; }
+        IRaceFactory RaceFactory { get; }
+        ICharacterFactory CharacterFactory { get; }
+        ISpellFactory SpellFactory { get; }
+        IParty Party { get; }
+        IAfflictionFactory AfflictionFactory { get; }
+        IArcheTypeFactory ArcheTypeFactory { get; }
+        ISkillsetFactory SkillsetFactory { get; }
+        ISignatureSpellFactory SignatureSpellFactory { get; }
+        INormalAttackFactory NormalAttackFactory { get; }
+        IMobPackManager MobPackManager { get; }
 
         void CommitChanges();
         void LoadResources();

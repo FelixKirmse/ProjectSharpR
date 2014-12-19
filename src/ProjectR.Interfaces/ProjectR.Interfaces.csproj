@@ -67,11 +67,15 @@
     <Compile Include="IStateMachine.cs" />
     <Compile Include="ISynchronizeable.cs" />
     <Compile Include="ISynchronizer.cs" />
+    <Compile Include="MapGen\IMapGenerator.cs" />
     <Compile Include="Model\BattleMenuState.cs" />
     <Compile Include="Model\IMap.cs" />
     <Compile Include="Model\IMenu.cs" />
     <Compile Include="Model\IMenuModel.cs" />
     <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\IOverworldCamera.cs" />
+    <Compile Include="Model\IOverworldModel.cs" />
+    <Compile Include="Model\IOverworldPlayer.cs" />
     <Compile Include="Model\IRMap.cs" />
     <Compile Include="Model\IRModel.cs" />
     <Compile Include="Model\IStateMachineSynchronizer.cs" />
