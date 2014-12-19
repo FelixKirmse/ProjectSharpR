@@ -25,9 +25,4 @@ namespace ProjectR.Interfaces.Model
         void CommitChanges();
         void LoadResources();
     }
-
-    public interface ITitleModel
-    {
-
-    }
 }
