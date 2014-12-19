@@ -69,6 +69,21 @@
     <Compile Include="ISynchronizer.cs" />
     <Compile Include="MapGen\IMapGenerator.cs" />
     <Compile Include="Model\BattleMenuState.cs" />
+    <Compile Include="Model\BattleState.cs" />
+    <Compile Include="Model\BoolConsolidator.cs" />
+    <Compile Include="Model\CharacterAttackingDelegate.cs" />
+    <Compile Include="Model\CharacterBlockedAttackDelegate.cs" />
+    <Compile Include="Model\CharacterBooleanEventDelegate.cs" />
+    <Compile Include="Model\CharacterBuffingStatDelegate.cs" />
+    <Compile Include="Model\CharacterDodgedAttackDelegate.cs" />
+    <Compile Include="Model\CharacterEventDelegate.cs" />
+    <Compile Include="Model\CharacterHealingDelegate.cs" />
+    <Compile Include="Model\CharacterRollingEvasionDelegate.cs" />
+    <Compile Include="Model\CharacterTakingDamageDelegate.cs" />
+    <Compile Include="Model\CharacterUsingMPDelegate.cs" />
+    <Compile Include="Model\IBattleModel.cs" />
+    <Compile Include="Model\ICharacter.cs" />
+    <Compile Include="Model\ICharacterEvents.cs" />
     <Compile Include="Model\IMap.cs" />
     <Compile Include="Model\IMenu.cs" />
     <Compile Include="Model\IMenuModel.cs" />
@@ -80,8 +95,10 @@
     <Compile Include="Model\IRModel.cs" />
     <Compile Include="Model\IStateMachineSynchronizer.cs" />
     <Compile Include="Model\ISubscribedFoVMap.cs" />
+    <Compile Include="Model\ITargetInfo.cs" />
     <Compile Include="Model\ITitleModel.cs" />
     <Compile Include="Model\RCell.cs" />
+    <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
