@@ -1,4 +1,4 @@
-namespace ProjectR.Interfaces
+namespace ProjectR.Interfaces.Model
 {
     public interface IModel
     {
@@ -24,5 +24,10 @@ namespace ProjectR.Interfaces
 
         void CommitChanges();
         void LoadResources();
+    }
+
+    public interface ITitleModel
+    {
+
     }
 }

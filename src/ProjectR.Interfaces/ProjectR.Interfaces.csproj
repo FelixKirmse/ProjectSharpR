@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IModel.cs" />
     <Compile Include="IObserveable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="ISynchronizeable.cs" />
     <Compile Include="ISynchronizer.cs" />
+    <Compile Include="Model\IMap.cs" />
+    <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\IRMap.cs" />
     <Compile Include="Model\IRModel.cs" />
     <Compile Include="Model\IStateMachineSynchronizer.cs" />
+    <Compile Include="Model\ISubscribedFoVMap.cs" />
+    <Compile Include="Model\RCell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
