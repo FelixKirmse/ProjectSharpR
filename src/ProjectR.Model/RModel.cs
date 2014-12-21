@@ -29,6 +29,7 @@ namespace ProjectR.Model
             Map = new RMap();
             Statistics = new Statistics();
             MobPackManager = new MobPackManager(this);
+            TitleModel = new TitleModel();
         }
 
         public void CommitChanges()

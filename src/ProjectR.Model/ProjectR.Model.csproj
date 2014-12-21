@@ -72,6 +72,7 @@
     <Compile Include="States\StateMachineSynchronizer.cs" />
     <Compile Include="Statistics.cs" />
     <Compile Include="SubscribedFoVMap.cs" />
+    <Compile Include="TitleModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectR.Interfaces\ProjectR.Interfaces.csproj">
