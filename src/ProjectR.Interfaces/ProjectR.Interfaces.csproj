@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\BiDictionary.cs" />
     <Compile Include="IObserveable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="IState.cs" />
@@ -98,6 +99,15 @@
     <Compile Include="Model\ITargetInfo.cs" />
     <Compile Include="Model\ITitleModel.cs" />
     <Compile Include="Model\RCell.cs" />
+    <Compile Include="Model\Stats\BaseStat.cs" />
+    <Compile Include="Model\Stats\DebuffResistance.cs" />
+    <Compile Include="Model\Stats\EleMastery.cs" />
+    <Compile Include="Model\Stats\EVAType.cs" />
+    <Compile Include="Model\Stats\IStats.cs" />
+    <Compile Include="Model\Stats\SingleStat.cs" />
+    <Compile Include="Model\Stats\Stat.cs" />
+    <Compile Include="Model\Stats\StatHelper.cs" />
+    <Compile Include="Model\Stats\StatType.cs" />
     <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
