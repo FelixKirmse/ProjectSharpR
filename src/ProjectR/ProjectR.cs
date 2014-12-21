@@ -7,6 +7,7 @@ namespace ProjectR
     {
         private static bool _exitGame;
         private IStateMachineSynchronizer _stateSyncer;
+        private IRModel _model;
 
         public ProjectR()
         {

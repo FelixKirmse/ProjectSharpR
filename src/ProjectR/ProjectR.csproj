@@ -60,6 +60,10 @@
     <Compile Include="ProjectR.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectR.Factory\ProjectR.Factory.csproj">
+      <Project>{BB0D5B02-810E-4FB8-A1CE-429935A8C3FB}</Project>
+      <Name>ProjectR.Factory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectR.Interfaces\ProjectR.Interfaces.csproj">
       <Project>{E638DE1B-5518-4C68-811E-1FC92367A088}</Project>
       <Name>ProjectR.Interfaces</Name>

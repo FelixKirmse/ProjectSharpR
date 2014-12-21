@@ -11,7 +11,7 @@ namespace ProjectR.Interfaces.Model
 
         IRaceTemplate RaceTemplate { set; }
         IArcheType ArcheType { set; }
-        ISkillSet SkillSet { set; }
+        ISkillset Skillset { set; }
         ISpell SignatureSpell { set; }
         ISpell NormalAttack { set; }
 
