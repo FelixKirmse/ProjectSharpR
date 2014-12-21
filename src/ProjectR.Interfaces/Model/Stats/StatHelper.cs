@@ -37,7 +37,7 @@ namespace ProjectR.Interfaces.Model.Stats
             return StatBiDictionary[str];
         }
 
-        public static string StringFromStat(this Stat stat)
+        public static string GetString(this Stat stat)
         {
             return StatBiDictionary[stat];
         }

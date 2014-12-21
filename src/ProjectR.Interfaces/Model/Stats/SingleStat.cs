@@ -17,5 +17,57 @@ namespace ProjectR.Interfaces.Model.Stats
             get { return _statTypes[type.AsInt()]; }
             set { _statTypes[type.AsInt()] = value; }
         }
+
+        public double BasePlusGrowth()
+        {
+            return Base() + Growth();
+        }
+
+        public double ItemModifiers()
+        {
+            return Item1() + Item2() + Item3();
+        }
+
+        public double Base()
+        {
+            return this[StatType.Base];
+        }
+
+        public double Growth()
+        {
+            return this[StatType.Growth];
+        }
+
+        public double Multiplier()
+        {
+            return this[StatType.Multiplier];
+        }
+
+        public double Item1()
+        {
+            return this[StatType.Item1];
+        }
+
+        public double Item2()
+        {
+            return this[StatType.Item2];
+        }
+
+        public double Item3()
+        {
+            return this[StatType.Item3];
+        }
+
+        public double BattleMod()
+        {
+            return this[StatType.BattleMod];
+        }
+
+        public SingleStat Clone()
+        {
+            var clone = new SingleStat();
+            _statTypes.CopyTo(clone._statTypes, 0);
+            return clone;
+        }
     }
 }

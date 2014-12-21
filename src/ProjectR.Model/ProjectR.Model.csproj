@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
@@ -70,12 +71,14 @@
     <Compile Include="MobPack.cs" />
     <Compile Include="MobPackManager.cs" />
     <Compile Include="ModelFactory.cs" />
+    <Compile Include="PreGameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RMap.cs" />
     <Compile Include="RModel.cs" />
     <Compile Include="StateMachine.cs" />
     <Compile Include="States\StateMachineSynchronizer.cs" />
     <Compile Include="Statistics.cs" />
+    <Compile Include="Stats.cs" />
     <Compile Include="SubscribedFoVMap.cs" />
     <Compile Include="TitleModel.cs" />
   </ItemGroup>

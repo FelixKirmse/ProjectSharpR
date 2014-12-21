@@ -23,7 +23,7 @@ namespace ProjectR.Interfaces.Model
         double CurrentMP { get; }
         double DamageTaken { get; }
 
-        int Lvl { get; }
+        int CurrentLevel { get; }
 
         bool IsDead { get; }
         bool WasHealed { get; }
@@ -40,12 +40,12 @@ namespace ProjectR.Interfaces.Model
         void TakeTrueDamage(double value);
         void UseMP(double value);
         void Heal(double value);
-        void SetLvl(int levels = 1);
+        void SetLvl(int newLevel = 1);
         void LvlUp(int experience);
-        void UpdateTurnCounter(bool invokeEvents = true);
+        bool UpdateTurnCounter(bool invokeEvents = true);
         void ResetDamageTaken();
         void AddAffliction(string name);
-        void BuffStat(int stat, float value);
+        void BuffStat(Stat stat, double value);
         void TurnEnded();
     }
 }

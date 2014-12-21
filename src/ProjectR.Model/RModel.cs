@@ -31,6 +31,7 @@ namespace ProjectR.Model
             MobPackManager = new MobPackManager(this);
             TitleModel = new TitleModel();
             MenuModel = new MenuModel();
+            PreGameModel = new PreGameModel(this);
         }
 
         public void CommitChanges()
