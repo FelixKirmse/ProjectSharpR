@@ -42,4 +42,22 @@ namespace ProjectR.Interfaces.Model
         Quality = Common | Uncommon | Rare | Epic | Legendary | Artifact,
         Size = Small | Normal | Big | Grand
     }
+
+    public static class RCellExtensions
+    {
+        public static bool Is(this RCell cell, RCell attribute)
+        {
+            return (cell & RCell.Wall) == attribute;
+        }
+
+        public static bool IsWalkable(this RCell cell)
+        {
+            return cell.Is(RCell.Walkable);
+        }
+
+        public static bool IsTransparent(this RCell cell)
+        {
+            return !cell.Is(RCell.LightBlocking) || cell.Is(RCell.Transparent);
+        }
+    }
 }
