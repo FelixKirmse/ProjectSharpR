@@ -11,5 +11,6 @@ namespace ProjectR.Interfaces.Model
         void GeneratePack(int x, int y);
         void GenerateBoss(int x, int y);
         void GenerateProjectR(int x, int y);
+        bool ProcessTurns(int playerX, int playerY);
     }
 }

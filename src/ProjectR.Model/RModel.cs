@@ -28,6 +28,7 @@ namespace ProjectR.Model
         {
             Map = new RMap();
             Statistics = new Statistics();
+            MobPackManager = new MobPackManager(this);
         }
 
         public void CommitChanges()

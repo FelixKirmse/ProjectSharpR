@@ -19,6 +19,7 @@ namespace ProjectR.Interfaces.Model
         void AddEnemy(ICharacter enemy, MobPackStrength strength = MobPackStrength.Stronger, double convertBonus = 1.2d);
         void AddMinion(ICharacter minion);
         void SetConvertBonus(ICharacter character, double bonus);
+        double GetConvertBonus(ICharacter character);
         bool ProcessTurn(int playerX, int playerY);
         void SetStrength(ICharacter enemy, MobPackStrength strength);
         MobPackStrength GetStrength(ICharacter enemy);

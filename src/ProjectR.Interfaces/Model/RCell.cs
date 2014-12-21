@@ -59,5 +59,14 @@ namespace ProjectR.Interfaces.Model
         {
             return !cell.Is(RCell.LightBlocking) || cell.Is(RCell.Transparent);
         }
+
+        public static int GetStatBonus(this RCell cell)
+        {
+            // lemme just take a moment to tell you C# is a PITA to work with flags...
+            var cellAsLong = (ulong) cell;
+            const int offset = (int) RCell.StatBonusOffset;
+
+            return (int)(cellAsLong >> offset);
+        }
     }
 }

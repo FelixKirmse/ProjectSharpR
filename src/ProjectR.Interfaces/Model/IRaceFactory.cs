@@ -8,7 +8,7 @@ namespace ProjectR.Interfaces.Model
 
         void LoadTemplates();
         IRaceTemplate GetTemplate(string name);
-        IRaceTemplate GetRAndomTemplate();
+        IRaceTemplate GetRandomTemplate();
 
         IList<IAffliction> GetPassivesForRace(string race);
     }

@@ -61,7 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Direction.cs" />
     <Compile Include="Helper\BiDictionary.cs" />
+    <Compile Include="Helper\RHelper.cs" />
     <Compile Include="IObserveable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="ISpell.cs" />
