@@ -83,6 +83,7 @@
     <Compile Include="Model\CharacterRollingEvasionDelegate.cs" />
     <Compile Include="Model\CharacterTakingDamageDelegate.cs" />
     <Compile Include="Model\CharacterUsingMPDelegate.cs" />
+    <Compile Include="Model\IArcheType.cs" />
     <Compile Include="Model\IBattleLog.cs" />
     <Compile Include="Model\IBattleModel.cs" />
     <Compile Include="Model\ICharacter.cs" />
@@ -95,14 +96,19 @@
     <Compile Include="Model\IOverworldCamera.cs" />
     <Compile Include="Model\IOverworldModel.cs" />
     <Compile Include="Model\IOverworldPlayer.cs" />
+    <Compile Include="Model\IPreGameModel.cs" />
+    <Compile Include="Model\IRaceTemplate.cs" />
     <Compile Include="Model\IRMap.cs" />
     <Compile Include="Model\IRModel.cs" />
+    <Compile Include="Model\ISkillSet.cs" />
     <Compile Include="Model\IStateMachineSynchronizer.cs" />
+    <Compile Include="Model\IStatistics.cs" />
     <Compile Include="Model\ISubscribedFoVMap.cs" />
     <Compile Include="Model\ITargetInfo.cs" />
     <Compile Include="Model\ITitleModel.cs" />
     <Compile Include="Model\MobPackStrength.cs" />
     <Compile Include="Model\RCell.cs" />
+    <Compile Include="Model\Statistic.cs" />
     <Compile Include="Model\Stats\BaseStat.cs" />
     <Compile Include="Model\Stats\DebuffResistance.cs" />
     <Compile Include="Model\Stats\EleMastery.cs" />
