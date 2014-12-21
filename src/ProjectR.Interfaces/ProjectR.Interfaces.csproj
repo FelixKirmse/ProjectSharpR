@@ -83,12 +83,14 @@
     <Compile Include="Model\CharacterRollingEvasionDelegate.cs" />
     <Compile Include="Model\CharacterTakingDamageDelegate.cs" />
     <Compile Include="Model\CharacterUsingMPDelegate.cs" />
+    <Compile Include="Model\IBattleLog.cs" />
     <Compile Include="Model\IBattleModel.cs" />
     <Compile Include="Model\ICharacter.cs" />
     <Compile Include="Model\ICharacterEvents.cs" />
     <Compile Include="Model\IMap.cs" />
     <Compile Include="Model\IMenu.cs" />
     <Compile Include="Model\IMenuModel.cs" />
+    <Compile Include="Model\IMobPack.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Model\IOverworldCamera.cs" />
     <Compile Include="Model\IOverworldModel.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Model\ISubscribedFoVMap.cs" />
     <Compile Include="Model\ITargetInfo.cs" />
     <Compile Include="Model\ITitleModel.cs" />
+    <Compile Include="Model\MobPackStrength.cs" />
     <Compile Include="Model\RCell.cs" />
     <Compile Include="Model\Stats\BaseStat.cs" />
     <Compile Include="Model\Stats\DebuffResistance.cs" />
