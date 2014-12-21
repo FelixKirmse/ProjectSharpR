@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using System.Web.UI.WebControls;
+using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
 
@@ -16,7 +16,7 @@ namespace ProjectR.Model
         {
             _model = model;
             Player = new OverworldPlayer(_model.Map, model.Statistics);
-            MapGenerator = new MapGenerator(_model.Map, model.MobPackManager);
+            MapGenerator = Factories.RFactory.CreateMapGenerator(_model.Map, _model.MobPackManager);
             Camera = new OverworldCamera(_model.Map);
         }
 

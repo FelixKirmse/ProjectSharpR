@@ -1,4 +1,5 @@
 ﻿using ProjectR.Factory;
+using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR
@@ -11,8 +12,8 @@ namespace ProjectR
 
         public ProjectR()
         {
-            _stateSyncer = RFactory.CreateStateMachineSynchronizer();
-            _model = RFactory.CreateModel();
+            _stateSyncer = Factories.RFactory.CreateStateMachineSynchronizer();
+            _model = Factories.RFactory.CreateModel();
         }
 
         public static void Exit()

@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Direction.cs" />
+    <Compile Include="Factories\Factories.cs" />
+    <Compile Include="Factories\IRFactory.cs" />
     <Compile Include="Helper\BiDictionary.cs" />
     <Compile Include="Helper\RHelper.cs" />
     <Compile Include="IObserveable.cs" />
