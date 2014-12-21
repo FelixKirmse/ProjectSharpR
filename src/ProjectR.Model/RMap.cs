@@ -9,7 +9,7 @@ namespace ProjectR.Model
     {
         public Rectangle HeatZone { get; private set; }
 
-        private TCODMap _fovMap;
+        private readonly TCODMap _fovMap;
         private event Action<TCODMap> MapUpdated = delegate { };
         private event Action<int, int, bool, bool> MapPartiallyUpdated = delegate { };
 

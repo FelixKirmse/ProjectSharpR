@@ -6,8 +6,8 @@ namespace ProjectR.Interfaces.Model
     {
         int Speed { set; }
 
-        void SetViewPortSize(int rows, int cols);
-        void SetViewPortPosition(int row, int col);
+        void SetViewPortSize(int colCount, int rowCount);
+        void SetViewPortPosition(int col, int row);
 
         Rectangle ViewPort { get; }
 

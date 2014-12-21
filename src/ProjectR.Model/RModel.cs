@@ -32,6 +32,7 @@ namespace ProjectR.Model
             TitleModel = new TitleModel();
             MenuModel = new MenuModel();
             PreGameModel = new PreGameModel(this);
+            OverworldModel = new OverworldModel(this);
         }
 
         public void CommitChanges()

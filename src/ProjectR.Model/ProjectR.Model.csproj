@@ -71,6 +71,9 @@
     <Compile Include="MobPack.cs" />
     <Compile Include="MobPackManager.cs" />
     <Compile Include="ModelFactory.cs" />
+    <Compile Include="OverworldCamera.cs" />
+    <Compile Include="OverworldModel.cs" />
+    <Compile Include="OverworldPlayer.cs" />
     <Compile Include="PreGameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RMap.cs" />
