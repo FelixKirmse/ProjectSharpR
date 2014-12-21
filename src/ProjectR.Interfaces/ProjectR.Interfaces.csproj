@@ -98,6 +98,7 @@
     <Compile Include="Model\ICharacterFactory.cs" />
     <Compile Include="Model\IMap.cs" />
     <Compile Include="Model\IMenu.cs" />
+    <Compile Include="Model\IMenuItem.cs" />
     <Compile Include="Model\IMenuModel.cs" />
     <Compile Include="Model\IMobPack.cs" />
     <Compile Include="Model\IMobPackManager.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Model\ISubscribedFoVMap.cs" />
     <Compile Include="Model\ITargetInfo.cs" />
     <Compile Include="Model\ITitleModel.cs" />
+    <Compile Include="Model\MainMenuOptions.cs" />
     <Compile Include="Model\MobPackStrength.cs" />
     <Compile Include="Model\PartySlot.cs" />
     <Compile Include="Model\RCell.cs" />

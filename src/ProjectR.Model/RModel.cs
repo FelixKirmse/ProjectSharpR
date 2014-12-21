@@ -30,6 +30,7 @@ namespace ProjectR.Model
             Statistics = new Statistics();
             MobPackManager = new MobPackManager(this);
             TitleModel = new TitleModel();
+            MenuModel = new MenuModel();
         }
 
         public void CommitChanges()

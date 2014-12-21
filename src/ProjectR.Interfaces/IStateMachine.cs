@@ -4,7 +4,7 @@
     {
         void Next();
         void Previous();
-        IState GetCurrentState();
+        IState CurrentState { get; }
         void AddState(IState state);
         void RunCurrentState();
         IState GetState(int index);
