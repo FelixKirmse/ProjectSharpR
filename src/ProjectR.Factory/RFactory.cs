@@ -1,5 +1,6 @@
 ﻿using System;
 using ProjectR.Interfaces.Model;
+using ProjectR.Model;
 using ProjectR.Model.States;
 
 namespace ProjectR.Factory
@@ -13,7 +14,7 @@ namespace ProjectR.Factory
 
         public static IRModel CreateModel()
         {
-            throw new NotImplementedException();
+            return new RModel();
         }
     }
 }

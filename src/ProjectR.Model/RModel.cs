@@ -27,6 +27,7 @@ namespace ProjectR.Model
         public RModel()
         {
             Map = new RMap();
+            Statistics = new Statistics();
         }
 
         public void CommitChanges()
