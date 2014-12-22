@@ -68,5 +68,14 @@ namespace ProjectR.Interfaces.Model
 
             return (int)(cellAsLong >> offset);
         }
+
+        public static RCell InsertCombatBonus(this RCell cell, ulong combatBonus)
+        {
+            var cellAsLong = (ulong) cell;
+            const int offset = (int) RCell.StatBonusOffset;
+            var shift = combatBonus << offset;
+            var result = cellAsLong | shift;
+            return (RCell) result;
+        }
     }
 }

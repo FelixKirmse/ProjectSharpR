@@ -85,5 +85,17 @@ namespace ProjectR.Interfaces.Helper
             if (val.CompareTo(min) < 0) return min;
             return val.CompareTo(max) > 0 ? max : val;
         }
+
+
+        private static readonly Direction[] Directions =
+        {
+            Direction.North, Direction.East, Direction.South, Direction.West, Direction.Center
+        
+        }; 
+
+        public static Direction[] GetDirections()
+        {
+            return Directions.Clone() as Direction[];
+        }
     }
 }
