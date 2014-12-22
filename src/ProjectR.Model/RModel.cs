@@ -1,6 +1,5 @@
 ﻿using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
-using System;
 
 namespace ProjectR.Model
 {
@@ -37,6 +36,7 @@ namespace ProjectR.Model
             BattleModel = new BattleModel(this);
             RaceFactory = new RaceFactory(this);
             CharacterFactory = new CharacterFactory(this);
+            SpellFactory = new Spellfactory(this);
         }
 
         public void CommitChanges()
