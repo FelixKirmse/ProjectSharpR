@@ -146,9 +146,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellType.cs" />
     <Compile Include="StateMachine.cs" />
+    <Compile Include="View\ICharDescriptionDrawer.cs" />
     <Compile Include="View\IConsoleView.cs" />
     <Compile Include="View\IMenuDrawer.cs" />
     <Compile Include="View\IRConsole.cs" />
+    <Compile Include="View\IStatScreenDrawer.cs" />
     <Compile Include="View\IView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
