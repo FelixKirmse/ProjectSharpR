@@ -65,6 +65,7 @@
     <Compile Include="Factories\Factories.cs" />
     <Compile Include="Factories\IRFactory.cs" />
     <Compile Include="Helper\BiDictionary.cs" />
+    <Compile Include="Helper\ExitHelper.cs" />
     <Compile Include="Helper\IScriptHelper.cs" />
     <Compile Include="Helper\RandomContainer.cs" />
     <Compile Include="Helper\RHelper.cs" />

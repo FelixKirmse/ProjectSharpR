@@ -37,6 +37,7 @@ namespace ProjectR.Model
             RaceFactory = new RaceFactory(this);
             CharacterFactory = new CharacterFactory(this);
             SpellFactory = new Spellfactory(this);
+            Party = new Party(this);
         }
 
         public void CommitChanges()
