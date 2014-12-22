@@ -95,10 +95,6 @@
       <Project>{E638DE1B-5518-4C68-811E-1FC92367A088}</Project>
       <Name>ProjectR.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProjectR.Scripting\ProjectR.Scripting.csproj">
-      <Project>{A017E80A-616C-4200-897A-DAB4E58982E2}</Project>
-      <Name>ProjectR.Scripting</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

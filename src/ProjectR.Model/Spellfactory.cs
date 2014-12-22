@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
-using ProjectR.Scripting;
 
 namespace ProjectR.Model
 {
