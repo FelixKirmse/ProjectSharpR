@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ProjectR.Interfaces;
+using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Scripting;
@@ -29,7 +30,7 @@ namespace ProjectR.Model
             foreach (var spell in from file in Directory.EnumerateFiles(ScriptPath)
                                     let fileInfo = new FileInfo(file)
                                     where fileInfo.Extension == "cs"
-                                    select new Spell(_model, file))
+                                    select Factories.RFactory.CreateScriptedSpell(_model, file))
             {
                 _spells.Add(spell);
                 _nameMap.Add(spell.Name, spell);

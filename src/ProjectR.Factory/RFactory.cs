@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces.Factories;
+﻿using ProjectR.Interfaces;
+using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
@@ -26,6 +27,11 @@ namespace ProjectR.Factory
         public IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager)
         {
             return new MapGenerator(map, mobPackManager);
+        }
+
+        public ISpell CreateScriptedSpell(IModel model, string file)
+        {
+            return new Spell(model, file);
         }
     }
 }

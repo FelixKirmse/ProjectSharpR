@@ -8,5 +8,6 @@ namespace ProjectR.Interfaces.Factories
         IStateMachineSynchronizer CreateStateMachineSynchronizer();
         IRModel CreateModel();
         IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager);
+        ISpell CreateScriptedSpell(IModel model, string file);
     }
 }
