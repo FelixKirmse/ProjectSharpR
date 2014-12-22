@@ -29,6 +29,11 @@ namespace ProjectR.Model
         {
         }
 
+        public IMenuItem GetMenuItem(int index)
+        {
+            return GetState(index) as IMenuItem;
+        }
+
         public void LeftAction()
         {
             CurrentMenuItem.LeftAction();

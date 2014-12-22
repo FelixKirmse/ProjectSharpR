@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleView.cs" />
+    <Compile Include="MainMenuView.cs" />
+    <Compile Include="MenuDrawer.cs" />
     <Compile Include="ModelState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RConsole.cs" />
