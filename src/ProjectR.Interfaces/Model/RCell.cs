@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Interfaces.Model
 {
@@ -60,13 +61,13 @@ namespace ProjectR.Interfaces.Model
             return !cell.Is(RCell.LightBlocking) || cell.Is(RCell.Transparent);
         }
 
-        public static int GetStatBonus(this RCell cell)
+        public static Stat GetStatBonus(this RCell cell)
         {
             // lemme just take a moment to tell you C# is a PITA to work with flags...
             var cellAsLong = (ulong) cell;
             const int offset = (int) RCell.StatBonusOffset;
 
-            return (int)(cellAsLong >> offset);
+            return (Stat)(cellAsLong >> offset);
         }
 
         public static RCell InsertCombatBonus(this RCell cell, ulong combatBonus)

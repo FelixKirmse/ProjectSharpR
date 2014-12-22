@@ -31,7 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -39,7 +39,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -72,6 +72,10 @@
     <ProjectReference Include="..\ProjectR.Model\ProjectR.Model.csproj">
       <Project>{0D34DBAF-FC57-423D-AF6E-4AF7D498EB9D}</Project>
       <Name>ProjectR.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectR.Scripting\ProjectR.Scripting.csproj">
+      <Project>{A017E80A-616C-4200-897A-DAB4E58982E2}</Project>
+      <Name>ProjectR.Scripting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

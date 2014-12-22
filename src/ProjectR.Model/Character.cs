@@ -29,12 +29,13 @@ namespace ProjectR.Model
         #endregion
 
         public const int XPRequiredForLvlUp = 2000;
+        public static double StaticTimeToAction { get; set; }
 
         public string Name { get; set; }
         public string Race { get; set; }
         public string Lore { get; set; }
         public double TurnCounter { get; set; }
-        public double TimeToAction { get; set; }
+        public double TimeToAction { get { return StaticTimeToAction; } set { StaticTimeToAction = value; } }
         public double CurrentHP { get; set; }
         public bool IsSilenced { get; set; }
         public bool IsMinion { get; set; }

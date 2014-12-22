@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Interfaces.Model
 {
@@ -38,7 +39,7 @@ namespace ProjectR.Interfaces.Model
 
         void RemoveEnemy(ICharacter enemy);
         void RemoveMinion(ICharacter minion);
-        void StartBattle(IMobPack pack, int statBonus, bool doubleStatBonus);
+        void StartBattle(IMobPack pack, Stat statBonus, bool doubleStatBonus);
 
         bool CharacterIsEnemy(ICharacter character);
     }

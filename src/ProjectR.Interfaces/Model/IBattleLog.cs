@@ -11,7 +11,7 @@ namespace ProjectR.Interfaces.Model
         IList<LogEntry> GetLog();
     }
 
-    public struct LogEntry
+    public class LogEntry
     {
         public string CasterName { get; set; }
         public bool CasterIsEnemy { get; set; }

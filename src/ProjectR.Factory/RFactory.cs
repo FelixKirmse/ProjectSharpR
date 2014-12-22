@@ -1,9 +1,11 @@
 ﻿using ProjectR.Interfaces.Factories;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
 using ProjectR.MapGen;
 using ProjectR.Model;
 using ProjectR.Model.States;
+using ProjectR.Scripting;
 
 namespace ProjectR.Factory
 {
@@ -16,7 +18,9 @@ namespace ProjectR.Factory
 
         public IRModel CreateModel()
         {
-            return new RModel();
+            var model = new RModel();
+            RHelper.ScriptHelper = new ScriptHelper { Model = model };
+            return model;
         }
 
         public IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager)

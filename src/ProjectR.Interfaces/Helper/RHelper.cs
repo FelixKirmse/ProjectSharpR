@@ -62,12 +62,12 @@ namespace ProjectR.Interfaces.Helper
 
         public static int MakeEven(this int n)
         {
-            return n%2 == 0 ? n : n + 1;
+            return n % 2 == 0 ? n : n + 1;
         }
 
         public static int MakeOdd(this int n)
         {
-            return n%2 == 0 ? n + 1 : n;
+            return n % 2 == 0 ? n + 1 : n;
         }
 
         public static Direction GetRandomDirection()
@@ -97,5 +97,7 @@ namespace ProjectR.Interfaces.Helper
         {
             return Directions.Clone() as Direction[];
         }
+
+        public static IScriptHelper ScriptHelper { get; set; }
     }
 }
