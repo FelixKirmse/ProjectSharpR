@@ -145,6 +145,10 @@
     <Compile Include="Model\TargetType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellType.cs" />
+    <Compile Include="StateMachine.cs" />
+    <Compile Include="View\IConsoleView.cs" />
+    <Compile Include="View\IRConsole.cs" />
+    <Compile Include="View\IView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

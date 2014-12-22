@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using ProjectR.Interfaces;
 
-namespace ProjectR.Model
+namespace ProjectR.Interfaces
 {
     public class StateMachine : IStateMachine, ISynchronizeable<int>
     {

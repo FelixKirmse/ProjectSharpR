@@ -1,5 +1,6 @@
 ﻿using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
+using ProjectR.Interfaces.View;
 
 namespace ProjectR.Interfaces.Factories
 {
@@ -10,5 +11,6 @@ namespace ProjectR.Interfaces.Factories
         IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager);
         ISpell CreateScriptedSpell(IModel model, string file);
         IAffliction CreateScriptedAffliction(IModel model, string file);
+        IConsoleView CreateConsoleView();
     }
 }

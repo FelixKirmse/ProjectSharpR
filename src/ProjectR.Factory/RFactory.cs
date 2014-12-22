@@ -3,10 +3,12 @@ using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
+using ProjectR.Interfaces.View;
 using ProjectR.MapGen;
 using ProjectR.Model;
 using ProjectR.Model.States;
 using ProjectR.Scripting;
+using ProjectR.View;
 
 namespace ProjectR.Factory
 {
@@ -37,6 +39,11 @@ namespace ProjectR.Factory
         public IAffliction CreateScriptedAffliction(IModel model, string file)
         {
             return new Affliction(model, file);
+        }
+
+        public IConsoleView CreateConsoleView()
+        {
+            return new ConsoleView();
         }
     }
 }

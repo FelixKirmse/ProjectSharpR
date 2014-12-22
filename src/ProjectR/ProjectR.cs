@@ -1,6 +1,7 @@
 ﻿using ProjectR.Factory;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Model;
+using ProjectR.Interfaces.View;
 
 namespace ProjectR
 {
@@ -9,11 +10,13 @@ namespace ProjectR
         private static bool _exitGame;
         private IStateMachineSynchronizer _stateSyncer;
         private IRModel _model;
+        private IConsoleView _view;
 
         public ProjectR()
         {
             _stateSyncer = Factories.RFactory.CreateStateMachineSynchronizer();
             _model = Factories.RFactory.CreateModel();
+            _view = Factories.RFactory.CreateConsoleView();
         }
 
         public static void Exit()

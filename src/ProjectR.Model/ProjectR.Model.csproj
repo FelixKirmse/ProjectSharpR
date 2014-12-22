@@ -90,7 +90,6 @@
     <Compile Include="SignatureSpellFactory.cs" />
     <Compile Include="SkillsetFactory.cs" />
     <Compile Include="Spellfactory.cs" />
-    <Compile Include="StateMachine.cs" />
     <Compile Include="States\StateMachineSynchronizer.cs" />
     <Compile Include="Statistics.cs" />
     <Compile Include="Stats.cs" />

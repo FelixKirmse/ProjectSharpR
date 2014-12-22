@@ -77,6 +77,10 @@
       <Project>{A017E80A-616C-4200-897A-DAB4E58982E2}</Project>
       <Name>ProjectR.Scripting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectR.View\ProjectR.View.csproj">
+      <Project>{D5F09B49-7E8E-4EB7-94E0-CAD1E0D8DD2B}</Project>
+      <Name>ProjectR.View</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
