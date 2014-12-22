@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ProjectR.Interfaces;
+﻿using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
@@ -54,35 +53,6 @@ namespace ProjectR.Model
         }
 
         public void NotifyObservers()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
-    public class RaceFactory : IRaceFactory
-    {
-        public IList<IRaceTemplate> Templates { get; private set; }
-        public RaceFactory(IModel model)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void LoadTemplates()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IRaceTemplate GetTemplate(string name)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IRaceTemplate GetRandomTemplate()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IList<IAffliction> GetPassivesForRace(string race)
         {
             throw new System.NotImplementedException();
         }

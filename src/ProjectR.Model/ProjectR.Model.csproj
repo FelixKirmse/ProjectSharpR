@@ -78,6 +78,7 @@
     <Compile Include="OverworldPlayer.cs" />
     <Compile Include="PreGameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceFactory.cs" />
     <Compile Include="RMap.cs" />
     <Compile Include="RModel.cs" />
     <Compile Include="StateMachine.cs" />
