@@ -42,6 +42,7 @@ namespace ProjectR.Model
             ArcheTypeFactory = new ArcheTypeFactory(this);
             SkillsetFactory = new SkillsetFactory(this);
             SignatureSpellFactory = new SignatureSpellFactory(this);
+            NormalAttackFactory = new NormalAttackFactory(this);
         }
 
         public void CommitChanges()

@@ -76,6 +76,7 @@
     <Compile Include="MobPack.cs" />
     <Compile Include="MobPackManager.cs" />
     <Compile Include="ModelFactory.cs" />
+    <Compile Include="NormalAttackFactory.cs" />
     <Compile Include="OverworldCamera.cs" />
     <Compile Include="OverworldModel.cs" />
     <Compile Include="OverworldPlayer.cs" />

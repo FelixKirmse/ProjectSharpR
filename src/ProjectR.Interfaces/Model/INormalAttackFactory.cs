@@ -4,7 +4,7 @@ namespace ProjectR.Interfaces.Model
 {
     public interface INormalAttackFactory
     {
-        IList<ISpell> GetNormalAttacks();
+        IList<ISpell> NormalAttacks { get; set; }
 
         void LoadNormalAttacks();
     }
