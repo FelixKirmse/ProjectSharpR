@@ -61,12 +61,12 @@ namespace ProjectR.Model
 
     public class RaceFactory : IRaceFactory
     {
+        public IList<IRaceTemplate> Templates { get; private set; }
         public RaceFactory(IModel model)
         {
             throw new System.NotImplementedException();
         }
 
-        public IList<IRaceTemplate> Templates { get; private set; }
         public void LoadTemplates()
         {
             throw new System.NotImplementedException();
