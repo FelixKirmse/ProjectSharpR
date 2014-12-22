@@ -4,7 +4,7 @@ namespace ProjectR.Interfaces.Model
 {
     public interface ISkillsetFactory
     {
-        IList<ISkillset> SkillsSets { get; } 
+        IList<ISkillset> SkillSets { get; } 
 
         void LoadSkillsets();
         ISkillset GetSkillset(string name);

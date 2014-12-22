@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model

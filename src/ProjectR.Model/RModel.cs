@@ -40,6 +40,7 @@ namespace ProjectR.Model
             Party = new Party(this);
             AfflictionFactory = new AfflictionFactory(this);
             ArcheTypeFactory = new ArcheTypeFactory(this);
+            SkillsetFactory = new SkillsetFactory(this);
         }
 
         public void CommitChanges()
