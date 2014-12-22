@@ -41,6 +41,7 @@ namespace ProjectR.Model
             AfflictionFactory = new AfflictionFactory(this);
             ArcheTypeFactory = new ArcheTypeFactory(this);
             SkillsetFactory = new SkillsetFactory(this);
+            SignatureSpellFactory = new SignatureSpellFactory(this);
         }
 
         public void CommitChanges()

@@ -85,6 +85,7 @@
     <Compile Include="RaceFactory.cs" />
     <Compile Include="RMap.cs" />
     <Compile Include="RModel.cs" />
+    <Compile Include="SignatureSpellFactory.cs" />
     <Compile Include="SkillsetFactory.cs" />
     <Compile Include="Spellfactory.cs" />
     <Compile Include="StateMachine.cs" />
