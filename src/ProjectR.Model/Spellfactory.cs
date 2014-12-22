@@ -37,6 +37,11 @@ namespace ProjectR.Model
 
         public ISpell GetSpell(string name)
         {
+            if (!_nameMap.ContainsKey(name))
+            {
+                ExitHelper.Exit(ErrorCodes.ErrorSpellNotFound, "Spell not found " + name);
+            }
+
             return _nameMap[name];
         }
 

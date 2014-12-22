@@ -38,6 +38,7 @@ namespace ProjectR.Model
             CharacterFactory = new CharacterFactory(this);
             SpellFactory = new Spellfactory(this);
             Party = new Party(this);
+            AfflictionFactory = new AfflictionFactory(this);
         }
 
         public void CommitChanges()

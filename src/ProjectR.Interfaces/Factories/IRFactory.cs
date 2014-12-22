@@ -9,5 +9,6 @@ namespace ProjectR.Interfaces.Factories
         IRModel CreateModel();
         IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager);
         ISpell CreateScriptedSpell(IModel model, string file);
+        IAffliction CreateScriptedAffliction(IModel model, string file);
     }
 }
