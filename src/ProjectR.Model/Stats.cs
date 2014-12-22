@@ -154,6 +154,55 @@ namespace ProjectR.Model
             return clone;
         }
 
+        public static IStats GetRandomBaseStats()
+        {
+            var stats = new Stats();
+            var hp = stats[Stat.HP];
+            hp[StatType.Base] = RHelper.Roll(75, 200);
+            hp[StatType.Growth] = RHelper.Roll(5, 25);
+
+            stats[BaseStat.MP][StatType.Base] = 200d;
+
+            for (var stat = Stat.AD; stat <= Stat.CHA; ++stat)
+            {
+                var s = stats[stat];
+                s[StatType.Base] = RHelper.Roll(20, 80);
+                s[StatType.Growth] = RHelper.Roll(1, 20);
+            }
+
+            stats.EVAType = RHelper.RollPercentage(10) ? EVAType.Block : EVAType.Dodge;
+
+            if (stats.EVAType == EVAType.Dodge)
+            {
+                stats[BaseStat.EVA][StatType.Base] = 2d;
+                stats[BaseStat.EVA][StatType.Growth] = RHelper.Roll(1, 8);
+            }
+            else
+            {
+                stats[BaseStat.EVA][StatType.Base] = RHelper.Roll(20, 80);
+                stats[BaseStat.EVA][StatType.Growth] = RHelper.Roll(0, 1);
+            }
+
+            var spd = stats[BaseStat.SPD];
+            spd[StatType.Base] = 100d;
+            spd[StatType.Growth] = RHelper.Roll(5, 10);
+            spd[StatType.Multiplier] = 0.0255d;
+
+            for (var stat = Stat.FIR; stat <= Stat.LGT; ++stat)
+            {
+                stats[stat][StatType.Base] = RHelper.Roll(50, 200);
+            }
+
+            for (var stat = Stat.PSN; stat <= Stat.SIL; ++stat)
+            {
+                stats[stat][StatType.Base] = RHelper.Roll(0, 30);
+            }
+
+            stats.XPMultiplier = RHelper.Roll(80, 120) / 100d;
+
+            return stats;
+        }
+
         #region Indexers
         public SingleStat this[Stat stat]
         {

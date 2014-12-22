@@ -66,6 +66,7 @@
     <Compile Include="BattleLog.cs" />
     <Compile Include="BattleModel.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterFactory.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
