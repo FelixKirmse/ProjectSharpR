@@ -1,9 +1,8 @@
-﻿using ProjectR.Interfaces;
-using ProjectR.Interfaces.Model;
+﻿using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class RModel : IRModel
+    public class RModel : Observeable, IRModel
     {
         public string PlayerName { get; set; }
         public IRMap Map { get; private set; }
@@ -47,22 +46,20 @@ namespace ProjectR.Model
 
         public void CommitChanges()
         {
-            throw new System.NotImplementedException();
+            NotifyObservers();
         }
 
         public void LoadResources()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void AddObserver(IObserver observer)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void NotifyObservers()
-        {
-            throw new System.NotImplementedException();
+            SpellFactory.LoadSpells();
+            AfflictionFactory.LoadAfflictions();
+            RaceFactory.LoadTemplates();
+            CharacterFactory.LoadCharacters();
+            ArcheTypeFactory.LoadArcheTypes();
+            SkillsetFactory.LoadSkillsets();
+            SignatureSpellFactory.LoadSignatureSpells();
+            NormalAttackFactory.LoadNormalAttacks();
+            Party.Reset();
         }
     }
 }
