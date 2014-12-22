@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces;
+﻿using System.Collections.Generic;
+using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
@@ -34,6 +35,7 @@ namespace ProjectR.Model
             PreGameModel = new PreGameModel(this);
             OverworldModel = new OverworldModel(this);
             BattleModel = new BattleModel(this);
+            RaceFactory = new RaceFactory(this);
         }
 
         public void CommitChanges()
@@ -52,6 +54,35 @@ namespace ProjectR.Model
         }
 
         public void NotifyObservers()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    public class RaceFactory : IRaceFactory
+    {
+        public RaceFactory(IModel model)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IList<IRaceTemplate> Templates { get; private set; }
+        public void LoadTemplates()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IRaceTemplate GetTemplate(string name)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IRaceTemplate GetRandomTemplate()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IList<IAffliction> GetPassivesForRace(string race)
         {
             throw new System.NotImplementedException();
         }
