@@ -2,6 +2,7 @@ using System;
 using System.Data.SqlTypes;
 using System.Linq.Expressions;
 using System.Security.Permissions;
+using System.Threading;
 using ProjectR.Interfaces.View;
 
 namespace ProjectR.View
@@ -27,6 +28,7 @@ namespace ProjectR.View
             _charDescDrawer = new CharDescriptionDrawer();
             _statScreenDrawer = new StatScreenDrawer();
             _normAttackDrawer = new SpellDescriptionDrawer();
+            _afflictionLister = new AfflictionLister();
         }
 
         public override void Run()

@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces.Helper;
+﻿using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Scripting
@@ -11,6 +12,11 @@ namespace ProjectR.Scripting
         {
             Model.AfflictionFactory.RemoveAllAfflictions();
             // TODO CharAfflMap.Clear
+        }
+
+        public IList<IAffliction> GetAfflictions(ICharacter character)
+        {
+            return new IAffliction[0]; // TODO get affliction for character
         }
     }
 }

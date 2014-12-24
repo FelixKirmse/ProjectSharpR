@@ -146,6 +146,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellType.cs" />
     <Compile Include="StateMachine.cs" />
+    <Compile Include="View\IAfflictionLister.cs" />
     <Compile Include="View\ICharDescriptionDrawer.cs" />
     <Compile Include="View\IConsoleView.cs" />
     <Compile Include="View\IMenuDrawer.cs" />
