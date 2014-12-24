@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 
 namespace ProjectR.Interfaces.Helper
@@ -99,5 +100,42 @@ namespace ProjectR.Interfaces.Helper
         }
 
         public static IScriptHelper ScriptHelper { get; set; }
+
+        public static string SanitizeNumber(double number, string format = "F2")
+        {
+            if (number <= 0)
+            {
+                return "0";
+            }
+
+            // ReSharper disable InconsistentNaming
+            const int k = 10000;
+            const int M = 1000000;
+            const int G = 1000000000;
+            const long T = 1000000000000;
+            // ReSharper restore InconsistentNaming
+
+            var chosenFormat = number < k ? "F0" : format;
+
+            const string resultFormat = "{0}{1}";
+            var damageLetter = number > T ? "T" : number > G ? "G" : number > M ? "M" : number > k ? "k" : "";
+
+            var reducedNumber = number > T
+                ? number / T
+                : number > G
+                    ? number / G
+                    : number > M
+                        ? number / M
+                        : number > k
+                            ? number / 1000
+                            : (int) number;
+
+            if (reducedNumber <= 0)
+            {
+                return "0";
+            }
+
+            return string.Format(resultFormat, reducedNumber.ToString(chosenFormat), damageLetter);
+        }
     }
 }

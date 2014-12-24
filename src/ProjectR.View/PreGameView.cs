@@ -1,5 +1,5 @@
-using System.Drawing;
-using ProjectR.Interfaces.Model;
+using System.Linq.Expressions;
+using System.Security.Permissions;
 using ProjectR.Interfaces.View;
 
 namespace ProjectR.View
@@ -29,33 +29,6 @@ namespace ProjectR.View
         public override void Run()
         {
             
-        }
-    }
-
-    public class StatScreenDrawer : RConsole, IStatScreenDrawer
-    {
-        private static readonly Rectangle StatRectangle = new Rectangle(7, 9, 17, 9);
-        private static readonly Rectangle StatStrengthRect = new Rectangle(29, 9, 17, 9);
-        private static readonly Rectangle MasteryRect = new Rectangle(7, 22, 4, 9);
-        private static readonly Rectangle MasteryStrengthRect = new Rectangle(13, 22, 4, 9);
-        private static readonly Rectangle ResiRect = new Rectangle(26, 22, 2, 4);
-        private static readonly Rectangle ResiStrengthRect = new Rectangle(29, 22, 4, 4);
-
-        private Point _position;
-
-        public StatScreenDrawer()
-            : base(37, 32)
-        {
-        }
-
-        public void DrawStats(ICharacter character, IRConsole targetConsole = null)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SetPosition(int x, int y)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
