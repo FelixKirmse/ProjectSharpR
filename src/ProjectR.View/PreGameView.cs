@@ -1,3 +1,5 @@
+using System;
+using System.Data.SqlTypes;
 using System.Linq.Expressions;
 using System.Security.Permissions;
 using ProjectR.Interfaces.View;
@@ -24,6 +26,7 @@ namespace ProjectR.View
             _menuDrawer = new MenuDrawer();
             _charDescDrawer = new CharDescriptionDrawer();
             _statScreenDrawer = new StatScreenDrawer();
+            _normAttackDrawer = new SpellDescriptionDrawer();
         }
 
         public override void Run()

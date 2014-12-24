@@ -80,6 +80,11 @@ namespace ProjectR.View
             return GetColorFormat(colour.Red, colour.Green, colour.Blue);
         }
 
+        public string GetStopControl()
+        {
+            return TCODConsole.getColorControlString(8);
+        }
+
         public static string GetColorFormat(byte red, byte green, byte blue)
         {
             if (red == 0)
