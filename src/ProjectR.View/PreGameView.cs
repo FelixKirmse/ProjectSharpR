@@ -122,6 +122,11 @@ namespace ProjectR.View
             _console.SetCharacter(x, y, character, foreground, background);
         }
 
+        public void SetCharacter(int x, int y, char character, TCODColor foreground)
+        {
+            _console.SetCharacter(x, y, character, foreground);
+        }
+
         public void DrawHorizontalLine(int x, int y, int length)
         {
             _console.DrawHorizontalLine(x, y, length);

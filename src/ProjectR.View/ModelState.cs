@@ -8,11 +8,11 @@ namespace ProjectR.View
         public static IModel Model { get; set; }
         protected IStateMachine Master { get; private set; }
 
-        public void Activate()
+        public virtual void Activate()
         {
         }
 
-        public void Deactivate()
+        public virtual void Deactivate()
         {
         }
 

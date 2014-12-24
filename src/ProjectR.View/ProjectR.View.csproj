@@ -66,8 +66,10 @@
     <Compile Include="CharDescriptionDrawer.cs" />
     <Compile Include="ConsoleView.cs" />
     <Compile Include="MainMenuView.cs" />
+    <Compile Include="MapDrawer.cs" />
     <Compile Include="MenuDrawer.cs" />
     <Compile Include="ModelState.cs" />
+    <Compile Include="OverworldView.cs" />
     <Compile Include="PreGameView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RConsole.cs" />

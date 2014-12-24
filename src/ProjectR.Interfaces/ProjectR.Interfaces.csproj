@@ -149,6 +149,7 @@
     <Compile Include="View\IAfflictionLister.cs" />
     <Compile Include="View\ICharDescriptionDrawer.cs" />
     <Compile Include="View\IConsoleView.cs" />
+    <Compile Include="View\IMapDrawer.cs" />
     <Compile Include="View\IMenuDrawer.cs" />
     <Compile Include="View\IRConsole.cs" />
     <Compile Include="View\ISpellDescriptionDrawer.cs" />

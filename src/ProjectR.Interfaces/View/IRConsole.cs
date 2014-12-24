@@ -13,6 +13,7 @@ namespace ProjectR.Interfaces.View
         void SetCharacter(int x, int y, char character);
         void SetCharacter(int x, int y, int character);
         void SetCharacter(int x, int y, char character, TCODColor foreground, TCODColor background);
+        void SetCharacter(int x, int y, char character, TCODColor foreground);
 
         void DrawHorizontalLine(int x, int y, int length);
         void DrawVerticalLine(int x, int y, int length);

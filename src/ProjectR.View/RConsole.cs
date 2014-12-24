@@ -65,6 +65,11 @@ namespace ProjectR.View
             _console.putCharEx(x, y, character, foreground, background);
         }
 
+        public void SetCharacter(int x, int y, char character, TCODColor foreground)
+        {
+            SetCharacter(x, y, character, foreground, TCODColor.black);
+        }
+
         public void DrawHorizontalLine(int x, int y, int length)
         {
             _console.hline(x, y, length);
