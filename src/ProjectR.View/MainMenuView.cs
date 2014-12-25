@@ -4,11 +4,11 @@ namespace ProjectR.View
 {
     public class MainMenuView : ModelState
     {
-        private readonly IRConsole _rootConsole;
         private readonly IRConsole _menuConsole;
-        private readonly int _rootWidth;
-        private readonly int _rootHeight;
         private readonly IMenuDrawer _menuDrawer;
+        private readonly IRConsole _rootConsole;
+        private readonly int _rootHeight;
+        private readonly int _rootWidth;
 
         public MainMenuView()
         {
@@ -21,7 +21,8 @@ namespace ProjectR.View
 
         public override void Run()
         {
-            _menuDrawer.DrawMenu(Model.MenuModel.ActiveMenu, 0, 0, 0, _menuConsole, 0, Model.MenuModel.ActiveMenu.GetStateCount() - 1);
+            _menuDrawer.DrawMenu(Model.MenuModel.ActiveMenu, 0, 0, 0, _menuConsole, 0,
+                Model.MenuModel.ActiveMenu.GetStateCount() - 1);
             _rootConsole.Blit(_menuConsole, _menuConsole.Bounds, 5, _rootHeight - 9);
         }
     }

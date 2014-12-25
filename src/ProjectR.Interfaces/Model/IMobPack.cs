@@ -14,7 +14,7 @@ namespace ProjectR.Interfaces.Model
         int UnstableCoreCount { get; }
 
         IList<ICharacter> Enemies { get; }
-        IList<ICharacter> Minions { get; } 
+        IList<ICharacter> Minions { get; }
 
         void AddEnemy(ICharacter enemy, MobPackStrength strength = MobPackStrength.Stronger, double convertBonus = 1.2d);
         void AddMinion(ICharacter minion);

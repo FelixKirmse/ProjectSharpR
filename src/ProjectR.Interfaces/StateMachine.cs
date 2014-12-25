@@ -33,10 +33,7 @@ namespace ProjectR.Interfaces
             }
         }
 
-        public IState CurrentState
-        {
-            get { return _states[_currentState]; }
-        }
+        public IState CurrentState { get { return _states[_currentState]; } }
 
 
         public void AddState(IState state)
@@ -51,7 +48,7 @@ namespace ProjectR.Interfaces
 
         public void RunCurrentState()
         {
-            var state = CurrentState;
+            IState state = CurrentState;
 
             if (state != null)
             {

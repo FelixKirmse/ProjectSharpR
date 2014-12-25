@@ -6,17 +6,17 @@ namespace ProjectR.MapGen.Generators
 {
     public class HallwayGenerator : Generator
     {
-        public HallwayGenerator(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map) 
+        public HallwayGenerator(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map)
             : base(minWidth, minHeight, maxWidth, maxHeight, map)
         {
         }
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            var topRow = row;
-            var leftCol = col;
+            int topRow = row;
+            int leftCol = col;
 
-            var length = Math.Max(Width, Height);
+            int length = Math.Max(Width, Height);
 
             if (dir == Direction.West || dir == Direction.East)
             {
@@ -32,13 +32,13 @@ namespace ProjectR.MapGen.Generators
 
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            var maxRow = topRow + Height;
-            var maxCol = leftCol + Width;
-            for (var r = topRow; r < maxRow; ++r)
+            int maxRow = topRow + Height;
+            int maxCol = leftCol + Width;
+            for (int r = topRow; r < maxRow; ++r)
             {
-                for (var c = leftCol; c < maxCol; ++c)
+                for (int c = leftCol; c < maxCol; ++c)
                 {
-                    var cell = Map[r, c];
+                    RCell cell = Map[r, c];
                     if (r == row && c == col)
                     {
                         if (cell.Is(RCell.Important))

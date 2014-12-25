@@ -5,8 +5,8 @@ namespace ProjectR.Model
 {
     public class SubscribedFoVMap : ISubscribedFoVMap
     {
-        private TCODPath _currentPath;
         private readonly TCODMap _currentMap;
+        private TCODPath _currentPath;
         private int _currentX;
         private int _currentY;
         private int _destX;

@@ -2,6 +2,5 @@
 {
     public interface IConsoleView : IView, IObserver, IStateMachine
     {
-         
     }
 }

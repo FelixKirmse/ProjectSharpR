@@ -10,26 +10,34 @@ namespace ProjectR.Model
     public class Character : ICharacter
     {
         #region Events
-        public event CharacterTakingDamageDelegate TakingDamage = delegate { }; 
-        public event CharacterRollingEvasionDelegate RollingEvasion = delegate { }; 
-        public event CharacterDodgedAttackDelegate AttackDodged = delegate { }; 
-        public event CharacterBlockedAttackDelegate AttackBlocked = delegate { }; 
-        public event CharacterEventDelegate Dying = delegate { }; 
-        public event CharacterUsingMPDelegate UsingMP = delegate { }; 
-        public event CharacterHealingDelegate Healing = delegate { }; 
-        public event CharacterBuffingStatDelegate BuffingStat = delegate { }; 
-        public event CharacterEventDelegate RemovingDebuffs = delegate { }; 
-        public event CharacterEventDelegate RemovingBuffs = delegate { }; 
-        public event CharacterEventDelegate TurnTriggered = delegate { }; 
-        public event CharacterEventDelegate TurnCounterUpdated = delegate { }; 
-        public event CharacterAttackingDelegate Attacking = delegate { }; 
-        public event CharacterBooleanEventDelegate ApplyingDebuff = delegate { }; 
-        public event CharacterBooleanEventDelegate ApplyingBuff = delegate { }; 
-        public event CharacterBooleanEventDelegate TurnCounterUpdating = delegate { }; 
+
+        public event CharacterTakingDamageDelegate TakingDamage = delegate { };
+        public event CharacterRollingEvasionDelegate RollingEvasion = delegate { };
+        public event CharacterDodgedAttackDelegate AttackDodged = delegate { };
+        public event CharacterBlockedAttackDelegate AttackBlocked = delegate { };
+        public event CharacterEventDelegate Dying = delegate { };
+        public event CharacterUsingMPDelegate UsingMP = delegate { };
+        public event CharacterHealingDelegate Healing = delegate { };
+        public event CharacterBuffingStatDelegate BuffingStat = delegate { };
+        public event CharacterEventDelegate RemovingDebuffs = delegate { };
+        public event CharacterEventDelegate RemovingBuffs = delegate { };
+        public event CharacterEventDelegate TurnTriggered = delegate { };
+        public event CharacterEventDelegate TurnCounterUpdated = delegate { };
+        public event CharacterAttackingDelegate Attacking = delegate { };
+        public event CharacterBooleanEventDelegate ApplyingDebuff = delegate { };
+        public event CharacterBooleanEventDelegate ApplyingBuff = delegate { };
+        public event CharacterBooleanEventDelegate TurnCounterUpdating = delegate { };
+
         #endregion
 
         public const int XPRequiredForLvlUp = 2000;
+        private IStats _stats;
         public static double StaticTimeToAction { get; set; }
+
+        public Character(string name)
+        {
+            Name = name;
+        }
 
         public string Name { get; set; }
         public string Race { get; set; }
@@ -63,14 +71,6 @@ namespace ProjectR.Model
             }
         }
 
-        private IStats _stats;
-
-
-        public Character(string name)
-        {
-            Name = name;
-        }
-
         public ICharacter Clone()
         {
             var clone = new Character(Name)
@@ -92,10 +92,10 @@ namespace ProjectR.Model
                 return;
             }
 
-            var evaChance = _stats.GetEVAChance(CurrentLevel);
+            double evaChance = _stats.GetEVAChance(CurrentLevel);
             RollingEvasion(this, ref evaChance);
 
-            var attackEvaded = RHelper.RollPercentage((int) evaChance);
+            bool attackEvaded = RHelper.RollPercentage((int) evaChance);
             if (attackEvaded && _stats.EVAType == EVAType.Dodge)
             {
                 AttackDodged(this, value);
@@ -104,7 +104,7 @@ namespace ProjectR.Model
             }
             BlockedDamage = attackEvaded;
 
-            var reduction = attackEvaded ? 2d : 1d;
+            double reduction = attackEvaded ? 2d : 1d;
             if (attackEvaded)
             {
                 AttackBlocked(this, ref value, ref reduction);
@@ -176,15 +176,9 @@ namespace ProjectR.Model
                 return;
             }
 
-            var newLevel = GetLevelFromExperience(experience);
+            int newLevel = GetLevelFromExperience(experience);
             SetLvl(newLevel);
             ResetDamageTaken();
-        }
-
-        private int GetLevelFromExperience(double xp)
-        {
-            return (int) (1 + xp / (XPRequiredForLvlUp * _stats.XPMultiplier *
-                                    (0.01 + 0.989 * Math.Pow(Math.E, -Math.Pow(10, -11) * Math.Pow(xp, 2)))));
         }
 
         public bool UpdateTurnCounter(bool invokeEvents = true)
@@ -194,7 +188,7 @@ namespace ProjectR.Model
                 return false;
             }
 
-            var timeStep = _stats.GetTotalStat(Stat.SPD);
+            double timeStep = _stats.GetTotalStat(Stat.SPD);
             if (invokeEvents)
             {
                 var eventResult = new BoolConsolidator();
@@ -205,7 +199,7 @@ namespace ProjectR.Model
                 }
             }
 
-            var result = false;
+            bool result = false;
             TurnCounter += timeStep;
 
             if (TurnCounter >= TimeToAction)
@@ -256,7 +250,7 @@ namespace ProjectR.Model
             BuffingStat(this, ref stat, ref value);
 
             const string format = "{0} {1}";
-            var add = string.Format(format, (value * 100d).ToString("P0"), stat.GetString());
+            string add = string.Format(format, (value * 100d).ToString("P0"), stat.GetString());
             AddAffliction(add);
             _stats.BuffStat(stat, value);
         }
@@ -264,6 +258,12 @@ namespace ProjectR.Model
         public void TurnEnded()
         {
             TakesTurn = false;
+        }
+
+        private int GetLevelFromExperience(double xp)
+        {
+            return (int) (1 + xp / (XPRequiredForLvlUp * _stats.XPMultiplier *
+                                    (0.01 + 0.989 * Math.Pow(Math.E, -Math.Pow(10, -11) * Math.Pow(xp, 2)))));
         }
     }
 }

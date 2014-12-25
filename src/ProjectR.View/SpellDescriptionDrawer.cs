@@ -11,8 +11,8 @@ namespace ProjectR.View
 {
     public class SpellDescriptionDrawer : RConsole, ISpellDescriptionDrawer
     {
-        private Point _position;
         private readonly Rectangle _printArea;
+        private Point _position;
 
         public SpellDescriptionDrawer()
             : base(37, 29)
@@ -29,7 +29,7 @@ namespace ProjectR.View
 
         public void DrawSpellDescription(ISpell spell, IRConsole target = null)
         {
-            var targetConsole = target ?? RootConsole;
+            IRConsole targetConsole = target ?? RootConsole;
             Clear();
             DrawBorder();
             PrintString(1, 1, string.Format("{0}Name:{1}", GetColorControlString(TCODColor.red), GetStopControl()));
@@ -84,7 +84,7 @@ namespace ProjectR.View
             PrintString(1, 11, "{0}Masteries:{1}", GetColorControlString(TCODColor.red), GetStopControl());
 
             var masteries = new StringBuilder();
-            foreach (var mastery in spell.Masteries.Select(eleMastery => (Stat) eleMastery))
+            foreach (Stat mastery in spell.Masteries.Select(eleMastery => (Stat) eleMastery))
             {
                 masteries.Append(mastery.GetString()).Append(" ");
             }

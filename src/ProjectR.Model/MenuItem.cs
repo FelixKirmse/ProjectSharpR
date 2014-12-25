@@ -6,11 +6,6 @@ namespace ProjectR.Model
 {
     public class MenuItem : IMenuItem
     {
-        public bool IsDisabled { get; set; }
-        public bool IsSelected { get; private set; }
-        public string Label { get; set; }
-        public Action CallBack { set; private get; }
-
         private Action _leftAction;
         private Action _rightAction;
 
@@ -30,6 +25,11 @@ namespace ProjectR.Model
             CallBack = callBack;
         }
 
+        public bool IsDisabled { get; set; }
+        public bool IsSelected { get; private set; }
+        public string Label { get; set; }
+        public Action CallBack { set; private get; }
+
         public void Activate()
         {
             IsSelected = true;
@@ -48,7 +48,7 @@ namespace ProjectR.Model
         public void SetStateMachine(IStateMachine machine)
         {
         }
-        
+
         public void SetLeftAction(Action leftAction)
         {
             _leftAction = leftAction;

@@ -6,7 +6,7 @@ namespace ProjectR.Model.States
 {
     public class StateMachineSynchronizer : IStateMachineSynchronizer
     {
-        private readonly List<ISynchronizeable<int>> _synchronizeables = new List<ISynchronizeable<int>>(); 
+        private readonly List<ISynchronizeable<int>> _synchronizeables = new List<ISynchronizeable<int>>();
 
         public void Sync(int value)
         {

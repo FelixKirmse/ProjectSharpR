@@ -5,13 +5,6 @@ namespace ProjectR.Model
 {
     public class OverworldCamera : IOverworldCamera
     {
-        public int Speed { set; private get; }
-
-        public Rectangle ViewPort
-        {
-            get { return _viewPort; }
-        }
-
         private readonly IRMap _map;
         private Rectangle _viewPort;
 
@@ -20,6 +13,10 @@ namespace ProjectR.Model
             _map = map;
             Speed = 1;
         }
+
+        public int Speed { set; private get; }
+
+        public Rectangle ViewPort { get { return _viewPort; } }
 
         public void SetViewPortSize(int colCount, int rowCount)
         {
@@ -63,9 +60,9 @@ namespace ProjectR.Model
 
         private void Move(int rows, int cols)
         {
-            var heatZone = _map.HeatZone;
+            Rectangle heatZone = _map.HeatZone;
 
-            for (var i = 0; i < Speed; ++i)
+            for (int i = 0; i < Speed; ++i)
             {
                 _viewPort.X += cols;
                 _viewPort.Y += rows;

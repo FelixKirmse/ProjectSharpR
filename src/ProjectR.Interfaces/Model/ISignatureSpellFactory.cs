@@ -4,7 +4,7 @@ namespace ProjectR.Interfaces.Model
 {
     public interface ISignatureSpellFactory
     {
-        IList<ISpell> GetSignatureSpells { get; } 
+        IList<ISpell> GetSignatureSpells { get; }
 
         void LoadSignatureSpells();
     }

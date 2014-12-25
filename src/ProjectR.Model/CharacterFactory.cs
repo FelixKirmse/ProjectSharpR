@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using ProjectR.Interfaces;
@@ -9,14 +10,12 @@ namespace ProjectR.Model
 {
     public class CharacterFactory : ICharacterFactory
     {
-        public IList<string> BossList { get; private set; }
-
         private readonly IModel _model;
-        private readonly ISpellFactory _spellFactory;
         private readonly List<string> _names;
 
+        private readonly Dictionary<string, List<IAffliction>> _passives;
         private readonly Dictionary<string, ICharacter> _specialChars;
-        private readonly Dictionary<string, List<IAffliction>> _passives; 
+        private readonly ISpellFactory _spellFactory;
 
         public CharacterFactory(IModel model)
         {
@@ -28,9 +27,11 @@ namespace ProjectR.Model
             _passives = new Dictionary<string, List<IAffliction>>();
         }
 
+        public IList<string> BossList { get; private set; }
+
         public void LoadCharacters()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ICharacter CreateRandomCharacter(int level = 1, IRaceTemplate race = null)
@@ -47,28 +48,38 @@ namespace ProjectR.Model
             return newChar;
         }
 
-        private string GetRandomName()
-        {
-            return _names[RHelper.Roll(_names.Count)];
-        }
-
         public ICharacter GetSpecialCharacter(string name)
         {
             return _specialChars[name].Clone();
         }
 
+        public IList<IAffliction> GetPassives(ICharacter character)
+        {
+            var passives = new List<IAffliction>();
+
+            passives.AddRange(_passives[character.Name]);
+            passives.AddRange(_model.RaceFactory.GetPassivesForRace(character.Race));
+
+            return passives;
+        }
+
+        private string GetRandomName()
+        {
+            return _names[RHelper.Roll(_names.Count)];
+        }
+
         public void SharedGenerationFunction(ICharacter newChar, int level, IRaceTemplate race = null)
         {
-            var rTemplate = race ?? _model.RaceFactory.GetRandomTemplate();
-            var randomStats = Stats.GetRandomBaseStats();
+            IRaceTemplate rTemplate = race ?? _model.RaceFactory.GetRandomTemplate();
+            IStats randomStats = Stats.GetRandomBaseStats();
             newChar.Race = rTemplate.Name;
             newChar.Lore = rTemplate.Description;
             ApplyRaceTemplate(rTemplate, randomStats);
             newChar.Stats = randomStats;
             newChar.LvlUp(_model.Party.Experience);
             var spells = new List<ISpell> { _spellFactory.GetSpell("Attack"), _spellFactory.GetSpell("Defend") };
-            var spellCount = RHelper.Roll(2, 5);
-            for (var i = 0; i < spellCount; ++i)
+            int spellCount = RHelper.Roll(2, 5);
+            for (int i = 0; i < spellCount; ++i)
             {
                 ISpell spell;
 
@@ -89,17 +100,6 @@ namespace ProjectR.Model
                 stats[stat][StatType.Base] *= rTemplate[stat];
                 stats[stat][StatType.Growth] *= rTemplate[stat];
             }
-        }
-
-
-        public IList<IAffliction> GetPassives(ICharacter character)
-        {
-            var passives = new List<IAffliction>();
-
-            passives.AddRange(_passives[character.Name]);
-            passives.AddRange(_model.RaceFactory.GetPassivesForRace(character.Race));
-
-            return passives;
         }
     }
 }

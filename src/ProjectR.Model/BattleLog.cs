@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
@@ -8,7 +7,7 @@ namespace ProjectR.Model
     public class BattleLog : IBattleLog
     {
         private readonly IBattleModel _battleModel;
-        private readonly List<LogEntry> _log = new List<LogEntry>(); 
+        private readonly List<LogEntry> _log = new List<LogEntry>();
 
         public BattleLog(IBattleModel battleModel)
         {

@@ -46,8 +46,8 @@ namespace ProjectR.Model
 
         public override void Next()
         {
-            var stateCount = GetStateCount();
-            for (var i = 0; i < stateCount; ++i)
+            int stateCount = GetStateCount();
+            for (int i = 0; i < stateCount; ++i)
             {
                 var menuItem = GetState(i) as IMenuItem;
                 Debug.Assert(menuItem != null, "menuItem != null");
@@ -58,7 +58,7 @@ namespace ProjectR.Model
 
                 menuItem.Deactivate();
                 SetCurrentState(i == stateCount - 1 ? 0 : i + 1);
-                var nextMenuItem = CurrentMenuItem;
+                IMenuItem nextMenuItem = CurrentMenuItem;
                 nextMenuItem.Activate();
                 if (nextMenuItem.IsDisabled)
                 {
@@ -70,8 +70,8 @@ namespace ProjectR.Model
 
         public override void Previous()
         {
-            var stateCount = GetStateCount();
-            for (var i = 0; i < stateCount; ++i)
+            int stateCount = GetStateCount();
+            for (int i = 0; i < stateCount; ++i)
             {
                 var menuItem = GetState(i) as IMenuItem;
                 Debug.Assert(menuItem != null, "menuItem != null");
@@ -82,7 +82,7 @@ namespace ProjectR.Model
 
                 menuItem.Deactivate();
                 SetCurrentState(i == 0 ? stateCount - 1 : i - 1);
-                var lastMenuItem = CurrentMenuItem;
+                IMenuItem lastMenuItem = CurrentMenuItem;
                 lastMenuItem.Activate();
                 if (lastMenuItem.IsDisabled)
                 {

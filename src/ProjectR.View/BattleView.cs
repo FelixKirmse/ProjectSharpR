@@ -1,12 +1,11 @@
-using System.Collections;
 using ProjectR.Interfaces;
 
 namespace ProjectR.View
 {
     public class BattleView : InitializeableModelState, IStateMachine
     {
-        private readonly IStateMachine _stateMachine;
         private readonly CommonBattleView _common;
+        private readonly IStateMachine _stateMachine;
 
         public BattleView()
         {
@@ -20,7 +19,7 @@ namespace ProjectR.View
 
             _common.Run();
 
-            var currentState = GetState((int) Model.BattleModel.CurrentBattleState);
+            IState currentState = GetState((int) Model.BattleModel.CurrentBattleState);
             if (currentState != null)
             {
                 currentState.Run();
@@ -31,14 +30,15 @@ namespace ProjectR.View
         {
             AddState(null);
             AddState(new BattleMenuView());
-            AddState(/*Consequences*/ null);
-            AddState(/*GameOver*/ null);
+            AddState( /*Consequences*/ null);
+            AddState( /*GameOver*/ null);
             AddState(new BattleWonView());
             SetCurrentState(0);
             _common.Activate();
         }
 
         #region IStateMachine Delegation
+
         public void Next()
         {
             _stateMachine.Next();
@@ -49,9 +49,7 @@ namespace ProjectR.View
             _stateMachine.Previous();
         }
 
-        public IState CurrentState
-        {
-            get { return _stateMachine.CurrentState; } }
+        public IState CurrentState { get { return _stateMachine.CurrentState; } }
 
         public void AddState(IState state)
         {
@@ -92,6 +90,7 @@ namespace ProjectR.View
         {
             return _stateMachine.GetCurrentStateNumber();
         }
+
         #endregion
     }
 }

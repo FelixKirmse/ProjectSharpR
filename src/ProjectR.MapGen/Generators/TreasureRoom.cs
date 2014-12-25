@@ -24,23 +24,23 @@ namespace ProjectR.MapGen.Generators
             { RCell.Grand, 1 }
         };
 
-        public TreasureRoom(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map) 
+        public TreasureRoom(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map)
             : base(minWidth, minHeight, maxWidth, maxHeight, map)
         {
         }
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            var topRow = row;
-            var leftCol = col;
+            int topRow = row;
+            int leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            var maxRow = topRow + Height;
-            var maxCol = leftCol + Width;
+            int maxRow = topRow + Height;
+            int maxCol = leftCol + Width;
 
-            for (var r = topRow; r < maxRow; ++r)
+            for (int r = topRow; r < maxRow; ++r)
             {
-                for (var c = leftCol; c < maxCol; ++c)
+                for (int c = leftCol; c < maxCol; ++c)
                 {
                     if (r == topRow || c == leftCol || r == maxRow - 1 || c == maxCol - 1)
                     {
@@ -55,7 +55,7 @@ namespace ProjectR.MapGen.Generators
 
             var treasureCount = (int) Math.Sqrt(Width * Height);
 
-            for (var i = 0; i < treasureCount; ++i)
+            for (int i = 0; i < treasureCount; ++i)
             {
                 int chestRow;
                 int chestCol;

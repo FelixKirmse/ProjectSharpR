@@ -6,6 +6,11 @@ namespace ProjectR.MapGen.Generators
 {
     public abstract class Generator : IGenerator
     {
+        private int _height;
+        private IMobPackManager _packManager;
+        private int _spawnChance;
+        private bool _spawningEnabled;
+        private int _width;
         public int MinWidth { get; set; }
         public int MinHeight { get; set; }
         public int MaxWidth { get; set; }
@@ -36,12 +41,6 @@ namespace ProjectR.MapGen.Generators
 
         public IRMap Map { get; set; }
 
-        private bool _spawningEnabled;
-        private int _spawnChance;
-        private IMobPackManager _packManager;
-        private int _width;
-        private int _height;
-
         protected Generator(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map)
         {
             MinWidth = minWidth;
@@ -68,12 +67,12 @@ namespace ProjectR.MapGen.Generators
                 return true;
             }
 
-            var topRow = row;
-            var leftCol = col;
+            int topRow = row;
+            int leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, direction);
 
-            var maxRow = topRow + Height;
-            var maxCol = leftCol + Width;
+            int maxRow = topRow + Height;
+            int maxCol = leftCol + Width;
 
             int spawnRow;
             int spawnCol;
@@ -129,17 +128,17 @@ namespace ProjectR.MapGen.Generators
 
         private bool CheckAvailableSpace(int row, int col, Direction dir)
         {
-            var topRow = row;
-            var leftCol = col;
+            int topRow = row;
+            int leftCol = col;
 
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
             // We have to move one block away, or it's guaranteed to fail the check
             RHelper.MoveInDirection(ref topRow, ref leftCol, dir);
 
-            for (var r = topRow; r < topRow + Height; ++r)
+            for (int r = topRow; r < topRow + Height; ++r)
             {
-                for (var c = leftCol; c < leftCol + Width; ++c)
+                for (int c = leftCol; c < leftCol + Width; ++c)
                 {
                     if (r < 0 || r >= Map.Rows || c < 0 || c >= Map.Columns)
                     {

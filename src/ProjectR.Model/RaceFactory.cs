@@ -8,9 +8,8 @@ namespace ProjectR.Model
     public class RaceFactory : IRaceFactory
     {
         private readonly IModel _model;
-        public IList<IRaceTemplate> Templates { get; private set; }
+        private readonly Dictionary<string, List<IAffliction>> _passives;
         private readonly Dictionary<string, int> _stringIndexMap;
-        private readonly Dictionary<string, List<IAffliction>> _passives; 
 
         public RaceFactory(IModel model)
         {
@@ -19,6 +18,8 @@ namespace ProjectR.Model
             _stringIndexMap = new Dictionary<string, int>();
             _passives = new Dictionary<string, List<IAffliction>>();
         }
+
+        public IList<IRaceTemplate> Templates { get; private set; }
 
         public void LoadTemplates()
         {

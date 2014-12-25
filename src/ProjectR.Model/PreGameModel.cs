@@ -7,8 +7,8 @@ namespace ProjectR.Model
 {
     public class PreGameModel : IPreGameModel
     {
+        private readonly Dictionary<EleMastery, int> _masteryMap;
         private readonly IModel _model;
-        private readonly Dictionary<EleMastery, int> _masteryMap; 
 
         public PreGameModel(IModel model)
         {
@@ -27,6 +27,11 @@ namespace ProjectR.Model
 
         public ICharacter Character { get { return GenerateCharacter(); } }
 
+        public void SetMastery(EleMastery mastery, int value)
+        {
+            _masteryMap[mastery] = value;
+        }
+
         private ICharacter GenerateCharacter()
         {
             var newChar = new Character(PlayerName);
@@ -34,7 +39,7 @@ namespace ProjectR.Model
 
             for (var stat = Stat.HP; stat <= Stat.CHA; ++stat)
             {
-                var singleStat = newStats[stat];
+                SingleStat singleStat = newStats[stat];
                 singleStat[StatType.Base] = ArcheType.GetBase(stat);
                 singleStat[StatType.Growth] = ArcheType.GetGrowth(stat);
             }
@@ -61,7 +66,7 @@ namespace ProjectR.Model
 
             var spells = new List<ISpell>
             {
-                NormalAttack, 
+                NormalAttack,
                 _model.SpellFactory.GetSpell("Defend")
             };
 
@@ -74,11 +79,6 @@ namespace ProjectR.Model
             newChar.Stats = newStats;
             newChar.SetLvl();
             return newChar;
-        }
-
-        public void SetMastery(EleMastery mastery, int value)
-        {
-            _masteryMap[mastery] = value;
         }
     }
 }

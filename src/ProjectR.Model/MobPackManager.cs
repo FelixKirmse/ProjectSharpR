@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Drawing;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
+using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Model
 {
     public class MobPackManager : IMobPackManager
     {
-        public IList<IMobPack> MobPacks { get { return _packs; } }
-        public int PackCount { get { return _packs.Count; } }
-
         private readonly IModel _model;
-        private readonly List<IMobPack> _packs; 
+        private readonly List<IMobPack> _packs;
 
         public MobPackManager(IModel model)
         {
             _model = model;
             _packs = new List<IMobPack>();
         }
+
+        public IList<IMobPack> MobPacks { get { return _packs; } }
+        public int PackCount { get { return _packs.Count; } }
 
         public void ClearPacks()
         {
@@ -27,23 +28,23 @@ namespace ProjectR.Model
 
         public void GeneratePack(int x, int y)
         {
-            var pack = new MobPack(_model.Map) {Position = new Point(x, y)};
-            var enemyCount = _model.Party.FrontRow.Count - RHelper.Roll(0, 1);
+            var pack = new MobPack(_model.Map) { Position = new Point(x, y) };
+            int enemyCount = _model.Party.FrontRow.Count - RHelper.Roll(0, 1);
 
             if (enemyCount == 0)
             {
                 ++enemyCount;
             }
 
-            var xpReward = 0;
+            int xpReward = 0;
 
             // 25% Chance to get a group of enemies with the same race
-            var raceGroup = RHelper.RollPercentage(25) ? _model.RaceFactory.GetRandomTemplate() : null;
+            IRaceTemplate raceGroup = RHelper.RollPercentage(25) ? _model.RaceFactory.GetRandomTemplate() : null;
 
-            for (var i = 0; i < enemyCount; ++i)
+            for (int i = 0; i < enemyCount; ++i)
             {
-                var strengthRoll = RHelper.Roll(0, 99);
-                var strength = strengthRoll < 60
+                int strengthRoll = RHelper.Roll(0, 99);
+                MobPackStrength strength = strengthRoll < 60
                     ? MobPackStrength.Equal
                     : strengthRoll < 90
                         ? MobPackStrength.Stronger
@@ -80,27 +81,27 @@ namespace ProjectR.Model
 
         public void GenerateBoss(int x, int y)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void GenerateProjectR(int x, int y)
         {
             // If you read this while actually implementing him: Congrats that youve come so far!!!!
             // Probably hopefully not much more to do until release! You da boss!
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public bool ProcessTurns(int playerX, int playerY)
         {
-            var result = false;
-            for (var i = 0; i < _packs.Count; ++i)
+            bool result = false;
+            for (int i = 0; i < _packs.Count; ++i)
             {
-                var pack = _packs[i];
+                IMobPack pack = _packs[i];
 
                 if (pack.ProcessTurn(playerX, playerY))
                 {
-                    var cell = _model.Map[playerX, playerY];
-                    var statBonus = cell.GetStatBonus();
+                    RCell cell = _model.Map[playerX, playerY];
+                    Stat statBonus = cell.GetStatBonus();
                     _model.BattleModel.StartBattle(pack, statBonus, cell.Is(RCell.DoubleCombatBonus));
                     _packs.RemoveAt(i);
                     --i;
@@ -113,9 +114,9 @@ namespace ProjectR.Model
 
         private int GenerateEnemy(IMobPack pack, IRaceTemplate race, MobPackStrength strength)
         {
-            var charFac = _model.CharacterFactory;
+            ICharacterFactory charFac = _model.CharacterFactory;
 
-            var newEnemy = charFac.CreateRandomCharacter(1, race);
+            ICharacter newEnemy = charFac.CreateRandomCharacter(1, race);
 
             switch (strength)
             {

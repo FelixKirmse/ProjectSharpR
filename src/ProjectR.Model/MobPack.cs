@@ -7,30 +7,12 @@ namespace ProjectR.Model
 {
     public class MobPack : IMobPack
     {
-        public MobPackStrength Strength { get { return (MobPackStrength) (_totalStrength / _enemies.Count); } }
-
-        public Point Position
-        {
-            get { return _position; }
-            set { _position = value; }
-        }
-
-        public int XPReward { get; set; }
-        public int SightRadius { get; set; }
-        public int Size { get { return _enemies.Count; } }
-        public int IntactCoreCount { get; private set; }
-        public int UnstableCoreCount { get; private set; }
-        public IList<ICharacter> Enemies { get { return _enemies; } }
-        public IList<ICharacter> Minions { get { return _minions; } }
-
+        private readonly Dictionary<ICharacter, double> _convertBoni;
         private readonly List<ICharacter> _enemies;
-        private readonly List<ICharacter> _minions;
-
-        private readonly Dictionary<ICharacter, double> _convertBoni; 
-        private readonly Dictionary<ICharacter, MobPackStrength> _strengths; 
-
         private readonly ISubscribedFoVMap _fovMap;
         private readonly IRMap _map;
+        private readonly List<ICharacter> _minions;
+        private readonly Dictionary<ICharacter, MobPackStrength> _strengths;
         private Point _position;
         private double _totalStrength;
 
@@ -44,13 +26,26 @@ namespace ProjectR.Model
             _strengths = new Dictionary<ICharacter, MobPackStrength>();
         }
 
-        public void AddEnemy(ICharacter enemy, MobPackStrength strength = MobPackStrength.Stronger, double convertBonus = 1.2)
+        public MobPackStrength Strength { get { return (MobPackStrength) (_totalStrength / _enemies.Count); } }
+
+        public Point Position { get { return _position; } set { _position = value; } }
+
+        public int XPReward { get; set; }
+        public int SightRadius { get; set; }
+        public int Size { get { return _enemies.Count; } }
+        public int IntactCoreCount { get; private set; }
+        public int UnstableCoreCount { get; private set; }
+        public IList<ICharacter> Enemies { get { return _enemies; } }
+        public IList<ICharacter> Minions { get { return _minions; } }
+
+        public void AddEnemy(ICharacter enemy, MobPackStrength strength = MobPackStrength.Stronger,
+                             double convertBonus = 1.2)
         {
             _enemies.Add(enemy);
             SetConvertBonus(enemy, convertBonus);
             SetStrength(enemy, strength);
 
-            var coreCount = RHelper.RollPercentage(10) ? 2 : 1;
+            int coreCount = RHelper.RollPercentage(10) ? 2 : 1;
             if (RHelper.RollPercentage(20))
             {
                 IntactCoreCount += coreCount;
@@ -110,7 +105,7 @@ namespace ProjectR.Model
             _position.X = wantX;
             _position.Y = wantY;
 
-            var onPlayer = playerX == _position.X && playerY == _position.Y;
+            bool onPlayer = playerX == _position.X && playerY == _position.Y;
 
             _map.SetWalkable(_position.X, _position.Y, onPlayer);
             _map.SetVisible(_position.X, _position.Y, onPlayer);

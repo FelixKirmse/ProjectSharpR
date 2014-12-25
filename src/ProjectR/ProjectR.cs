@@ -1,4 +1,4 @@
-﻿using ProjectR.Factory;
+﻿using System;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
@@ -8,8 +8,8 @@ namespace ProjectR
     public class ProjectR : IProjectR
     {
         private static bool _exitGame;
-        private IStateMachineSynchronizer _stateSyncer;
         private IRModel _model;
+        private IStateMachineSynchronizer _stateSyncer;
         private IConsoleView _view;
 
         public ProjectR()
@@ -19,19 +19,19 @@ namespace ProjectR
             _view = Factories.RFactory.CreateConsoleView();
         }
 
-        public static void Exit()
-        {
-            _exitGame = true;
-        }
-
         public void SetupGameStructure()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void RunGame()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public static void Exit()
+        {
+            _exitGame = true;
         }
     }
 }

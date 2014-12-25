@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Linq;
 using libtcod;
 using ProjectR.Interfaces.Model;
@@ -24,21 +25,21 @@ namespace ProjectR.View
         public void DrawMap(IRMap map, IOverworldCamera camera, IOverworldPlayer player, IMobPackManager mobPackManager,
                             IStatistics statistics, IRConsole target = null)
         {
-            var targetConsole = target ?? RootConsole;
+            IRConsole targetConsole = target ?? RootConsole;
             Clear();
-            var viewPort = camera.ViewPort;
+            Rectangle viewPort = camera.ViewPort;
 
-            for (var row = 0; row <= viewPort.Height; ++row)
+            for (int row = 0; row <= viewPort.Height; ++row)
             {
-                for (var col = 0; col <= viewPort.Width; ++ col)
+                for (int col = 0; col <= viewPort.Width; ++ col)
                 {
-                    var charCell = ' ';
-                    var cellColour = TCODColor.white;
+                    char charCell = ' ';
+                    TCODColor cellColour = TCODColor.white;
 
-                    var mapRow = viewPort.Y + row;
-                    var mapCol = viewPort.X + col;
+                    int mapRow = viewPort.Y + row;
+                    int mapCol = viewPort.X + col;
 
-                    var cell = map[mapRow, mapCol];
+                    RCell cell = map[mapRow, mapCol];
 
                     cellColour = GetRarityColour(cell, cellColour);
 
@@ -82,11 +83,11 @@ namespace ProjectR.View
                         charCell = 'O';
                     }
 
-                    foreach (var pack in from pack in mobPackManager.MobPacks
-                                         let packX = pack.Position.X
-                                         let packY = pack.Position.Y
-                                         where mapCol == packX && mapRow == packY && player.CanSee(packX, packY)
-                                         select pack)
+                    foreach (IMobPack pack in from pack in mobPackManager.MobPacks
+                                              let packX = pack.Position.X
+                                              let packY = pack.Position.Y
+                                              where mapCol == packX && mapRow == packY && player.CanSee(packX, packY)
+                                              select pack)
                     {
                         charCell = 'E';
 
@@ -100,7 +101,7 @@ namespace ProjectR.View
                         cellColour = TCODColor.white;
                     }
 
-                    var visitedMod = .2f;
+                    float visitedMod = .2f;
 
                     if (player.CanSee(mapCol, mapRow))
                     {

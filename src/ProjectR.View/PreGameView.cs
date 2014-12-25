@@ -1,23 +1,12 @@
 using System.Drawing;
 using libtcod;
+using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
 
 namespace ProjectR.View
 {
     public class PreGameView : ModelState, IRConsole
     {
-        private readonly IRConsole _console;
-
-        private readonly IMenuDrawer _menuDrawer;
-        private readonly ICharDescriptionDrawer _charDescDrawer;
-        private readonly IStatScreenDrawer _statScreenDrawer;
-        private readonly ISpellDescriptionDrawer _normAttackDrawer;
-        private readonly IAfflictionLister _afflictionLister;
-        private readonly ISpellDescriptionDrawer _spell1Drawer;
-        private readonly ISpellDescriptionDrawer _spell2Drawer;
-        private readonly ISpellDescriptionDrawer _spell3Drawer;
-        private readonly ISpellDescriptionDrawer _spell4Drawer;
-
         public const string MasteryDescription = "Mastery Distribution:\n\n" +
                                                  "  Mastery affects how much damage you\n" +
                                                  "  deal and how much damage you take\n" +
@@ -34,6 +23,19 @@ namespace ProjectR.View
                                                  "  mastery. Switch between Spell view\n" +
                                                  "  and Stat view by pressing the\n" +
                                                  "  Action key.";
+
+        private readonly IAfflictionLister _afflictionLister;
+        private readonly ICharDescriptionDrawer _charDescDrawer;
+
+        private readonly IRConsole _console;
+
+        private readonly IMenuDrawer _menuDrawer;
+        private readonly ISpellDescriptionDrawer _normAttackDrawer;
+        private readonly ISpellDescriptionDrawer _spell1Drawer;
+        private readonly ISpellDescriptionDrawer _spell2Drawer;
+        private readonly ISpellDescriptionDrawer _spell3Drawer;
+        private readonly ISpellDescriptionDrawer _spell4Drawer;
+        private readonly IStatScreenDrawer _statScreenDrawer;
 
 
         public PreGameView()
@@ -65,14 +67,15 @@ namespace ProjectR.View
             Clear();
             DrawBorder();
             PrintString(1, 16, MasteryDescription);
-            PrintString(1, 38, string.Format("Available points to distribute: {0}", Model.PreGameModel.AvailableMasteryPoints));
+            PrintString(1, 38,
+                string.Format("Available points to distribute: {0}", Model.PreGameModel.AvailableMasteryPoints));
             RConsole.RootConsole.Blit(this, Bounds, 2, 3);
-            var menu = Model.MenuModel.ActiveMenu;
+            IMenu menu = Model.MenuModel.ActiveMenu;
             _menuDrawer.DrawMenuPart(menu, 0, 5, 3, 4, 1);
             _menuDrawer.DrawMenuPart(menu, 6, 14, 3, 43, 1);
             _menuDrawer.DrawMenuPart(menu, 15, 15, 3, 63);
 
-            var character = Model.PreGameModel.Character;
+            ICharacter character = Model.PreGameModel.Character;
 
             if (Model.PreGameModel.ShowStats)
             {
@@ -90,8 +93,8 @@ namespace ProjectR.View
             }
         }
 
-
         #region IRConsole delegation
+
         public void SetForegroundColour(TCODColor colour)
         {
             _console.SetForegroundColour(colour);
@@ -157,20 +160,11 @@ namespace ProjectR.View
             _console.Clear();
         }
 
-        public int Width
-        {
-            get { return _console.Width; }
-        }
+        public int Width { get { return _console.Width; } }
 
-        public int Height
-        {
-            get { return _console.Height; }
-        }
+        public int Height { get { return _console.Height; } }
 
-        public Rectangle Bounds
-        {
-            get { return _console.Bounds; }
-        }
+        public Rectangle Bounds { get { return _console.Bounds; } }
 
         public void PrintString(int x, int y, string text, params object[] args)
         {

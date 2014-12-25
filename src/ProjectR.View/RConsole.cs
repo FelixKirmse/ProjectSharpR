@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using libtcod;
@@ -9,13 +8,10 @@ namespace ProjectR.View
 {
     public class RConsole : IRConsole
     {
-        public int Width { get { return _console.getWidth(); } }
-        public int Height { get { return _console.getHeight(); } }
-        public Rectangle Bounds { get { return new Rectangle(0, 0, Width, Height); } }
-
         private readonly TCODConsole _console;
 
         public static IRConsole RootConsole { get; private set; }
+        public static bool ConsoleWindowClosed { get { return TCODConsole.isWindowClosed(); } }
 
         public RConsole(int width, int height)
         {
@@ -27,18 +23,9 @@ namespace ProjectR.View
             _console = console;
         }
 
-        public static void InitializeRootConsole(int width, int height)
-        {
-            TCODConsole.initRoot(width, height, "ProjectR", false, TCODRendererType.GLSL);
-            RootConsole = new RConsole(TCODConsole.root);
-        }
-
-        public static bool ConsoleWindowClosed { get { return TCODConsole.isWindowClosed(); } }
-
-        public static void Draw()
-        {
-            TCODConsole.flush();
-        }
+        public int Width { get { return _console.getWidth(); } }
+        public int Height { get { return _console.getHeight(); } }
+        public Rectangle Bounds { get { return new Rectangle(0, 0, Width, Height); } }
 
         public void SetForegroundColour(TCODColor colour)
         {
@@ -90,30 +77,17 @@ namespace ProjectR.View
             return TCODConsole.getColorControlString(8);
         }
 
-        public static string GetColorFormat(byte red, byte green, byte blue)
-        {
-            if (red == 0)
-                red = 1;
-            if (green == 0)
-                green = 1;
-            if (blue == 0)
-                blue = 1;
-
-            var c = Encoding.Default.GetChars(new byte[] { 6, red, green, blue });
-            return (string.Format("{0}{1}{2}{3}", c[0], c[1], c[2], c[3]));
-        }
-
         public void DrawBorder()
         {
-            var width = Width;
-            var height = Height;
-            for (var col = 0; col < width; ++col)
+            int width = Width;
+            int height = Height;
+            for (int col = 0; col < width; ++col)
             {
-                var drawCharTop = col == 0
+                TCODSpecialCharacter drawCharTop = col == 0
                     ? TCODSpecialCharacter.NW
                     : col == width - 1 ? TCODSpecialCharacter.NE : TCODSpecialCharacter.HorzLine;
 
-                var drawCharBot = col == 0
+                TCODSpecialCharacter drawCharBot = col == 0
                     ? TCODSpecialCharacter.SW
                     : col == width - 1 ? TCODSpecialCharacter.SE : TCODSpecialCharacter.HorzLine;
 
@@ -121,7 +95,7 @@ namespace ProjectR.View
                 SetCharacter(col, 0, (int) drawCharBot);
             }
 
-            for (var row = 1; row < height - 1; ++row)
+            for (int row = 1; row < height - 1; ++row)
             {
                 SetCharacter(0, row, (int) TCODSpecialCharacter.VertLine);
                 SetCharacter(width - 1, row, (int) TCODSpecialCharacter.VertLine);
@@ -132,7 +106,7 @@ namespace ProjectR.View
         {
             _console.clear();
         }
-        
+
         public void PrintString(int x, int y, string text, params object[] args)
         {
             _console.print(x, y, string.Format(text, args));
@@ -150,7 +124,8 @@ namespace ProjectR.View
 
         public int PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
         {
-            return _console.printRectEx(rect.X, rect.Y, rect.Width, rect.Height, TCODBackgroundFlag.None, alignment, string.Format(text, args));
+            return _console.printRectEx(rect.X, rect.Y, rect.Width, rect.Height, TCODBackgroundFlag.None, alignment,
+                string.Format(text, args));
         }
 
         public void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1, float bgAlpha = 1)
@@ -165,6 +140,36 @@ namespace ProjectR.View
         {
             SetBackgroundColour(colour);
             _console.rect(area.X, area.Y, area.Width, area.Height, true);
+        }
+
+        public static void InitializeRootConsole(int width, int height)
+        {
+            TCODConsole.initRoot(width, height, "ProjectR", false, TCODRendererType.GLSL);
+            RootConsole = new RConsole(TCODConsole.root);
+        }
+
+        public static void Draw()
+        {
+            TCODConsole.flush();
+        }
+
+        public static string GetColorFormat(byte red, byte green, byte blue)
+        {
+            if (red == 0)
+            {
+                red = 1;
+            }
+            if (green == 0)
+            {
+                green = 1;
+            }
+            if (blue == 0)
+            {
+                blue = 1;
+            }
+
+            char[] c = Encoding.Default.GetChars(new byte[] { 6, red, green, blue });
+            return (string.Format("{0}{1}{2}{3}", c[0], c[1], c[2], c[3]));
         }
     }
 }

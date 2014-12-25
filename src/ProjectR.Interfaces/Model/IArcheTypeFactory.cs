@@ -4,7 +4,7 @@ namespace ProjectR.Interfaces.Model
 {
     public interface IArcheTypeFactory
     {
-        IList<IArcheType> ArcheTypes { get; } 
+        IList<IArcheType> ArcheTypes { get; }
 
         void LoadArcheTypes();
         IArcheType GetArcheType(string name);

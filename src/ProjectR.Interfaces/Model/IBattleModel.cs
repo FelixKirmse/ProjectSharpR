@@ -26,13 +26,13 @@ namespace ProjectR.Interfaces.Model
 
         IList<ICharacter> Enemies { get; }
         IList<ICharacter> FrontRow { get; }
-        IList<ICharacter> EnemyMinions { get; } 
+        IList<ICharacter> EnemyMinions { get; }
         IList<ICharacter> PlayerMinions { get; }
 
         ICharacter CreateMinion(ICharacter template);
         ICharacter CreateEnemyMinion(ICharacter template);
         ICharacter CreatePlayerMinion(ICharacter template);
-        
+
         void EndBattle();
         void EnemyDied();
         void PlayerDied();

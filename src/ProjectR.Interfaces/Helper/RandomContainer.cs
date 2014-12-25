@@ -14,6 +14,11 @@ namespace ProjectR.Interfaces.Helper
             _weightSum = 0;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            return _objects.GetEnumerator();
+        }
+
         public void Add(T obj, int weight)
         {
             _objects[obj] = weight;
@@ -27,8 +32,8 @@ namespace ProjectR.Interfaces.Helper
 
         public T Get()
         {
-            var sumExtra = 0;
-            var rand = RHelper.Roll(0, _weightSum - 1);
+            int sumExtra = 0;
+            int rand = RHelper.Roll(0, _weightSum - 1);
             foreach (var kvp in _objects)
             {
                 if (rand < kvp.Value + sumExtra)
@@ -40,11 +45,6 @@ namespace ProjectR.Interfaces.Helper
             }
 
             return default(T);
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return _objects.GetEnumerator();
         }
     }
 }

@@ -5,6 +5,10 @@ namespace ProjectR.Interfaces.View
 {
     public interface IRConsole
     {
+        int Width { get; }
+        int Height { get; }
+
+        Rectangle Bounds { get; }
         void SetForegroundColour(TCODColor colour);
 
         void SetBackgroundColour(TCODColor colour);
@@ -24,11 +28,6 @@ namespace ProjectR.Interfaces.View
 
         void DrawBorder();
         void Clear();
-
-        int Width { get; }
-        int Height { get; }
-
-        Rectangle Bounds { get; }
 
         void PrintString(int x, int y, string text, params object[] args);
         void PrintString(int x, int y, string text, TCODAlignment alignment, params object[] args);

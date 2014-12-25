@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
@@ -9,18 +7,13 @@ namespace ProjectR.Model
 {
     public class Party : IParty
     {
-        public IList<ICharacter> FrontRow { get; private set; }
-        public IList<ICharacter> BackSeat { get; private set; }
-        public IList<ICharacter> Reserve { get; private set; }
-        public int Experience { get; private set; }
-
-        private readonly Dictionary<ICharacter, IList<ICharacter>> _charMap; 
-
-        private readonly IModel _model;
-        private bool _cached;
         private const int FrontRowLimit = 4;
         private const int BackSeatLimit = 8;
+        private readonly Dictionary<ICharacter, IList<ICharacter>> _charMap;
+
+        private readonly IModel _model;
         private int _averagePartyLvl;
+        private bool _cached;
 
         public Party(IModel model)
         {
@@ -31,6 +24,11 @@ namespace ProjectR.Model
             Reserve = new List<ICharacter>();
         }
 
+        public IList<ICharacter> FrontRow { get; private set; }
+        public IList<ICharacter> BackSeat { get; private set; }
+        public IList<ICharacter> Reserve { get; private set; }
+        public int Experience { get; private set; }
+
         public int AveragePartyLvl
         {
             get
@@ -40,7 +38,7 @@ namespace ProjectR.Model
                     return _averagePartyLvl;
                 }
 
-                var charCount = _charMap.Keys.Count;
+                int charCount = _charMap.Keys.Count;
                 double lvlSum = _charMap.Keys.Sum(character => character.CurrentLevel);
 
                 _cached = true;
@@ -74,7 +72,7 @@ namespace ProjectR.Model
         {
             Experience += amount;
 
-            foreach (var character in _charMap.Keys)
+            foreach (ICharacter character in _charMap.Keys)
             {
                 character.LvlUp(Experience);
             }
@@ -91,13 +89,13 @@ namespace ProjectR.Model
                 return;
             }
 
-            var originList = _charMap[char1];
-            var targetList = _charMap[char2];
+            IList<ICharacter> originList = _charMap[char1];
+            IList<ICharacter> targetList = _charMap[char2];
             _charMap[char1] = targetList;
             _charMap[char2] = originList;
 
-            var char1Pos = originList.IndexOf(char1);
-            var char2Pos = targetList.IndexOf(char2);
+            int char1Pos = originList.IndexOf(char1);
+            int char2Pos = targetList.IndexOf(char2);
 
             originList[char1Pos] = char2;
             targetList[char2Pos] = char1;
@@ -105,8 +103,10 @@ namespace ProjectR.Model
 
         public void AddCharacter(ICharacter character, PartySlot slot)
         {
-            var relevantList = slot == PartySlot.FrontRow ? FrontRow : slot == PartySlot.BackSeat ? BackSeat : Reserve;
-            var limit = slot == PartySlot.FrontRow ? FrontRowLimit : slot == PartySlot.BackSeat ? BackSeatLimit : -1;
+            IList<ICharacter> relevantList = slot == PartySlot.FrontRow
+                ? FrontRow
+                : slot == PartySlot.BackSeat ? BackSeat : Reserve;
+            int limit = slot == PartySlot.FrontRow ? FrontRowLimit : slot == PartySlot.BackSeat ? BackSeatLimit : -1;
 
             if (relevantList.Count == limit)
             {
@@ -122,12 +122,13 @@ namespace ProjectR.Model
             relevantList.Add(character);
             _charMap[character] = relevantList;
 
-            var currentHighestPartyCount = _model.Statistics[Statistic.HighestPartyCount];
+            ulong currentHighestPartyCount = _model.Statistics[Statistic.HighestPartyCount];
             var currentPartyCount = (ulong) _charMap.Count;
 
             if (currentPartyCount > currentHighestPartyCount)
             {
-                _model.Statistics.AddToStatistic(Statistic.HighestPartyCount, (uint) (currentPartyCount - currentHighestPartyCount));
+                _model.Statistics.AddToStatistic(Statistic.HighestPartyCount,
+                    (uint) (currentPartyCount - currentHighestPartyCount));
             }
 
             character.LvlUp(Experience);
@@ -151,7 +152,7 @@ namespace ProjectR.Model
 
         public void RemoveCharacter(ICharacter character)
         {
-            var list = _charMap[character];
+            IList<ICharacter> list = _charMap[character];
             list.Remove(character);
 
             _charMap.Remove(character);

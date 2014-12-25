@@ -10,6 +10,16 @@ namespace ProjectR.Model
     {
         private readonly IModel _model;
         private BattleState _currentBattleState;
+
+        public BattleModel(IModel model)
+        {
+            _model = model;
+            BattleLog = new BattleLog(this);
+            Enemies = new List<ICharacter>();
+            EnemyMinions = new List<ICharacter>();
+            PlayerMinions = new List<ICharacter>();
+        }
+
         public ITargetInfo TargetInfo { get; set; }
         public ICharacter CurrentAttacker { get; set; }
         public bool IsEnemyTurn { get; set; }
@@ -53,34 +63,9 @@ namespace ProjectR.Model
             }
         }
 
-        public BattleModel(IModel model)
-        {
-            _model = model;
-            BattleLog = new BattleLog(this);
-            Enemies = new List<ICharacter>();
-            EnemyMinions = new List<ICharacter>();
-            PlayerMinions = new List<ICharacter>();
-        }
-
         public ICharacter CreateMinion(ICharacter template)
         {
             return CreateMinion(template, AttackerIsEnemy ? EnemyMinions : PlayerMinions);
-        }
-
-        private ICharacter CreateMinion(ICharacter minion, IList<ICharacter> minionList)
-        {
-            var specialChar = minion.Clone();
-            specialChar.LvlUp(_model.Party.Experience);
-            _model.AfflictionFactory.GetAffliction("Minion").AttachTo(specialChar);
-
-            minionList.Insert(0, specialChar);
-            if (minionList.Count != 3)
-            {
-                return specialChar;
-            }
-
-            minionList.RemoveAt(minionList.Count - 1);
-            return specialChar;
         }
 
         public ICharacter CreateEnemyMinion(ICharacter template)
@@ -97,7 +82,7 @@ namespace ProjectR.Model
         {
             RHelper.ScriptHelper.ResetAllAfflictions();
 
-            foreach (var character in Enemies)
+            foreach (ICharacter character in Enemies)
             {
                 _model.AfflictionFactory.GetAffliction(IsBossFight ? "Boss" : "Enemy").RemoveFrom(character);
             }
@@ -153,23 +138,44 @@ namespace ProjectR.Model
             SetStatBonus(_model.Party.BackSeat, statBonus, doubleStatBonus);
         }
 
+        public bool CharacterIsEnemy(ICharacter character)
+        {
+            return Enemies.Any(x => x == character) || EnemyMinions.Any(x => x == character);
+        }
+
+        private ICharacter CreateMinion(ICharacter minion, IList<ICharacter> minionList)
+        {
+            ICharacter specialChar = minion.Clone();
+            specialChar.LvlUp(_model.Party.Experience);
+            _model.AfflictionFactory.GetAffliction("Minion").AttachTo(specialChar);
+
+            minionList.Insert(0, specialChar);
+            if (minionList.Count != 3)
+            {
+                return specialChar;
+            }
+
+            minionList.RemoveAt(minionList.Count - 1);
+            return specialChar;
+        }
+
         private double GetAvgSPD()
         {
-            var spdTotal = 0d;
-            var charCount = 0;
-            foreach (var enemy in Enemies)
+            double spdTotal = 0d;
+            int charCount = 0;
+            foreach (ICharacter enemy in Enemies)
             {
                 spdTotal += enemy.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
             }
 
-            foreach (var character in FrontRow)
+            foreach (ICharacter character in FrontRow)
             {
                 spdTotal += character.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
             }
 
-            foreach (var character in _model.Party.BackSeat)
+            foreach (ICharacter character in _model.Party.BackSeat)
             {
                 spdTotal += character.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
@@ -180,7 +186,7 @@ namespace ProjectR.Model
 
         private static void SetInitialSpeed(IEnumerable<ICharacter> characters)
         {
-            foreach (var character in characters)
+            foreach (ICharacter character in characters)
             {
                 character.TurnCounter = character.Stats[Stat.SPD][StatType.Base];
             }
@@ -188,9 +194,9 @@ namespace ProjectR.Model
 
         private void SetupPassives(IEnumerable<ICharacter> list, bool enemy = false, bool minion = false)
         {
-            foreach (var character in list)
+            foreach (ICharacter character in list)
             {
-                foreach (var passive in _model.CharacterFactory.GetPassives(character))
+                foreach (IAffliction passive in _model.CharacterFactory.GetPassives(character))
                 {
                     passive.AttachTo(character);
                 }
@@ -212,7 +218,7 @@ namespace ProjectR.Model
 
         private static void SetStatBonus(IEnumerable<ICharacter> list, Stat stat, bool doubleBonus)
         {
-            foreach (var character in list)
+            foreach (ICharacter character in list)
             {
                 character.BuffStat(stat, .5d * (doubleBonus ? 2d : 1d));
                 character.ResetDamageTaken();
@@ -227,11 +233,11 @@ namespace ProjectR.Model
                 return;
             }
 
-            var experience = _model.Party.Experience;
+            int experience = _model.Party.Experience;
 
-            foreach (var enemy in pack.Enemies)
+            foreach (ICharacter enemy in pack.Enemies)
             {
-                var xpFactor = 1d;
+                double xpFactor = 1d;
                 switch (pack.GetStrength(enemy))
                 {
                     case MobPackStrength.Stronger:
@@ -263,16 +269,11 @@ namespace ProjectR.Model
                 Enemies.Add(enemy);
             }
 
-            foreach (var minion in pack.Minions)
+            foreach (ICharacter minion in pack.Minions)
             {
                 minion.LvlUp(experience);
                 EnemyMinions.Add(minion);
             }
-        }
-
-        public bool CharacterIsEnemy(ICharacter character)
-        {
-            return Enemies.Any(x => x == character) || EnemyMinions.Any(x => x == character);
         }
     }
 }

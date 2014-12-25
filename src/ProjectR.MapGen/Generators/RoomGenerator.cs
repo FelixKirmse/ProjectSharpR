@@ -5,25 +5,25 @@ namespace ProjectR.MapGen.Generators
 {
     public class RoomGenerator : Generator
     {
-        public RoomGenerator(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map) 
+        public RoomGenerator(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map)
             : base(minWidth, minHeight, maxWidth, maxHeight, map)
         {
         }
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            var topRow = row;
-            var leftCol = col;
-            GetTopLeftCorner(ref  topRow, ref leftCol, dir);
+            int topRow = row;
+            int leftCol = col;
+            GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            var maxRow = topRow + Height;
-            var maxCol = leftCol + Width;
+            int maxRow = topRow + Height;
+            int maxCol = leftCol + Width;
 
-            for (var r = topRow; r < maxRow; ++r)
+            for (int r = topRow; r < maxRow; ++r)
             {
-                for (var c = leftCol; c < maxCol; ++c)
+                for (int c = leftCol; c < maxCol; ++c)
                 {
-                    var cell = Map[r, c];
+                    RCell cell = Map[r, c];
                     if (r == topRow || c == leftCol || r == maxRow - 1 || c == maxCol - 1)
                     {
                         if (cell.Is(RCell.Wall) &&
@@ -47,7 +47,7 @@ namespace ProjectR.MapGen.Generators
                 }
             }
 
-            var entranceCell = Map[row, col];
+            RCell entranceCell = Map[row, col];
             if (entranceCell.Is(RCell.Wall))
             {
                 Map[row, col] = RCell.Door | RCell.Closed;

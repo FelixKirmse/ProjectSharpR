@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
@@ -10,15 +11,14 @@ namespace ProjectR.MapGen
 {
     public class MapGenerator : IMapGenerator
     {
+        private readonly int _cols;
+        private readonly Direction[] _directions;
+        private readonly RandomContainer<IGenerator> _generators;
         private readonly IRMap _map;
         private readonly IMobPackManager _mobPackManager;
+        private readonly Dictionary<Direction, Direction> _oppositeDirections;
         private readonly int _rows;
-        private readonly int _cols;
         private int _featureTarget;
-
-        private readonly RandomContainer<IGenerator> _generators;
-        private readonly Direction[] _directions;
-        private readonly Dictionary<Direction, Direction> _oppositeDirections; 
 
         public MapGenerator(IRMap map, IMobPackManager mobPackManager)
         {
@@ -29,11 +29,11 @@ namespace ProjectR.MapGen
             _directions = RHelper.GetDirections();
             _oppositeDirections = new Dictionary<Direction, Direction>
             {
-                {Direction.North, Direction.South},
-                {Direction.East, Direction.West},
-                {Direction.South, Direction.North},
-                {Direction.West, Direction.East},
-                {Direction.Center, Direction.Center}
+                { Direction.North, Direction.South },
+                { Direction.East, Direction.West },
+                { Direction.South, Direction.North },
+                { Direction.West, Direction.East },
+                { Direction.Center, Direction.Center }
             };
 
             var roomGen = new RoomGenerator(5, 5, 10, 10, _map);
@@ -68,9 +68,9 @@ namespace ProjectR.MapGen
 
         public void PrepareMap()
         {
-            for (var row = 0; row < _rows; ++row)
+            for (int row = 0; row < _rows; ++row)
             {
-                for (var col = 0; col < _cols; col++)
+                for (int col = 0; col < _cols; col++)
                 {
                     if (row == 0 || col == 0 || row == _rows - 1 || col == _cols - 1)
                     {
@@ -88,7 +88,7 @@ namespace ProjectR.MapGen
 
         private bool ValidCell(int row, int col, ref Direction direction)
         {
-            var cell = _map[row, col];
+            RCell cell = _map[row, col];
 
             if (!cell.Is(RCell.Wall))
             {
@@ -97,15 +97,15 @@ namespace ProjectR.MapGen
 
             _directions.ShuffleList();
 
-            foreach (var dir in _directions)
+            foreach (Direction dir in _directions)
             {
                 direction = dir;
-                var checkRow = row;
-                var checkCol = col;
+                int checkRow = row;
+                int checkCol = col;
                 RHelper.MoveInDirection(ref checkRow, ref checkCol, dir);
 
-                var checkRowOpp = row;
-                var checkColOpp = col;
+                int checkRowOpp = row;
+                int checkColOpp = col;
                 RHelper.MoveInDirection(ref checkRowOpp, ref checkColOpp, _oppositeDirections[dir]);
 
                 if (_map[checkRow, checkCol].Is(RCell.Diggable) &&
@@ -120,7 +120,7 @@ namespace ProjectR.MapGen
 
         private void GenerateFeatures()
         {
-            for (var i = 0; i < _featureTarget; i++)
+            for (int i = 0; i < _featureTarget; i++)
             {
                 int row;
                 int col;
@@ -155,9 +155,9 @@ namespace ProjectR.MapGen
 
         private void EnsureEnemies()
         {
-            var packCount = _mobPackManager.PackCount;
+            int packCount = _mobPackManager.PackCount;
 
-            for (var i = packCount; i < 5; ++i)
+            for (int i = packCount; i < 5; ++i)
             {
                 int row;
                 int col;
@@ -170,7 +170,7 @@ namespace ProjectR.MapGen
 
         private void FindSuitableSpot(out int row, out int col, Func<int, int, bool> predicate)
         {
-            var heatZone = _map.HeatZone;
+            Rectangle heatZone = _map.HeatZone;
 
             do
             {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using libtcod;
@@ -9,13 +10,13 @@ namespace ProjectR.View
 {
     public class BattleLogDrawer : ModelState
     {
-        private IBattleLog _log;
-        private readonly IRConsole _logConsole;
-        private Point _position;
-        private IRConsole _root;
-        private readonly StringBuilder _logBuilder;
         public const int MaxLogLines = 25;
         private readonly Rectangle _logArea;
+        private readonly StringBuilder _logBuilder;
+        private readonly IRConsole _logConsole;
+        private IBattleLog _log;
+        private Point _position;
+        private IRConsole _root;
 
         public BattleLogDrawer()
         {
@@ -39,23 +40,23 @@ namespace ProjectR.View
 
         public override void Run()
         {
-            var fetchCount = 5;
-            var printedLines = 0;
+            int fetchCount = 5;
+            int printedLines = 0;
 
             do
             {
                 _logConsole.Clear();
-                var redControl = _logConsole.GetColorControlString(TCODColor.red);
-                var greenControl = _logConsole.GetColorControlString(TCODColor.green);
-                var stopControl = _logConsole.GetStopControl();
+                string redControl = _logConsole.GetColorControlString(TCODColor.red);
+                string greenControl = _logConsole.GetColorControlString(TCODColor.green);
+                string stopControl = _logConsole.GetStopControl();
 
                 _logConsole.PrintString(1, 1, "{0}Battlelog:{1}", redControl, stopControl);
                 _logConsole.DrawBorder();
 
-                var log = _log.GetLastEntries(fetchCount);
+                IList<LogEntry> log = _log.GetLastEntries(fetchCount);
                 printedLines = 0;
 
-                foreach (var logEntry in log)
+                foreach (LogEntry logEntry in log)
                 {
                     _logBuilder.Clear();
                     var printArea = new Rectangle(_logArea.X, _logArea.Y + printedLines, _logArea.Width,

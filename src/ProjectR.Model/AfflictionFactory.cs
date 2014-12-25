@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ProjectR.Interfaces.Factories;
@@ -12,8 +11,8 @@ namespace ProjectR.Model
     {
         private const string ScriptPath = "content/scripts/afflictions";
 
+        private readonly Dictionary<string, IAffliction> _afflictions;
         private readonly IModel _model;
-        private readonly Dictionary<string, IAffliction> _afflictions; 
 
         public AfflictionFactory(IModel model)
         {
@@ -26,17 +25,6 @@ namespace ProjectR.Model
             LoadFrom(ScriptPath + "/Buffs");
             LoadFrom(ScriptPath + "/Debuffs");
             LoadFrom(ScriptPath + "/Passives");
-        }
-
-        private void LoadFrom(string path)
-        {
-            foreach (var affl in from file in Directory.EnumerateFiles(path)
-                                 let fileInfo = new FileInfo(file)
-                                 where fileInfo.Extension == "cs"
-                                 select Factories.RFactory.CreateScriptedAffliction(_model, file))
-            {
-                _afflictions[affl.Name] = affl;
-            }
         }
 
         public IAffliction GetAffliction(string name)
@@ -52,6 +40,17 @@ namespace ProjectR.Model
         public void RemoveAllAfflictions()
         {
             _afflictions.Clear();
+        }
+
+        private void LoadFrom(string path)
+        {
+            foreach (IAffliction affl in from file in Directory.EnumerateFiles(path)
+                                         let fileInfo = new FileInfo(file)
+                                         where fileInfo.Extension == "cs"
+                                         select Factories.RFactory.CreateScriptedAffliction(_model, file))
+            {
+                _afflictions[affl.Name] = affl;
+            }
         }
     }
 }

@@ -10,12 +10,12 @@ namespace ProjectR.Model
 {
     public class Spellfactory : ISpellFactory
     {
-        private readonly IModel _model;
         private const string ScriptPath = "content/scripts/spells";
+        private readonly IModel _model;
 
+        private readonly Dictionary<string, ISpell> _nameMap;
         private readonly List<ISpell> _spells;
-        private readonly Dictionary<string, ISpell> _nameMap; 
- 
+
         public Spellfactory(IModel model)
         {
             _model = model;
@@ -25,10 +25,10 @@ namespace ProjectR.Model
 
         public void LoadSpells()
         {
-            foreach (var spell in from file in Directory.EnumerateFiles(ScriptPath)
-                                    let fileInfo = new FileInfo(file)
-                                    where fileInfo.Extension == "cs"
-                                    select Factories.RFactory.CreateScriptedSpell(_model, file))
+            foreach (ISpell spell in from file in Directory.EnumerateFiles(ScriptPath)
+                                     let fileInfo = new FileInfo(file)
+                                     where fileInfo.Extension == "cs"
+                                     select Factories.RFactory.CreateScriptedSpell(_model, file))
             {
                 _spells.Add(spell);
                 _nameMap.Add(spell.Name, spell);
@@ -52,7 +52,6 @@ namespace ProjectR.Model
             do
             {
                 spell = _spells[RHelper.Roll(_spells.Count - 1)];
-
             } while (spell.Name == "Attack" || spell.Name == "Defend" || spell.Name == "Switch");
 
             return spell;

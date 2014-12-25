@@ -7,28 +7,26 @@ namespace ProjectR.Model
 {
     public class RMap : Map<RCell>, IRMap
     {
-        public Rectangle HeatZone { get; private set; }
-
         private readonly TCODMap _fovMap;
-        private event Action<TCODMap> MapUpdated = delegate { };
-        private event Action<int, int, bool, bool> MapPartiallyUpdated = delegate { };
 
         public RMap()
         {
             _fovMap = new TCODMap(Columns, Rows);
         }
 
+        public Rectangle HeatZone { get; private set; }
+
         public void RecalculateHeatZone()
         {
-            var lowestX = Columns;
-            var lowestY = Rows;
-            var highestX = 0;
-            var highestY = 0;
+            int lowestX = Columns;
+            int lowestY = Rows;
+            int highestX = 0;
+            int highestY = 0;
 
             // HeatZone may not be bigger than map + Boundary
-            for (var row = 1; row < Rows - 2; ++row)
+            for (int row = 1; row < Rows - 2; ++row)
             {
-                for (var col = 1; col < Columns - 2; ++col)
+                for (int col = 1; col < Columns - 2; ++col)
                 {
                     if (!this[row, col].Is(RCell.Wall))
                     {
@@ -68,11 +66,11 @@ namespace ProjectR.Model
 
         public void CreateFoVMap()
         {
-            for (var row = 0; row < Rows; ++row)
+            for (int row = 0; row < Rows; ++row)
             {
-                for (var col = 0; col < Columns; ++col)
+                for (int col = 0; col < Columns; ++col)
                 {
-                    var cell = this[row, col];
+                    RCell cell = this[row, col];
                     _fovMap.setProperties(col, row, cell.IsTransparent(), cell.IsWalkable());
                 }
             }
@@ -99,5 +97,8 @@ namespace ProjectR.Model
             _fovMap.setProperties(x, y, visible, _fovMap.isWalkable(x, y));
             MapPartiallyUpdated(x, y, _fovMap.isWalkable(x, y), visible);
         }
+
+        private event Action<TCODMap> MapUpdated = delegate { };
+        private event Action<int, int, bool, bool> MapPartiallyUpdated = delegate { };
     }
 }

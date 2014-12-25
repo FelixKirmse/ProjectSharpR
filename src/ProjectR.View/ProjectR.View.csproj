@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="AfflictionLister.cs" />
     <Compile Include="BattleLogDrawer.cs" />
+    <Compile Include="BattleMenuView.cs" />
     <Compile Include="BattleView.cs" />
     <Compile Include="CharBattleFrame.cs" />
     <Compile Include="CharDescriptionDrawer.cs" />

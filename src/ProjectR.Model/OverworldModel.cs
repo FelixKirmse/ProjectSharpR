@@ -8,9 +8,6 @@ namespace ProjectR.Model
     public class OverworldModel : IOverworldModel
     {
         private readonly IModel _model;
-        public IOverworldPlayer Player { get; private set; }
-        public IMapGenerator MapGenerator { get; private set; }
-        public IOverworldCamera Camera { get; private set; }
 
         public OverworldModel(IModel model)
         {
@@ -20,15 +17,19 @@ namespace ProjectR.Model
             Camera = new OverworldCamera(_model.Map);
         }
 
+        public IOverworldPlayer Player { get; private set; }
+        public IMapGenerator MapGenerator { get; private set; }
+        public IOverworldCamera Camera { get; private set; }
+
         public void GenerateNewMap(int level)
         {
-            var map = _model.Map;
-            var heatZone = map.HeatZone;
+            IRMap map = _model.Map;
+            Rectangle heatZone = map.HeatZone;
             _model.Statistics.AddToStatistic(Statistic.MapsGenerated, 1);
 
-            for (var row = heatZone.Top; row <= heatZone.Bottom; ++row)
+            for (int row = heatZone.Top; row <= heatZone.Bottom; ++row)
             {
-                for (var col = heatZone.Left; col <= heatZone.Right; ++col)
+                for (int col = heatZone.Left; col <= heatZone.Right; ++col)
                 {
                     if (map[row, col].Is(RCell.Grand | RCell.Artifact))
                     {
@@ -40,9 +41,9 @@ namespace ProjectR.Model
             MapGenerator.GenerateMap(level);
 
             heatZone = map.HeatZone;
-            for (var row = heatZone.Top; row <= heatZone.Bottom; ++row)
+            for (int row = heatZone.Top; row <= heatZone.Bottom; ++row)
             {
-                for (var col = heatZone.Left; col <= heatZone.Right; ++col)
+                for (int col = heatZone.Left; col <= heatZone.Right; ++col)
                 {
                     if (!map[row, col].Is(RCell.Spawn))
                     {

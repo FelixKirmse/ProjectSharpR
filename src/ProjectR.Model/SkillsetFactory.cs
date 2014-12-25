@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ProjectR.Interfaces.Model;
 
@@ -5,7 +6,6 @@ namespace ProjectR.Model
 {
     public class SkillsetFactory : ISkillsetFactory
     {
-        public IList<ISkillset> SkillSets { get; private set; }
         private readonly IModel _model;
         private readonly Dictionary<string, ISkillset> _nameMap;
 
@@ -16,9 +16,11 @@ namespace ProjectR.Model
             _nameMap = new Dictionary<string, ISkillset>();
         }
 
+        public IList<ISkillset> SkillSets { get; private set; }
+
         public void LoadSkillsets()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public ISkillset GetSkillset(string name)

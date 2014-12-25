@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 
 namespace ProjectR.Interfaces.Helper
@@ -8,14 +7,21 @@ namespace ProjectR.Interfaces.Helper
     {
         private static readonly Random Random = new Random();
 
+        private static readonly Direction[] Directions =
+        {
+            Direction.North, Direction.East, Direction.South, Direction.West, Direction.Center
+        };
+
+        public static IScriptHelper ScriptHelper { get; set; }
+
         public static IList<T> ShuffleList<T>(this IList<T> list)
         {
-            var n = list.Count;
+            int n = list.Count;
             while (n > 1)
             {
                 --n;
-                var k = Random.Next(0, n + 1);
-                var value = list[k];
+                int k = Random.Next(0, n + 1);
+                T value = list[k];
                 list[k] = list[n];
                 list[n] = value;
             }
@@ -83,23 +89,18 @@ namespace ProjectR.Interfaces.Helper
 
         public static T Clamp<T>(this T val, T min, T max) where T : IComparable<T>
         {
-            if (val.CompareTo(min) < 0) return min;
+            if (val.CompareTo(min) < 0)
+            {
+                return min;
+            }
             return val.CompareTo(max) > 0 ? max : val;
         }
 
-
-        private static readonly Direction[] Directions =
-        {
-            Direction.North, Direction.East, Direction.South, Direction.West, Direction.Center
-        
-        }; 
 
         public static Direction[] GetDirections()
         {
             return Directions.Clone() as Direction[];
         }
-
-        public static IScriptHelper ScriptHelper { get; set; }
 
         public static string SanitizeNumber(double number, string format = "F2")
         {
@@ -115,12 +116,12 @@ namespace ProjectR.Interfaces.Helper
             const long T = 1000000000000;
             // ReSharper restore InconsistentNaming
 
-            var chosenFormat = number < k ? "F0" : format;
+            string chosenFormat = number < k ? "F0" : format;
 
             const string resultFormat = "{0}{1}";
-            var damageLetter = number > T ? "T" : number > G ? "G" : number > M ? "M" : number > k ? "k" : "";
+            string damageLetter = number > T ? "T" : number > G ? "G" : number > M ? "M" : number > k ? "k" : "";
 
-            var reducedNumber = number > T
+            double reducedNumber = number > T
                 ? number / T
                 : number > G
                     ? number / G

@@ -28,7 +28,7 @@ namespace ProjectR.View
 
         public void DrawStats(ICharacter character, IRConsole targetConsole = null)
         {
-            var target = targetConsole ?? RootConsole;
+            IRConsole target = targetConsole ?? RootConsole;
             Clear();
             SetupStatics();
             PrintString(35, 1, string.Format("Level: {0}", character.CurrentLevel), TCODAlignment.RightAlignment);
@@ -36,7 +36,7 @@ namespace ProjectR.View
             PrintString(4, 2, character.Name);
             PrintString(4, 5, character.Race);
 
-            var stats = character.Stats;
+            IStats stats = character.Stats;
             var statFormat = new StringBuilder();
             statFormat.AppendFormat("{0} / {1}\n", RHelper.SanitizeNumber(character.CurrentHP),
                 RHelper.SanitizeNumber(stats.GetTotalStat(BaseStat.HP)));
@@ -46,7 +46,7 @@ namespace ProjectR.View
             var hpPercentage = (float) (character.CurrentHP / stats.GetTotalStat(BaseStat.HP));
             var mpPercentage = (float) (character.CurrentMP / 200d);
 
-            var stopControl = TCODConsole.getColorControlString(8);
+            string stopControl = TCODConsole.getColorControlString(8);
 
             statStrengthFormat.AppendFormat("{0}{1}%{2}\n",
                 GetColorControlString(new TCODColor(120f * hpPercentage, 1f, 1f)),
@@ -100,9 +100,15 @@ namespace ProjectR.View
             target.Blit(this, Bounds, _position.X, _position.Y);
         }
 
+        public void SetPosition(int x, int y)
+        {
+            _position.X = x;
+            _position.Y = y;
+        }
+
         private string GetColor(IStats stats, Stat stat)
         {
-            var value = stats[stat][StatType.BattleMod] * 100d;
+            double value = stats[stat][StatType.BattleMod] * 100d;
             return Math.Abs(value - 100d) < 0.001d
                 ? TCODConsole.getColorControlString(8)
                 : value > 100 ? GetColorControlString(TCODColor.green) : GetColorControlString(TCODColor.red);
@@ -120,13 +126,7 @@ namespace ProjectR.View
             PrintString(20, 20, "Resistances:");
             PrintString(20, 28, "Type of EVA:");
             PrintString(new Rectangle(2, 22, 4, 9), "FIR:WAT:ICE:ARC:WND:HOL:DRK:GRN:LGT:");
-            PrintString(new Rectangle(21, 22, 4, 4), "PSN:PAR:DTH:SIL:");   
-        }
-
-        public void SetPosition(int x, int y)
-        {
-            _position.X = x;
-            _position.Y = y;
+            PrintString(new Rectangle(21, 22, 4, 4), "PSN:PAR:DTH:SIL:");
         }
     }
 }

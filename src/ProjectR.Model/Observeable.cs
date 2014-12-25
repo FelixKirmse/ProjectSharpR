@@ -5,7 +5,7 @@ namespace ProjectR.Model
 {
     public class Observeable : IObserveable
     {
-        private readonly List<IObserver> _observers = new List<IObserver>(); 
+        private readonly List<IObserver> _observers = new List<IObserver>();
 
         public void AddObserver(IObserver observer)
         {
@@ -14,7 +14,7 @@ namespace ProjectR.Model
 
         public void NotifyObservers()
         {
-            foreach (var observer in _observers)
+            foreach (IObserver observer in _observers)
             {
                 observer.Notify();
             }

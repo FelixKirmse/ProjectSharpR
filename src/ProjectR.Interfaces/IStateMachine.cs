@@ -2,9 +2,9 @@
 {
     public interface IStateMachine
     {
+        IState CurrentState { get; }
         void Next();
         void Previous();
-        IState CurrentState { get; }
         void AddState(IState state);
         void RunCurrentState();
         IState GetState(int index);

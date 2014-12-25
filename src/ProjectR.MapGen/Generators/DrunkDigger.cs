@@ -7,24 +7,26 @@ namespace ProjectR.MapGen.Generators
 {
     public class DrunkDigger : Generator
     {
-        public DrunkDigger(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map) 
+        public DrunkDigger(int minWidth, int minHeight, int maxWidth, int maxHeight, IRMap map)
             : base(minWidth, minHeight, maxWidth, maxHeight, map)
         {
         }
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            var topRow = row;
-            var leftCol = col;
+            int topRow = row;
+            int leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            var goalRow = row;
-            var goalCol = col;
+            int goalRow = row;
+            int goalCol = col;
             RHelper.MoveInDirection(ref goalRow, ref goalCol, dir);
 
             var digArea = new Rectangle(leftCol + 1, topRow + 1, Width - 2, Height - 2);
             var digger = new Digger(goalRow, goalCol, (digArea.Width * digArea.Height) / 25d, digArea, Map);
-            Map[row, col] = Map[row, col].Is(RCell.Important) ? RCell.Door | RCell.Important | RCell.Closed : RCell.Floor;
+            Map[row, col] = Map[row, col].Is(RCell.Important)
+                ? RCell.Door | RCell.Important | RCell.Closed
+                : RCell.Floor;
             digger.DigCell(row, col);
             digger.DigCell(row + 1, col);
             digger.DigCell(row - 1, col);
@@ -35,15 +37,15 @@ namespace ProjectR.MapGen.Generators
 
         public class Digger
         {
-            private int _row;
-            private int _col;
-            private readonly double _digGoal;
-            private readonly Rectangle _digArea;
-            private readonly IRMap _map;
-            private readonly bool _darkDigger;
-            private readonly bool _doubleCombatBonus;
             private readonly ulong _combatBonus;
+            private readonly bool _darkDigger;
+            private readonly Rectangle _digArea;
+            private readonly double _digGoal;
+            private readonly bool _doubleCombatBonus;
+            private readonly IRMap _map;
+            private int _col;
             private int _digged;
+            private int _row;
 
             public Digger(int row, int col, double digGoal, Rectangle digArea, IRMap map)
             {
@@ -61,7 +63,7 @@ namespace ProjectR.MapGen.Generators
 
             public void DigCell(int row, int col)
             {
-                var cell = _map[row, col];
+                RCell cell = _map[row, col];
                 if (cell.Is(RCell.Important))
                 {
                     return;
@@ -88,9 +90,9 @@ namespace ProjectR.MapGen.Generators
 
                 do
                 {
-                    var dir = RHelper.GetRandomDirection();
-                    var nextRow = _row;
-                    var nextCol = _col;
+                    Direction dir = RHelper.GetRandomDirection();
+                    int nextRow = _row;
+                    int nextCol = _col;
                     RHelper.MoveInDirection(ref nextRow, ref nextCol, dir);
 
                     if (!CanMove(nextRow, nextCol))
@@ -123,7 +125,7 @@ namespace ProjectR.MapGen.Generators
 
             private void DigOut()
             {
-                var cell = _darkDigger ? RCell.Floor | RCell.Dark : RCell.Floor;
+                RCell cell = _darkDigger ? RCell.Floor | RCell.Dark : RCell.Floor;
                 cell = cell.InsertCombatBonus(_combatBonus);
 
                 if (_doubleCombatBonus)

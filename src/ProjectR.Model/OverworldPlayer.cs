@@ -5,11 +5,19 @@ namespace ProjectR.Model
 {
     public class OverworldPlayer : IOverworldPlayer
     {
+        private readonly ISubscribedFoVMap _fovMap;
         private readonly IRMap _map;
         private readonly IStatistics _statistics;
         private Point _position;
-        private readonly ISubscribedFoVMap _fovMap;
         private int _viewRadius;
+
+        public OverworldPlayer(IRMap map, IStatistics statistics)
+        {
+            _map = map;
+            _statistics = statistics;
+            _fovMap = _map.Subscribe();
+            _viewRadius = 10;
+        }
 
         public Point Position
         {
@@ -19,14 +27,6 @@ namespace ProjectR.Model
                 _position = value;
                 RecaclulateFoV();
             }
-        }
-
-        public OverworldPlayer(IRMap map, IStatistics statistics)
-        {
-            _map = map;
-            _statistics = statistics;
-            _fovMap = _map.Subscribe();
-            _viewRadius = 10;
         }
 
         public void MoveLeft()
@@ -68,7 +68,7 @@ namespace ProjectR.Model
                 _statistics.AddToStatistic(Statistic.StepsTaken, 1);
             }
 
-            var cell = _map[_position.Y, _position.X];
+            RCell cell = _map[_position.Y, _position.X];
             if (cell.Is(RCell.Door) && cell.Is(RCell.Closed))
             {
                 cell &= ~RCell.Closed;
@@ -83,7 +83,8 @@ namespace ProjectR.Model
 
         private void RecaclulateFoV()
         {
-            _fovMap.CalculateFoV(_position.X, _position.Y, (int)(_map[_position.Y, _position.X].Is(RCell.Dark) ? _viewRadius / 2d : _viewRadius));
+            _fovMap.CalculateFoV(_position.X, _position.Y,
+                (int) (_map[_position.Y, _position.X].Is(RCell.Dark) ? _viewRadius / 2d : _viewRadius));
         }
     }
 }

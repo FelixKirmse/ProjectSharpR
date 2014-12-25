@@ -43,18 +43,18 @@ namespace ProjectR.View
             }
 
             _menuConsole.Clear();
-            var targetConsole = target ?? RConsole.RootConsole;
+            IRConsole targetConsole = target ?? RConsole.RootConsole;
 
-            var rightMostCol = 0;
-            var itemCount = endItem + 1 - startItem;
-            var counter = 0;
-            var newLineCount = 0;
-            for (var i = startItem; i <= endItem; ++i, ++counter)
+            int rightMostCol = 0;
+            int itemCount = endItem + 1 - startItem;
+            int counter = 0;
+            int newLineCount = 0;
+            for (int i = startItem; i <= endItem; ++i, ++counter)
             {
-                var printRow = counter + counter * offset;
-                var item = menu.GetMenuItem(i);
-                var label = item.Label;
-                var labelLength = Measure(label);
+                int printRow = counter + counter * offset;
+                IMenuItem item = menu.GetMenuItem(i);
+                string label = item.Label;
+                int labelLength = Measure(label);
                 newLineCount += label.Count(x => x == '\n');
                 if (labelLength > rightMostCol)
                 {
@@ -90,9 +90,9 @@ namespace ProjectR.View
                 return str.Length;
             }
 
-            var firstLineLength = str.IndexOf('\n');
-            var secondLineLength = str.IndexOf('\n', firstLineLength) - firstLineLength;
-            var thirdLineLength = str.Length - 2 - secondLineLength - firstLineLength;
+            int firstLineLength = str.IndexOf('\n');
+            int secondLineLength = str.IndexOf('\n', firstLineLength) - firstLineLength;
+            int thirdLineLength = str.Length - 2 - secondLineLength - firstLineLength;
 
             return Math.Max(thirdLineLength, Math.Max(firstLineLength, secondLineLength));
         }

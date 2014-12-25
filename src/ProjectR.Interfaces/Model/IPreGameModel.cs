@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using ProjectR.Interfaces.Model.Stats;
+﻿using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Interfaces.Model
 {

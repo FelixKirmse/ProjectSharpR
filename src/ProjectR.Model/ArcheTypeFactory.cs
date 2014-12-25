@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
     public class ArcheTypeFactory : IArcheTypeFactory
     {
-        public IList<IArcheType> ArcheTypes { get; private set; }
-
-        private readonly Dictionary<string, IArcheType> _nameMap; 
-
         private readonly IModel _model;
+        private readonly Dictionary<string, IArcheType> _nameMap;
 
         public ArcheTypeFactory(IModel model)
         {
@@ -18,9 +16,11 @@ namespace ProjectR.Model
             _nameMap = new Dictionary<string, IArcheType>();
         }
 
+        public IList<IArcheType> ArcheTypes { get; private set; }
+
         public void LoadArcheTypes()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public IArcheType GetArcheType(string name)

@@ -8,24 +8,21 @@ namespace ProjectR.View
 {
     public class CommonBattleView : ModelState
     {
-        private IBattleModel _battleModel;
-        private IList<ICharacter> _frontRow;
-        private IList<ICharacter> _partyMinions;
-        private IList<ICharacter> _enemies;
-        private IList<ICharacter> _enemyMinions;
-
-        private readonly IList<ICharBattleFrame> _frontRowFrames;
-        private readonly IList<ICharBattleFrame> _partyMinionFrames;
-        private readonly IList<ICharBattleFrame> _enemyFrames;
-        private readonly IList<ICharBattleFrame> _enemyMinionFrames;
-
-        private readonly BattleLogDrawer _logDrawer;
-
+        private const int FrameOffset = 17;
         private static readonly Point EnemyMinionStart = new Point(24, 5);
         private static readonly Point EnemyStart = new Point(7, 16);
         private static readonly Point FrontRowStart = new Point(7, 30);
         private static readonly Point PartyMinionStart = new Point(24, 41);
-        private const int FrameOffset = 17;
+        private readonly IList<ICharBattleFrame> _enemyFrames;
+        private readonly IList<ICharBattleFrame> _enemyMinionFrames;
+        private readonly IList<ICharBattleFrame> _frontRowFrames;
+        private readonly BattleLogDrawer _logDrawer;
+        private readonly IList<ICharBattleFrame> _partyMinionFrames;
+        private IBattleModel _battleModel;
+        private IList<ICharacter> _enemies;
+        private IList<ICharacter> _enemyMinions;
+        private IList<ICharacter> _frontRow;
+        private IList<ICharacter> _partyMinions;
 
         public CommonBattleView()
         {
@@ -37,7 +34,7 @@ namespace ProjectR.View
             _logDrawer = new BattleLogDrawer();
             _logDrawer.SetPosition(80, 35);
 
-            for (var i = 0; i < 4; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 _frontRowFrames.Add(CharBattleFrame.CreateFrameForPlayerChar());
                 _frontRowFrames[i].SetPosition(FrontRowStart.X + FrameOffset * i, FrontRowStart.Y);
@@ -62,25 +59,25 @@ namespace ProjectR.View
         {
             DrawBorders();
 
-            for (var i = 0; i < _frontRow.Count; ++i)
+            for (int i = 0; i < _frontRow.Count; ++i)
             {
                 _frontRowFrames[i].AssignCharacter(_frontRow[i]);
                 _frontRowFrames[i].Draw();
             }
 
-            for (var i = 0; i < _partyMinions.Count; ++i)
+            for (int i = 0; i < _partyMinions.Count; ++i)
             {
                 _partyMinionFrames[i].AssignCharacter(_partyMinions[i]);
                 _partyMinionFrames[i].Draw();
             }
 
-            for (var i = 0; i < _enemies.Count; ++i)
+            for (int i = 0; i < _enemies.Count; ++i)
             {
                 _enemyFrames[i].AssignCharacter(_enemies[i], _battleModel.CurrentMobPack.GetStrength(_enemies[i]));
                 _enemyFrames[i].Draw();
             }
 
-            for (var i = 0; i < _enemyMinions.Count; ++i)
+            for (int i = 0; i < _enemyMinions.Count; ++i)
             {
                 _enemyMinionFrames[i].AssignCharacter(_enemyMinions[i]);
                 _enemyMinionFrames[i].Draw();
@@ -92,13 +89,13 @@ namespace ProjectR.View
         private static void DrawBorders()
         {
             var enemyBorder = new RConsole(74, 24);
-            var redControl = enemyBorder.GetColorControlString(TCODColor.red);
-            var stopControl = enemyBorder.GetStopControl();
+            string redControl = enemyBorder.GetColorControlString(TCODColor.red);
+            string stopControl = enemyBorder.GetStopControl();
 
             enemyBorder.DrawBorder();
             enemyBorder.PrintString(1, 1, string.Format("{0}Enemy Party{1}", redControl, stopControl));
 
-            var root = RConsole.RootConsole;
+            IRConsole root = RConsole.RootConsole;
             root.Blit(enemyBorder, enemyBorder.Bounds, 3, 3);
 
             var playerBorder = new RConsole(74, 24);

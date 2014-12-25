@@ -11,14 +11,11 @@ namespace ProjectR.Model
             _statistics[(int) statistic] += value;
         }
 
-        public ulong this[Statistic statistic]
-        {
-            get { return _statistics[(int) statistic]; }
-        }
+        public ulong this[Statistic statistic] { get { return _statistics[(int) statistic]; } }
 
         public void Reset()
         {
-            for (var i = 0; i < (int) Statistic.StatisticCount; i++)
+            for (int i = 0; i < (int) Statistic.StatisticCount; i++)
             {
                 _statistics[i] = 0ul;
             }

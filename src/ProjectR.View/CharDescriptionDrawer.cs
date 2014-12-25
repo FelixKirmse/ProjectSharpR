@@ -27,7 +27,7 @@ namespace ProjectR.View
                 return;
             }
 
-            var targetConsole = target ?? RootConsole;
+            IRConsole targetConsole = target ?? RootConsole;
 
             Clear();
             DrawBorder();

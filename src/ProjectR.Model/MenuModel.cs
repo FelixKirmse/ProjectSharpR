@@ -5,6 +5,18 @@ namespace ProjectR.Model
 {
     public class MenuModel : IMenuModel
     {
+        public MenuModel()
+        {
+            MainMenu = new Menu();
+            OptionsMenu = new Menu();
+            ActiveMenu = MainMenu;
+            SelectedSwitchIndex = 0;
+
+            SetupMainMenu(MainMenu);
+            SetupMainMenu(OptionsMenu);
+            OptionsMenu.GetState(2).Activate();
+        }
+
         public IMenu ActiveMenu { get; set; }
         public IMenu BattleMenu { get; set; }
         public IMenu SpellSelectMenu { get; set; }
@@ -17,18 +29,6 @@ namespace ProjectR.Model
         public IMenu InventoryMenu { get; private set; }
         public IMenu CharSwitchMenu { get; private set; }
         public IMenu TargetSelectMenu { get; private set; }
-
-        public MenuModel()
-        {
-            MainMenu = new Menu();
-            OptionsMenu = new Menu();
-            ActiveMenu = MainMenu;
-            SelectedSwitchIndex = 0;
-
-            SetupMainMenu(MainMenu);
-            SetupMainMenu(OptionsMenu);
-            OptionsMenu.GetState(2).Activate();
-        }
 
         private void SetupMainMenu(IStateMachine menu)
         {
