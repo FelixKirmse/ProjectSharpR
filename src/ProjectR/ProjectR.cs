@@ -1,5 +1,6 @@
 ﻿using System;
 using ProjectR.Interfaces.Factories;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
 
@@ -18,6 +19,8 @@ namespace ProjectR
             _model = Factories.RFactory.CreateModel();
             _view = Factories.RFactory.CreateConsoleView();
             _logic = Factories.RFactory.CreateLogic();
+
+            ExitHelper.ExitAction = Exit;
         }
 
         public void SetupGameStructure()

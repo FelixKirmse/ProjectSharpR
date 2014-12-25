@@ -26,6 +26,13 @@ namespace ProjectR.Interfaces.Helper
 
     public static class ExitHelper
     {
+        public static Action ExitAction { get; set; }
+
+        public static void Exit()
+        {
+            ExitAction();
+        }
+
         public static void Exit(ErrorCodes exitCode, string reason)
         {
             Console.Error.WriteLine(reason);
