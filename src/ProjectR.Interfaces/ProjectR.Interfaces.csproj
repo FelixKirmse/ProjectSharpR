@@ -154,6 +154,7 @@
     <Compile Include="View\IMenuDrawer.cs" />
     <Compile Include="View\IRConsole.cs" />
     <Compile Include="View\ISpellDescriptionDrawer.cs" />
+    <Compile Include="View\ISpellLister.cs" />
     <Compile Include="View\IStatScreenDrawer.cs" />
     <Compile Include="View\IView.cs" />
   </ItemGroup>
