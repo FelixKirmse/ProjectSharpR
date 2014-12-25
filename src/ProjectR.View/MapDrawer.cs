@@ -90,36 +90,7 @@ namespace ProjectR.View
                     {
                         charCell = 'E';
 
-                        switch (pack.Strength)
-                        {
-                            case MobPackStrength.Equal:
-                                cellColour = TCODColor.white;
-                                break;
-
-                            case MobPackStrength.Stronger:
-                                cellColour = TCODColor.lightGreen;
-                                break;
-
-                            case MobPackStrength.Challenging:
-                                cellColour = TCODColor.lighterBlue;
-                                break;
-
-                            case MobPackStrength.Elite:
-                                cellColour = TCODColor.lightMagenta;
-                                break;
-
-                            case MobPackStrength.Boss:
-                                cellColour = TCODColor.lightYellow;
-                                break;
-
-                            case MobPackStrength.EndBoss:
-                                cellColour = TCODColor.lightRed;
-                                break;
-
-                            case MobPackStrength.TheEndOfAllThings:
-                                cellColour = TCODColor.lightTurquoise;
-                                break;
-                        }
+                        cellColour = pack.Strength.GetAssociatedColour();
                     }
 
                     if (mapCol == player.Position.X &&

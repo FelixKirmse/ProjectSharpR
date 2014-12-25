@@ -63,13 +63,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AfflictionLister.cs" />
+    <Compile Include="BattleView.cs" />
+    <Compile Include="CharBattleFrame.cs" />
     <Compile Include="CharDescriptionDrawer.cs" />
+    <Compile Include="CommonBattleView.cs" />
     <Compile Include="ConsoleView.cs" />
+    <Compile Include="EnemyBattleFrame.cs" />
+    <Compile Include="InitializeableModelState.cs" />
     <Compile Include="MainMenuView.cs" />
     <Compile Include="MapDrawer.cs" />
     <Compile Include="MenuDrawer.cs" />
     <Compile Include="ModelState.cs" />
     <Compile Include="OverworldView.cs" />
+    <Compile Include="PlayerBattleFrame.cs" />
     <Compile Include="PreGameView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RConsole.cs" />
