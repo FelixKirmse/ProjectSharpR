@@ -1,4 +1,4 @@
-﻿namespace ProjectR.View
+﻿namespace ProjectR.Interfaces.Model
 {
     public abstract class InitializeableModelState : ModelState
     {

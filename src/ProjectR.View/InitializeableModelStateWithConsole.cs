@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using libtcod;
+using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
 
 namespace ProjectR.View

@@ -1,4 +1,5 @@
 ﻿using libtcod;
+using ProjectR.Interfaces.Model;
 
 namespace ProjectR.View
 {

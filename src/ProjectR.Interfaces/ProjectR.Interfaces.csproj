@@ -67,6 +67,7 @@
     <Compile Include="Helper\BiDictionary.cs" />
     <Compile Include="Helper\ExitHelper.cs" />
     <Compile Include="Helper\IScriptHelper.cs" />
+    <Compile Include="Helper\Pair.cs" />
     <Compile Include="Helper\RandomContainer.cs" />
     <Compile Include="Helper\RHelper.cs" />
     <Compile Include="IGenerator.cs" />
@@ -77,6 +78,10 @@
     <Compile Include="IStateMachine.cs" />
     <Compile Include="ISynchronizeable.cs" />
     <Compile Include="ISynchronizer.cs" />
+    <Compile Include="Logic\Actions.cs" />
+    <Compile Include="Logic\IInput.cs" />
+    <Compile Include="Logic\IRInput.cs" />
+    <Compile Include="Logic\IRLogic.cs" />
     <Compile Include="MapGen\IMapGenerator.cs" />
     <Compile Include="Model\AfflictionType.cs" />
     <Compile Include="Model\BattleMenuState.cs" />
@@ -109,6 +114,7 @@
     <Compile Include="Model\IMobPack.cs" />
     <Compile Include="Model\IMobPackManager.cs" />
     <Compile Include="Model\IModel.cs" />
+    <Compile Include="Model\InitializeableModelState.cs" />
     <Compile Include="Model\INormalAttackFactory.cs" />
     <Compile Include="Model\IOverworldCamera.cs" />
     <Compile Include="Model\IOverworldModel.cs" />
@@ -130,6 +136,7 @@
     <Compile Include="Model\ITitleModel.cs" />
     <Compile Include="Model\MainMenuOptions.cs" />
     <Compile Include="Model\MobPackStrength.cs" />
+    <Compile Include="Model\ModelState.cs" />
     <Compile Include="Model\PartySlot.cs" />
     <Compile Include="Model\RCell.cs" />
     <Compile Include="Model\Statistic.cs" />

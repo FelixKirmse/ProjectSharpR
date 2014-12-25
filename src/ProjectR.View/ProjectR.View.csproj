@@ -74,12 +74,10 @@
     <Compile Include="ConsoleView.cs" />
     <Compile Include="ConvinceDrawer.cs" />
     <Compile Include="EnemyBattleFrame.cs" />
-    <Compile Include="InitializeableModelState.cs" />
     <Compile Include="InitializeableModelStateWithConsole.cs" />
     <Compile Include="MainMenuView.cs" />
     <Compile Include="MapDrawer.cs" />
     <Compile Include="MenuDrawer.cs" />
-    <Compile Include="ModelState.cs" />
     <Compile Include="OverworldView.cs" />
     <Compile Include="PlayerBattleFrame.cs" />
     <Compile Include="PreGameView.cs" />

@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces.MapGen;
+﻿using ProjectR.Interfaces.Logic;
+using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
 
@@ -12,5 +13,6 @@ namespace ProjectR.Interfaces.Factories
         ISpell CreateScriptedSpell(IModel model, string file);
         IAffliction CreateScriptedAffliction(IModel model, string file);
         IConsoleView CreateConsoleView();
+        IRLogic CreateLogic();
     }
 }

@@ -1,9 +1,11 @@
 ﻿using ProjectR.Interfaces;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
+using ProjectR.Interfaces.Logic;
 using ProjectR.Interfaces.MapGen;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
+using ProjectR.Logic;
 using ProjectR.MapGen;
 using ProjectR.Model;
 using ProjectR.Model.States;
@@ -45,6 +47,11 @@ namespace ProjectR.Factory
         public IConsoleView CreateConsoleView()
         {
             return new ConsoleView();
+        }
+
+        public IRLogic CreateLogic()
+        {
+            return new RLogic();
         }
     }
 }

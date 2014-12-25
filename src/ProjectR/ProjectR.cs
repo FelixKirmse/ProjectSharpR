@@ -17,6 +17,7 @@ namespace ProjectR
             _stateSyncer = Factories.RFactory.CreateStateMachineSynchronizer();
             _model = Factories.RFactory.CreateModel();
             _view = Factories.RFactory.CreateConsoleView();
+            _logic = Factories.RFactory.CreateLogic();
         }
 
         public void SetupGameStructure()

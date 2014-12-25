@@ -65,6 +65,10 @@
       <Project>{E638DE1B-5518-4C68-811E-1FC92367A088}</Project>
       <Name>ProjectR.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProjectR.Logic\ProjectR.Logic.csproj">
+      <Project>{EF126B9E-6B6E-4A1F-BD25-D9AB5D791296}</Project>
+      <Name>ProjectR.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectR.MapGen\ProjectR.MapGen.csproj">
       <Project>{3A0AF005-54FC-4100-9736-C05E22146D80}</Project>
       <Name>ProjectR.MapGen</Name>

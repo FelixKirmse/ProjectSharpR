@@ -1,7 +1,4 @@
-﻿using ProjectR.Interfaces;
-using ProjectR.Interfaces.Model;
-
-namespace ProjectR.View
+﻿namespace ProjectR.Interfaces.Model
 {
     public abstract class ModelState : IState
     {

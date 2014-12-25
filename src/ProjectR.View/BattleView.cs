@@ -1,4 +1,5 @@
 using ProjectR.Interfaces;
+using ProjectR.Interfaces.Model;
 
 namespace ProjectR.View
 {
