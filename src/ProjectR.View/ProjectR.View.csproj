@@ -67,6 +67,7 @@
     <Compile Include="BattleLogDrawer.cs" />
     <Compile Include="BattleMenuView.cs" />
     <Compile Include="BattleView.cs" />
+    <Compile Include="BattleWonView.cs" />
     <Compile Include="CharBattleFrame.cs" />
     <Compile Include="CharDescriptionDrawer.cs" />
     <Compile Include="CommonBattleView.cs" />

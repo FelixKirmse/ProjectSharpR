@@ -178,12 +178,12 @@ namespace ProjectR.View
 
         public int PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
         {
-            _console.PrintString(rect, text, alignment, args);
+            return _console.PrintString(rect, text, alignment, args);
         }
 
         public int PrintString(Rectangle rect, string text, params object[] args)
         {
-            _console.PrintString(rect, text, args);
+            return _console.PrintString(rect, text, args);
         }
 
         public string GetStopControl()
