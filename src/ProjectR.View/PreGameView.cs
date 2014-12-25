@@ -182,15 +182,21 @@ namespace ProjectR.View
             _console.PrintString(x, y, text, alignment, args);
         }
 
-        public void PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
+        public int PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
         {
             _console.PrintString(rect, text, alignment, args);
         }
 
-        public void PrintString(Rectangle rect, string text, params object[] args)
+        public int PrintString(Rectangle rect, string text, params object[] args)
         {
             _console.PrintString(rect, text, args);
         }
+
+        public string GetStopControl()
+        {
+            return _console.GetStopControl();
+        }
+
         #endregion
     }
 }

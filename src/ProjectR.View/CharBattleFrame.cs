@@ -18,6 +18,7 @@ namespace ProjectR.View
 
         protected CharBattleFrame()
         {
+            _position = new Point();
             CharConsole = new RConsole(16, 10);
             _root = RConsole.RootConsole;
             DrawStatics();

@@ -19,7 +19,7 @@ namespace ProjectR.View
         private readonly IList<ICharBattleFrame> _enemyFrames;
         private readonly IList<ICharBattleFrame> _enemyMinionFrames;
 
-        private readonly IBattleLogDrawer _logDrawer;
+        private readonly BattleLogDrawer _logDrawer;
 
         private static readonly Point EnemyMinionStart = new Point(24, 5);
         private static readonly Point EnemyStart = new Point(7, 16);

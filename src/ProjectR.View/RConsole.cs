@@ -143,14 +143,14 @@ namespace ProjectR.View
             _console.printEx(x, y, TCODBackgroundFlag.None, alignment, string.Format(text, args));
         }
 
-        public void PrintString(Rectangle rect, string text, params object[] args)
+        public int PrintString(Rectangle rect, string text, params object[] args)
         {
-            _console.printRect(rect.X, rect.Y, rect.Width, rect.Height, string.Format(text, args));
+            return _console.printRect(rect.X, rect.Y, rect.Width, rect.Height, string.Format(text, args));
         }
 
-        public void PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
+        public int PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args)
         {
-            _console.printRectEx(rect.X, rect.Y, rect.Width, rect.Height, TCODBackgroundFlag.None, alignment, string.Format(text, args));
+            return _console.printRectEx(rect.X, rect.Y, rect.Width, rect.Height, TCODBackgroundFlag.None, alignment, string.Format(text, args));
         }
 
         public void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1, float bgAlpha = 1)

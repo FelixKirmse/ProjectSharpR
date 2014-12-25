@@ -32,8 +32,8 @@ namespace ProjectR.Interfaces.View
 
         void PrintString(int x, int y, string text, params object[] args);
         void PrintString(int x, int y, string text, TCODAlignment alignment, params object[] args);
-        void PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args);
-        void PrintString(Rectangle rect, string text, params object[] args);
+        int PrintString(Rectangle rect, string text, TCODAlignment alignment, params object[] args);
+        int PrintString(Rectangle rect, string text, params object[] args);
         string GetStopControl();
     }
 }
