@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace ProjectR.Interfaces
 {
-    public class StateMachine : IStateMachine, ISynchronizeable<int>
+    public class StateMachine : IStateMachine
     {
         private readonly List<IState> _states;
         private int _currentState;

@@ -106,6 +106,16 @@ namespace ProjectR.Logic
         {
             return _mainMenuStateMachine.GetCurrentStateNumber();
         }
+
+        public void Sync(int value)
+        {
+            _mainMenuStateMachine.Sync(value);
+        }
+
+        public void SetSynchronizer(ISynchronizer<int> syncer)
+        {
+            _mainMenuStateMachine.SetSynchronizer(syncer);
+        }
         #endregion
     }
 }

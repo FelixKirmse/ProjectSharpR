@@ -72,6 +72,7 @@
     <Compile Include="ConvinceLogic.cs" />
     <Compile Include="ConvinceSpell.cs" />
     <Compile Include="FrontRowSelector.cs" />
+    <Compile Include="GameOverLogic.cs" />
     <Compile Include="IdleBattleLogic.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="InputBuffer.cs" />

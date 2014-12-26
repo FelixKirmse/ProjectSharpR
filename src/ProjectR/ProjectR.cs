@@ -1,6 +1,7 @@
-﻿using System;
+﻿using libtcod;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
+using ProjectR.Interfaces.Logic;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
 
@@ -9,9 +10,10 @@ namespace ProjectR
     public class ProjectR : IProjectR
     {
         private static bool _exitGame;
-        private IRModel _model;
-        private IStateMachineSynchronizer _stateSyncer;
-        private IConsoleView _view;
+        private readonly IRModel _model;
+        private readonly IStateMachineSynchronizer _stateSyncer;
+        private readonly IConsoleView _view;
+        private readonly IRLogic _logic;
 
         public ProjectR()
         {
@@ -21,16 +23,27 @@ namespace ProjectR
             _logic = Factories.RFactory.CreateLogic();
 
             ExitHelper.ExitAction = Exit;
+            _model.LoadResources();
         }
 
         public void SetupGameStructure()
         {
-            throw new NotImplementedException();
+            _stateSyncer.AddSynchronizeable(_view);
+            _stateSyncer.AddSynchronizeable(_logic);
+            _view.InitializeStates();
+            _logic.InitializeStates();
+            _model.AddObserver(_view);
+            _stateSyncer.Sync(0);
         }
 
         public void RunGame()
         {
-            throw new NotImplementedException();
+            _model.CommitChanges();
+            do
+            {
+                TCODConsole.checkForKeypress((int) TCODKeyStatus.KeyPressed);
+                _logic.RunCurrentState();
+            } while (!_exitGame && !TCODConsole.isWindowClosed());
         }
 
         public static void Exit()

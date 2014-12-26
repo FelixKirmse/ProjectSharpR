@@ -1,6 +1,6 @@
 ﻿namespace ProjectR.Interfaces
 {
-    public interface IStateMachine
+    public interface IStateMachine : ISynchronizeable<int>
     {
         IState CurrentState { get; }
         void Next();

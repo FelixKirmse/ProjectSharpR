@@ -53,7 +53,6 @@ namespace ProjectR.Logic
         private int _availableMasteryPoints;
         private IMenuController _controller;
         private IMenuItem _createChar;
-        private bool _enteringName;
         private IInputBuffer _inputBuffer;
         private IMenuItem _name;
         private IMenuItem _normalAttack;
@@ -192,7 +191,6 @@ namespace ProjectR.Logic
             _DRKValue = 50;
             _GRNValue = 50;
             _LGTValue = 50;
-            _enteringName = false;
             _availableMasteryPoints = 550;
 
             _race.SetLeftAction(() => SwitchRace(-1));
@@ -437,6 +435,15 @@ namespace ProjectR.Logic
             _menu.RightAction();
         }
 
+        public void Sync(int value)
+        {
+            _menu.Sync(value);
+        }
+
+        public void SetSynchronizer(ISynchronizer<int> syncer)
+        {
+            _menu.SetSynchronizer(syncer);
+        }
         #endregion
     }
 }

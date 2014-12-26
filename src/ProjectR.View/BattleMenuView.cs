@@ -100,6 +100,16 @@ namespace ProjectR.View
         {
             return _stateMachine.GetCurrentStateNumber();
         }
+
+        public void Sync(int value)
+        {
+            _stateMachine.Sync(value);
+        }
+
+        public void SetSynchronizer(ISynchronizer<int> syncer)
+        {
+            _stateMachine.SetSynchronizer(syncer);
+        }
         #endregion
     }
 }

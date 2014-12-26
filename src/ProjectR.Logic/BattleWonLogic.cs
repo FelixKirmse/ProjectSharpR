@@ -45,14 +45,17 @@ namespace ProjectR.Logic
             _battleOver = true;
         }
 
-        public bool BattleOver()
+        public bool IsBattleOver
         {
-            var result = _battleOver;
-            if (result)
+            get
             {
-                _battleOver = false;
+                var result = _battleOver;
+                if (result)
+                {
+                    _battleOver = false;
+                }
+                return result;
             }
-            return result;
         }
     }
 }

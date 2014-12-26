@@ -153,6 +153,16 @@ namespace ProjectR.Logic
         {
             _menu.RightAction();
         }
+
+        public void Sync(int value)
+        {
+            _menu.Sync(value);
+        }
+
+        public void SetSynchronizer(ISynchronizer<int> syncer)
+        {
+            _menu.SetSynchronizer(syncer);
+        }
         #endregion
     }
 }
