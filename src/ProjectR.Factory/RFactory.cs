@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces;
+﻿using System;
+using ProjectR.Interfaces;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Logic;
@@ -52,6 +53,21 @@ namespace ProjectR.Factory
         public IRLogic CreateLogic()
         {
             return new RLogic();
+        }
+
+        public IMenu CreateMenu()
+        {
+            return new Menu();
+        }
+
+        public IMenuItem CreateMenuItem(string name)
+        {
+            return new MenuItem(name);
+        }
+
+        public IMenuItem CreateMenuItem(string name, Action callBack)
+        {
+            return new MenuItem(name, callBack);
         }
     }
 }

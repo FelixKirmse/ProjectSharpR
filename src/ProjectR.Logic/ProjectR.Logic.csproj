@@ -62,7 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Input.cs" />
+    <Compile Include="InputBuffer.cs" />
     <Compile Include="LogicState.cs" />
+    <Compile Include="MainMenuLogic.cs" />
+    <Compile Include="MenuController.cs" />
+    <Compile Include="PreGameLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RInput.cs" />
     <Compile Include="RLogic.cs" />

@@ -14,7 +14,7 @@ namespace ProjectR.Model
             _model = model;
         }
 
-        public IList<ISpell> GetSignatureSpells { get; private set; }
+        public IList<ISpell> SignatureSpells { get; private set; }
 
         public void LoadSignatureSpells()
         {

@@ -71,6 +71,7 @@
     <Compile Include="Helper\RandomContainer.cs" />
     <Compile Include="Helper\RHelper.cs" />
     <Compile Include="IGenerator.cs" />
+    <Compile Include="INameHolder.cs" />
     <Compile Include="IObserveable.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="ISpell.cs" />
@@ -80,6 +81,8 @@
     <Compile Include="ISynchronizer.cs" />
     <Compile Include="Logic\Actions.cs" />
     <Compile Include="Logic\IInput.cs" />
+    <Compile Include="Logic\IInputBuffer.cs" />
+    <Compile Include="Logic\IMenuController.cs" />
     <Compile Include="Logic\IRInput.cs" />
     <Compile Include="Logic\IRLogic.cs" />
     <Compile Include="MapGen\IMapGenerator.cs" />

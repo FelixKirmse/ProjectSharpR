@@ -2,9 +2,8 @@ using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Interfaces.Model
 {
-    public interface IArcheType
+    public interface IArcheType : INameHolder
     {
-        string Name { get; }
         bool Block { get; set; }
 
         double GetBase(Stat stat);

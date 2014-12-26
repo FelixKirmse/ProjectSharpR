@@ -4,10 +4,9 @@ using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Interfaces
 {
-    public interface ISpell
+    public interface ISpell : INameHolder
     {
         TargetType TargetType { get; }
-        string Name { get; }
         string Description { get; }
         bool IsSupportSpell { get; }
         double Delay { get; }
