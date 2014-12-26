@@ -80,6 +80,7 @@
     <Compile Include="ISynchronizeable.cs" />
     <Compile Include="ISynchronizer.cs" />
     <Compile Include="Logic\Actions.cs" />
+    <Compile Include="Logic\ICharacterSpellSelect.cs" />
     <Compile Include="Logic\IInput.cs" />
     <Compile Include="Logic\IInputBuffer.cs" />
     <Compile Include="Logic\IMenuController.cs" />
