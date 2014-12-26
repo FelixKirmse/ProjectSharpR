@@ -66,6 +66,7 @@
     <Compile Include="BackRowSelector.cs" />
     <Compile Include="BattleLogic.cs" />
     <Compile Include="BattleMenuLogic.cs" />
+    <Compile Include="BattleWonLogic.cs" />
     <Compile Include="CharacterSpellSelect.cs" />
     <Compile Include="ConsequenceBattleLogic.cs" />
     <Compile Include="ConvinceLogic.cs" />

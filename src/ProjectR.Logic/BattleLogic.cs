@@ -12,6 +12,8 @@ namespace ProjectR.Logic
         public BattleLogic()
         {
             _stateMachine = new StateMachine();
+            _battleWonLogic = new BattleWonLogic();
+            _gameOverLogic = new GameOverLogic();
         }
 
         public override void InitializeImpl()
