@@ -78,6 +78,7 @@
     <Compile Include="RInput.cs" />
     <Compile Include="RLogic.cs" />
     <Compile Include="TargetInfo.cs" />
+    <Compile Include="TargetSelect.cs" />
     <Compile Include="TitleScreenLogic.cs" />
   </ItemGroup>
   <ItemGroup>
