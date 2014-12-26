@@ -33,6 +33,7 @@ namespace ProjectR.Interfaces.Model
         bool TakesTurn { get; }
 
         string AfflictedBy { get; }
+        double HPPercentage { get; }
 
         ICharacter Clone();
 

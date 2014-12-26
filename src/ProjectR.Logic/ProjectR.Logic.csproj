@@ -67,6 +67,8 @@
     <Compile Include="BattleLogic.cs" />
     <Compile Include="BattleMenuLogic.cs" />
     <Compile Include="CharacterSpellSelect.cs" />
+    <Compile Include="ConvinceLogic.cs" />
+    <Compile Include="ConvinceSpell.cs" />
     <Compile Include="FrontRowSelector.cs" />
     <Compile Include="IdleBattleLogic.cs" />
     <Compile Include="Input.cs" />
