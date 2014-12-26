@@ -62,7 +62,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionSelect.cs" />
     <Compile Include="BattleLogic.cs" />
+    <Compile Include="BattleMenuLogic.cs" />
     <Compile Include="CharacterSpellSelect.cs" />
     <Compile Include="IdleBattleLogic.cs" />
     <Compile Include="Input.cs" />
