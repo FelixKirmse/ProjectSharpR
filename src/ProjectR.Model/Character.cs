@@ -28,6 +28,11 @@ namespace ProjectR.Model
         public event CharacterBooleanEventDelegate ApplyingBuff = delegate { };
         public event CharacterBooleanEventDelegate TurnCounterUpdating = delegate { };
 
+        public void FireAttackingEvent(ICharacter character, ICharacter target, ISpell spell, ref double damage, ref double modifier)
+        {
+            Attacking(character, target, spell, ref damage, ref modifier);
+        }
+
         #endregion
 
         public const int XPRequiredForLvlUp = 2000;
