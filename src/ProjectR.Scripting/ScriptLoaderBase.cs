@@ -24,18 +24,25 @@ namespace ProjectR.Scripting
         {
             var totalCount = ScriptCount;
             var currentCount = 0;
-            return from file in Directory.EnumerateFiles(ScriptPath).Select(x => new FileInfo(x))
-                   where file.Extension == ".cs"
-                   select LoadScript(file, updateAction, totalCount, ++currentCount);
+
+            var resultList = new List<T>();
+            foreach (var file in Directory.EnumerateFiles(ScriptPath).Select(x => new FileInfo(x)).Where(x => x.Extension == ".cs"))
+            {
+                resultList.AddRange(LoadScript(file, updateAction, totalCount, ++currentCount));
+            }
+
+            return resultList;
         }
 
-        protected virtual T LoadScript(FileSystemInfo file, UpdateLoadResourcesDelegate updateAction, int totalCount, int currentCount)
+        protected virtual IEnumerable<T> LoadScript(FileSystemInfo file, UpdateLoadResourcesDelegate updateAction, int totalCount, int currentCount)
         {
             updateAction(string.Format("Compiling: {0}", file.Name), currentCount, totalCount);
-            var helper = new AsmHelper(CSScript.Load(file.ToString(), null, true));
+            var assembly = CSScript.Load(file.ToString(), null, true);
+            var helper = new AsmHelper(assembly);
 
-            var race = (T) helper.CreateObject(string.Format("ProjectR.Scripting.{0}", Path.GetFileNameWithoutExtension(file.Name)));
-            return race;
+            return assembly.ExportedTypes
+                           .Where(x => x.GetInterfaces().Contains(typeof (T)))
+                           .Select(source => (T) helper.CreateObject(source.FullName));
         }
     }
 }

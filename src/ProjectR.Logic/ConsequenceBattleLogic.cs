@@ -72,14 +72,14 @@ namespace ProjectR.Logic
             switch (targetType)
             {
                 case TargetType.Single:
-                    DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, _targetInfo.Target),
+                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _targetInfo.Target),
                         _targetInfo.Target);
                     log.LogAction(_currentAttacker, _targetInfo.Target, _targetInfo.Spell);
                     _targetInfo.Target.IsMarked = true;
                     break;
 
                 case TargetType.Myself:
-                    DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, _currentAttacker), _currentAttacker);
+                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _currentAttacker), _currentAttacker);
                     log.LogAction(_currentAttacker, _currentAttacker, _targetInfo.Spell);
                     break;
 
@@ -94,7 +94,7 @@ namespace ProjectR.Logic
                     var targetRow = targetIsPlayer ? frontRow : enemies;
                     foreach (var character in targetRow)
                     {
-                        DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, character), character);
+                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, character), character);
                         log.LogAction(_currentAttacker, character, _targetInfo.Spell);
                         character.IsMarked = true;
                     }
@@ -103,7 +103,7 @@ namespace ProjectR.Logic
 
                 case TargetType.Decaying:
                 {
-                    DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, _targetInfo.Target),
+                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _targetInfo.Target),
                         _targetInfo.Target);
                     log.LogAction(_currentAttacker, _targetInfo.Target, _targetInfo.Spell);
                     _targetInfo.Target.IsMarked = true;
@@ -120,14 +120,14 @@ namespace ProjectR.Logic
 
                     for (int i = targetIndex - 1, mod = 2; i >= 0; --i, ++mod)
                     {
-                        DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
+                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
                         log.LogAction(_currentAttacker, targetRow[i], _targetInfo.Spell);
                         targetRow[i].IsMarked = true;
                     }
 
                     for (int i = targetIndex + 1, mod = 2; i < targetRow.Count; ++i, ++mod)
                     {
-                        DealDamage(_targetInfo.Spell.DamageCalculation(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
+                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
                         log.LogAction(_currentAttacker, targetRow[i], _targetInfo.Spell);
                         targetRow[i].IsMarked = true;
                     }

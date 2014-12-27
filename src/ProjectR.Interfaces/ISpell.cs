@@ -15,7 +15,7 @@ namespace ProjectR.Interfaces
         SpellType SpellType { get; }
         IScriptHelper ScriptHelper { get; set; }
 
-        double DamageCalculation(ICharacter attacker, ICharacter defender, double specialModifier = 1d);
+        double SpellEffect(ICharacter attacker, ICharacter defender, double specialModifier = 1d);
         double GetMPCost(ICharacter caster);
         void ForceReload();
     }

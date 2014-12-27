@@ -17,7 +17,7 @@ namespace ProjectR.Logic
         public SpellType SpellType { get { return SpellType.Pure; } }
         public IScriptHelper ScriptHelper { get; set; }
 
-        public double DamageCalculation(ICharacter attacker, ICharacter defender, double specialModifier = 1)
+        public double SpellEffect(ICharacter attacker, ICharacter defender, double specialModifier = 1)
         {
             return 0d;
         }
