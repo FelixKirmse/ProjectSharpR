@@ -23,6 +23,7 @@ namespace ProjectR.Model
             SkillsetFactory = new SkillsetFactory(this);
             SignatureSpellFactory = new SignatureSpellFactory(this);
             NormalAttackFactory = new NormalAttackFactory(this);
+            LoadResourcesModel = new LoadResourcesModel();
         }
 
         public string PlayerName { get; set; }
@@ -43,6 +44,7 @@ namespace ProjectR.Model
         public ISignatureSpellFactory SignatureSpellFactory { get; private set; }
         public INormalAttackFactory NormalAttackFactory { get; private set; }
         public IMobPackManager MobPackManager { get; private set; }
+        public ILoadResourcesModel LoadResourcesModel { get; private set; }
 
         public void CommitChanges()
         {

@@ -24,6 +24,8 @@ namespace ProjectR.Interfaces.View
 
         void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1f, float bgAlpha = 1f);
 
+        TCODConsole UnderlyingConsole { get; }
+
         string GetColorControlString(TCODColor colour);
 
         void DrawBorder();

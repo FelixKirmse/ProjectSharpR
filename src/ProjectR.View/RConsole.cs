@@ -130,11 +130,11 @@ namespace ProjectR.View
 
         public void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1, float bgAlpha = 1)
         {
-            var console = src as RConsole;
-            Debug.Assert(console != null, "console != null");
-            TCODConsole.blit(console._console, srcRect.X, srcRect.Y, srcRect.Width, srcRect.Height, _console, dstX, dstY,
+            TCODConsole.blit(src.UnderlyingConsole, srcRect.X, srcRect.Y, srcRect.Width, srcRect.Height, _console, dstX, dstY,
                 fgAlpha, bgAlpha);
         }
+
+        public TCODConsole UnderlyingConsole { get { return _console; } }
 
         public void SetBackgroundColour(Rectangle area, TCODColor colour)
         {

@@ -12,6 +12,7 @@ namespace ProjectR.Logic
 
         public void InitializeStates()
         {
+            AddState(new LoadResourcesLogic());
             AddState(new TitleScreenLogic());
             AddState(new MainMenuLogic());
             AddState(new PreGameLogic());

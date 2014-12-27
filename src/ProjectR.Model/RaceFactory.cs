@@ -6,15 +6,14 @@ using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class RaceFactory : IRaceFactory
+    public class RaceFactory : FactoryBase, IRaceFactory
     {
-        private readonly IModel _model;
         private readonly Dictionary<string, List<IAffliction>> _passives;
         private readonly Dictionary<string, int> _stringIndexMap;
 
         public RaceFactory(IModel model)
         {
-            _model = model;
+            Model = model;
             Templates = new List<IRaceTemplate>();
             _stringIndexMap = new Dictionary<string, int>();
             _passives = new Dictionary<string, List<IAffliction>>();
@@ -24,13 +23,14 @@ namespace ProjectR.Model
 
         public void LoadTemplates()
         {
-            Templates = RHelper.ScriptLoader.LoadRaceTemplates().ToList();
+            Model.LoadResourcesModel.OverarchingAction = "Loading Races";
+            Templates = RHelper.ScriptLoader.LoadRaceTemplates(UpdateModel).ToList();
 
             foreach (var raceTemplate in Templates)
             {
                 _passives.Add(raceTemplate.Name, new List<IAffliction>());
 
-                _passives[raceTemplate.Name].AddRange(raceTemplate.Passives.Select(x => _model.AfflictionFactory.GetAffliction(x)));
+                _passives[raceTemplate.Name].AddRange(raceTemplate.Passives.Select(x => Model.AfflictionFactory.GetAffliction(x)));
             }
         }
 

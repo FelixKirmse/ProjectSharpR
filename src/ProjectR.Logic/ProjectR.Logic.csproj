@@ -76,6 +76,7 @@
     <Compile Include="IdleBattleLogic.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="InputBuffer.cs" />
+    <Compile Include="LoadResourcesLogic.cs" />
     <Compile Include="LogicState.cs" />
     <Compile Include="MainMenuLogic.cs" />
     <Compile Include="MenuController.cs" />

@@ -14,15 +14,18 @@ namespace ProjectR.Logic
         {
             _mainMenuStateMachine = new StateMachine();
             _menuController = new MenuController();
+        }
 
+        public override void InitializeImpl()
+        {
             AddState(Model.MenuModel.MainMenu);
             AddState(Model.MenuModel.OptionsMenu);
 
             var mainMenu = Model.MenuModel.MainMenu;
-            mainMenu.GetMenuItem((int) MainMenuOptions.Quit).CallBack = ExitHelper.Exit;
-            mainMenu.GetMenuItem((int) MainMenuOptions.Options).CallBack = Next;
-            mainMenu.GetMenuItem((int) MainMenuOptions.LoadGame).IsDisabled = true;
-            mainMenu.GetMenuItem((int) MainMenuOptions.NewGame).CallBack = Master.Next;
+            mainMenu.GetMenuItem((int)MainMenuOptions.Quit).CallBack = ExitHelper.Exit;
+            mainMenu.GetMenuItem((int)MainMenuOptions.Options).CallBack = Next;
+            mainMenu.GetMenuItem((int)MainMenuOptions.LoadGame).IsDisabled = true;
+            mainMenu.GetMenuItem((int)MainMenuOptions.NewGame).CallBack = Master.Next;
         }
 
         private void CancelAction()
@@ -39,6 +42,8 @@ namespace ProjectR.Logic
 
         public override void Activate()
         {
+            Initialize();
+
             Model.MenuModel.MainMenu.Activate();
             SetCurrentState(0);
             Model.MenuModel.ActiveMenu = CurrentState as IMenu;

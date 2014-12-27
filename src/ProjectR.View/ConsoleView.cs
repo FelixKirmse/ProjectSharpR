@@ -24,6 +24,7 @@ namespace ProjectR.View
 
         public void InitializeStates()
         {
+            AddState(new LoadResourcesView());
             AddState(new TitleScreenView());
             AddState(new MainMenuView());
             AddState(new PreGameView());

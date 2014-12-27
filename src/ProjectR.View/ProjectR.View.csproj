@@ -75,6 +75,7 @@
     <Compile Include="ConvinceDrawer.cs" />
     <Compile Include="EnemyBattleFrame.cs" />
     <Compile Include="InitializeableModelStateWithConsole.cs" />
+    <Compile Include="LoadResourcesView.cs" />
     <Compile Include="MainMenuView.cs" />
     <Compile Include="MapDrawer.cs" />
     <Compile Include="MenuDrawer.cs" />

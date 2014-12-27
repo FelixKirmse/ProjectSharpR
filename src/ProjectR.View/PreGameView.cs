@@ -145,6 +145,10 @@ namespace ProjectR.View
             _console.Blit(src, srcRect, dstX, dstY, fgAlpha, bgAlpha);
         }
 
+        public TCODConsole UnderlyingConsole
+        {
+            get { return _console.UnderlyingConsole; } }
+
         public string GetColorControlString(TCODColor colour)
         {
             return _console.GetColorControlString(colour);

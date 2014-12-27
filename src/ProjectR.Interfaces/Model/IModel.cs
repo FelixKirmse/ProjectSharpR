@@ -1,3 +1,5 @@
+using System;
+
 namespace ProjectR.Interfaces.Model
 {
     public interface IModel
@@ -21,6 +23,7 @@ namespace ProjectR.Interfaces.Model
         ISignatureSpellFactory SignatureSpellFactory { get; }
         INormalAttackFactory NormalAttackFactory { get; }
         IMobPackManager MobPackManager { get; }
+        ILoadResourcesModel LoadResourcesModel { get; }
 
         void CommitChanges();
         void LoadResources();

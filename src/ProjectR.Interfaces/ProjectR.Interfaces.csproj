@@ -114,6 +114,7 @@
     <Compile Include="Model\ICharacter.cs" />
     <Compile Include="Model\ICharacterEvents.cs" />
     <Compile Include="Model\ICharacterFactory.cs" />
+    <Compile Include="Model\ILoadResourcesModel.cs" />
     <Compile Include="Model\IMap.cs" />
     <Compile Include="Model\IMenu.cs" />
     <Compile Include="Model\IMenuItem.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Model\Stats\StatHelper.cs" />
     <Compile Include="Model\Stats\StatType.cs" />
     <Compile Include="Model\TargetType.cs" />
+    <Compile Include="Model\UpdateLoadResourcesDelegate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellType.cs" />
     <Compile Include="StateMachine.cs" />

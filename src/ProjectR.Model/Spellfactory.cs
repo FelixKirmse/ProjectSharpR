@@ -2,28 +2,26 @@
 using System.IO;
 using System.Linq;
 using ProjectR.Interfaces;
-using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class Spellfactory : ISpellFactory
+    public class Spellfactory : FactoryBase, ISpellFactory
     {
-        private readonly IModel _model;
-
         private readonly Dictionary<string, ISpell> _nameMap;
         private List<ISpell> _spells;
 
         public Spellfactory(IModel model)
         {
-            _model = model;
+            Model = model;
             _nameMap = new Dictionary<string, ISpell>();
         }
 
         public void LoadSpells()
         {
-            _spells = RHelper.ScriptLoader.LoadSpells().ToList();
+            Model.LoadResourcesModel.OverarchingAction = "Loading Spells";
+            _spells = RHelper.ScriptLoader.LoadSpells(UpdateModel).ToList();
 
             foreach (var spell in _spells)
             {

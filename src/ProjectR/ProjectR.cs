@@ -23,7 +23,6 @@ namespace ProjectR
             _logic = Factories.RFactory.CreateLogic();
 
             ExitHelper.ExitAction = Exit;
-            _model.LoadResources();
         }
 
         public void SetupGameStructure()
