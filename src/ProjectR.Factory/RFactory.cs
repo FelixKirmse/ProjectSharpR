@@ -36,11 +36,6 @@ namespace ProjectR.Factory
             return new MapGenerator(map, mobPackManager);
         }
 
-        public ISpell CreateScriptedSpell(IModel model, string file)
-        {
-            return new Spell(model, file);
-        }
-
         public IAffliction CreateScriptedAffliction(IModel model, string file)
         {
             return new Affliction(model, file);

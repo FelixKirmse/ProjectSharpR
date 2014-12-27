@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
@@ -12,6 +13,7 @@ namespace ProjectR.Interfaces
         double Delay { get; }
         IList<EleMastery> Masteries { get; }
         SpellType SpellType { get; }
+        IScriptHelper ScriptHelper { get; set; }
 
         double DamageCalculation(ICharacter attacker, ICharacter defender, double specialModifier = 1d);
         double GetMPCost(ICharacter caster);

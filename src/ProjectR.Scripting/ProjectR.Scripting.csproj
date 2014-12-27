@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affliction.cs" />
+    <Compile Include="SpellScriptLoader.cs" />
     <None Include="content\scripts\races\Human.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -122,7 +123,6 @@
     <Compile Include="ScriptHelper.cs" />
     <Compile Include="ScriptLoader.cs" />
     <Compile Include="ScriptLoaderBase.cs" />
-    <Compile Include="Spell.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectR.Interfaces\ProjectR.Interfaces.csproj">

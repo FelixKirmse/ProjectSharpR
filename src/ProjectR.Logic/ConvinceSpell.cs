@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProjectR.Interfaces;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
@@ -14,6 +15,8 @@ namespace ProjectR.Logic
         public double Delay { get { return .5d; } }
         public IList<EleMastery> Masteries { get { return new EleMastery[0]; } }
         public SpellType SpellType { get { return SpellType.Pure; } }
+        public IScriptHelper ScriptHelper { get; set; }
+
         public double DamageCalculation(ICharacter attacker, ICharacter defender, double specialModifier = 1)
         {
             return 0d;

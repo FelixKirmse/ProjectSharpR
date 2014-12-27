@@ -6,5 +6,6 @@ namespace ProjectR.Interfaces.Helper
     public interface IScriptLoader
     {
         IEnumerable<IRaceTemplate> LoadRaceTemplates();
+        IEnumerable<ISpell> LoadSpells();
     }
 }
