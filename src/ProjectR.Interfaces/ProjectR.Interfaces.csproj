@@ -66,8 +66,11 @@
     <Compile Include="Factories\IRFactory.cs" />
     <Compile Include="Helper\BiDictionary.cs" />
     <Compile Include="Helper\ExitHelper.cs" />
+    <Compile Include="Helper\IRaceDictionary.cs" />
     <Compile Include="Helper\IScriptHelper.cs" />
+    <Compile Include="Helper\IScriptLoader.cs" />
     <Compile Include="Helper\Pair.cs" />
+    <Compile Include="Helper\RaceDictionary.cs" />
     <Compile Include="Helper\RandomContainer.cs" />
     <Compile Include="Helper\RHelper.cs" />
     <Compile Include="IGenerator.cs" />

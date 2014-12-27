@@ -25,6 +25,7 @@ namespace ProjectR.Interfaces.Model.Stats
         SLW = 20, // Slow -- OBSOLETE
         STD = 21, // Statdrop -- OBSOLETE
         DTH = 22, // Instant-Death
-        SIL = 23 // Silence
+        SIL = 23, // Silence
+        Count = 24 // Useful for Loops
     }
 }

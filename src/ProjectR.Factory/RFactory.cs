@@ -26,6 +26,7 @@ namespace ProjectR.Factory
         {
             var model = new RModel();
             RHelper.ScriptHelper = new ScriptHelper { Model = model };
+            RHelper.ScriptLoader = new ScriptLoader();
             ModelState.Model = model;
             return model;
         }

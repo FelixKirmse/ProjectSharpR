@@ -1,11 +1,14 @@
-﻿using ProjectR.Interfaces.Model.Stats;
+﻿using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 
 namespace ProjectR.Interfaces.Model
 {
     public interface IRaceTemplate
     {
-        double this[Stat stat] { get; set; }
-        string Description { get; set; }
-        string Name { get; set; }
+        string Description { get; }
+        string Name { get; }
+
+        IList<string> Passives { get; }
+        IRaceDictionary Stats { get; } 
     }
 }

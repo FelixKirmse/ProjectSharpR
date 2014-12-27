@@ -58,8 +58,8 @@ namespace ProjectR.Model
 
             for (var stat = Stat.HP; stat <= Stat.SIL; ++stat)
             {
-                newStats[stat][StatType.Base] *= RaceTemplate[stat];
-                newStats[stat][StatType.Growth] *= RaceTemplate[stat];
+                newStats[stat][StatType.Base] *= RaceTemplate.Stats[stat];
+                newStats[stat][StatType.Growth] *= RaceTemplate.Stats[stat];
             }
 
             newStats.XPMultiplier = 1.1d;

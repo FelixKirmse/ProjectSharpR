@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
@@ -23,7 +24,7 @@ namespace ProjectR.Model
 
         public void LoadTemplates()
         {
-            throw new NotImplementedException();
+            Templates = RHelper.ScriptLoader.LoadRaceTemplates().ToList();
         }
 
         public IRaceTemplate GetTemplate(string name)

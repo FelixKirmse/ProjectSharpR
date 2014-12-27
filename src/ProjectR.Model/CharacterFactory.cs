@@ -97,8 +97,8 @@ namespace ProjectR.Model
         {
             for (var stat = Stat.HP; stat <= Stat.SIL; ++stat)
             {
-                stats[stat][StatType.Base] *= rTemplate[stat];
-                stats[stat][StatType.Growth] *= rTemplate[stat];
+                stats[stat][StatType.Base] *= rTemplate.Stats[stat];
+                stats[stat][StatType.Growth] *= rTemplate.Stats[stat];
             }
         }
     }

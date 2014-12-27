@@ -13,6 +13,7 @@ namespace ProjectR.Interfaces.Helper
         };
 
         public static IScriptHelper ScriptHelper { get; set; }
+        public static IScriptLoader ScriptLoader { get; set; }
 
         public static IList<T> ShuffleList<T>(this IList<T> list)
         {
