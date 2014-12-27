@@ -25,6 +25,13 @@ namespace ProjectR.Model
         public void LoadTemplates()
         {
             Templates = RHelper.ScriptLoader.LoadRaceTemplates().ToList();
+
+            foreach (var raceTemplate in Templates)
+            {
+                _passives.Add(raceTemplate.Name, new List<IAffliction>());
+
+                _passives[raceTemplate.Name].AddRange(raceTemplate.Passives.Select(x => _model.AfflictionFactory.GetAffliction(x)));
+            }
         }
 
         public IRaceTemplate GetTemplate(string name)
