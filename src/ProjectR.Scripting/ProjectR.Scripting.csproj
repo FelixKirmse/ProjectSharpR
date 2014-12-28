@@ -61,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affliction.cs" />
+    <Compile Include="ScriptExtensions.cs" />
+    <Compile Include="SpellBase.cs" />
+    <Compile Include="SpellScriptBase.cs" />
     <Compile Include="SpellScriptLoader.cs" />
     <None Include="content\scripts\races\Human.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

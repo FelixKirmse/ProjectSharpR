@@ -16,19 +16,14 @@ namespace ProjectR.Logic
         public IList<EleMastery> Masteries { get { return new EleMastery[0]; } }
         public SpellType SpellType { get { return SpellType.Pure; } }
         public IScriptHelper ScriptHelper { get; set; }
-
-        public double SpellEffect(ICharacter attacker, ICharacter defender, double specialModifier = 1)
-        {
-            return 0d;
-        }
-
-        public double GetMPCost(ICharacter caster)
-        {
-            return 0d;
-        }
-
-        public void ForceReload()
+        public double MPCost { get { return 0d; } }
+        public void Cast(ICharacter caster, IList<ICharacter> targets)
         {
         }
+         
+        public void Cast(ICharacter caster, ICharacter target, double decayMod = 1)
+        {
+        }
+
     }
 }

@@ -54,7 +54,7 @@ namespace ProjectR.Logic
                         Master.SetCurrentState((int) BattleMenuState.Execute);
                     }
                 });
-                item.IsDisabled = spell.GetMPCost(_battleModel.CurrentAttacker) > currentMP + 1;
+                item.IsDisabled = spell.MPCost >= currentMP + 1;
                 AddState(item);
             }
 

@@ -14,9 +14,9 @@ namespace ProjectR.Interfaces
         IList<EleMastery> Masteries { get; }
         SpellType SpellType { get; }
         IScriptHelper ScriptHelper { get; set; }
+        double MPCost { get; }
 
-        double SpellEffect(ICharacter attacker, ICharacter defender, double specialModifier = 1d);
-        double GetMPCost(ICharacter caster);
-        void ForceReload();
+        void Cast(ICharacter caster, IList<ICharacter> targets);
+        void Cast(ICharacter caster, ICharacter target, double decayMod = 1d);
     }
 }

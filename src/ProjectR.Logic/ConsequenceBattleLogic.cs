@@ -44,7 +44,8 @@ namespace ProjectR.Logic
 
         private void Calculate()
         {
-            _currentAttacker.UseMP(_targetInfo.Spell.GetMPCost(_currentAttacker));
+            _currentAttacker.UseMP(_targetInfo.Spell.MPCost);
+            _currentAttacker.TurnCounter = _currentAttacker.TimeToAction * _targetInfo.Spell.Delay;
             var targetIsEnemy = _battleModel.TargetIsEnemy;
             if (!targetIsEnemy)
             {
@@ -67,44 +68,48 @@ namespace ProjectR.Logic
                 enemyHPBefore[i] = enemies[i].CurrentHP;
             }
 
-            var targetType = _targetInfo.Spell.TargetType;
+            var spell = _targetInfo.Spell;
+            var targetType = spell.TargetType;
 
             switch (targetType)
             {
                 case TargetType.Single:
-                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _targetInfo.Target),
-                        _targetInfo.Target);
+                    spell.Cast(_currentAttacker, _targetInfo.Target);
+                    ResolveDamage(_targetInfo.Target);
+                    ResolveDamage(_currentAttacker);
                     log.LogAction(_currentAttacker, _targetInfo.Target, _targetInfo.Spell);
                     _targetInfo.Target.IsMarked = true;
                     break;
 
                 case TargetType.Myself:
-                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _currentAttacker), _currentAttacker);
+                    spell.Cast(_currentAttacker, _currentAttacker);
+                    ResolveDamage(_currentAttacker);
                     log.LogAction(_currentAttacker, _currentAttacker, _targetInfo.Spell);
                     break;
 
                 case TargetType.Allies:
                 case TargetType.Enemies:
                 {
-
-
                     var attackerIsEnemy = _battleModel.AttackerIsEnemy;
                     var targetIsPlayer = (attackerIsEnemy && targetType != TargetType.Allies) ||
                                          (!attackerIsEnemy && targetType == TargetType.Allies);
                     var targetRow = targetIsPlayer ? frontRow : enemies;
+                    spell.Cast(_currentAttacker, targetRow);
+
                     foreach (var character in targetRow)
                     {
-                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, character), character);
+                        ResolveDamage(character);
                         log.LogAction(_currentAttacker, character, _targetInfo.Spell);
                         character.IsMarked = true;
                     }
+                    ResolveDamage(_currentAttacker);
                     break;
                 }
 
                 case TargetType.Decaying:
                 {
-                    DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, _targetInfo.Target),
-                        _targetInfo.Target);
+                    spell.Cast(_currentAttacker, _targetInfo.Target);
+                    ResolveDamage(_targetInfo.Target);
                     log.LogAction(_currentAttacker, _targetInfo.Target, _targetInfo.Spell);
                     _targetInfo.Target.IsMarked = true;
 
@@ -120,14 +125,16 @@ namespace ProjectR.Logic
 
                     for (int i = targetIndex - 1, mod = 2; i >= 0; --i, ++mod)
                     {
-                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
+                        spell.Cast(_currentAttacker, targetRow[i], mod);
+                        ResolveDamage(targetRow[i], mod);
                         log.LogAction(_currentAttacker, targetRow[i], _targetInfo.Spell);
                         targetRow[i].IsMarked = true;
                     }
 
                     for (int i = targetIndex + 1, mod = 2; i < targetRow.Count; ++i, ++mod)
                     {
-                        DealDamage(_targetInfo.Spell.SpellEffect(_currentAttacker, targetRow[i], mod), targetRow[i], mod);
+                        spell.Cast(_currentAttacker, targetRow[i], mod);
+                        ResolveDamage(targetRow[i], mod);
                         log.LogAction(_currentAttacker, targetRow[i], _targetInfo.Spell);
                         targetRow[i].IsMarked = true;
                     }
@@ -176,8 +183,9 @@ namespace ProjectR.Logic
             }
         }
 
-        private void DealDamage(double damage, ICharacter target, double mod = 1d)
+        private void ResolveDamage(ICharacter target, double mod = 1d)
         {
+            var damage = _targetInfo.Spell.ScriptHelper.GetDamageTaken(target);
             _currentAttacker.FireAttackingEvent(_currentAttacker, target, _targetInfo.Spell, ref damage, ref mod);
 
             if (damage < 0d)

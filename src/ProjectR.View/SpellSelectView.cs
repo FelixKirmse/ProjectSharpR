@@ -46,7 +46,7 @@ namespace ProjectR.View
 
                 PrintString(CostX, StartY + OffSetY * i, CostFormat, TCODAlignment.RightAlignment,
                     item.IsSelected ? redControl : item.IsDisabled ? greyControl : whiteControl,
-                    (int) spell.GetMPCost(Model.BattleModel.CurrentAttacker), GetStopControl());
+                    (int) spell.MPCost, GetStopControl());
 
                 PrintString(DelayX, StartY + OffSetY * i, DelayFormat, TCODAlignment.RightAlignment,
                     item.IsSelected ? redControl : item.IsDisabled ? greyControl : whiteControl,

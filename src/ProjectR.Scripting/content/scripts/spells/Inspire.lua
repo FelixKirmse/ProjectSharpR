@@ -7,7 +7,7 @@ function GetName()
 end
 
 function GetDescription()
-    return "Inspire target, slightly rasing their offense. Also restores some of casters MP."
+    return "Inspire target, slightly raising their offense. Also restores some of casters MP."
 end
 
 function IsSupportSpell()
