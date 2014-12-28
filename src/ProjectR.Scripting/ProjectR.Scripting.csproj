@@ -64,17 +64,42 @@
     <None Include="content\scripts\spells\5ExaWattsXterminationLaserX1337.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Compile Include="content\scripts\spells\AcidicSea.cs" />
-    <Compile Include="content\scripts\spells\AlphaSlash.cs" />
-    <Compile Include="content\scripts\spells\AmazingBitchSlapX11.cs" />
-    <Compile Include="content\scripts\spells\Anomaly.cs" />
-    <Compile Include="content\scripts\spells\Attack.cs" />
-    <Compile Include="content\scripts\spells\Backstab.cs" />
-    <Compile Include="content\scripts\spells\BalanceIsKey.cs" />
-    <Compile Include="content\scripts\spells\BalanceStrike.cs" />
-    <Compile Include="content\scripts\spells\BarrierOfFaith.cs" />
-    <Compile Include="content\scripts\spells\Bash.cs" />
-    <Compile Include="content\scripts\spells\EightHeadedRadiantHydra.cs" />
+    <None Include="content\scripts\spells\AcidicSea.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\AlphaSlash.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\AmazingBitchSlapX11.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Anomaly.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Attack.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Backstab.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\BalanceIsKey.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\BalanceStrike.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\BarrierOfFaith.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Bash.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\BeastlySmash.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\EightHeadedRadiantHydra.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="SpellBase.cs" />
     <Compile Include="SpellScriptBase.cs" />
