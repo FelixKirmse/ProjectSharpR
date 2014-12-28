@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces.Helper;
+﻿using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
@@ -13,14 +14,22 @@ namespace ProjectR.Scripting
             ScriptHelper.DealDamage(target, damage);
         }
 
+        protected void DealDamage(IList<ICharacter> targets, double damage)
+        {
+            foreach (var target in targets)
+            {
+                DealDamage(target, damage);
+            }
+        }
+
         protected void Heal(ICharacter target, double healing)
         {
             ScriptHelper.Heal(target, healing);
         }
 
-        protected void TryToApplyDebuff(DebuffResistance type, int applyChance)
+        protected void TryToApplyDebuff(ICharacter target, DebuffResistance type, int applyChance)
         {
-            ScriptHelper.TryToApplyDebuff(type, applyChance);
+            ScriptHelper.TryToApplyDebuff(target, type, applyChance);
         }
 
         protected void BuffStat(ICharacter target, Stat stat, double buffMod)
@@ -58,6 +67,26 @@ namespace ProjectR.Scripting
             {
                 BuffStat(target, stat, buffMod);
             }
+        }
+
+        protected bool IsEnemy(ICharacter target)
+        {
+            return ScriptHelper.IsEnemy(target);
+        }
+
+        protected double GetVar(ICharacter target, string varName)
+        {
+            return ScriptHelper.GetVar(target, varName);
+        }
+
+        protected void SetVar(ICharacter target, string varName, double value)
+        {
+            ScriptHelper.SetVar(target, varName, value);
+        }
+
+        protected void ApplyAffliction(ICharacter target, string affliction)
+        {
+            ScriptHelper.ApplyAffliction(target, affliction);
         }
 
         #region Total Stat Functions

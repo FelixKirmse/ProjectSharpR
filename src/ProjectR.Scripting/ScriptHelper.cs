@@ -11,21 +11,30 @@ namespace ProjectR.Scripting
         public IModel Model { get; set; }
 
         private readonly Dictionary<ICharacter, double> _damageTakenDictionary;
+        private readonly Dictionary<ICharacter, Dictionary<string, double>> _characterVariables;
+        private readonly Dictionary<ICharacter, List<IAffliction>> _charAfflDictionary; 
 
         public ScriptHelper()
         {
             _damageTakenDictionary = new Dictionary<ICharacter, double>();
+            _characterVariables = new Dictionary<ICharacter, Dictionary<string, double>>();
+            _charAfflDictionary = new Dictionary<ICharacter, List<IAffliction>>();
         }
 
         public void ResetAllAfflictions()
         {
             Model.AfflictionFactory.RemoveAllAfflictions();
-            // TODO CharAfflMap.Clear
+            _charAfflDictionary.Clear();
         }
 
         public IList<IAffliction> GetAfflictions(ICharacter character)
         {
-            return new IAffliction[0]; // TODO get affliction for character
+            if (!_charAfflDictionary.ContainsKey(character))
+            {
+                return new IAffliction[0]; 
+            }
+
+            return _charAfflDictionary[character];
         }
 
         public void DealDamage(ICharacter target, double damage)
@@ -50,9 +59,53 @@ namespace ProjectR.Scripting
             _damageTakenDictionary[target] -= Math.Max(0d, healing);
         }
 
-        public void TryToApplyDebuff(DebuffResistance type, int applyChance)
+        public void TryToApplyDebuff(ICharacter target, DebuffResistance type, int applyChance)
         {
-            throw new System.NotImplementedException();
+            var result = new BoolConsolidator();
+            target.FireApplyingDebuffEvent(result);
+            if (!result.Result())
+            {
+                return;
+            }
+
+            if (!target.Stats.TryToApplyDebuf(type, applyChance))
+            {
+                return;
+            }
+
+            IAffliction affl = null;
+            var afflFac = Model.AfflictionFactory;
+
+            switch (type)
+            {
+                case DebuffResistance.PSN:
+                    affl = afflFac.GetAffliction("Poison");
+                    target.AddAffliction("PSN");
+                    break;
+
+                case DebuffResistance.PAR:
+                    affl = afflFac.GetAffliction("Paralyze");
+                    target.AddAffliction("PAR");
+                    break;
+
+                case DebuffResistance.DTH:
+                    affl = afflFac.GetAffliction("InstaDeath");
+                    target.AddAffliction("DTH");
+                    break;
+
+                case DebuffResistance.SIL:
+                    affl = afflFac.GetAffliction("Silence");
+                    target.AddAffliction("SIL");
+                    break;
+            }
+
+            if (affl == null)
+            {
+                return;
+            }
+
+            affl.AttachTo(target);
+            _charAfflDictionary.GetOrCreate(target).Add(affl);   
         }
 
         public double GetDamageTaken(ICharacter character)
@@ -63,6 +116,62 @@ namespace ProjectR.Scripting
             }
 
             return _damageTakenDictionary[character];
+        }
+
+        public bool IsEnemy(ICharacter target)
+        {
+            return Model.BattleModel.CharacterIsEnemy(target);
+        }
+
+        public double GetVar(ICharacter target, string varName)
+        {
+            if (!_characterVariables.ContainsKey(target))
+            {
+                _characterVariables.Add(target, new Dictionary<string, double> { { varName, 0d }});
+            }
+
+            var vars = _characterVariables[target];
+
+            if (!vars.ContainsKey(varName))
+            {
+                vars.Add(varName, 0d);
+            }
+
+            return vars[varName];
+        }
+
+        public void ResetDamageTaken()
+        {
+            _damageTakenDictionary.Clear();
+        }
+
+        public void SetVar(ICharacter target, string varName, double value)
+        {
+            _characterVariables.GetOrCreate(target).SetOrInsert(varName, value);
+        }
+
+        public void ApplyAffliction(ICharacter target, string affliction)
+        {
+            var affl = Model.AfflictionFactory.GetAffliction(affliction);
+            var result = new BoolConsolidator();
+
+            if (affl.Type == AfflictionType.Buff)
+            {
+                target.FireApplyingBuffEvent(result);
+            }
+            else
+            {
+                target.FireApplyingDebuffEvent(result);
+            }
+
+            if (!result.Result())
+            {
+                return;
+            }
+
+            affl.AttachTo(target);
+            target.AddAffliction(affliction);
+            _charAfflDictionary.GetOrCreate(target).Add(affl);
         }
     }
 }

@@ -139,5 +139,27 @@ namespace ProjectR.Interfaces.Helper
 
             return string.Format(resultFormat, reducedNumber.ToString(chosenFormat), damageLetter);
         }
+
+        public static void SetOrInsert<TKey, TValue>(this IDictionary<TKey, TValue> dic, TKey key, TValue value)
+        {
+            if (!dic.ContainsKey(key))
+            {
+                dic.Add(key, value);
+                return;
+            }
+
+            dic[key] = value;
+        }
+
+        public static TValue GetOrCreate<TKey, TValue>(this IDictionary<TKey, TValue> dic, TKey key)
+            where TValue : new()
+        {
+            if (!dic.ContainsKey(key))
+            {
+                dic.Add(key, new TValue());
+            }
+
+            return dic[key];
+        }
     }
 }

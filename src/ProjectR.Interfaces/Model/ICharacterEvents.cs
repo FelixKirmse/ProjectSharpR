@@ -19,7 +19,9 @@ namespace ProjectR.Interfaces.Model
         event CharacterBooleanEventDelegate ApplyingBuff;
         event CharacterBooleanEventDelegate TurnCounterUpdating;
 
-        void FireAttackingEvent(ICharacter character, ICharacter target, ISpell spell, ref double damage,
+        void FireAttackingEvent(ICharacter target, ISpell spell, ref double damage,
                                 ref double modifier);
+        void FireApplyingDebuffEvent(BoolConsolidator result);
+        void FireApplyingBuffEvent(BoolConsolidator result);
     }
 }

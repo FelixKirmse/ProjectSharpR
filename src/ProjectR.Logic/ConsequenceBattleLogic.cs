@@ -182,12 +182,14 @@ namespace ProjectR.Logic
             {
                 statistics.AddToStatistic(Statistic.DamageDone, (uint) character.DamageTaken);
             }
+
+            RHelper.ScriptHelper.ResetDamageTaken();
         }
 
         private void ResolveDamage(ICharacter target, double mod = 1d)
         {
             var damage = RHelper.ScriptHelper.GetDamageTaken(target);
-            _currentAttacker.FireAttackingEvent(_currentAttacker, target, _targetInfo.Spell, ref damage, ref mod);
+            _currentAttacker.FireAttackingEvent(target, _targetInfo.Spell, ref damage, ref mod);
 
             if (damage < 0d)
             {

@@ -28,9 +28,19 @@ namespace ProjectR.Model
         public event CharacterBooleanEventDelegate ApplyingBuff = delegate { };
         public event CharacterBooleanEventDelegate TurnCounterUpdating = delegate { };
 
-        public void FireAttackingEvent(ICharacter character, ICharacter target, ISpell spell, ref double damage, ref double modifier)
+        public void FireAttackingEvent(ICharacter target, ISpell spell, ref double damage, ref double modifier)
         {
-            Attacking(character, target, spell, ref damage, ref modifier);
+            Attacking(this, target, spell, ref damage, ref modifier);
+        }
+
+        public void FireApplyingDebuffEvent(BoolConsolidator result)
+        {
+            ApplyingDebuff(this, result);
+        }
+
+        public void FireApplyingBuffEvent(BoolConsolidator result)
+        {
+            ApplyingBuff(this, result);
         }
 
         #endregion

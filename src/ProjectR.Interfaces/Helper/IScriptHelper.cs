@@ -10,7 +10,12 @@ namespace ProjectR.Interfaces.Helper
         IList<IAffliction> GetAfflictions(ICharacter character);
         void DealDamage(ICharacter target, double damage);
         void Heal(ICharacter target, double healing);
-        void TryToApplyDebuff(DebuffResistance type, int applyChance);
+        void TryToApplyDebuff(ICharacter target, DebuffResistance type, int applyChance);
         double GetDamageTaken(ICharacter character);
+        bool IsEnemy(ICharacter target);
+        double GetVar(ICharacter target, string varName);
+        void ResetDamageTaken();
+        void SetVar(ICharacter target, string varName, double value);
+        void ApplyAffliction(ICharacter target, string affliction);
     }
 }
