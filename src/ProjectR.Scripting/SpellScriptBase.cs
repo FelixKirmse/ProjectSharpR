@@ -1,10 +1,13 @@
-﻿using ProjectR.Interfaces.Model;
+﻿using ProjectR.Interfaces.Helper;
+using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Scripting
 {
     public abstract class SpellScriptBase : SpellBase
     {
+        private static IScriptHelper ScriptHelper { get { return RHelper.ScriptHelper; } }
+
         protected void DealDamage(ICharacter target, double damage)
         {
             ScriptHelper.DealDamage(target, damage);

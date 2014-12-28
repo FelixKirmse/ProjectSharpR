@@ -26,7 +26,6 @@ namespace ProjectR.Model
             foreach (var spell in _spells)
             {
                 _nameMap.Add(spell.Name, spell);
-                spell.ScriptHelper = RHelper.ScriptHelper;
             }
         }
 

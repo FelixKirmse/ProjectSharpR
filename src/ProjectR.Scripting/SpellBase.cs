@@ -18,8 +18,6 @@ namespace ProjectR.Scripting
         public abstract double MPCost { get; }
         public abstract string Name { get; }
 
-        public IScriptHelper ScriptHelper { get; set; }
-
         public void Cast(ICharacter caster, IList<ICharacter> targets)
         {
             switch (TargetType)

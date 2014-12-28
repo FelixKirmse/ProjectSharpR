@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProjectR.Interfaces;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Logic
@@ -185,7 +186,7 @@ namespace ProjectR.Logic
 
         private void ResolveDamage(ICharacter target, double mod = 1d)
         {
-            var damage = _targetInfo.Spell.ScriptHelper.GetDamageTaken(target);
+            var damage = RHelper.ScriptHelper.GetDamageTaken(target);
             _currentAttacker.FireAttackingEvent(_currentAttacker, target, _targetInfo.Spell, ref damage, ref mod);
 
             if (damage < 0d)
