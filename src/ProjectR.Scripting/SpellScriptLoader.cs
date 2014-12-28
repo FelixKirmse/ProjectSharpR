@@ -4,6 +4,6 @@ namespace ProjectR.Scripting
 {
     public class SpellScriptLoader : ScriptLoaderBase<ISpell>
     {
-        protected override string ScriptPath { get { return "content/scripts/spells"; } }
+        protected override string ScriptPath { get { return "spells"; } }
     }
 }

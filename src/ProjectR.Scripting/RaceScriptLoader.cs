@@ -4,6 +4,6 @@ namespace ProjectR.Scripting
 {
     public class RaceScriptLoader : ScriptLoaderBase<IRaceTemplate>
     {
-        protected override string ScriptPath { get { return "content/scripts/races"; } }
+        protected override string ScriptPath { get { return "races"; } }
     }
 }
