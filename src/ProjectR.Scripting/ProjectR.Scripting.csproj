@@ -253,571 +253,571 @@
     <None Include="content\scripts\skillsets\skillsets.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\5ExaWattsHyperExterminationLaserX1337.lua">
+    <None Include="content\scripts\spells\lua\5ExaWattsHyperExterminationLaserX1337.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\8HeadedRadiantHydra.lua">
+    <None Include="content\scripts\spells\lua\8HeadedRadiantHydra.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AcidicSea.lua">
+    <None Include="content\scripts\spells\lua\AcidicSea.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AlphaSlash.lua">
+    <None Include="content\scripts\spells\lua\AlphaSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AmazingBitchSlapX11.lua">
+    <None Include="content\scripts\spells\lua\AmazingBitchSlapX11.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Anomaly.lua">
+    <None Include="content\scripts\spells\lua\Anomaly.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Attack.lua">
+    <None Include="content\scripts\spells\lua\Attack.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Backstab.lua">
+    <None Include="content\scripts\spells\lua\Backstab.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BalanceIsKey.lua">
+    <None Include="content\scripts\spells\lua\BalanceIsKey.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BalanceStrike.lua">
+    <None Include="content\scripts\spells\lua\BalanceStrike.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BarrierOfFaith.lua">
+    <None Include="content\scripts\spells\lua\BarrierOfFaith.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Bash.lua">
+    <None Include="content\scripts\spells\lua\Bash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BeastlySmash.lua">
+    <None Include="content\scripts\spells\lua\BeastlySmash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessedGround.lua">
+    <None Include="content\scripts\spells\lua\BlessedGround.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessingOfTheGods.lua">
+    <None Include="content\scripts\spells\lua\BlessingOfTheGods.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessingOfTheWindGod.lua">
+    <None Include="content\scripts\spells\lua\BlessingOfTheWindGod.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlindKnowledge.lua">
+    <None Include="content\scripts\spells\lua\BlindKnowledge.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Blitzkrieg.lua">
+    <None Include="content\scripts\spells\lua\Blitzkrieg.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlizzardOfTheTundraWasteland.lua">
+    <None Include="content\scripts\spells\lua\BlizzardOfTheTundraWasteland.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BloodForPower.lua">
+    <None Include="content\scripts\spells\lua\BloodForPower.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BreathOfTheBabyIceDragon.lua">
+    <None Include="content\scripts\spells\lua\BreathOfTheBabyIceDragon.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BugStorm.lua">
+    <None Include="content\scripts\spells\lua\BugStorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CataclysmicBarrier.lua">
+    <None Include="content\scripts\spells\lua\CataclysmicBarrier.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Catwalk.lua">
+    <None Include="content\scripts\spells\lua\Catwalk.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ChaosBarrier.lua">
+    <None Include="content\scripts\spells\lua\ChaosBarrier.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ChaosCleanse.lua">
+    <None Include="content\scripts\spells\lua\ChaosCleanse.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Cleanse.lua">
+    <None Include="content\scripts\spells\lua\Cleanse.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CleansingSong.lua">
+    <None Include="content\scripts\spells\lua\CleansingSong.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CripplingAura.lua">
+    <None Include="content\scripts\spells\lua\CripplingAura.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CurseOfTheHanyo.lua">
+    <None Include="content\scripts\spells\lua\CurseOfTheHanyo.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkFogAlly.lua">
+    <None Include="content\scripts\spells\lua\DarkFogAlly.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkFogEnemy.lua">
+    <None Include="content\scripts\spells\lua\DarkFogEnemy.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkMend.lua">
+    <None Include="content\scripts\spells\lua\DarkMend.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarknessComesFromWithin.lua">
+    <None Include="content\scripts\spells\lua\DarknessComesFromWithin.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DeadlySwarm.lua">
+    <None Include="content\scripts\spells\lua\DeadlySwarm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DeadlyVenom.lua">
+    <None Include="content\scripts\spells\lua\DeadlyVenom.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Defend.lua">
+    <None Include="content\scripts\spells\lua\Defend.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DefenseOfTheAncients.lua">
+    <None Include="content\scripts\spells\lua\DefenseOfTheAncients.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DemonicSeal61Maru.lua">
+    <None Include="content\scripts\spells\lua\DemonicSeal61Maru.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DemonicStrike.lua">
+    <None Include="content\scripts\spells\lua\DemonicStrike.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DistortionField.lua">
+    <None Include="content\scripts\spells\lua\DistortionField.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DivineLightOfTheGoddess.lua">
+    <None Include="content\scripts\spells\lua\DivineLightOfTheGoddess.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DivineRestoration.lua">
+    <None Include="content\scripts\spells\lua\DivineRestoration.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmbraceOfTheDemon.lua">
+    <None Include="content\scripts\spells\lua\EmbraceOfTheDemon.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmbraceOfTheWindGod.lua">
+    <None Include="content\scripts\spells\lua\EmbraceOfTheWindGod.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmpoweringLaser.lua">
+    <None Include="content\scripts\spells\lua\EmpoweringLaser.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ExpectTheUnexpected.lua">
+    <None Include="content\scripts\spells\lua\ExpectTheUnexpected.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ExplosiveFist.lua">
+    <None Include="content\scripts\spells\lua\ExplosiveFist.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Extinction.lua">
+    <None Include="content\scripts\spells\lua\Extinction.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FacturedLaserBarrage.lua">
+    <None Include="content\scripts\spells\lua\FacturedLaserBarrage.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FearOfTheDark.lua">
+    <None Include="content\scripts\spells\lua\FearOfTheDark.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FieryFuryFist.lua">
+    <None Include="content\scripts\spells\lua\FieryFuryFist.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FireWheel.lua">
+    <None Include="content\scripts\spells\lua\FireWheel.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FlyingPhoenix.lua">
+    <None Include="content\scripts\spells\lua\FlyingPhoenix.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell42.lua">
+    <None Include="content\scripts\spells\lua\ForbiddenSpell42.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell64.lua">
+    <None Include="content\scripts\spells\lua\ForbiddenSpell64.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell74.lua">
+    <None Include="content\scripts\spells\lua\ForbiddenSpell74.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell98.lua">
+    <None Include="content\scripts\spells\lua\ForbiddenSpell98.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenTechniqueRage.lua">
+    <None Include="content\scripts\spells\lua\ForbiddenTechniqueRage.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FreezeThemToDeath.lua">
+    <None Include="content\scripts\spells\lua\FreezeThemToDeath.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FrostBlast.lua">
+    <None Include="content\scripts\spells\lua\FrostBlast.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FrozenBlood.lua">
+    <None Include="content\scripts\spells\lua\FrozenBlood.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FuckThemUp.lua">
+    <None Include="content\scripts\spells\lua\FuckThemUp.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FuzzyOverhaul.lua">
+    <None Include="content\scripts\spells\lua\FuzzyOverhaul.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GhostNova.lua">
+    <None Include="content\scripts\spells\lua\GhostNova.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GlimmeringTrap.lua">
+    <None Include="content\scripts\spells\lua\GlimmeringTrap.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GrandHealingPotion.lua">
+    <None Include="content\scripts\spells\lua\GrandHealingPotion.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HandOfDeath.lua">
+    <None Include="content\scripts\spells\lua\HandOfDeath.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Haunt.lua">
+    <None Include="content\scripts\spells\lua\Haunt.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HealingRain.lua">
+    <None Include="content\scripts\spells\lua\HealingRain.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HealingTouch.lua">
+    <None Include="content\scripts\spells\lua\HealingTouch.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HellfireFlare.lua">
+    <None Include="content\scripts\spells\lua\HellfireFlare.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HellsInferno.lua">
+    <None Include="content\scripts\spells\lua\HellsInferno.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HiddenPower.lua">
+    <None Include="content\scripts\spells\lua\HiddenPower.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HiddenSeal37.lua">
+    <None Include="content\scripts\spells\lua\HiddenSeal37.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyEntangement.lua">
+    <None Include="content\scripts\spells\lua\HolyEntangement.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyOrb.lua">
+    <None Include="content\scripts\spells\lua\HolyOrb.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyPunch.lua">
+    <None Include="content\scripts\spells\lua\HolyPunch.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Hurricane.lua">
+    <None Include="content\scripts\spells\lua\Hurricane.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\IcePrison.lua">
+    <None Include="content\scripts\spells\lua\IcePrison.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\IcicleBarrage.lua">
+    <None Include="content\scripts\spells\lua\IcicleBarrage.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Inspire.lua">
+    <None Include="content\scripts\spells\lua\Inspire.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\InspiringSpeech.lua">
+    <None Include="content\scripts\spells\lua\InspiringSpeech.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\JumpingJacks.lua">
+    <None Include="content\scripts\spells\lua\JumpingJacks.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\KonSlash.lua">
+    <None Include="content\scripts\spells\lua\KonSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LastManStanding.lua">
+    <None Include="content\scripts\spells\lua\LastManStanding.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LeaveCutter.lua">
+    <None Include="content\scripts\spells\lua\LeaveCutter.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LetsSpeedThisUp.lua">
+    <None Include="content\scripts\spells\lua\LetsSpeedThisUp.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LightAndShadowIntertwined.lua">
+    <None Include="content\scripts\spells\lua\LightAndShadowIntertwined.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LingeringDeath.lua">
+    <None Include="content\scripts\spells\lua\LingeringDeath.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicCharge.lua">
+    <None Include="content\scripts\spells\lua\MagicCharge.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicDampeningZone.lua">
+    <None Include="content\scripts\spells\lua\MagicDampeningZone.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicMissile.lua">
+    <None Include="content\scripts\spells\lua\MagicMissile.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicSap.lua">
+    <None Include="content\scripts\spells\lua\MagicSap.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicShot.lua">
+    <None Include="content\scripts\spells\lua\MagicShot.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MasterOfMind.lua">
+    <None Include="content\scripts\spells\lua\MasterOfMind.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Meditation.lua">
+    <None Include="content\scripts\spells\lua\Meditation.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MeltingThunder.lua">
+    <None Include="content\scripts\spells\lua\MeltingThunder.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MindStorm.lua">
+    <None Include="content\scripts\spells\lua\MindStorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiniatureTornado.lua">
+    <None Include="content\scripts\spells\lua\MiniatureTornado.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiniBlackHole.lua">
+    <None Include="content\scripts\spells\lua\MiniBlackHole.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiraclePoke.lua">
+    <None Include="content\scripts\spells\lua\MiraclePoke.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MirrorImage.lua">
+    <None Include="content\scripts\spells\lua\MirrorImage.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MysticalDragonfly.lua">
+    <None Include="content\scripts\spells\lua\MysticalDragonfly.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NeedleRain.lua">
+    <None Include="content\scripts\spells\lua\NeedleRain.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Netherball.lua">
+    <None Include="content\scripts\spells\lua\Netherball.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NightStalker.lua">
+    <None Include="content\scripts\spells\lua\NightStalker.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NuclearMeltdown.lua">
+    <None Include="content\scripts\spells\lua\NuclearMeltdown.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NumberOfTheBeast.lua">
+    <None Include="content\scripts\spells\lua\NumberOfTheBeast.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OffenseIsTheBestDefense.lua">
+    <None Include="content\scripts\spells\lua\OffenseIsTheBestDefense.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OffenseOfTheAncients.lua">
+    <None Include="content\scripts\spells\lua\OffenseOfTheAncients.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OmaeWaMoShindeiru.lua">
+    <None Include="content\scripts\spells\lua\OmaeWaMoShindeiru.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OmegaSlash.lua">
+    <None Include="content\scripts\spells\lua\OmegaSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Omnislash.lua">
+    <None Include="content\scripts\spells\lua\Omnislash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OneAtATime.lua">
+    <None Include="content\scripts\spells\lua\OneAtATime.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OpticalCamouflageX69.lua">
+    <None Include="content\scripts\spells\lua\OpticalCamouflageX69.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OrbOfFilth.lua">
+    <None Include="content\scripts\spells\lua\OrbOfFilth.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PenetratingHorn.lua">
+    <None Include="content\scripts\spells\lua\PenetratingHorn.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PiercingFlames.lua">
+    <None Include="content\scripts\spells\lua\PiercingFlames.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PoisonFlight.lua">
+    <None Include="content\scripts\spells\lua\PoisonFlight.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\QuickDive.lua">
+    <None Include="content\scripts\spells\lua\QuickDive.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\QuickSurprise.lua">
+    <None Include="content\scripts\spells\lua\QuickSurprise.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RadiantLight.lua">
+    <None Include="content\scripts\spells\lua\RadiantLight.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RagingFirestorm.lua">
+    <None Include="content\scripts\spells\lua\RagingFirestorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RagingStorm.lua">
+    <None Include="content\scripts\spells\lua\RagingStorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Ragnarok.lua">
+    <None Include="content\scripts\spells\lua\Ragnarok.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Ram.lua">
+    <None Include="content\scripts\spells\lua\Ram.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RavagingFlow.lua">
+    <None Include="content\scripts\spells\lua\RavagingFlow.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ReapersScythe.lua">
+    <None Include="content\scripts\spells\lua\ReapersScythe.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RecklessSwing.lua">
+    <None Include="content\scripts\spells\lua\RecklessSwing.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ScarletSwordSlash.lua">
+    <None Include="content\scripts\spells\lua\ScarletSwordSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ScytheOfTheDoomed.lua">
+    <None Include="content\scripts\spells\lua\ScytheOfTheDoomed.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SealOfGod.lua">
+    <None Include="content\scripts\spells\lua\SealOfGod.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecondWind.lua">
+    <None Include="content\scripts\spells\lua\SecondWind.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique48.lua">
+    <None Include="content\scripts\spells\lua\SecretTechnique48.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique64.lua">
+    <None Include="content\scripts\spells\lua\SecretTechnique64.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique76.lua">
+    <None Include="content\scripts\spells\lua\SecretTechnique76.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechniqueStoneform.lua">
+    <None Include="content\scripts\spells\lua\SecretTechniqueStoneform.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SeedOfCorruption.lua">
+    <None Include="content\scripts\spells\lua\SeedOfCorruption.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowRay.lua">
+    <None Include="content\scripts\spells\lua\ShadowRay.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowShot.lua">
+    <None Include="content\scripts\spells\lua\ShadowShot.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowTrap.lua">
+    <None Include="content\scripts\spells\lua\ShadowTrap.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SharingIsCaring.lua">
+    <None Include="content\scripts\spells\lua\SharingIsCaring.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SharpAssault.lua">
+    <None Include="content\scripts\spells\lua\SharpAssault.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Slash.lua">
+    <None Include="content\scripts\spells\lua\Slash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SniffMyFinger.lua">
+    <None Include="content\scripts\spells\lua\SniffMyFinger.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SoulVacuum.lua">
+    <None Include="content\scripts\spells\lua\SoulVacuum.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StabbyStab.lua">
+    <None Include="content\scripts\spells\lua\StabbyStab.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Stonebreaker.lua">
+    <None Include="content\scripts\spells\lua\Stonebreaker.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StormDash.lua">
+    <None Include="content\scripts\spells\lua\StormDash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StunBomb.lua">
+    <None Include="content\scripts\spells\lua\StunBomb.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonChaosTroublemakers.lua">
+    <None Include="content\scripts\spells\lua\SummonChaosTroublemakers.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonDivineDuo.lua">
+    <None Include="content\scripts\spells\lua\SummonDivineDuo.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonFieryInfernals.lua">
+    <None Include="content\scripts\spells\lua\SummonFieryInfernals.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonGhostlyPriest.lua">
+    <None Include="content\scripts\spells\lua\SummonGhostlyPriest.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonImp.lua">
+    <None Include="content\scripts\spells\lua\SummonImp.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonInfiltrationUnit.lua">
+    <None Include="content\scripts\spells\lua\SummonInfiltrationUnit.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonStorm.lua">
+    <None Include="content\scripts\spells\lua\SummonStorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonTrickster.lua">
+    <None Include="content\scripts\spells\lua\SummonTrickster.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupersonicSlash.lua">
+    <None Include="content\scripts\spells\lua\SupersonicSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueShield.lua">
+    <None Include="content\scripts\spells\lua\SupportTechniqueShield.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueSword.lua">
+    <None Include="content\scripts\spells\lua\SupportTechniqueSword.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueWand.lua">
+    <None Include="content\scripts\spells\lua\SupportTechniqueWand.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SurgeOfLightning.lua">
+    <None Include="content\scripts\spells\lua\SurgeOfLightning.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Switch.lua">
+    <None Include="content\scripts\spells\lua\Switch.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Technique10.lua">
+    <None Include="content\scripts\spells\lua\Technique10.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheAlchemistsSecretElixir.lua">
+    <None Include="content\scripts\spells\lua\TheAlchemistsSecretElixir.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheNewWays.lua">
+    <None Include="content\scripts\spells\lua\TheNewWays.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheOldWays.lua">
+    <None Include="content\scripts\spells\lua\TheOldWays.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ThousandNeedles.lua">
+    <None Include="content\scripts\spells\lua\ThousandNeedles.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TicklingNeedles.lua">
+    <None Include="content\scripts\spells\lua\TicklingNeedles.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TimeBubble.lua">
+    <None Include="content\scripts\spells\lua\TimeBubble.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TimeStop.lua">
+    <None Include="content\scripts\spells\lua\TimeStop.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Tornado.lua">
+    <None Include="content\scripts\spells\lua\Tornado.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TrueForm.lua">
+    <None Include="content\scripts\spells\lua\TrueForm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TruePotential.lua">
+    <None Include="content\scripts\spells\lua\TruePotential.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Tsunami.lua">
+    <None Include="content\scripts\spells\lua\Tsunami.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TwilightBarrier.lua">
+    <None Include="content\scripts\spells\lua\TwilightBarrier.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TwistingNether.lua">
+    <None Include="content\scripts\spells\lua\TwistingNether.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\UltimateTaboo.lua">
+    <None Include="content\scripts\spells\lua\UltimateTaboo.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Untouchable.lua">
+    <None Include="content\scripts\spells\lua\Untouchable.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\VengefulSpirit.lua">
+    <None Include="content\scripts\spells\lua\VengefulSpirit.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ViolentThunderstorm.lua">
+    <None Include="content\scripts\spells\lua\ViolentThunderstorm.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WaterfallX84.lua">
+    <None Include="content\scripts\spells\lua\WaterfallX84.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WaveOfDarkness.lua">
+    <None Include="content\scripts\spells\lua\WaveOfDarkness.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WeakeningFireBeam.lua">
+    <None Include="content\scripts\spells\lua\WeakeningFireBeam.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindGodTornado.lua">
+    <None Include="content\scripts\spells\lua\WindGodTornado.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindSlash.lua">
+    <None Include="content\scripts\spells\lua\WindSlash.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindStrike.lua">
+    <None Include="content\scripts\spells\lua\WindStrike.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
