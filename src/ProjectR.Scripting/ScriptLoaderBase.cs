@@ -77,7 +77,7 @@ namespace ProjectR.Scripting
             var assemblyInfo = new FileInfo(assemblyPath);
             var currentAssemblyInfo = new FileInfo(Assembly.GetExecutingAssembly().Location);
 
-            return currentAssemblyInfo.LastWriteTimeUtc > script.LastWriteTimeUtc && script.LastWriteTimeUtc > assemblyInfo.LastWriteTimeUtc;
+            return /*currentAssemblyInfo.LastWriteTimeUtc > script.LastWriteTimeUtc || */script.LastWriteTimeUtc > assemblyInfo.LastWriteTimeUtc;
         }
     }
 }
