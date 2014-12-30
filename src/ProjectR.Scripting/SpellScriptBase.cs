@@ -5,6 +5,7 @@ using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Scripting
 {
+    // ReSharper disable InconsistentNaming
     public abstract class SpellScriptBase : SpellBase
     {
         private static IScriptHelper ScriptHelper { get { return RHelper.ScriptHelper; } }
@@ -90,8 +91,28 @@ namespace ProjectR.Scripting
         }
 
         #region Total Stat Functions
-
+        
         #region BaseStats
+
+        protected double cHP { get { return HP(Caster); } }
+        protected double cMP { get { return MP(Caster); } }
+        protected double cAD { get { return AD(Caster); } }
+        protected double cMD { get { return MD(Caster); } }
+        protected double cDEF { get { return DEF(Caster); } }
+        protected double cMR { get { return MR(Caster); } }
+        protected double cEVA { get { return EVA(Caster); } }
+        protected double cSPD { get { return SPD(Caster); } }
+        protected double cCHA { get { return CHA(Caster); } }
+
+        protected double tHP { get { return HP(Target); } }
+        protected double tMP { get { return MP(Target); } }
+        protected double tAD { get { return AD(Target); } }
+        protected double tMD { get { return MD(Target); } }
+        protected double tDEF { get { return DEF(Target); } }
+        protected double tMR { get { return MR(Target); } }
+        protected double tEVA { get { return EVA(Target); } }
+        protected double tSPD { get { return SPD(Target); } }
+        protected double tCHA { get { return CHA(Target); } }
 
         protected double HP(ICharacter character)
         {
@@ -142,6 +163,26 @@ namespace ProjectR.Scripting
 
         #region Masteries
 
+        protected double cFIR { get { return FIR(Caster); } }
+        protected double cWAT { get { return WAT(Caster); } }
+        protected double cICE { get { return ICE(Caster); } }
+        protected double cARC { get { return ARC(Caster); } }
+        protected double cWND { get { return WND(Caster); } }
+        protected double cHOL { get { return HOL(Caster); } }
+        protected double cDRK { get { return DRK(Caster); } }
+        protected double cGRN { get { return GRN(Caster); } }
+        protected double cLGT { get { return LGT(Caster); } }
+
+        protected double tFIR { get { return FIR(Target); } }
+        protected double tWAT { get { return WAT(Target); } }
+        protected double tICE { get { return ICE(Target); } }
+        protected double tARC { get { return ARC(Target); } }
+        protected double tWND { get { return WND(Target); } }
+        protected double tHOL { get { return HOL(Target); } }
+        protected double tDRK { get { return DRK(Target); } }
+        protected double tGRN { get { return GRN(Target); } }
+        protected double tLGT { get { return LGT(Target); } }
+
         protected double FIR(ICharacter character)
         {
             return character.TotalStat(EleMastery.FIR);
@@ -191,6 +232,16 @@ namespace ProjectR.Scripting
 
         #region DebuffResistances
 
+        protected double cPSN { get { return PSN(Caster); } }
+        protected double cPAR { get { return PAR(Caster); } }
+        protected double cDTH { get { return DTH(Caster); } }
+        protected double cSIL { get { return SIL(Caster); } }
+
+        protected double tPSN { get { return PSN(Target); } }
+        protected double tPAR { get { return PAR(Target); } }
+        protected double tDTH { get { return DTH(Target); } }
+        protected double tSIL { get { return SIL(Target); } }
+
         protected double PSN(ICharacter character)
         {
             return character.TotalStat(DebuffResistance.PSN);
@@ -215,4 +266,5 @@ namespace ProjectR.Scripting
 
         #endregion
     }
+    // ReSharper restore InconsistentNaming
 }

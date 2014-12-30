@@ -18,6 +18,9 @@ namespace ProjectR.Scripting
         public abstract double MPCost { get; }
         public abstract string Name { get; }
 
+        protected ICharacter Caster { get; set; }
+        protected ICharacter Target { get; set; }
+
         public void Cast(ICharacter caster, IList<ICharacter> targets)
         {
             switch (TargetType)
@@ -31,6 +34,9 @@ namespace ProjectR.Scripting
 
         public void Cast(ICharacter caster, ICharacter target, double decayMod = 1d)
         {
+            Caster = caster;
+            Target = target;
+
             switch (TargetType)
             {
                 case TargetType.Single:

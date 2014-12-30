@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Reflection;
 using CSScriptLibrary;
 using ProjectR.Interfaces.Model;
@@ -50,7 +49,7 @@ namespace ProjectR.Scripting
         {
             var assemblyPath = Path.Combine(CompleteCompiledScriptPath, Path.ChangeExtension(file.Name, ".dll"));
             Assembly assembly;
-            if (ScriptNeedCompilation(file, assemblyPath))
+            if (ScriptNeedsCompilation(file, assemblyPath))
             {
                 updateAction(string.Format("Compiling: {0}", file.Name), currentCount, totalCount);
                 assembly = CSScript.Load(file.ToString(), assemblyPath, false);
@@ -68,7 +67,7 @@ namespace ProjectR.Scripting
                            .Select(source => (T)helper.CreateObject(source.FullName));
         }
 
-        private bool ScriptNeedCompilation(FileSystemInfo script, string assemblyPath)
+        private static bool ScriptNeedsCompilation(FileSystemInfo script, string assemblyPath)
         {
             if (!File.Exists(assemblyPath))
             {
@@ -76,8 +75,9 @@ namespace ProjectR.Scripting
             }
 
             var assemblyInfo = new FileInfo(assemblyPath);
+            var currentAssemblyInfo = new FileInfo(Assembly.GetExecutingAssembly().Location);
 
-            return script.LastWriteTimeUtc > assemblyInfo.LastWriteTimeUtc;
+            return currentAssemblyInfo.LastWriteTimeUtc > script.LastWriteTimeUtc && script.LastWriteTimeUtc > assemblyInfo.LastWriteTimeUtc;
         }
     }
 }
