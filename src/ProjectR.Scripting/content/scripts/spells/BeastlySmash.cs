@@ -18,7 +18,7 @@ namespace ProjectR.Scripting
         public override double MPCost { get { return 30; } }
         public override double Delay { get { return .18; } }
 
-        public override void SpellEffect(ICharacter caster, ICharacter target, double decayMod = 1)
+        public override void SpellEffect(ICharacter caster, ICharacter target)
         {
             var damage = 3.5 * AD(caster) - DEF(target);
             DealDamage(target, damage);

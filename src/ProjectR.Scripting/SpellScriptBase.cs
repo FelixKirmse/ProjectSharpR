@@ -10,9 +10,39 @@ namespace ProjectR.Scripting
     {
         private static IScriptHelper ScriptHelper { get { return RHelper.ScriptHelper; } }
 
+        protected IEnumerable<ICharacter> GetCasterParty()
+        {
+            return ScriptHelper.GetCasterParty();
+        }
+
+        protected void RemoveStatDebuffs()
+        {
+            RemoveStatDebuffs(Target);
+        }
+
+        protected void RemoveStatDebuffs(ICharacter target)
+        {
+            target.Stats.RemoveDebuffs();
+        }
+
+        protected void RemoveDebuffs()
+        {
+            RemoveDebuffs(Target);
+        }
+
+        protected void RemoveDebuffs(ICharacter target)
+        {
+            ScriptHelper.RemoveDebuffs(target);
+        }
+
         protected void DealDamage(ICharacter target, double damage)
         {
             ScriptHelper.DealDamage(target, damage);
+        }
+
+        protected void DealDamage(double damage)
+        {
+            DealDamage(Target, damage);
         }
 
         protected void DealDamage(IList<ICharacter> targets, double damage)
@@ -28,14 +58,29 @@ namespace ProjectR.Scripting
             ScriptHelper.Heal(target, healing);
         }
 
+        protected void Heal(double healing)
+        {
+            Heal(Target, healing);
+        }
+
         protected void TryToApplyDebuff(ICharacter target, DebuffResistance type, int applyChance)
         {
             ScriptHelper.TryToApplyDebuff(target, type, applyChance);
         }
 
+        protected void TryToApplyDebuff(DebuffResistance type, int applyChance)
+        {
+            TryToApplyDebuff(Target, type, applyChance);
+        }
+
         protected void BuffStat(ICharacter target, Stat stat, double buffMod)
         {
             target.BuffStat(stat, buffMod);
+        }
+
+        protected void BuffStat(Stat stat, double buffMod)
+        {
+            BuffStat(Target, stat, buffMod);
         }
 
         protected void BuffAllStats(ICharacter target, double buffMod)

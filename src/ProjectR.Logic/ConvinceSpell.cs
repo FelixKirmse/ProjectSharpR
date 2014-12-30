@@ -18,7 +18,11 @@ namespace ProjectR.Logic
         public void Cast(ICharacter caster, IList<ICharacter> targets)
         {
         }
-         
+
+        public void Cast(ICharacter caster, IList<ICharacter> allies, IList<ICharacter> enemies)
+        {
+        }
+
         public void Cast(ICharacter caster, ICharacter target, double decayMod = 1)
         {
         }

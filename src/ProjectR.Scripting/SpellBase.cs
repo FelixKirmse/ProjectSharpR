@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ProjectR.Interfaces;
-using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
@@ -18,11 +16,23 @@ namespace ProjectR.Scripting
         public abstract double MPCost { get; }
         public abstract string Name { get; }
 
-        protected ICharacter Caster { get; set; }
+        protected ICharacter Caster { get; private set; }
         protected ICharacter Target { get; set; }
+
+        public void Cast(ICharacter caster, IList<ICharacter> allies, IList<ICharacter> enemies)
+        {
+            Caster = caster;
+            switch (TargetType)
+            {
+                case TargetType.Everyone:
+                    SpellEffect(caster, allies, enemies);
+                    break;
+            }
+        }
 
         public void Cast(ICharacter caster, IList<ICharacter> targets)
         {
+            Caster = caster;
             switch (TargetType)
             {
                 case TargetType.Allies:
@@ -53,15 +63,28 @@ namespace ProjectR.Scripting
             }
         }
 
-        public virtual void SpellEffect(ICharacter caster, ICharacter target, double decayMod = 1d)
+        public virtual void SpellEffect(ICharacter caster, ICharacter target)
+        {
+        }
+
+        public virtual void SpellEffect(ICharacter caster, ICharacter target, double decayMod)
         {
         }
 
         public virtual void SpellEffect(ICharacter caster, IList<ICharacter> targets)
         {
+            foreach (var target in targets)
+            {
+                Target = target;
+                SpellEffect(caster, target);
+            }
         }
 
         public virtual void SpellEffect(ICharacter caster)
+        {
+        }
+
+        public virtual void SpellEffect(ICharacter caster, IList<ICharacter> allies, IList<ICharacter> enemies)
         {
         }
     }

@@ -6,6 +6,7 @@ namespace ProjectR.Interfaces.Model
         Myself = 1,
         Allies = 2,
         Enemies = 3,
-        Decaying = 4
+        Decaying = 4,
+        Everyone = 5,
     }
 }

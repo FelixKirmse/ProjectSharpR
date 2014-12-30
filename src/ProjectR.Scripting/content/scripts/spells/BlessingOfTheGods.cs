@@ -5,23 +5,24 @@ using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Scripting
 {
-    public class Backstab : SpellScriptBase
+    public class BlessingOfTheGods : SpellScriptBase
     {
-        public override string Name { get { return "Backstab!"; } }
-        public override string Description { get { return "Deal high composite damage to ally target. Deals no damage if used against enemies."; } }
+        public override string Name { get { return "Blessing of the Gods"; } }
+        public override string Description { get { return "Bless the target, increasing all their stats.\nAlso sets their speed bar to 100%."; } }
 
         public override TargetType TargetType { get { return TargetType.Single; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }
-        public override SpellType SpellType { get { return SpellType.Composite; } }
+        public override SpellType SpellType { get { return SpellType.Magical; } }
         public override bool IsSupportSpell { get { return true; } }
 
-        public override double MPCost { get { return 0; } }
+        public override double MPCost { get { return 132; } }
         public override double Delay { get { return .5; } }
 
         public override void SpellEffect(ICharacter caster, ICharacter target)
         {
-            var damage = 10 * AD(caster) + 10 * MD(caster) - DEF(target) - MR(target);
-            DealDamage(target, IsEnemy(target) ? 0d : damage);
+            target.TurnCounter = target.TimeToAction * .99;
+
+            BuffAllStats(target, .25);
         }
     }
 }

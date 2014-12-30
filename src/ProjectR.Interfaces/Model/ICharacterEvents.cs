@@ -23,5 +23,7 @@ namespace ProjectR.Interfaces.Model
                                 ref double modifier);
         void FireApplyingDebuffEvent(BoolConsolidator result);
         void FireApplyingBuffEvent(BoolConsolidator result);
+        void FireRemovingDebuffs();
+
     }
 }

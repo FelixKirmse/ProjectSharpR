@@ -15,6 +15,7 @@ namespace ProjectR.Interfaces
         double MPCost { get; }
 
         void Cast(ICharacter caster, IList<ICharacter> targets);
+        void Cast(ICharacter caster, IList<ICharacter> allies, IList<ICharacter> enemies);
         void Cast(ICharacter caster, ICharacter target, double decayMod = 1d);
     }
 }

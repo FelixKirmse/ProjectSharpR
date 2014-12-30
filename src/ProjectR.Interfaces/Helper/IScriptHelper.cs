@@ -17,5 +17,7 @@ namespace ProjectR.Interfaces.Helper
         void ResetDamageTaken();
         void SetVar(ICharacter target, string varName, double value);
         void ApplyAffliction(ICharacter target, string affliction);
+        IEnumerable<ICharacter> GetCasterParty();
+        void RemoveDebuffs(ICharacter target);
     }
 }

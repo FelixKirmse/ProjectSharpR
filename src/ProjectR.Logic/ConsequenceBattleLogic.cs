@@ -107,6 +107,30 @@ namespace ProjectR.Logic
                     break;
                 }
 
+                case TargetType.Everyone:
+                {
+                    var attackerIsEnemy = _battleModel.AttackerIsEnemy;
+                    var allies = attackerIsEnemy ? enemies : frontRow;
+                    var enemyRow = attackerIsEnemy ? frontRow : enemies;
+
+                    spell.Cast(_currentAttacker, allies, enemyRow);
+
+                    foreach (var character in allies)
+                    {
+                        ResolveDamage(character);
+                        log.LogAction(_currentAttacker, character, _targetInfo.Spell);
+                        character.IsMarked = true;
+                    }
+
+                    foreach (var character in enemyRow)
+                    {
+                        ResolveDamage(character);
+                        log.LogAction(_currentAttacker, character, _targetInfo.Spell);
+                        character.IsMarked = true;
+                    }
+                    break;
+                }
+
                 case TargetType.Decaying:
                 {
                     spell.Cast(_currentAttacker, _targetInfo.Target);

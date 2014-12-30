@@ -43,6 +43,11 @@ namespace ProjectR.Model
             ApplyingBuff(this, result);
         }
 
+        public void FireRemovingDebuffs()
+        {
+            RemovingDebuffs(this);
+        }
+
         #endregion
 
         public const int XPRequiredForLvlUp = 2000;

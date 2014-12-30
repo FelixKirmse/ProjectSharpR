@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
@@ -172,6 +173,27 @@ namespace ProjectR.Scripting
             affl.AttachTo(target);
             target.AddAffliction(affliction);
             _charAfflDictionary.GetOrCreate(target).Add(affl);
+        }
+
+        public IEnumerable<ICharacter> GetCasterParty()
+        {
+            var battleModel = Model.BattleModel;
+            return battleModel.AttackerIsEnemy ? battleModel.Enemies : battleModel.FrontRow;
+        }
+
+        public void RemoveDebuffs(ICharacter target)
+        {
+            if (!_charAfflDictionary.ContainsKey(target))
+            {
+                return;
+            }
+
+            foreach (var affliction in _charAfflDictionary[target].Where(x => x.Type == AfflictionType.Debuff))
+            {
+                affliction.RemoveFrom(target);
+            }
+
+            target.FireRemovingDebuffs();
         }
     }
 }
