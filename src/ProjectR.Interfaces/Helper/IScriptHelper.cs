@@ -19,5 +19,6 @@ namespace ProjectR.Interfaces.Helper
         void ApplyAffliction(ICharacter target, string affliction);
         IEnumerable<ICharacter> GetCasterParty();
         void RemoveDebuffs(ICharacter target);
+        IEnumerable<ICharacter> GetCasterReserveParty();
     }
 }

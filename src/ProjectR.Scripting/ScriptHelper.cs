@@ -195,5 +195,15 @@ namespace ProjectR.Scripting
 
             target.FireRemovingDebuffs();
         }
+
+        public IEnumerable<ICharacter> GetCasterReserveParty()
+        {
+            if (Model.BattleModel.AttackerIsEnemy)
+            {
+                return new ICharacter[0];
+            }
+
+            return Model.Party.Reserve;
+        }
     }
 }

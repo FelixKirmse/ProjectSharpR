@@ -15,6 +15,11 @@ namespace ProjectR.Scripting
             return ScriptHelper.GetCasterParty();
         }
 
+        protected IEnumerable<ICharacter> GetCasterReserveParty()
+        {
+            return ScriptHelper.GetCasterReserveParty();
+        }
+
         protected void RemoveStatDebuffs()
         {
             RemoveStatDebuffs(Target);
