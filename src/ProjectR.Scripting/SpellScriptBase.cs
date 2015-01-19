@@ -25,6 +25,16 @@ namespace ProjectR.Scripting
             RemoveStatDebuffs(Target);
         }
 
+        protected void RemoveStatBuffs()
+        {
+            RemoveStatBuffs(Target);
+        }
+
+        protected void RemoveStatBuffs(ICharacter target)
+        {
+            target.Stats.RemoveBuffs();
+        }
+
         protected void RemoveStatDebuffs(ICharacter target)
         {
             target.Stats.RemoveDebuffs();
