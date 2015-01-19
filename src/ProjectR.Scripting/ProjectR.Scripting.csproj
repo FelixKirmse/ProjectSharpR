@@ -166,10 +166,48 @@
     <None Include="content\scripts\spells\DeadlySwarm.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Compile Include="content\scripts\spells\DeadlyVenom.cs" />
-    <Compile Include="content\scripts\spells\Defend.cs" />
-    <Compile Include="content\scripts\spells\DefenseOfTheAncients.cs" />
-    <Compile Include="content\scripts\spells\DemonicSeal61Maru.cs" />
+    <None Include="content\scripts\spells\DeadlyVenom.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Defend.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DefenseOfTheAncients.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DemonicSeal61Maru.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DemonicStrike.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DistortionField.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DivineLightOfTheGoddess.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\DivineRestoration.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\EmbraceOfTheDemon.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\EmbraceOfTheWindGod.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\EmpoweringLaser.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\ExpectTheUnexpected.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\ExplosiveFist.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\spells\Extinction.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="SpellBase.cs" />
     <Compile Include="SpellScriptBase.cs" />
