@@ -20,5 +20,7 @@ namespace ProjectR.Interfaces.Helper
         IEnumerable<ICharacter> GetCasterParty();
         void RemoveDebuffs(ICharacter target);
         IEnumerable<ICharacter> GetCasterReserveParty();
+        double GetDeathCountOfAttackerParty();
+        ICharacter SummonMinionCopy(ICharacter target, string name);
     }
 }

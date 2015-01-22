@@ -20,6 +20,16 @@ namespace ProjectR.Scripting
             return ScriptHelper.GetCasterReserveParty();
         }
 
+        protected ICharacter SummonMinionCopy(ICharacter target, string name)
+        {
+            return ScriptHelper.SummonMinionCopy(target, name);
+        }
+
+        protected double GetDeathCountOfAttackerParty()
+        {
+            return ScriptHelper.GetDeathCountOfAttackerParty();
+        }
+
         protected void RemoveStatDebuffs()
         {
             RemoveStatDebuffs(Target);

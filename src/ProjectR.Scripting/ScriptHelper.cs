@@ -205,5 +205,22 @@ namespace ProjectR.Scripting
 
             return Model.Party.Reserve;
         }
+
+        public double GetDeathCountOfAttackerParty()
+        {
+            var battleModel = Model.BattleModel;
+            return battleModel.AttackerIsEnemy ? battleModel.EnemyDeathCount : battleModel.PlayerDeathCount;
+        }
+
+        public ICharacter SummonMinionCopy(ICharacter target, string name)
+        {
+            var clone = target.Clone();
+            clone.Name = name;
+            clone.Race = name;
+            var battleModel = Model.BattleModel;
+            return battleModel.CharacterIsEnemy(battleModel.CurrentAttacker)
+                ? Model.BattleModel.CreateEnemyMinion(clone)
+                : Model.BattleModel.CreatePlayerMinion(clone);
+        }
     }
 }
