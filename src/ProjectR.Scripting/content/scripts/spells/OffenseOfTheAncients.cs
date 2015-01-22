@@ -5,10 +5,10 @@ using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Scripting
 {
-    public class DefenseOfTheAncients : SpellScriptBase
+    public class OffenseOfTheAncients : SpellScriptBase
     {
-        public override string Name { get { return "Defense Of The Ancients"; } }
-        public override string Description { get { return "An old and long forgotten spell.\nBuffs the defense of everyone in your Party,\nincluding characters on reserve."; } }
+        public override string Name { get { return "Offense Of The Ancients"; } }
+        public override string Description { get { return "An old and long forgotten spell.\nBuffs the offense of everyone in your Party,\nincluding characters on reserve."; } }
 
         public override TargetType TargetType { get { return TargetType.Allies; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }
@@ -31,8 +31,8 @@ namespace ProjectR.Scripting
 
         public override void SpellEffect(ICharacter caster, ICharacter target)
         {
-            BuffStat(Stat.DEF, .3);
-            BuffStat(Stat.MR, .3);
+            BuffStat(Stat.AD, .3);
+            BuffStat(Stat.MD, .3);
         }
     }
 }
