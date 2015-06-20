@@ -222,5 +222,21 @@ namespace ProjectR.Scripting
                 ? Model.BattleModel.CreateEnemyMinion(clone)
                 : Model.BattleModel.CreatePlayerMinion(clone);
         }
+
+        public void AddSpell(ICharacter character, string spellName)
+        {
+            character.Spells.Add(Model.SpellFactory.GetSpell(spellName));
+        }
+
+        public ICharacter SummonMinionCopyAmongEnemy(ICharacter target, string name)
+        {
+            var clone = target.Clone();
+            clone.Name = name;
+            clone.Race = name;
+            var battleModel = Model.BattleModel;
+            return battleModel.CharacterIsEnemy(battleModel.CurrentAttacker)
+                ? Model.BattleModel.CreatePlayerMinion(clone)
+                : Model.BattleModel.CreateEnemyMinion(clone);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
@@ -98,7 +99,7 @@ namespace ProjectR.Model
             {
                 Lore = Lore,
                 Race = Race,
-                Spells = Spells,
+                Spells = Spells.ToList(), // creates new list
                 Stats = Stats.Clone(),
                 CurrentLevel = CurrentLevel
             };

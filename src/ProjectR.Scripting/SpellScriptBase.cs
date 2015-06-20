@@ -10,6 +10,11 @@ namespace ProjectR.Scripting
     {
         private static IScriptHelper ScriptHelper { get { return RHelper.ScriptHelper; } }
 
+        protected void AddSpell(ICharacter character, string spellName)
+        {
+            ScriptHelper.AddSpell(character, spellName);
+        }
+
         protected IEnumerable<ICharacter> GetCasterParty()
         {
             return ScriptHelper.GetCasterParty();
@@ -18,6 +23,11 @@ namespace ProjectR.Scripting
         protected IEnumerable<ICharacter> GetCasterReserveParty()
         {
             return ScriptHelper.GetCasterReserveParty();
+        }
+
+        protected ICharacter SummonMinionCopyAmongEnemy(ICharacter target, string name)
+        {
+            return ScriptHelper.SummonMinionCopyAmongEnemy(target, name);
         }
 
         protected ICharacter SummonMinionCopy(ICharacter target, string name)
@@ -331,6 +341,72 @@ namespace ProjectR.Scripting
         {
             return character.TotalStat(DebuffResistance.SIL);
         }
+
+        #endregion
+
+        #endregion
+
+        #region Legacy Total Stat Functions
+        // These identifiers where used in the lua scripts in the C++ version. For easier porting I added these. 
+
+        #region BaseStats
+
+        protected double aHP { get { return HP(Caster); } }
+        protected double aMP { get { return MP(Caster); } }
+        protected double aAD { get { return AD(Caster); } }
+        protected double aMD { get { return MD(Caster); } }
+        protected double aDEF { get { return DEF(Caster); } }
+        protected double aMR { get { return MR(Caster); } }
+        protected double aEVA { get { return EVA(Caster); } }
+        protected double aSPD { get { return SPD(Caster); } }
+        protected double aCHA { get { return CHA(Caster); } }
+
+        protected double dHP { get { return HP(Target); } }
+        protected double dMP { get { return MP(Target); } }
+        protected double dAD { get { return AD(Target); } }
+        protected double dMD { get { return MD(Target); } }
+        protected double dDEF { get { return DEF(Target); } }
+        protected double dMR { get { return MR(Target); } }
+        protected double dEVA { get { return EVA(Target); } }
+        protected double dSPD { get { return SPD(Target); } }
+        protected double dCHA { get { return CHA(Target); } }
+        #endregion
+
+        #region Masteries
+
+        protected double aFIR { get { return FIR(Caster); } }
+        protected double aWAT { get { return WAT(Caster); } }
+        protected double aICE { get { return ICE(Caster); } }
+        protected double aARC { get { return ARC(Caster); } }
+        protected double aWND { get { return WND(Caster); } }
+        protected double aHOL { get { return HOL(Caster); } }
+        protected double aDRK { get { return DRK(Caster); } }
+        protected double aGRN { get { return GRN(Caster); } }
+        protected double aLGT { get { return LGT(Caster); } }
+
+        protected double dFIR { get { return FIR(Target); } }
+        protected double dWAT { get { return WAT(Target); } }
+        protected double dICE { get { return ICE(Target); } }
+        protected double dARC { get { return ARC(Target); } }
+        protected double dWND { get { return WND(Target); } }
+        protected double dHOL { get { return HOL(Target); } }
+        protected double dDRK { get { return DRK(Target); } }
+        protected double dGRN { get { return GRN(Target); } }
+        protected double dLGT { get { return LGT(Target); } }
+
+        #endregion
+
+        #region DebuffResistances
+
+        protected double aPSN { get { return PSN(Caster); } }
+        protected double aPAR { get { return PAR(Caster); } }
+        protected double aDTH { get { return DTH(Caster); } }
+        protected double aSIL { get { return SIL(Caster); } }
+
+        protected double dPSN { get { return PSN(Target); } }
+        protected double dPAR { get { return PAR(Target); } }
+        protected double dDTH { get { return DTH(Target); } }
+        protected double dSIL { get { return SIL(Target); } }
 
         #endregion
 

@@ -22,5 +22,7 @@ namespace ProjectR.Interfaces.Helper
         IEnumerable<ICharacter> GetCasterReserveParty();
         double GetDeathCountOfAttackerParty();
         ICharacter SummonMinionCopy(ICharacter target, string name);
+        void AddSpell(ICharacter character, string spellName);
+        ICharacter SummonMinionCopyAmongEnemy(ICharacter target, string name);
     }
 }
