@@ -36,6 +36,7 @@ namespace ProjectR.Interfaces.Helper
         public static void Exit(ErrorCodes exitCode, string reason)
         {
             Console.Error.WriteLine(reason);
+            Console.WriteLine(reason);
             Environment.Exit((int) exitCode);
         }
     }

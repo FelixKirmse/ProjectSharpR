@@ -11,7 +11,6 @@ namespace ProjectR.Interfaces.Factories
         IStateMachineSynchronizer CreateStateMachineSynchronizer();
         IRModel CreateModel();
         IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager);
-        IAffliction CreateScriptedAffliction(IModel model, string file);
         IConsoleView CreateConsoleView();
         IRLogic CreateLogic();
         IMenu CreateMenu();

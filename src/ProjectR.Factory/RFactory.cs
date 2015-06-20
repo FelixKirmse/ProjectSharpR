@@ -1,5 +1,4 @@
 ﻿using System;
-using ProjectR.Interfaces;
 using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Logic;
@@ -34,11 +33,6 @@ namespace ProjectR.Factory
         public IMapGenerator CreateMapGenerator(IRMap map, IMobPackManager mobPackManager)
         {
             return new MapGenerator(map, mobPackManager);
-        }
-
-        public IAffliction CreateScriptedAffliction(IModel model, string file)
-        {
-            return new Affliction(model, file);
         }
 
         public IConsoleView CreateConsoleView()

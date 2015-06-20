@@ -9,5 +9,6 @@ namespace ProjectR.Interfaces.Helper
         IEnumerable<ISpell> LoadSpells(UpdateLoadResourcesDelegate updateAction);
         int RaceTemplateCount { get; }
         int SpellCount { get; }
+        IEnumerable<IAffliction> LoadAfflictions(UpdateLoadResourcesDelegate updateAction);
     }
 }

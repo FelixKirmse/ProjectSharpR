@@ -7,24 +7,24 @@ using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class AfflictionFactory : IAfflictionFactory
+    public class AfflictionFactory : FactoryBase, IAfflictionFactory
     {
-        private const string ScriptPath = "content/scripts/afflictions";
-
         private readonly Dictionary<string, IAffliction> _afflictions;
-        private readonly IModel _model;
 
         public AfflictionFactory(IModel model)
         {
-            _model = model;
+            Model = model;
             _afflictions = new Dictionary<string, IAffliction>();
         }
 
         public void LoadAfflictions()
         {
-            LoadFrom(ScriptPath + "/Buffs");
-            LoadFrom(ScriptPath + "/Debuffs");
-            LoadFrom(ScriptPath + "/Passives");
+            Model.LoadResourcesModel.OverarchingAction = "Loading Afflictions";
+
+            foreach (var affliction in RHelper.ScriptLoader.LoadAfflictions(UpdateModel))
+            {
+                _afflictions[affliction.Name] = affliction;
+            }
         }
 
         public IAffliction GetAffliction(string name)
@@ -40,17 +40,6 @@ namespace ProjectR.Model
         public void RemoveAllAfflictions()
         {
             _afflictions.Clear();
-        }
-
-        private void LoadFrom(string path)
-        {
-            foreach (IAffliction affl in from file in Directory.EnumerateFiles(path)
-                                         let fileInfo = new FileInfo(file)
-                                         where fileInfo.Extension == "cs"
-                                         select Factories.RFactory.CreateScriptedAffliction(_model, file))
-            {
-                _afflictions[affl.Name] = affl;
-            }
         }
     }
 }

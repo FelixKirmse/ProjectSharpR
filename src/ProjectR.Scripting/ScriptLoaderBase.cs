@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using CSScriptLibrary;
 using ProjectR.Interfaces.Model;
 
@@ -48,8 +49,10 @@ namespace ProjectR.Scripting
         protected virtual IEnumerable<T> LoadScript(FileSystemInfo file, UpdateLoadResourcesDelegate updateAction, int totalCount, int currentCount)
         {
             var assemblyPath = Path.Combine(CompleteCompiledScriptPath, Path.ChangeExtension(file.Name, ".dll"));
+            var md5Path = Path.Combine(CompleteCompiledScriptPath, Path.ChangeExtension(file.Name, ".md5"));
+
             Assembly assembly;
-            if (ScriptNeedsCompilation(file, assemblyPath))
+            if (ScriptNeedsCompilation(file, assemblyPath, md5Path))
             {
                 updateAction(string.Format("Compiling: {0}", file.Name), currentCount, totalCount);
                 assembly = CSScript.Load(file.ToString(), assemblyPath, false);
@@ -67,17 +70,41 @@ namespace ProjectR.Scripting
                            .Select(source => (T)helper.CreateObject(source.FullName));
         }
 
-        private static bool ScriptNeedsCompilation(FileSystemInfo script, string assemblyPath)
+        private static bool ScriptNeedsCompilation(FileSystemInfo script, string assemblyPath, string md5Path)
         {
-            if (!File.Exists(assemblyPath))
+            if (!File.Exists(assemblyPath) || !File.Exists(md5Path))
             {
+                var md5 = ComputeHash(script.ToString());
+                SaveHashFile(md5, md5Path);
                 return true;
             }
 
-            var assemblyInfo = new FileInfo(assemblyPath);
-            var currentAssemblyInfo = new FileInfo(Assembly.GetExecutingAssembly().Location);
+            var oldMd5 = ReadHashFile(md5Path);
+            var currentMd5 = ComputeHash(script.ToString());
 
-            return /*currentAssemblyInfo.LastWriteTimeUtc > script.LastWriteTimeUtc || */script.LastWriteTimeUtc > assemblyInfo.LastWriteTimeUtc;
+            return !oldMd5.SequenceEqual(currentMd5);
+        }
+
+        private static void SaveHashFile(byte[] md5, string md5Path)
+        {
+            using (var stream = File.OpenWrite(md5Path))
+            {
+                stream.Write(md5, 0, md5.Length);
+            }
+        }
+
+        private static IEnumerable<byte> ReadHashFile(string fileName)
+        {
+            return File.ReadAllBytes(fileName);
+        }
+
+        public static byte[] ComputeHash(string fileName)
+        {
+            using (var md5 = MD5.Create())
+            using (var stream = File.OpenRead(fileName))
+            {
+                return md5.ComputeHash(stream);
+            }
         }
     }
 }
