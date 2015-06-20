@@ -238,5 +238,16 @@ namespace ProjectR.Scripting
                 ? Model.BattleModel.CreatePlayerMinion(clone)
                 : Model.BattleModel.CreateEnemyMinion(clone);
         }
+
+        public void RemoveAffliction(ICharacter character, IAffliction affliction)
+        {
+            if (!_charAfflDictionary.ContainsKey(character))
+            {
+                return;
+            }
+
+            var afflictions = _charAfflDictionary[character];
+            afflictions.Remove(affliction);
+        }
     }
 }

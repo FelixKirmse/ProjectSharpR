@@ -39,7 +39,10 @@ namespace ProjectR.Model
 
         public void RemoveAllAfflictions()
         {
-            _afflictions.Clear();
+            foreach (var affliction in _afflictions.Values)
+            {
+                affliction.RemoveFromEveryone();
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ProjectR.Scripting
 
         public IEnumerable<IAffliction> LoadAfflictions(UpdateLoadResourcesDelegate updateAction)
         {
-            return _afflictionScriptLoader.LoadAllScripts(updateAction);
+            return _afflictionScriptLoader.LoadScripts(updateAction);
         }
     }
 }

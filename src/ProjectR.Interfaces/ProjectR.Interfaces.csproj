@@ -104,7 +104,7 @@
     <Compile Include="Model\CharacterRollingEvasionDelegate.cs" />
     <Compile Include="Model\CharacterTakingDamageDelegate.cs" />
     <Compile Include="Model\CharacterUsingMPDelegate.cs" />
-    <Compile Include="Model\HookPoints.cs" />
+    <Compile Include="Model\HookPoint.cs" />
     <Compile Include="Model\IAffliction.cs" />
     <Compile Include="Model\IAfflictionFactory.cs" />
     <Compile Include="Model\IArcheType.cs" />

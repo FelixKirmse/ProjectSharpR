@@ -2,7 +2,7 @@ namespace ProjectR.Interfaces.Model
 {
     public class BoolConsolidator
     {
-        private bool _result;
+        private bool _result = true;
 
         public void AddResult(bool result)
         {

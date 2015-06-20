@@ -22,7 +22,7 @@ namespace ProjectR.Scripting
         {
             get
             {
-                return Directory.EnumerateFiles(CompletePath)
+                return Directory.EnumerateFiles(CompletePath, "*.cs", SearchOption.AllDirectories)
                                 .Select(x => new FileInfo(x)).Count(x => x.Extension == ".cs");
             }
         }
@@ -38,7 +38,7 @@ namespace ProjectR.Scripting
             }
 
             var resultList = new List<T>();
-            foreach (var file in Directory.EnumerateFiles(CompletePath).Select(x => new FileInfo(x)).Where(x => x.Extension == ".cs"))
+            foreach (var file in Directory.EnumerateFiles(CompletePath, "*.cs", SearchOption.AllDirectories).Select(x => new FileInfo(x)).Where(x => x.Extension == ".cs"))
             {
                 resultList.AddRange(LoadScript(file, updateAction, totalCount, ++currentCount));
             }

@@ -1,6 +1,6 @@
 namespace ProjectR.Interfaces.Model
 {
-    public enum HookPoints
+    public enum HookPoint
     {
         TakingDamage,
         RollingEvasion,

@@ -629,6 +629,30 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="AfflictionScriptLoader.cs" />
+    <None Include="content\scripts\afflictions\Buffs\Clearcasting.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\CertainDeath.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\Drunk.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\InstaDeath.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\MiniStun.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\Paralyze.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\Poison.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\afflictions\Debuffs\Silence.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="SpellBase.cs" />
     <Compile Include="SpellScriptBase.cs" />
@@ -714,97 +738,73 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\scripts\afflictions\Buffs\Clearcasting.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\AggresiveRegeneration.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\CertainDeath.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\AstralImprisonment.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Drunk.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\BeerArmor.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\InstaDeath.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Boss.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\MiniStun.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Counter.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Paralyze.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\DarkPortal.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Poison.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Enemy.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Silence.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\FieryRegeneration.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\AggresiveRegeneration.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\FlavorOfTheMonth.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\AstralImprisonment.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\GlassBones.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\BeerArmor.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\HardeningSkin.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\Boss.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\JackOfAllTrades.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\Counter.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\KissOfDuplication.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\DarkPortal.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\LingeringDeath.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\Enemy.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\MagicResistant.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\FieryRegeneration.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Minion.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\FlavorOfTheMonth.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Regeneration.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\GlassBones.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Rejuvenation.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\HardeningSkin.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\RiseOfThePhoenix.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\JackOfAllTrades.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\RockHard.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\KissOfDuplication.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\ShadowWisp.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\LingeringDeath.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\SwiftFeet.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Passives\MagicResistant.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\Minion.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\Regeneration.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\Rejuvenation.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\RiseOfThePhoenix.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\RockHard.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\ShadowWisp.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\SwiftFeet.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\Windfury.lua">
+    <None Include="content\scripts\afflictions\Passives\lua\Windfury.lua">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="content\scripts\archetypes\archetypes.cfg">
