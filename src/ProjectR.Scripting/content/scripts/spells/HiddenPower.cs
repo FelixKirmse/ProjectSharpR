@@ -3,7 +3,7 @@ using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
-namespace ProjectR.Scripting
+namespace ProjectR.Scripting.Spells
 {
     public class HiddenPower : SpellScriptBase
     {

@@ -25,5 +25,7 @@ namespace ProjectR.Interfaces.Helper
         void AddSpell(ICharacter character, string spellName);
         ICharacter SummonMinionCopyAmongEnemy(ICharacter target, string name);
         void RemoveAffliction(ICharacter character, IAffliction affliction);
+        ICharacter GetCurrentAttacker();
+        ISpell GetCurrentSpell();
     }
 }

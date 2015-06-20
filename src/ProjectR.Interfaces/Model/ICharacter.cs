@@ -34,6 +34,7 @@ namespace ProjectR.Interfaces.Model
 
         string AfflictedBy { get; }
         double HPPercentage { get; }
+        double MaxHP { get; }
 
         ICharacter Clone();
 

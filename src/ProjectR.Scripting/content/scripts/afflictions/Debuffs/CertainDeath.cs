@@ -1,7 +1,6 @@
 ﻿using ProjectR.Interfaces.Model;
-using ProjectR.Interfaces.Model.Stats;
 
-namespace ProjectR.Scripting
+namespace ProjectR.Scripting.Afflictions
 {
     public class CertainDeath : Affliction
     {

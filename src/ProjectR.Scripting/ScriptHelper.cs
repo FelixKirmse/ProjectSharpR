@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
@@ -248,6 +249,16 @@ namespace ProjectR.Scripting
 
             var afflictions = _charAfflDictionary[character];
             afflictions.Remove(affliction);
+        }
+
+        public ICharacter GetCurrentAttacker()
+        {
+            return Model.BattleModel.CurrentAttacker;
+        }
+
+        public ISpell GetCurrentSpell()
+        {
+            return Model.BattleModel.TargetInfo.Spell;
         }
     }
 }

@@ -81,6 +81,7 @@ namespace ProjectR.Model
         public bool TakesTurn { get; private set; }
         public string AfflictedBy { get; private set; }
         public double HPPercentage { get { return CurrentHP / Stats.GetTotalStat(BaseStat.HP); } }
+        public double MaxHP { get { return _stats.GetTotalStat(BaseStat.HP); } }
 
         public IStats Stats
         {

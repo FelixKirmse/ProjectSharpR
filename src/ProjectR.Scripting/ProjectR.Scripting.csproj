@@ -61,658 +61,729 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affliction.cs" />
-    <None Include="content\scripts\spells\5ExaWattsXterminationLaserX1337.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\5ExaWattsXterminationLaserX1337.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AcidicSea.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\AcidicSea.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AlphaSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\AlphaSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\AmazingBitchSlapX11.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\AmazingBitchSlapX11.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Anomaly.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Anomaly.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Attack.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Attack.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Backstab.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Backstab.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BalanceIsKey.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BalanceIsKey.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BalanceStrike.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BalanceStrike.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BarrierOfFaith.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BarrierOfFaith.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Bash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Bash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BeastlySmash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BeastlySmash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EightHeadedRadiantHydra.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\EightHeadedRadiantHydra.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessedGround.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BlessedGround.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessingOfTheGods.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BlessingOfTheGods.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlessingOfTheWindGod.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BlessingOfTheWindGod.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlindKnowledge.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BlindKnowledge.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Blitzkrieg.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Blitzkrieg.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BlizzardOfTheTundraWasteland.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BlizzardOfTheTundraWasteland.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BloodForPower.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BloodForPower.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BreathOfTheBabyIceDragon.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BreathOfTheBabyIceDragon.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\BugStorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\BugStorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CataclysmicBarrier.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\CataclysmicBarrier.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Catwalk.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Catwalk.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ChaosBarrier.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ChaosBarrier.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ChaosCleanse.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ChaosCleanse.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Cleanse.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Cleanse.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CleansingSong.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\CleansingSong.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CripplingAura.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\CripplingAura.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\CurseOfTheHanyo.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\CurseOfTheHanyo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkFogAlly.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DarkFogAlly.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkFogEnemy.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DarkFogEnemy.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarkMend.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DarkMend.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DarknessComesFromWithin.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DarknessComesFromWithin.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DeadlySwarm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DeadlySwarm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DeadlyVenom.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DeadlyVenom.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Defend.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Defend.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DefenseOfTheAncients.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DefenseOfTheAncients.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DemonicSeal61Maru.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DemonicSeal61Maru.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DemonicStrike.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DemonicStrike.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DistortionField.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DistortionField.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DivineLightOfTheGoddess.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DivineLightOfTheGoddess.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\DivineRestoration.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\DivineRestoration.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmbraceOfTheDemon.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\EmbraceOfTheDemon.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmbraceOfTheWindGod.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\EmbraceOfTheWindGod.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\EmpoweringLaser.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\EmpoweringLaser.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ExpectTheUnexpected.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ExpectTheUnexpected.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ExplosiveFist.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ExplosiveFist.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Extinction.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Extinction.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FearOfTheDark.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FearOfTheDark.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FieryFuryFist.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FieryFuryFist.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FireWheel.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FireWheel.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FlyingPhoenix.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FlyingPhoenix.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell42.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ForbiddenSpell42.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell64.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ForbiddenSpell64.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell74.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ForbiddenSpell74.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenSpell98.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ForbiddenSpell98.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ForbiddenTechniqueRage.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ForbiddenTechniqueRage.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FracturedLaserBarrage.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FracturedLaserBarrage.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FreezeThemToDeath.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FreezeThemToDeath.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FrostBlast.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FrostBlast.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FrozenBlood.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FrozenBlood.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FuckThemUp.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FuckThemUp.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\FuzzyOverhaul.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\FuzzyOverhaul.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GhostNova.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\GhostNova.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GlimmeringTrap.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\GlimmeringTrap.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\GrandHealingPotion.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\GrandHealingPotion.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HandOfDeath.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HandOfDeath.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Haunt.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Haunt.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HealingRain.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HealingRain.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HealingTouch.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HealingTouch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HellFireFlare.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HellFireFlare.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HellsInferno.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HellsInferno.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HiddenPower.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HiddenPower.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HiddenSeal37.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HiddenSeal37.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyEntanglement.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HolyEntanglement.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyOrb.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HolyOrb.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\HolyPunch.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\HolyPunch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Hurricane.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Hurricane.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\IcePrison.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\IcePrison.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\IcicleBarrage.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\IcicleBarrage.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Inspire.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Inspire.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\InspiringSpeech.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\InspiringSpeech.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\JumpingJacks.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\JumpingJacks.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\KonSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\KonSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LastManStanding.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\LastManStanding.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LeaveCutter.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\LeaveCutter.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LetsSpeedThisUp.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\LetsSpeedThisUp.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LightAndShadowIntertwined.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\LightAndShadowIntertwined.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\LingeringDeath.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\LingeringDeath.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicCharge.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MagicCharge.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicDampeningZone.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MagicDampeningZone.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicMissile.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MagicMissile.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicSap.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MagicSap.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MagicShot.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MagicShot.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MasterOfMind.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MasterOfMind.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Meditation.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Meditation.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MeltingThunder.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MeltingThunder.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MindStorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MindStorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiniatureTornado.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MiniatureTornado.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiniBlackHole.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MiniBlackHole.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MiraclePoke.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MiraclePoke.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MirrorImage.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MirrorImage.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\MysticalDragonFly.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\MysticalDragonFly.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NeedleRain.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\NeedleRain.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Netherball.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Netherball.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NightStalker.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\NightStalker.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NuclearMeltdown.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\NuclearMeltdown.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\NumberOfTheBeast.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\NumberOfTheBeast.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OffenseIsTheBestDefense.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OffenseIsTheBestDefense.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OffenseOfTheAncients.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OffenseOfTheAncients.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OmaeWaMoShindeiru.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OmaeWaMoShindeiru.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OmegaSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OmegaSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OmniSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OmniSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OneAtATime.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OneAtATime.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OpticalCamouflageX69.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OpticalCamouflageX69.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\OrbOfFilth.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\OrbOfFilth.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PenetratingHorn.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\PenetratingHorn.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PiercingFlames.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\PiercingFlames.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\PoisonFlight.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\PoisonFlight.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\QuickDive.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\QuickDive.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\QuickSurprise.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\QuickSurprise.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RadiantLight.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\RadiantLight.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RagingFireStorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\RagingFireStorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RagingStorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\RagingStorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Ragnarok.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Ragnarok.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Ram.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Ram.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RavagingFlow.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\RavagingFlow.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ReapersScycthe.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ReapersScycthe.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\RecklessSwing.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\RecklessSwing.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ScarletSwordSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ScarletSwordSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ScytheOfTheDoomed.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ScytheOfTheDoomed.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SealOfGod.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SealOfGod.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecondWind.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SecondWind.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique48.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SecretTechnique48.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique64.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SecretTechnique64.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechnique76.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SecretTechnique76.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SecretTechniqueStoneform.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SecretTechniqueStoneform.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SeefOfCorruption.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SeefOfCorruption.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowRay.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ShadowRay.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowShot.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ShadowShot.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ShadowTrap.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ShadowTrap.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SharingIsCaring.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SharingIsCaring.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SharpAssault.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SharpAssault.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Slash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Slash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SniffMyFinger.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SniffMyFinger.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SoulVacuum.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SoulVacuum.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StabbyStab.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\StabbyStab.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StoneBreaker.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\StoneBreaker.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StormDash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\StormDash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\StunBomb.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\StunBomb.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonChaosTroubleMakers.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonChaosTroubleMakers.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonDivineDuo.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonDivineDuo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonFieryInfernals.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonFieryInfernals.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonGhostlyPriest.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonGhostlyPriest.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonImp.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonImp.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonInfiltrationUnit.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonInfiltrationUnit.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonStorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonStorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SummonTrickster.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SummonTrickster.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupersonicSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SupersonicSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueShield.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SupportTechniqueShield.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueSword.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SupportTechniqueSword.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SupportTechniqueWand.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SupportTechniqueWand.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\SurgeOfLightning.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\SurgeOfLightning.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Switch.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Switch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Technique10.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Technique10.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheAlchemistsSecretElixier.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TheAlchemistsSecretElixier.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheNewWays.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TheNewWays.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TheOldWays.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TheOldWays.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ThousandNeedles.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ThousandNeedles.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TicklingNeedles.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TicklingNeedles.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TimeBubble.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TimeBubble.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TimeStop.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TimeStop.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Tornado.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Tornado.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TrueForm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TrueForm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TruePotential.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TruePotential.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Tsunami.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Tsunami.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TwilightBarrier.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TwilightBarrier.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\TwistingNether.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\TwistingNether.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\UltimateTaboo.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\UltimateTaboo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\Untouchable.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\Untouchable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\VengefulSpirit.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\VengefulSpirit.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\ViolentThunderstorm.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\ViolentThunderstorm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WaterfallX84.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WaterfallX84.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WaveOfDarkness.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WaveOfDarkness.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WeakeningFireBeam.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WeakeningFireBeam.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindGodTornado.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WindGodTornado.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindSlash.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WindSlash.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\spells\WindStrike.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Spells\WindStrike.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="AfflictionScriptLoader.cs" />
-    <None Include="content\scripts\afflictions\Buffs\Clearcasting.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Buffs\Clearcasting.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\CertainDeath.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\CertainDeath.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Drunk.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\Drunk.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\InstaDeath.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\InstaDeath.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\MiniStun.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\MiniStun.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Paralyze.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\Paralyze.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Poison.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\Poison.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\afflictions\Debuffs\Silence.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Afflictions\Debuffs\Silence.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\AggresiveRegeneration.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\AstralImprisonment.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\BeerArmor.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Boss.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Counter.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\DarkPortal.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Enemy.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\FieryRegeneration.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\FlavorOfTheMonth.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\GlassBones.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\HardeningSkin.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\JackOfAllTrades.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\KissOfDuplication.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\LingeringDeathAffliction.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\MagicResistant.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Minion.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Regeneration.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Rejuvenation.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\RiseOfThePhoenix.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\RockHard.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\ShadowWisp.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\SwiftFeet.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\WindFury.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="SpellBase.cs" />
     <Compile Include="SpellScriptBase.cs" />
     <Compile Include="SpellScriptLoader.cs" />
     <Compile Include="SpellTemplate.cs" />
-    <None Include="content\scripts\races\Human.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Human.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Viking.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Viking.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Dwarf.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Dwarf.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Gnome.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Gnome.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Berserker.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Berserker.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Beerman.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Beerman.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Hardcore.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Hardcore.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Arcana.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Arcana.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\IceCream.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\IceCream.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\ForestTroll.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\ForestTroll.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\MountainTroll.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\MountainTroll.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\FireTroll.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\FireTroll.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\CaveTroll.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\CaveTroll.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Imp.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Imp.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\DeathReaper.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\DeathReaper.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Compile Include="content\scripts\races\RaceTemplate.cs" />
-    <Compile Include="content\scripts\races\Rockman.cs" />
-    <None Include="content\scripts\races\Troll.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Compile Include="RaceTemplate.cs" />
+    <None Include="content\scripts\Races\Rockman.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\ShadowDemon.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\Troll.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\races\Succubus.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\Races\ShadowDemon.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Races\Succubus.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RaceScriptLoader.cs" />
@@ -738,75 +809,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\scripts\afflictions\Passives\lua\AggresiveRegeneration.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\AstralImprisonment.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\BeerArmor.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Boss.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Counter.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\DarkPortal.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Enemy.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\FieryRegeneration.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\FlavorOfTheMonth.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\GlassBones.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\HardeningSkin.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\JackOfAllTrades.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\KissOfDuplication.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\LingeringDeath.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\MagicResistant.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Minion.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Regeneration.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Rejuvenation.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\RiseOfThePhoenix.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\RockHard.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\ShadowWisp.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\SwiftFeet.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\afflictions\Passives\lua\Windfury.lua">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="content\scripts\archetypes\archetypes.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

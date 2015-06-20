@@ -24,14 +24,49 @@ namespace ProjectR.Scripting
             _hookPoints = HookPoints;
         }
 
-        public double GetVar(ICharacter character, string varName)
+        protected ISpell GetCurrentSpell()
+        {
+            return ScriptHelper.GetCurrentSpell();
+        }
+
+        protected ICharacter SummonMinionCopyAmongEnemy(ICharacter character, string name)
+        {
+            return ScriptHelper.SummonMinionCopyAmongEnemy(character, name);
+        }
+
+        protected void AddSpell(ICharacter character, string name)
+        {
+            ScriptHelper.AddSpell(character, name);
+        }
+
+        protected ICharacter SummonMinionCopy(ICharacter character, string name)
+        {
+            return ScriptHelper.SummonMinionCopy(character, name);
+        }
+
+        protected ICharacter GetCurrentAttacker()
+        {
+            return ScriptHelper.GetCurrentAttacker();
+        }
+
+        protected void ApplyAffliction(ICharacter character, string afflName)
+        {
+            ScriptHelper.ApplyAffliction(character, afflName);
+        }
+
+        protected double GetVar(ICharacter character, string varName)
         {
             return ScriptHelper.GetVar(character, varName);
         }
 
-        public void SetVar(ICharacter character, string varName, double value)
+        protected void SetVar(ICharacter character, string varName, double value)
         {
             ScriptHelper.SetVar(character, varName, value);
+        }
+
+        protected bool RollPercentage(double chance)
+        {
+            return RHelper.RollPercentage((int) chance);
         }
 
         public void AttachTo(ICharacter character)

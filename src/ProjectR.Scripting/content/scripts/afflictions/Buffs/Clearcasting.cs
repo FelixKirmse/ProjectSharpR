@@ -1,6 +1,6 @@
 ﻿using ProjectR.Interfaces.Model;
 
-namespace ProjectR.Scripting
+namespace ProjectR.Scripting.Afflictions
 {
     public class Clearcasting : Affliction
     {

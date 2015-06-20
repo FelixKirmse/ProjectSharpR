@@ -4,7 +4,7 @@ using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.Model.Stats;
 
-namespace ProjectR.Scripting
+namespace ProjectR.Scripting.Spells
 {
     public class SecretTechnique76 : SpellScriptBase
     {

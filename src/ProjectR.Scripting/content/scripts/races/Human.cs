@@ -2,7 +2,7 @@
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
-namespace ProjectR.Scripting
+namespace ProjectR.Scripting.Races
 {
     public class Human : IRaceTemplate
     {
