@@ -55,6 +55,25 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\lib\libSDL.so">
+      <Link>libSDL.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\lib\libtcod-net-unmanaged.so">
+      <Link>libtcod-net-unmanaged.so</Link>
+    </None>
+    <None Include="..\..\lib\libtcod.dylib">
+      <Link>libtcod.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\lib\libtcod.so">
+      <Link>libtcod.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\lib\libtcodxx.so">
+      <Link>libtcodxx.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
