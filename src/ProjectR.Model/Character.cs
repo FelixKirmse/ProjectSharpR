@@ -53,6 +53,7 @@ namespace ProjectR.Model
 
         public const int XPRequiredForLvlUp = 2000;
         private IStats _stats;
+        private double _currentHP;
         public static double StaticTimeToAction { get; set; }
 
         public Character(string name)
@@ -65,7 +66,7 @@ namespace ProjectR.Model
         public string Lore { get; set; }
         public double TurnCounter { get; set; }
         public double TimeToAction { get { return StaticTimeToAction; } set { StaticTimeToAction = value; } }
-        public double CurrentHP { get; set; }
+        public double CurrentHP { get { return Math.Min(_currentHP, MaxHP); } set { _currentHP = value; } }
         public bool IsSilenced { get; set; }
         public bool IsMinion { get; set; }
         public bool IsMarked { get; set; }

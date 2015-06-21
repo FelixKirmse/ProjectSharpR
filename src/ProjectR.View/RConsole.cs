@@ -91,7 +91,7 @@ namespace ProjectR.View
                     : col == width - 1 ? TCODSpecialCharacter.SE : TCODSpecialCharacter.HorzLine;
 
                 SetCharacter(col, 0, (int) drawCharTop);
-                SetCharacter(col, 0, (int) drawCharBot);
+                SetCharacter(col, height - 1, (int) drawCharBot);
             }
 
             for (var row = 1; row < height - 1; ++row)

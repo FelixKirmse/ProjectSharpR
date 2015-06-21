@@ -81,8 +81,8 @@ namespace ProjectR.Logic
                 HandleNameEntering();
                 return;
             }
-
-            _controller.ControlMenu(this, Input, Master.Previous);
+            
+            _controller.ControlMenu(_menu, Input, Master.Previous);
 
             if (Input.Action(Actions.Confirm) && !FirstStateActive())
             {
@@ -377,7 +377,7 @@ namespace ProjectR.Logic
         #region IMenu Delegation
 
         public IState CurrentState { get { return _menu.CurrentState; } }
-
+        
         public void Next()
         {
             _menu.Next();

@@ -56,7 +56,10 @@ namespace ProjectR.Model
         {
             var passives = new List<IAffliction>();
 
-            passives.AddRange(_passives[character.Name]);
+            if (_passives.ContainsKey(character.Name))
+            {
+                passives.AddRange(_passives[character.Name]);
+            }
             passives.AddRange(_model.RaceFactory.GetPassivesForRace(character.Race));
 
             return passives;

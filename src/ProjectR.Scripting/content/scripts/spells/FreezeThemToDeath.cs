@@ -7,7 +7,7 @@ namespace ProjectR.Scripting.Spells
 {
     public class FreezeThemToDeath : SpellScriptBase
     {
-        public override string Name { get { return "Freeze Them To Death"; } }
+        public override string Name { get { return "Freeze Them To Death!"; } }
         public override string Description { get { return "Absorb all heat from your enemies bodies.\nChance to instantly kill targets."; } }
 
         public override TargetType TargetType { get { return TargetType.Enemies; } }
