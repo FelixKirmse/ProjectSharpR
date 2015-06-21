@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class SignatureSpellFactory : ISignatureSpellFactory
+    public class SignatureSpellFactory : FactoryBase, ISignatureSpellFactory
     {
-        private readonly IModel _model;
-
         public SignatureSpellFactory(IModel model)
         {
-            _model = model;
+            Model = model;
         }
 
         public IList<ISpell> SignatureSpells { get; private set; }
 
         public void LoadSignatureSpells()
         {
-            throw new NotImplementedException();
+            Model.LoadResourcesModel.OverarchingAction = "Loading SignatureSpells";
+            SignatureSpells =
+                File.ReadAllLines("content/scripts/SignatureSpells/signaturespells.cfg")
+                    .Select(x => Model.SpellFactory.GetSpell(x))
+                    .ToList();
         }
     }
 }

@@ -34,7 +34,8 @@ namespace ProjectR.Logic
                     initialSpellIndex = 0;
                 }
 
-                targetInfo.Spell = spellList[RHelper.Roll(silenced ? 0 : initialSpellIndex, silenced ? 1 : spellList.Count - 1)];
+                targetInfo.Spell =
+                    spellList[RHelper.Roll(silenced ? 0 : initialSpellIndex, silenced ? 1 : spellList.Count - 1)];
             } while (targetInfo.Spell.MPCost >= character.CurrentMP + 1f);
 
             targetInfo.Target = null;

@@ -70,12 +70,12 @@ namespace ProjectR.View
             PrintString(1, 38,
                 string.Format("Available points to distribute: {0}", Model.PreGameModel.AvailableMasteryPoints));
             RConsole.RootConsole.Blit(this, Bounds, 2, 3);
-            IMenu menu = Model.MenuModel.ActiveMenu;
+            var menu = Model.MenuModel.ActiveMenu;
             _menuDrawer.DrawMenuPart(menu, 0, 5, 3, 4, 1);
             _menuDrawer.DrawMenuPart(menu, 6, 14, 3, 43, 1);
             _menuDrawer.DrawMenuPart(menu, 15, 15, 3, 63);
 
-            ICharacter character = Model.PreGameModel.Character;
+            var character = Model.PreGameModel.Character;
 
             if (Model.PreGameModel.ShowStats)
             {
@@ -145,9 +145,7 @@ namespace ProjectR.View
             _console.Blit(src, srcRect, dstX, dstY, fgAlpha, bgAlpha);
         }
 
-        public TCODConsole UnderlyingConsole
-        {
-            get { return _console.UnderlyingConsole; } }
+        public TCODConsole UnderlyingConsole { get { return _console.UnderlyingConsole; } }
 
         public string GetColorControlString(TCODColor colour)
         {

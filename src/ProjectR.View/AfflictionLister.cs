@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using libtcod;
@@ -26,17 +25,17 @@ namespace ProjectR.View
 
         public void ListAfflictions(ICharacter character, IModel model, IRConsole target = null)
         {
-            IRConsole targetConsole = target ?? RootConsole;
+            var targetConsole = target ?? RootConsole;
             Clear();
             DrawBorder();
-            string redControl = GetColorControlString(TCODColor.red);
-            string stopControl = GetStopControl();
+            var redControl = GetColorControlString(TCODColor.red);
+            var stopControl = GetStopControl();
             PrintString(1, 1, string.Format("{0}Passives:{1}", redControl, stopControl));
 
             var passiveBuilder = new StringBuilder();
-            IList<IAffliction> passives = model.CharacterFactory.GetPassives(character);
+            var passives = model.CharacterFactory.GetPassives(character);
             int[] count = { 0 };
-            foreach (IAffliction passive in passives.Where(passive => count[0] != 4))
+            foreach (var passive in passives.Where(passive => count[0] != 4))
             {
                 passiveBuilder.AppendLine(passive.Name).AppendLine();
                 ++count[0];
@@ -45,12 +44,12 @@ namespace ProjectR.View
             PrintString(3, 3, passiveBuilder.ToString());
             PrintString(1, 11, string.Format("{0}Afflictions:{1}", redControl, stopControl));
 
-            IList<IAffliction> afflictions = RHelper.ScriptHelper.GetAfflictions(character);
+            var afflictions = RHelper.ScriptHelper.GetAfflictions(character);
             count[0] = 13;
-            string orangeControl = GetColorControlString(TCODColor.orange);
-            string greenControl = GetColorControlString(TCODColor.green);
+            var orangeControl = GetColorControlString(TCODColor.orange);
+            var greenControl = GetColorControlString(TCODColor.green);
 
-            foreach (IAffliction affliction in afflictions)
+            foreach (var affliction in afflictions)
             {
                 if (count[0] > 25)
                 {

@@ -9,12 +9,9 @@ namespace ProjectR.Scripting
 {
     public abstract class Affliction : IAffliction
     {
-        public abstract string Name { get; }
-        public abstract AfflictionType Type { get; }
-        protected abstract HookPoint[] HookPoints { get; }
-
-        private readonly HookPoint[] _hookPoints;
         private readonly Dictionary<ICharacter, bool> _afflictedChars = new Dictionary<ICharacter, bool>();
+        private readonly HookPoint[] _hookPoints;
+        protected abstract HookPoint[] HookPoints { get; }
 
         private static IScriptHelper ScriptHelper { get { return RHelper.ScriptHelper; } }
 
@@ -24,50 +21,8 @@ namespace ProjectR.Scripting
             _hookPoints = HookPoints;
         }
 
-        protected ISpell GetCurrentSpell()
-        {
-            return ScriptHelper.GetCurrentSpell();
-        }
-
-        protected ICharacter SummonMinionCopyAmongEnemy(ICharacter character, string name)
-        {
-            return ScriptHelper.SummonMinionCopyAmongEnemy(character, name);
-        }
-
-        protected void AddSpell(ICharacter character, string name)
-        {
-            ScriptHelper.AddSpell(character, name);
-        }
-
-        protected ICharacter SummonMinionCopy(ICharacter character, string name)
-        {
-            return ScriptHelper.SummonMinionCopy(character, name);
-        }
-
-        protected ICharacter GetCurrentAttacker()
-        {
-            return ScriptHelper.GetCurrentAttacker();
-        }
-
-        protected void ApplyAffliction(ICharacter character, string afflName)
-        {
-            ScriptHelper.ApplyAffliction(character, afflName);
-        }
-
-        protected double GetVar(ICharacter character, string varName)
-        {
-            return ScriptHelper.GetVar(character, varName);
-        }
-
-        protected void SetVar(ICharacter character, string varName, double value)
-        {
-            ScriptHelper.SetVar(character, varName, value);
-        }
-
-        protected bool RollPercentage(double chance)
-        {
-            return RHelper.RollPercentage((int) chance);
-        }
+        public abstract string Name { get; }
+        public abstract AfflictionType Type { get; }
 
         public void AttachTo(ICharacter character)
         {
@@ -110,6 +65,7 @@ namespace ProjectR.Scripting
         }
 
         #region Attachment / Detachment
+
         private void DetachEvents(ICharacterEvents character)
         {
             foreach (var hookPoint in _hookPoints)
@@ -261,7 +217,8 @@ namespace ProjectR.Scripting
                 }
             }
         }
-#endregion
+
+        #endregion
 
         #region Events
 
@@ -334,9 +291,55 @@ namespace ProjectR.Scripting
         }
 
         protected virtual void OnAttacking(ICharacter attacker, ICharacter target, ISpell spell, ref double damage,
-                                ref double modifier)
+                                           ref double modifier)
         {
         }
+
         #endregion
+
+        protected ISpell GetCurrentSpell()
+        {
+            return ScriptHelper.GetCurrentSpell();
+        }
+
+        protected ICharacter SummonMinionCopyAmongEnemy(ICharacter character, string name)
+        {
+            return ScriptHelper.SummonMinionCopyAmongEnemy(character, name);
+        }
+
+        protected void AddSpell(ICharacter character, string name)
+        {
+            ScriptHelper.AddSpell(character, name);
+        }
+
+        protected ICharacter SummonMinionCopy(ICharacter character, string name)
+        {
+            return ScriptHelper.SummonMinionCopy(character, name);
+        }
+
+        protected ICharacter GetCurrentAttacker()
+        {
+            return ScriptHelper.GetCurrentAttacker();
+        }
+
+        protected void ApplyAffliction(ICharacter character, string afflName)
+        {
+            ScriptHelper.ApplyAffliction(character, afflName);
+        }
+
+        protected double GetVar(ICharacter character, string varName)
+        {
+            return ScriptHelper.GetVar(character, varName);
+        }
+
+        protected void SetVar(ICharacter character, string varName, double value)
+        {
+            ScriptHelper.SetVar(character, varName, value);
+        }
+
+        protected bool RollPercentage(double chance)
+        {
+            return RHelper.RollPercentage((int) chance);
+        }
     }
 }

@@ -82,7 +82,7 @@ namespace ProjectR.Model
         {
             RHelper.ScriptHelper.ResetAllAfflictions();
 
-            foreach (ICharacter character in Enemies)
+            foreach (var character in Enemies)
             {
                 _model.AfflictionFactory.GetAffliction(IsBossFight ? "Boss" : "Enemy").RemoveFrom(character);
             }
@@ -145,7 +145,7 @@ namespace ProjectR.Model
 
         private ICharacter CreateMinion(ICharacter minion, IList<ICharacter> minionList)
         {
-            ICharacter specialChar = minion.Clone();
+            var specialChar = minion.Clone();
             specialChar.LvlUp(_model.Party.Experience);
             _model.AfflictionFactory.GetAffliction("Minion").AttachTo(specialChar);
 
@@ -161,21 +161,21 @@ namespace ProjectR.Model
 
         private double GetAvgSPD()
         {
-            double spdTotal = 0d;
-            int charCount = 0;
-            foreach (ICharacter enemy in Enemies)
+            var spdTotal = 0d;
+            var charCount = 0;
+            foreach (var enemy in Enemies)
             {
                 spdTotal += enemy.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
             }
 
-            foreach (ICharacter character in FrontRow)
+            foreach (var character in FrontRow)
             {
                 spdTotal += character.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
             }
 
-            foreach (ICharacter character in _model.Party.BackSeat)
+            foreach (var character in _model.Party.BackSeat)
             {
                 spdTotal += character.Stats.GetTotalStat(BaseStat.SPD);
                 ++charCount;
@@ -186,7 +186,7 @@ namespace ProjectR.Model
 
         private static void SetInitialSpeed(IEnumerable<ICharacter> characters)
         {
-            foreach (ICharacter character in characters)
+            foreach (var character in characters)
             {
                 character.TurnCounter = character.Stats[Stat.SPD][StatType.Base];
             }
@@ -194,9 +194,9 @@ namespace ProjectR.Model
 
         private void SetupPassives(IEnumerable<ICharacter> list, bool enemy = false, bool minion = false)
         {
-            foreach (ICharacter character in list)
+            foreach (var character in list)
             {
-                foreach (IAffliction passive in _model.CharacterFactory.GetPassives(character))
+                foreach (var passive in _model.CharacterFactory.GetPassives(character))
                 {
                     passive.AttachTo(character);
                 }
@@ -218,7 +218,7 @@ namespace ProjectR.Model
 
         private static void SetStatBonus(IEnumerable<ICharacter> list, Stat stat, bool doubleBonus)
         {
-            foreach (ICharacter character in list)
+            foreach (var character in list)
             {
                 character.BuffStat(stat, .5d * (doubleBonus ? 2d : 1d));
                 character.ResetDamageTaken();
@@ -233,11 +233,11 @@ namespace ProjectR.Model
                 return;
             }
 
-            int experience = _model.Party.Experience;
+            var experience = _model.Party.Experience;
 
-            foreach (ICharacter enemy in pack.Enemies)
+            foreach (var enemy in pack.Enemies)
             {
-                double xpFactor = 1d;
+                var xpFactor = 1d;
                 switch (pack.GetStrength(enemy))
                 {
                     case MobPackStrength.Stronger:
@@ -269,7 +269,7 @@ namespace ProjectR.Model
                 Enemies.Add(enemy);
             }
 
-            foreach (ICharacter minion in pack.Minions)
+            foreach (var minion in pack.Minions)
             {
                 minion.LvlUp(experience);
                 EnemyMinions.Add(minion);

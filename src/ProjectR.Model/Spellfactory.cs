@@ -24,12 +24,13 @@ namespace ProjectR.Model
 
             foreach (var spell in _spells)
             {
-                _nameMap.Add(spell.Name, spell);
+                _nameMap.Add(spell.Name.ToLower(), spell);
             }
         }
 
         public ISpell GetSpell(string name)
         {
+            name = name.ToLower();
             if (!_nameMap.ContainsKey(name))
             {
                 ExitHelper.Exit(ErrorCodes.ErrorSpellNotFound, "Spell not found " + name);

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using ProjectR.Interfaces;
@@ -70,16 +69,16 @@ namespace ProjectR.Model
 
         public void SharedGenerationFunction(ICharacter newChar, int level, IRaceTemplate race = null)
         {
-            IRaceTemplate rTemplate = race ?? _model.RaceFactory.GetRandomTemplate();
-            IStats randomStats = Stats.GetRandomBaseStats();
+            var rTemplate = race ?? _model.RaceFactory.GetRandomTemplate();
+            var randomStats = Stats.GetRandomBaseStats();
             newChar.Race = rTemplate.Name;
             newChar.Lore = rTemplate.Description;
             ApplyRaceTemplate(rTemplate, randomStats);
             newChar.Stats = randomStats;
             newChar.LvlUp(_model.Party.Experience);
             var spells = new List<ISpell> { _spellFactory.GetSpell("Attack"), _spellFactory.GetSpell("Defend") };
-            int spellCount = RHelper.Roll(2, 5);
-            for (int i = 0; i < spellCount; ++i)
+            var spellCount = RHelper.Roll(2, 5);
+            for (var i = 0; i < spellCount; ++i)
             {
                 ISpell spell;
 

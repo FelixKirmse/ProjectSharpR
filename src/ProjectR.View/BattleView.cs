@@ -20,7 +20,7 @@ namespace ProjectR.View
 
             _common.Run();
 
-            IState currentState = GetState((int) Model.BattleModel.CurrentBattleState);
+            var currentState = GetState((int) Model.BattleModel.CurrentBattleState);
             if (currentState != null)
             {
                 currentState.Run();
@@ -103,7 +103,5 @@ namespace ProjectR.View
         }
 
         #endregion
-
-        
     }
 }

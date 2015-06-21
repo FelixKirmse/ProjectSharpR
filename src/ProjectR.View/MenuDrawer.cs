@@ -43,18 +43,18 @@ namespace ProjectR.View
             }
 
             _menuConsole.Clear();
-            IRConsole targetConsole = target ?? RConsole.RootConsole;
+            var targetConsole = target ?? RConsole.RootConsole;
 
-            int rightMostCol = 0;
-            int itemCount = endItem + 1 - startItem;
-            int counter = 0;
-            int newLineCount = 0;
-            for (int i = startItem; i <= endItem; ++i, ++counter)
+            var rightMostCol = 0;
+            var itemCount = endItem + 1 - startItem;
+            var counter = 0;
+            var newLineCount = 0;
+            for (var i = startItem; i <= endItem; ++i, ++counter)
             {
-                int printRow = counter + counter * offset;
-                IMenuItem item = menu.GetMenuItem(i);
-                string label = item.Label;
-                int labelLength = Measure(label);
+                var printRow = counter + counter * offset;
+                var item = menu.GetMenuItem(i);
+                var label = item.Label;
+                var labelLength = Measure(label);
                 newLineCount += label.Count(x => x == '\n');
                 if (labelLength > rightMostCol)
                 {
@@ -85,14 +85,14 @@ namespace ProjectR.View
 
         private static int Measure(string str)
         {
-            if (str.IndexOf('\n') != -1)
+            if (str.IndexOf('\n') == -1)
             {
                 return str.Length;
             }
 
-            int firstLineLength = str.IndexOf('\n');
-            int secondLineLength = str.IndexOf('\n', firstLineLength) - firstLineLength;
-            int thirdLineLength = str.Length - 2 - secondLineLength - firstLineLength;
+            var firstLineLength = str.IndexOf('\n');
+            var secondLineLength = str.IndexOf('\n', firstLineLength) - firstLineLength;
+            var thirdLineLength = str.Length - 2 - secondLineLength - firstLineLength;
 
             return Math.Max(thirdLineLength, Math.Max(firstLineLength, secondLineLength));
         }

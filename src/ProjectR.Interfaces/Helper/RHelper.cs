@@ -17,12 +17,12 @@ namespace ProjectR.Interfaces.Helper
 
         public static IList<T> ShuffleList<T>(this IList<T> list)
         {
-            int n = list.Count;
+            var n = list.Count;
             while (n > 1)
             {
                 --n;
-                int k = Random.Next(0, n + 1);
-                T value = list[k];
+                var k = Random.Next(0, n + 1);
+                var value = list[k];
                 list[k] = list[n];
                 list[n] = value;
             }
@@ -117,12 +117,12 @@ namespace ProjectR.Interfaces.Helper
             const long T = 1000000000000;
             // ReSharper restore InconsistentNaming
 
-            string chosenFormat = number < k ? "F0" : format;
+            var chosenFormat = number < k ? "F0" : format;
 
             const string resultFormat = "{0}{1}";
-            string damageLetter = number > T ? "T" : number > G ? "G" : number > M ? "M" : number > k ? "k" : "";
+            var damageLetter = number > T ? "T" : number > G ? "G" : number > M ? "M" : number > k ? "k" : "";
 
-            double reducedNumber = number > T
+            var reducedNumber = number > T
                 ? number / T
                 : number > G
                     ? number / G

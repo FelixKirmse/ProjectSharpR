@@ -8,19 +8,18 @@ namespace ProjectR.View
 {
     public class SwitchView : InitializeableModelState
     {
-        private IRConsole _root;
-        private readonly IRConsole _clearConsole;
-        private readonly IRConsole _borderConsole;
-
         private const int StartX = 7;
         private const int StartY = 5;
         private const int RowOffset = 11;
         private const int ColOffset = 17;
         private const int FrontRowSize = 4;
+        private readonly IRConsole _borderConsole;
+        private readonly IRConsole _clearConsole;
 
-        private readonly IList<ICharBattleFrame> _frames;
         private readonly IStatScreenDrawer _drawer;
+        private readonly IList<ICharBattleFrame> _frames;
         private readonly ISpellLister _lister;
+        private IRConsole _root;
 
         public SwitchView()
         {

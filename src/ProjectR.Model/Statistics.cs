@@ -15,7 +15,7 @@ namespace ProjectR.Model
 
         public void Reset()
         {
-            for (int i = 0; i < (int) Statistic.StatisticCount; i++)
+            for (var i = 0; i < (int) Statistic.StatisticCount; i++)
             {
                 _statistics[i] = 0ul;
             }

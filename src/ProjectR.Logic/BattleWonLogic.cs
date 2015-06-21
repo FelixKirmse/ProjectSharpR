@@ -8,6 +8,19 @@ namespace ProjectR.Logic
     {
         private bool _battleOver;
 
+        public bool IsBattleOver
+        {
+            get
+            {
+                var result = _battleOver;
+                if (result)
+                {
+                    _battleOver = false;
+                }
+                return result;
+            }
+        }
+
         public override void Run()
         {
             var battleModel = Model.BattleModel;
@@ -43,19 +56,6 @@ namespace ProjectR.Logic
             } while (!Input.Action(Actions.Confirm));
 
             _battleOver = true;
-        }
-
-        public bool IsBattleOver
-        {
-            get
-            {
-                var result = _battleOver;
-                if (result)
-                {
-                    _battleOver = false;
-                }
-                return result;
-            }
         }
     }
 }

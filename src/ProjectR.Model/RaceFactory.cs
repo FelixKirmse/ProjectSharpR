@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectR.Interfaces.Helper;
@@ -30,7 +29,8 @@ namespace ProjectR.Model
             {
                 _passives.Add(raceTemplate.Name, new List<IAffliction>());
 
-                _passives[raceTemplate.Name].AddRange(raceTemplate.Passives.Select(x => Model.AfflictionFactory.GetAffliction(x)));
+                _passives[raceTemplate.Name].AddRange(
+                    raceTemplate.Passives.Select(x => Model.AfflictionFactory.GetAffliction(x)));
             }
         }
 

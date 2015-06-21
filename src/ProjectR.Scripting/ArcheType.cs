@@ -7,11 +7,10 @@ namespace ProjectR.Scripting
 {
     public abstract class ArcheType : IArcheType
     {
-        public abstract string Name { get; }
-        public abstract bool Block { get; }
-
         protected abstract IDictionary<Stat, double> Resistances { get; }
         protected abstract IDictionary<Stat, Pair<double, double>> Stats { get; }
+        public abstract string Name { get; }
+        public abstract bool Block { get; }
 
         public double GetBase(Stat stat)
         {
@@ -25,7 +24,7 @@ namespace ProjectR.Scripting
 
         public double GetResistance(Stat stat)
         {
-            return Resistances[stat];
+            return Resistances.ContainsKey(stat) ? Resistances[stat] : 0d;
         }
     }
 }

@@ -5,9 +5,9 @@ namespace ProjectR.Logic
 {
     public class BattleLogic : LogicState, IStateMachine
     {
-        private readonly IStateMachine _stateMachine;
         private readonly BattleWonLogic _battleWonLogic;
         private readonly GameOverLogic _gameOverLogic;
+        private readonly IStateMachine _stateMachine;
 
         public BattleLogic()
         {
@@ -56,9 +56,8 @@ namespace ProjectR.Logic
         }
 
         #region IStateMachine Delegations
-        public IState CurrentState
-        {
-            get { return _stateMachine.CurrentState; } }
+
+        public IState CurrentState { get { return _stateMachine.CurrentState; } }
 
         public void Next()
         {
@@ -119,6 +118,7 @@ namespace ProjectR.Logic
         {
             _stateMachine.SetSynchronizer(syncer);
         }
+
         #endregion
     }
 }

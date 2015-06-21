@@ -8,17 +8,17 @@ namespace ProjectR.Logic
 {
     public class ConsequenceBattleLogic : LogicState
     {
-        private IBattleModel _battleModel;
-        private ICharacter _currentAttacker;
-        private ITargetInfo _targetInfo;
-        private bool _enemyTurn;
-        private int _frameCounter;
         private const int ConsequenceFrames = 90;
         private readonly double[] _charHPShouldHave = new double[4];
         private readonly double[] _charHPStep = new double[4];
 
         private readonly double[] _enemyHPShouldHave = new double[4];
         private readonly double[] _enemyHPStep = new double[4];
+        private IBattleModel _battleModel;
+        private ICharacter _currentAttacker;
+        private bool _enemyTurn;
+        private int _frameCounter;
+        private ITargetInfo _targetInfo;
 
         public override void Run()
         {
@@ -142,7 +142,8 @@ namespace ProjectR.Logic
                     var casterRow = _enemyTurn ? frontRow : enemies;
 
                     var targetIndex = 0;
-                    for (;targetIndex < targetRow.Count && 
+                    for (;
+                        targetIndex < targetRow.Count &&
                         casterRow[targetIndex] != _targetInfo.Target;
                         ++targetIndex)
                     {
@@ -189,7 +190,8 @@ namespace ProjectR.Logic
             var statistics = Model.Statistics;
             foreach (var character in frontRow)
             {
-                statistics.AddToStatistic(character.WasHealed ? Statistic.HealingTaken : Statistic.DamageTaken, (uint) character.DamageTaken);
+                statistics.AddToStatistic(character.WasHealed ? Statistic.HealingTaken : Statistic.DamageTaken,
+                    (uint) character.DamageTaken);
 
                 if (character.DodgedAttack)
                 {
@@ -314,7 +316,7 @@ namespace ProjectR.Logic
                 {
                     toBeDeleted.Add(enemy);
                     _battleModel.EnemyDied();
-                    Model.Statistics.AddToStatistic(Statistic.EnemiesKilled, (uint)enemies.Count);
+                    Model.Statistics.AddToStatistic(Statistic.EnemiesKilled, (uint) enemies.Count);
                 }
 
                 enemyAlive |= !enemyDead;

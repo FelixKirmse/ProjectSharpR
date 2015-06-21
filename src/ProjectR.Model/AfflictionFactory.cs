@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using ProjectR.Interfaces.Factories;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
@@ -23,12 +20,13 @@ namespace ProjectR.Model
 
             foreach (var affliction in RHelper.ScriptLoader.LoadAfflictions(UpdateModel))
             {
-                _afflictions[affliction.Name] = affliction;
+                _afflictions[affliction.Name.ToLower()] = affliction;
             }
         }
 
         public IAffliction GetAffliction(string name)
         {
+            name = name.ToLower();
             if (!_afflictions.ContainsKey(name))
             {
                 ExitHelper.Exit(ErrorCodes.ErrorAfflictionNotFound, "Affliction not found " + name);

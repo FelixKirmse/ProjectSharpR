@@ -23,13 +23,13 @@ namespace ProjectR.Model
 
         public void GenerateNewMap(int level)
         {
-            IRMap map = _model.Map;
-            Rectangle heatZone = map.HeatZone;
+            var map = _model.Map;
+            var heatZone = map.HeatZone;
             _model.Statistics.AddToStatistic(Statistic.MapsGenerated, 1);
 
-            for (int row = heatZone.Top; row <= heatZone.Bottom; ++row)
+            for (var row = heatZone.Top; row <= heatZone.Bottom; ++row)
             {
-                for (int col = heatZone.Left; col <= heatZone.Right; ++col)
+                for (var col = heatZone.Left; col <= heatZone.Right; ++col)
                 {
                     if (map[row, col].Is(RCell.Grand | RCell.Artifact))
                     {
@@ -41,9 +41,9 @@ namespace ProjectR.Model
             MapGenerator.GenerateMap(level);
 
             heatZone = map.HeatZone;
-            for (int row = heatZone.Top; row <= heatZone.Bottom; ++row)
+            for (var row = heatZone.Top; row <= heatZone.Bottom; ++row)
             {
-                for (int col = heatZone.Left; col <= heatZone.Right; ++col)
+                for (var col = heatZone.Left; col <= heatZone.Right; ++col)
                 {
                     if (!map[row, col].Is(RCell.Spawn))
                     {

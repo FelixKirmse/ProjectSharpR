@@ -32,8 +32,8 @@ namespace ProjectR.Interfaces.Helper
 
         public T Get()
         {
-            int sumExtra = 0;
-            int rand = RHelper.Roll(0, _weightSum - 1);
+            var sumExtra = 0;
+            var rand = RHelper.Roll(0, _weightSum - 1);
             foreach (var kvp in _objects)
             {
                 if (rand < kvp.Value + sumExtra)

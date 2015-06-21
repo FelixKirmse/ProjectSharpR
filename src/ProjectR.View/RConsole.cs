@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Text;
 using libtcod;
 using ProjectR.Interfaces.View;
@@ -79,15 +78,15 @@ namespace ProjectR.View
 
         public void DrawBorder()
         {
-            int width = Width;
-            int height = Height;
-            for (int col = 0; col < width; ++col)
+            var width = Width;
+            var height = Height;
+            for (var col = 0; col < width; ++col)
             {
-                TCODSpecialCharacter drawCharTop = col == 0
+                var drawCharTop = col == 0
                     ? TCODSpecialCharacter.NW
                     : col == width - 1 ? TCODSpecialCharacter.NE : TCODSpecialCharacter.HorzLine;
 
-                TCODSpecialCharacter drawCharBot = col == 0
+                var drawCharBot = col == 0
                     ? TCODSpecialCharacter.SW
                     : col == width - 1 ? TCODSpecialCharacter.SE : TCODSpecialCharacter.HorzLine;
 
@@ -95,7 +94,7 @@ namespace ProjectR.View
                 SetCharacter(col, 0, (int) drawCharBot);
             }
 
-            for (int row = 1; row < height - 1; ++row)
+            for (var row = 1; row < height - 1; ++row)
             {
                 SetCharacter(0, row, (int) TCODSpecialCharacter.VertLine);
                 SetCharacter(width - 1, row, (int) TCODSpecialCharacter.VertLine);
@@ -130,7 +129,8 @@ namespace ProjectR.View
 
         public void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1, float bgAlpha = 1)
         {
-            TCODConsole.blit(src.UnderlyingConsole, srcRect.X, srcRect.Y, srcRect.Width, srcRect.Height, _console, dstX, dstY,
+            TCODConsole.blit(src.UnderlyingConsole, srcRect.X, srcRect.Y, srcRect.Width, srcRect.Height, _console, dstX,
+                dstY,
                 fgAlpha, bgAlpha);
         }
 
@@ -168,7 +168,7 @@ namespace ProjectR.View
                 blue = 1;
             }
 
-            char[] c = Encoding.Default.GetChars(new byte[] { 6, red, green, blue });
+            var c = Encoding.Default.GetChars(new byte[] { 6, red, green, blue });
             return (string.Format("{0}{1}{2}{3}", c[0], c[1], c[2], c[3]));
         }
     }

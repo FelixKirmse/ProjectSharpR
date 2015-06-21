@@ -7,15 +7,14 @@ namespace ProjectR.View
 {
     public class SpellSelectView : InitializeableModelStateWithConsole
     {
-        private readonly IMenuDrawer _drawer;
-        private readonly ISpellDescriptionDrawer _spellDrawer;
-
         private const int CostX = 44;
         private const int DelayX = 51;
         private const int StartY = 2;
         private const int OffSetY = 2;
         private const string CostFormat = "{0}{1} MP{2}";
         private const string DelayFormat = "{0}{1}%{2}";
+        private readonly IMenuDrawer _drawer;
+        private readonly ISpellDescriptionDrawer _spellDrawer;
 
         public SpellSelectView()
             : base(55, 12)

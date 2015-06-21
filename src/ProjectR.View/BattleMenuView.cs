@@ -19,7 +19,7 @@ namespace ProjectR.View
             AddState(new SpellSelectView());
             AddState(new SwitchView());
             AddState(new ConvinceDrawer());
-            AddState(/*Execute*/null);
+            AddState( /*Execute*/null);
             AddState(new SetFormationView());
         }
 
@@ -47,9 +47,8 @@ namespace ProjectR.View
         }
 
         #region IStateMachine Delegation
-        public IState CurrentState
-        {
-            get { return _stateMachine.CurrentState; } }
+
+        public IState CurrentState { get { return _stateMachine.CurrentState; } }
 
         public void Next()
         {
@@ -110,6 +109,7 @@ namespace ProjectR.View
         {
             _stateMachine.SetSynchronizer(syncer);
         }
+
         #endregion
     }
 }

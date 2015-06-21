@@ -2,6 +2,6 @@
 {
     public interface INameHolder
     {
-        string Name { get; } 
+        string Name { get; }
     }
 }

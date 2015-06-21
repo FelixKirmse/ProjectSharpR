@@ -7,20 +7,15 @@ namespace ProjectR.Logic
 {
     public class SpellSelect : LogicState, IMenu
     {
+        private readonly IMenuController _controller;
         private readonly IMenu _menu;
         private IBattleModel _battleModel;
-        private readonly IMenuController _controller;
         private ITargetInfo _targetInfo;
 
         public SpellSelect()
         {
             _menu = Factories.RFactory.CreateMenu();
             _controller = new MenuController();
-        }
-
-        public override void InitializeImpl()
-        {
-            _battleModel = Model.BattleModel;
         }
 
         public override void Activate()
@@ -81,9 +76,7 @@ namespace ProjectR.Logic
 
         #region IMenu Delegation
 
-        public IState CurrentState
-        {
-            get { return _menu.CurrentState; } }
+        public IState CurrentState { get { return _menu.CurrentState; } }
 
         public void Next()
         {
@@ -159,6 +152,12 @@ namespace ProjectR.Logic
         {
             _menu.SetSynchronizer(syncer);
         }
+
         #endregion
+
+        public override void InitializeImpl()
+        {
+            _battleModel = Model.BattleModel;
+        }
     }
 }

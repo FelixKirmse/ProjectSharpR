@@ -21,9 +21,9 @@ namespace ProjectR.Interfaces.Model
 
         void FireAttackingEvent(ICharacter target, ISpell spell, ref double damage,
                                 ref double modifier);
+
         void FireApplyingDebuffEvent(BoolConsolidator result);
         void FireApplyingBuffEvent(BoolConsolidator result);
         void FireRemovingDebuffs();
-
     }
 }

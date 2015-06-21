@@ -825,8 +825,8 @@
     <None Include="content\scripts\normalattacks\normalattacks.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="content\scripts\signaturespells\signaturespells.cfg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="content\scripts\SignatureSpells\signaturespells.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

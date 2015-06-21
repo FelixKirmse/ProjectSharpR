@@ -10,10 +10,10 @@ namespace ProjectR
     public class ProjectR : IProjectR
     {
         private static bool _exitGame;
+        private readonly IRLogic _logic;
         private readonly IRModel _model;
         private readonly IStateMachineSynchronizer _stateSyncer;
         private readonly IConsoleView _view;
-        private readonly IRLogic _logic;
 
         public ProjectR()
         {

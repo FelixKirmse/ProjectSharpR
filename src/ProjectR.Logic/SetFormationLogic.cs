@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using ProjectR.Interfaces.Logic;
 using ProjectR.Interfaces.Model;
@@ -7,14 +6,14 @@ namespace ProjectR.Logic
 {
     public class SetFormationLogic : LogicState
     {
+        private const int FrontRowSize = 4;
         private IList<ICharacter> _frontRow;
+        private bool _selectedFirst;
         private int _selectedIndex1;
         private int _selectedIndex2;
-        private bool _selectedFirst;
-        private const int FrontRowSize = 4;
 
-        private bool SelectedMarked1 { set { _frontRow[_selectedIndex1].IsMarked = value; }}
-        private bool SelectedMarked2 { set { _frontRow[_selectedIndex2].IsMarked = value; }}
+        private bool SelectedMarked1 { set { _frontRow[_selectedIndex1].IsMarked = value; } }
+        private bool SelectedMarked2 { set { _frontRow[_selectedIndex2].IsMarked = value; } }
 
         public override void InitializeImpl()
         {

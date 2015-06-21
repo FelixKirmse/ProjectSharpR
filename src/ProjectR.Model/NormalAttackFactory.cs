@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class NormalAttackFactory : INormalAttackFactory
+    public class NormalAttackFactory : FactoryBase, INormalAttackFactory
     {
-        private readonly IModel _model;
-
         public NormalAttackFactory(IModel model)
         {
-            _model = model;
+            Model = model;
         }
 
         public IList<ISpell> NormalAttacks { get; set; }
 
         public void LoadNormalAttacks()
         {
-            throw new NotImplementedException();
+            Model.LoadResourcesModel.OverarchingAction = "Loading NormalAttacks";
+            NormalAttacks =
+                File.ReadAllLines("content/scripts/normalattacks/normalattacks.cfg")
+                    .Select(x => Model.SpellFactory.GetSpell(x))
+                    .ToList();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace ProjectR.Interfaces.View
         int Height { get; }
 
         Rectangle Bounds { get; }
+        TCODConsole UnderlyingConsole { get; }
         void SetForegroundColour(TCODColor colour);
 
         void SetBackgroundColour(TCODColor colour);
@@ -23,8 +24,6 @@ namespace ProjectR.Interfaces.View
         void DrawVerticalLine(int x, int y, int length);
 
         void Blit(IRConsole src, Rectangle srcRect, int dstX, int dstY, float fgAlpha = 1f, float bgAlpha = 1f);
-
-        TCODConsole UnderlyingConsole { get; }
 
         string GetColorControlString(TCODColor colour);
 

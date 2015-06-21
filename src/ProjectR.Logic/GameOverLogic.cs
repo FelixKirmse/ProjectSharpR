@@ -6,16 +6,6 @@ namespace ProjectR.Logic
     {
         private bool _gameOver;
 
-        public override void Run()
-        {
-            Model.CommitChanges();
-            do
-            {
-                Input.Update();
-            } while (!Input.Action(Actions.Confirm));
-            _gameOver = true;
-        }
-
         public bool IsGameOver
         {
             get
@@ -27,6 +17,16 @@ namespace ProjectR.Logic
                 }
                 return result;
             }
+        }
+
+        public override void Run()
+        {
+            Model.CommitChanges();
+            do
+            {
+                Input.Update();
+            } while (!Input.Action(Actions.Confirm));
+            _gameOver = true;
         }
     }
 }

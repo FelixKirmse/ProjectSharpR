@@ -74,8 +74,8 @@ namespace ProjectR.Interfaces.Model
         {
             var cellAsLong = (ulong) cell;
             const int offset = (int) RCell.StatBonusOffset;
-            ulong shift = combatBonus << offset;
-            ulong result = cellAsLong | shift;
+            var shift = combatBonus << offset;
+            var result = cellAsLong | shift;
             return (RCell) result;
         }
     }

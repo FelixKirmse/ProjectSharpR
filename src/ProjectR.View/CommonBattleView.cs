@@ -34,7 +34,7 @@ namespace ProjectR.View
             _logDrawer = new BattleLogDrawer();
             _logDrawer.SetPosition(80, 35);
 
-            for (int i = 0; i < 4; ++i)
+            for (var i = 0; i < 4; ++i)
             {
                 _frontRowFrames.Add(CharBattleFrame.CreateFrameForPlayerChar());
                 _frontRowFrames[i].SetPosition(FrontRowStart.X + FrameOffset * i, FrontRowStart.Y);
@@ -59,25 +59,25 @@ namespace ProjectR.View
         {
             DrawBorders();
 
-            for (int i = 0; i < _frontRow.Count; ++i)
+            for (var i = 0; i < _frontRow.Count; ++i)
             {
                 _frontRowFrames[i].AssignCharacter(_frontRow[i]);
                 _frontRowFrames[i].Draw();
             }
 
-            for (int i = 0; i < _partyMinions.Count; ++i)
+            for (var i = 0; i < _partyMinions.Count; ++i)
             {
                 _partyMinionFrames[i].AssignCharacter(_partyMinions[i]);
                 _partyMinionFrames[i].Draw();
             }
 
-            for (int i = 0; i < _enemies.Count; ++i)
+            for (var i = 0; i < _enemies.Count; ++i)
             {
                 _enemyFrames[i].AssignCharacter(_enemies[i], _battleModel.CurrentMobPack.GetStrength(_enemies[i]));
                 _enemyFrames[i].Draw();
             }
 
-            for (int i = 0; i < _enemyMinions.Count; ++i)
+            for (var i = 0; i < _enemyMinions.Count; ++i)
             {
                 _enemyMinionFrames[i].AssignCharacter(_enemyMinions[i]);
                 _enemyMinionFrames[i].Draw();
@@ -89,13 +89,13 @@ namespace ProjectR.View
         private static void DrawBorders()
         {
             var enemyBorder = new RConsole(74, 24);
-            string redControl = enemyBorder.GetColorControlString(TCODColor.red);
-            string stopControl = enemyBorder.GetStopControl();
+            var redControl = enemyBorder.GetColorControlString(TCODColor.red);
+            var stopControl = enemyBorder.GetStopControl();
 
             enemyBorder.DrawBorder();
             enemyBorder.PrintString(1, 1, string.Format("{0}Enemy Party{1}", redControl, stopControl));
 
-            IRConsole root = RConsole.RootConsole;
+            var root = RConsole.RootConsole;
             root.Blit(enemyBorder, enemyBorder.Bounds, 3, 3);
 
             var playerBorder = new RConsole(74, 24);

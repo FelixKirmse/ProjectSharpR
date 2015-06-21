@@ -28,7 +28,7 @@ namespace ProjectR.View
 
         public void DrawStats(ICharacter character, IRConsole targetConsole = null)
         {
-            IRConsole target = targetConsole ?? RootConsole;
+            var target = targetConsole ?? RootConsole;
             Clear();
             SetupStatics();
             PrintString(35, 1, string.Format("Level: {0}", character.CurrentLevel), TCODAlignment.RightAlignment);
@@ -36,7 +36,7 @@ namespace ProjectR.View
             PrintString(4, 2, character.Name);
             PrintString(4, 5, character.Race);
 
-            IStats stats = character.Stats;
+            var stats = character.Stats;
             var statFormat = new StringBuilder();
             statFormat.AppendFormat("{0} / {1}\n", RHelper.SanitizeNumber(character.CurrentHP),
                 RHelper.SanitizeNumber(stats.GetTotalStat(BaseStat.HP)));
@@ -46,7 +46,7 @@ namespace ProjectR.View
             var hpPercentage = (float) (character.CurrentHP / stats.GetTotalStat(BaseStat.HP));
             var mpPercentage = (float) (character.CurrentMP / 200d);
 
-            string stopControl = TCODConsole.getColorControlString(8);
+            var stopControl = TCODConsole.getColorControlString(8);
 
             statStrengthFormat.AppendFormat("{0}{1}%{2}\n",
                 GetColorControlString(new TCODColor(120f * hpPercentage, 1f, 1f)),
@@ -108,7 +108,7 @@ namespace ProjectR.View
 
         private string GetColor(IStats stats, Stat stat)
         {
-            double value = stats[stat][StatType.BattleMod] * 100d;
+            var value = stats[stat][StatType.BattleMod] * 100d;
             return Math.Abs(value - 100d) < 0.001d
                 ? TCODConsole.getColorControlString(8)
                 : value > 100 ? GetColorControlString(TCODColor.green) : GetColorControlString(TCODColor.red);

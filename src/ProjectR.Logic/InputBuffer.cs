@@ -5,8 +5,8 @@ namespace ProjectR.Logic
 {
     public class InputBuffer : IInputBuffer
     {
+        private readonly char[] _buffer;
         private int _pos;
-        private char[] _buffer;
 
         public InputBuffer()
         {

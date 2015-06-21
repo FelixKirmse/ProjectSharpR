@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using ProjectR.Interfaces.Logic;
 using ProjectR.Interfaces.Model;
@@ -7,9 +6,9 @@ namespace ProjectR.Logic
 {
     public class TargetSelect : LogicState
     {
-        private IBattleModel _battleModel;
-        private IList<ICharacter> _activeRow;
         private int _activeIndex;
+        private IList<ICharacter> _activeRow;
+        private IBattleModel _battleModel;
         private bool _enemyRowSelected;
         private ITargetInfo _targetInfo;
 
@@ -48,7 +47,7 @@ namespace ProjectR.Logic
                 _enemyRowSelected = !_enemyRowSelected;
                 _activeRow = _enemyRowSelected ? _battleModel.Enemies : _battleModel.FrontRow;
             }
-            else if(Input.Action(Actions.Left))
+            else if (Input.Action(Actions.Left))
             {
                 _activeRow[_activeIndex].IsMarked = false;
                 _activeIndex = _activeIndex == 0 ? _activeRow.Count - 1 : _activeIndex - 1;

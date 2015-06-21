@@ -9,11 +9,11 @@ namespace ProjectR.Logic
     public class IdleBattleLogic : LogicState
     {
         private readonly ICharacterSpellSelect _spellSelect;
+        private int _enemyLeftOff;
+        private int _enemyMinionLeftOff;
         private ICharacter _lastAttacker;
 
         private int _playerLeftOff;
-        private int _enemyLeftOff;
-        private int _enemyMinionLeftOff;
         private int _playerMinionLeftOff;
 
         public IdleBattleLogic()

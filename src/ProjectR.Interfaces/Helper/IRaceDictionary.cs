@@ -5,6 +5,5 @@ namespace ProjectR.Interfaces.Helper
 {
     public interface IRaceDictionary : IDictionary<Stat, double>
     {
-         
     }
 }

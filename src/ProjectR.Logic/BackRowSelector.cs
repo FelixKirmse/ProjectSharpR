@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectR.Interfaces.Logic;
@@ -10,6 +9,7 @@ namespace ProjectR.Logic
     {
         private IList<ICharacter> _backRow;
         private int _selectedIndex;
+        private bool SelectedIsMarked { set { _backRow[_selectedIndex].IsMarked = value; } }
 
         public override void InitializeImpl()
         {
@@ -115,7 +115,5 @@ namespace ProjectR.Logic
             SelectedIsMarked = true;
             Model.CommitChanges();
         }
-
-        private bool SelectedIsMarked { set { _backRow[_selectedIndex].IsMarked = value; } } 
     }
 }

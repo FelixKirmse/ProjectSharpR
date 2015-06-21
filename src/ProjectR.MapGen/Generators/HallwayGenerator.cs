@@ -13,10 +13,10 @@ namespace ProjectR.MapGen.Generators
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            int topRow = row;
-            int leftCol = col;
+            var topRow = row;
+            var leftCol = col;
 
-            int length = Math.Max(Width, Height);
+            var length = Math.Max(Width, Height);
 
             if (dir == Direction.West || dir == Direction.East)
             {
@@ -32,13 +32,13 @@ namespace ProjectR.MapGen.Generators
 
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            int maxRow = topRow + Height;
-            int maxCol = leftCol + Width;
-            for (int r = topRow; r < maxRow; ++r)
+            var maxRow = topRow + Height;
+            var maxCol = leftCol + Width;
+            for (var r = topRow; r < maxRow; ++r)
             {
-                for (int c = leftCol; c < maxCol; ++c)
+                for (var c = leftCol; c < maxCol; ++c)
                 {
-                    RCell cell = Map[r, c];
+                    var cell = Map[r, c];
                     if (r == row && c == col)
                     {
                         if (cell.Is(RCell.Important))

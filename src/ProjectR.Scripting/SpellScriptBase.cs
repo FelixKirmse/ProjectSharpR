@@ -171,7 +171,7 @@ namespace ProjectR.Scripting
         }
 
         #region Total Stat Functions
-        
+
         #region BaseStats
 
         protected double cHP { get { return HP(Caster); } }
@@ -347,7 +347,6 @@ namespace ProjectR.Scripting
         #endregion
 
         #region Legacy Total Stat Functions
-        // These identifiers where used in the lua scripts in the C++ version. For easier porting I added these. 
 
         #region BaseStats
 
@@ -370,6 +369,7 @@ namespace ProjectR.Scripting
         protected double dEVA { get { return EVA(Target); } }
         protected double dSPD { get { return SPD(Target); } }
         protected double dCHA { get { return CHA(Target); } }
+
         #endregion
 
         #region Masteries
@@ -410,7 +410,10 @@ namespace ProjectR.Scripting
 
         #endregion
 
+        // These identifiers where used in the lua scripts in the C++ version. For easier porting I added these. 
+
         #endregion
     }
+
     // ReSharper restore InconsistentNaming
 }

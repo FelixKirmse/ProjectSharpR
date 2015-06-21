@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
-using ProjectR.Interfaces.Model.Stats;
 
 namespace ProjectR.Model
 {
@@ -29,22 +28,22 @@ namespace ProjectR.Model
         public void GeneratePack(int x, int y)
         {
             var pack = new MobPack(_model.Map) { Position = new Point(x, y) };
-            int enemyCount = _model.Party.FrontRow.Count - RHelper.Roll(0, 1);
+            var enemyCount = _model.Party.FrontRow.Count - RHelper.Roll(0, 1);
 
             if (enemyCount == 0)
             {
                 ++enemyCount;
             }
 
-            int xpReward = 0;
+            var xpReward = 0;
 
             // 25% Chance to get a group of enemies with the same race
-            IRaceTemplate raceGroup = RHelper.RollPercentage(25) ? _model.RaceFactory.GetRandomTemplate() : null;
+            var raceGroup = RHelper.RollPercentage(25) ? _model.RaceFactory.GetRandomTemplate() : null;
 
-            for (int i = 0; i < enemyCount; ++i)
+            for (var i = 0; i < enemyCount; ++i)
             {
-                int strengthRoll = RHelper.Roll(0, 99);
-                MobPackStrength strength = strengthRoll < 60
+                var strengthRoll = RHelper.Roll(0, 99);
+                var strength = strengthRoll < 60
                     ? MobPackStrength.Equal
                     : strengthRoll < 90
                         ? MobPackStrength.Stronger
@@ -93,15 +92,15 @@ namespace ProjectR.Model
 
         public bool ProcessTurns(int playerX, int playerY)
         {
-            bool result = false;
-            for (int i = 0; i < _packs.Count; ++i)
+            var result = false;
+            for (var i = 0; i < _packs.Count; ++i)
             {
-                IMobPack pack = _packs[i];
+                var pack = _packs[i];
 
                 if (pack.ProcessTurn(playerX, playerY))
                 {
-                    RCell cell = _model.Map[playerX, playerY];
-                    Stat statBonus = cell.GetStatBonus();
+                    var cell = _model.Map[playerX, playerY];
+                    var statBonus = cell.GetStatBonus();
                     _model.BattleModel.StartBattle(pack, statBonus, cell.Is(RCell.DoubleCombatBonus));
                     _packs.RemoveAt(i);
                     --i;
@@ -114,9 +113,9 @@ namespace ProjectR.Model
 
         private int GenerateEnemy(IMobPack pack, IRaceTemplate race, MobPackStrength strength)
         {
-            ICharacterFactory charFac = _model.CharacterFactory;
+            var charFac = _model.CharacterFactory;
 
-            ICharacter newEnemy = charFac.CreateRandomCharacter(1, race);
+            var newEnemy = charFac.CreateRandomCharacter(1, race);
 
             switch (strength)
             {

@@ -7,6 +7,7 @@ namespace ProjectR.Logic
     {
         public override void Run()
         {
+            Model.CommitChanges();
             Input.Update();
             if (Input.Action(Actions.Cancel))
             {

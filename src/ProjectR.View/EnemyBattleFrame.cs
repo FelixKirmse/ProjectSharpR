@@ -12,9 +12,9 @@ namespace ProjectR.View
             CachedMP = (int) CurrentChar.CurrentMP;
             CharConsole.PrintString(6, 8, "         ");
 
-            double percentage = CachedMP / CurrentChar.Stats.GetTotalStat(BaseStat.MP);
+            var percentage = CachedMP / CurrentChar.Stats.GetTotalStat(BaseStat.MP);
             var colour = new TCODColor((float) (205d * percentage), 1f, 1f);
-            string colourControl = CharConsole.GetColorControlString(colour);
+            var colourControl = CharConsole.GetColorControlString(colour);
 
             CharConsole.PrintString(14, 8, "{0}{1}{2}", colourControl, (percentage * 100d).ToString("F2"),
                 CharConsole.GetStopControl());
@@ -23,8 +23,8 @@ namespace ProjectR.View
         protected override void DrawHP()
         {
             CharConsole.PrintString(6, 6, "         ");
-            double currentHP = CurrentChar.CurrentHP;
-            double percentage = currentHP / CurrentChar.Stats.GetTotalStat(BaseStat.HP);
+            var currentHP = CurrentChar.CurrentHP;
+            var percentage = currentHP / CurrentChar.Stats.GetTotalStat(BaseStat.HP);
             if (percentage > 1d)
             {
                 CurrentChar.Heal(currentHP);
@@ -32,15 +32,15 @@ namespace ProjectR.View
             }
 
             var colour = new TCODColor((float) (120d * percentage), 1f, 1f);
-            string colourControl = CharConsole.GetColorControlString(colour);
+            var colourControl = CharConsole.GetColorControlString(colour);
             CharConsole.PrintString(14, 6, "{0}{1}%{2}", colourControl, (percentage * 100d).ToString("F2"),
                 CharConsole.GetStopControl());
         }
 
         protected override void DrawName()
         {
-            TCODColor colour = Strength.GetAssociatedColour();
-            string colourControl = CharConsole.GetColorControlString(colour);
+            var colour = Strength.GetAssociatedColour();
+            var colourControl = CharConsole.GetColorControlString(colour);
 
             CachedName = CurrentChar.Name;
             CharConsole.PrintString(new Rectangle(8, 1, 13, 2), "                          ",

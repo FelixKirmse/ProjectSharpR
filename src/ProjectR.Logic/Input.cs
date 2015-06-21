@@ -58,21 +58,6 @@ namespace ProjectR.Logic
             return Check(_inputs[action].First, noChars) || Check(_inputs[action].Second, noChars);
         }
 
-        private bool Check(TCODKey key, bool noChars)
-        {
-            if (_currentInput.KeyCode != key.KeyCode)
-            {
-                return false;
-            }
-
-            if (key.KeyCode == TCODKeyCode.Char)
-            {
-                return _currentInput.Character == key.Character && !noChars;
-            }
-
-            return true;
-        }
-
         public bool CheckAlt()
         {
             return _currentInput.LeftAlt || _currentInput.RightAlt;
@@ -113,6 +98,21 @@ namespace ProjectR.Logic
 
         public virtual void SaveConfig()
         {
+        }
+
+        private bool Check(TCODKey key, bool noChars)
+        {
+            if (_currentInput.KeyCode != key.KeyCode)
+            {
+                return false;
+            }
+
+            if (key.KeyCode == TCODKeyCode.Char)
+            {
+                return _currentInput.Character == key.Character && !noChars;
+            }
+
+            return true;
         }
     }
 }

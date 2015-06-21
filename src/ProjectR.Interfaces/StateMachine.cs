@@ -48,7 +48,7 @@ namespace ProjectR.Interfaces
 
         public void RunCurrentState()
         {
-            IState state = CurrentState;
+            var state = CurrentState;
 
             if (state != null)
             {

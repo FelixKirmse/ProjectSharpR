@@ -22,10 +22,10 @@ namespace ProjectR.Logic
             AddState(Model.MenuModel.OptionsMenu);
 
             var mainMenu = Model.MenuModel.MainMenu;
-            mainMenu.GetMenuItem((int)MainMenuOptions.Quit).CallBack = ExitHelper.Exit;
-            mainMenu.GetMenuItem((int)MainMenuOptions.Options).CallBack = Next;
-            mainMenu.GetMenuItem((int)MainMenuOptions.LoadGame).IsDisabled = true;
-            mainMenu.GetMenuItem((int)MainMenuOptions.NewGame).CallBack = Master.Next;
+            mainMenu.GetMenuItem((int) MainMenuOptions.Quit).CallBack = ExitHelper.Exit;
+            mainMenu.GetMenuItem((int) MainMenuOptions.Options).CallBack = Next;
+            mainMenu.GetMenuItem((int) MainMenuOptions.LoadGame).IsDisabled = true;
+            mainMenu.GetMenuItem((int) MainMenuOptions.NewGame).CallBack = Master.Next;
         }
 
         private void CancelAction()
@@ -58,9 +58,8 @@ namespace ProjectR.Logic
         }
 
         #region IStateMachine Delegation
-        public IState CurrentState
-        {
-            get { return _mainMenuStateMachine.CurrentState; } }
+
+        public IState CurrentState { get { return _mainMenuStateMachine.CurrentState; } }
 
         public void Next()
         {
@@ -121,6 +120,7 @@ namespace ProjectR.Logic
         {
             _mainMenuStateMachine.SetSynchronizer(syncer);
         }
+
         #endregion
     }
 }

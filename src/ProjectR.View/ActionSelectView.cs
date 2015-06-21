@@ -6,9 +6,9 @@ namespace ProjectR.View
 {
     public class ActionSelectView : InitializeableModelState
     {
-        private IMenuModel _menuModel;
         private readonly IMenuDrawer _drawer;
         private readonly IStatScreenDrawer _statDrawer;
+        private IMenuModel _menuModel;
         private IRConsole _root;
 
         public ActionSelectView()

@@ -30,6 +30,7 @@ namespace ProjectR.Logic
         private readonly IMenu _menu;
 
         #region Fields
+
         private IMenuItem _ARC;
         private int _ARCValue;
         private IMenuItem _DRK;
@@ -64,39 +65,12 @@ namespace ProjectR.Logic
         private IMenuItem _skillSet;
         private int _skillSetIndex;
         private bool _switchViews;
+
         #endregion
 
         public PreGameLogic()
         {
             _menu = Factories.RFactory.CreateMenu();
-        }
-
-        public override void InitializeImpl()
-        {
-            _inputBuffer = new InputBuffer();
-            _controller = new MenuController();
-            _name = Factories.RFactory.CreateMenuItem(Name);
-            _race = Factories.RFactory.CreateMenuItem(Race);
-            _archeType = Factories.RFactory.CreateMenuItem(ArcheType);
-            _skillSet = Factories.RFactory.CreateMenuItem(SkillSet);
-            _signatureSpell = Factories.RFactory.CreateMenuItem(SignatureSpell);
-            _normalAttack = Factories.RFactory.CreateMenuItem(NormalAttack);
-            _FIR = Factories.RFactory.CreateMenuItem(FIR);
-            _WAT = Factories.RFactory.CreateMenuItem(WAT);
-            _ICE = Factories.RFactory.CreateMenuItem(ICE);
-            _ARC = Factories.RFactory.CreateMenuItem(ARC);
-            _WND = Factories.RFactory.CreateMenuItem(WND);
-            _HOL = Factories.RFactory.CreateMenuItem(HOL);
-            _DRK = Factories.RFactory.CreateMenuItem(DRK);
-            _GRN = Factories.RFactory.CreateMenuItem(GRN);
-            _LGT = Factories.RFactory.CreateMenuItem(LGT);
-            _createChar = Factories.RFactory.CreateMenuItem(CreateChar, () =>
-            {
-                Model.Party.AddCharacter(Model.PreGameModel.Character);
-                Model.OverworldModel.GenerateNewMap(Model.PreGameModel.Character.CurrentLevel);
-                Master.Next();
-            });
-            _controller.NoInputUpdate(true);
         }
 
         public override void Run()
@@ -118,36 +92,6 @@ namespace ProjectR.Logic
             Model.PreGameModel.ShowStats = (GetCurrentStateNumber() <= 3 && !_switchViews) ||
                                            (GetCurrentStateNumber() > 3 && _switchViews);
             Model.CommitChanges();
-        }
-
-        private void HandleNameEntering()
-        {
-            var input = Input.GetChar();
-
-            if (Input.Action(Actions.Back, true))
-            {
-                _inputBuffer.RemoveChar();
-                var name = _inputBuffer.GetString();
-                UpdateName(name);
-            }
-            else if (Input.Action(Actions.Cancel, true))
-            {
-                Master.Previous();
-            }
-            else if (_inputBuffer.GetLength() < 16 && input != '\0')
-            {
-                _inputBuffer.AddChar(input);
-                UpdateName(_inputBuffer.GetString());
-            }
-
-            Model.CommitChanges();
-        }
-
-        private void UpdateName(string name)
-        {
-            _name.Label = string.Format("{0}{1}", Name, name);
-            Model.PlayerName = name;
-            Model.PreGameModel.PlayerName = name;
         }
 
         public override void Activate()
@@ -202,10 +146,12 @@ namespace ProjectR.Logic
             SetLeftAndRightActions(_skillSet, () => _skillSetIndex, x => _skillSetIndex = x, skillSets, SkillSet,
                 x => Model.PreGameModel.Skillset = x);
 
-            SetLeftAndRightActions(_signatureSpell, () => _signatureSpellIndex, x => _signatureSpellIndex = x, signatureSpells, SignatureSpell,
+            SetLeftAndRightActions(_signatureSpell, () => _signatureSpellIndex, x => _signatureSpellIndex = x,
+                signatureSpells, SignatureSpell,
                 x => Model.PreGameModel.SignatureSpell = x);
 
-            SetLeftAndRightActions(_normalAttack, () => _normalAttackIndex, x => _normalAttackIndex = x, normalAttacks, NormalAttack,
+            SetLeftAndRightActions(_normalAttack, () => _normalAttackIndex, x => _normalAttackIndex = x, normalAttacks,
+                NormalAttack,
                 x => Model.PreGameModel.NormalAttack = x);
 
             Model.PreGameModel.RaceTemplate = races[_raceIndex];
@@ -216,8 +162,10 @@ namespace ProjectR.Logic
 
             SwitchList(() => _archeTypeIndex, x => _archeTypeIndex = x, 0, archeTypes, _archeType, ArcheType);
             SwitchList(() => _skillSetIndex, x => _skillSetIndex = x, 0, skillSets, _skillSet, SkillSet);
-            SwitchList(() => _signatureSpellIndex, x => _signatureSpellIndex = x, 0, signatureSpells, _signatureSpell, SignatureSpell);
-            SwitchList(() => _normalAttackIndex, x => _normalAttackIndex = x, 0, normalAttacks, _normalAttack, NormalAttack);
+            SwitchList(() => _signatureSpellIndex, x => _signatureSpellIndex = x, 0, signatureSpells, _signatureSpell,
+                SignatureSpell);
+            SwitchList(() => _normalAttackIndex, x => _normalAttackIndex = x, 0, normalAttacks, _normalAttack,
+                NormalAttack);
 
             SwitchRace(0);
 
@@ -270,6 +218,64 @@ namespace ProjectR.Logic
             Model.MenuModel.ActiveMenu = this;
         }
 
+        public override void InitializeImpl()
+        {
+            _inputBuffer = new InputBuffer();
+            _controller = new MenuController();
+            _name = Factories.RFactory.CreateMenuItem(Name);
+            _race = Factories.RFactory.CreateMenuItem(Race);
+            _archeType = Factories.RFactory.CreateMenuItem(ArcheType);
+            _skillSet = Factories.RFactory.CreateMenuItem(SkillSet);
+            _signatureSpell = Factories.RFactory.CreateMenuItem(SignatureSpell);
+            _normalAttack = Factories.RFactory.CreateMenuItem(NormalAttack);
+            _FIR = Factories.RFactory.CreateMenuItem(FIR);
+            _WAT = Factories.RFactory.CreateMenuItem(WAT);
+            _ICE = Factories.RFactory.CreateMenuItem(ICE);
+            _ARC = Factories.RFactory.CreateMenuItem(ARC);
+            _WND = Factories.RFactory.CreateMenuItem(WND);
+            _HOL = Factories.RFactory.CreateMenuItem(HOL);
+            _DRK = Factories.RFactory.CreateMenuItem(DRK);
+            _GRN = Factories.RFactory.CreateMenuItem(GRN);
+            _LGT = Factories.RFactory.CreateMenuItem(LGT);
+            _createChar = Factories.RFactory.CreateMenuItem(CreateChar, () =>
+            {
+                Model.Party.AddCharacter(Model.PreGameModel.Character);
+                Model.OverworldModel.GenerateNewMap(Model.PreGameModel.Character.CurrentLevel);
+                Master.Next();
+            });
+            _controller.NoInputUpdate(true);
+        }
+
+        private void HandleNameEntering()
+        {
+            var input = Input.GetChar();
+
+            if (Input.Action(Actions.Back, true))
+            {
+                _inputBuffer.RemoveChar();
+                var name = _inputBuffer.GetString();
+                UpdateName(name);
+            }
+            else if (Input.Action(Actions.Cancel, true))
+            {
+                Master.Previous();
+            }
+            else if (_inputBuffer.GetLength() < 16 && input != '\0')
+            {
+                _inputBuffer.AddChar(input);
+                UpdateName(_inputBuffer.GetString());
+            }
+
+            Model.CommitChanges();
+        }
+
+        private void UpdateName(string name)
+        {
+            _name.Label = string.Format("{0}{1}", Name, name);
+            Model.PlayerName = name;
+            Model.PreGameModel.PlayerName = name;
+        }
+
         private void ChangePoints(IMenuItem menuItem, ref int points, int change, string label, EleMastery stat)
         {
             var loops = 1;
@@ -304,7 +310,8 @@ namespace ProjectR.Logic
         }
 
 
-        private void SetLeftAndRightActions<T>(IMenuItem menuItem, Func<int> getIndex, Action<int> setIndex, IList<T> list, string label, Action<T> setItem)
+        private void SetLeftAndRightActions<T>(IMenuItem menuItem, Func<int> getIndex, Action<int> setIndex,
+                                               IList<T> list, string label, Action<T> setItem)
             where T : INameHolder
         {
             menuItem.SetLeftAction(() =>
@@ -320,7 +327,8 @@ namespace ProjectR.Logic
             });
         }
 
-        private void SwitchList<T>(Func<int> getIndex, Action<int> setIndex, int inkrement, IList<T> list, IMenuItem menuItem, string label) 
+        private void SwitchList<T>(Func<int> getIndex, Action<int> setIndex, int inkrement, IList<T> list,
+                                   IMenuItem menuItem, string label)
             where T : INameHolder
         {
             var index = getIndex();
@@ -444,6 +452,7 @@ namespace ProjectR.Logic
         {
             _menu.SetSynchronizer(syncer);
         }
+
         #endregion
     }
 }

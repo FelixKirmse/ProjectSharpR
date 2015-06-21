@@ -7,19 +7,6 @@ namespace ProjectR.Scripting.Races
 {
     public class RaceTemplate : IRaceTemplate
     {
-        public string Description
-        {
-            get
-            {
-                return "";
-            }
-        }
-
-        public string Name { get { return ""; } }
-
-        public IList<string> Passives { get { return new[] { "" }; } }
-        public IRaceDictionary Stats { get { return _stats; } }
-
         private readonly IRaceDictionary _stats = new RaceDictionary
         {
             { Stat.HP, 1.0d },
@@ -44,5 +31,12 @@ namespace ProjectR.Scripting.Races
             { Stat.DTH, 1.0d },
             { Stat.SIL, 1.0d },
         };
+
+        public string Description { get { return ""; } }
+
+        public string Name { get { return ""; } }
+
+        public IList<string> Passives { get { return new[] { "" }; } }
+        public IRaceDictionary Stats { get { return _stats; } }
     }
 }

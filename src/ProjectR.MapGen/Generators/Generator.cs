@@ -67,12 +67,12 @@ namespace ProjectR.MapGen.Generators
                 return true;
             }
 
-            int topRow = row;
-            int leftCol = col;
+            var topRow = row;
+            var leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, direction);
 
-            int maxRow = topRow + Height;
-            int maxCol = leftCol + Width;
+            var maxRow = topRow + Height;
+            var maxCol = leftCol + Width;
 
             int spawnRow;
             int spawnCol;
@@ -128,17 +128,17 @@ namespace ProjectR.MapGen.Generators
 
         private bool CheckAvailableSpace(int row, int col, Direction dir)
         {
-            int topRow = row;
-            int leftCol = col;
+            var topRow = row;
+            var leftCol = col;
 
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
             // We have to move one block away, or it's guaranteed to fail the check
             RHelper.MoveInDirection(ref topRow, ref leftCol, dir);
 
-            for (int r = topRow; r < topRow + Height; ++r)
+            for (var r = topRow; r < topRow + Height; ++r)
             {
-                for (int c = leftCol; c < leftCol + Width; ++c)
+                for (var c = leftCol; c < leftCol + Width; ++c)
                 {
                     if (r < 0 || r >= Map.Rows || c < 0 || c >= Map.Columns)
                     {

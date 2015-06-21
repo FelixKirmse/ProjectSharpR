@@ -45,7 +45,7 @@ namespace ProjectR.Model
             SetConvertBonus(enemy, convertBonus);
             SetStrength(enemy, strength);
 
-            int coreCount = RHelper.RollPercentage(10) ? 2 : 1;
+            var coreCount = RHelper.RollPercentage(10) ? 2 : 1;
             if (RHelper.RollPercentage(20))
             {
                 IntactCoreCount += coreCount;
@@ -105,7 +105,7 @@ namespace ProjectR.Model
             _position.X = wantX;
             _position.Y = wantY;
 
-            bool onPlayer = playerX == _position.X && playerY == _position.Y;
+            var onPlayer = playerX == _position.X && playerY == _position.Y;
 
             _map.SetWalkable(_position.X, _position.Y, onPlayer);
             _map.SetVisible(_position.X, _position.Y, onPlayer);

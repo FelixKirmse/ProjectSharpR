@@ -38,7 +38,7 @@ namespace ProjectR.Model
                     return _averagePartyLvl;
                 }
 
-                int charCount = _charMap.Keys.Count;
+                var charCount = _charMap.Keys.Count;
                 double lvlSum = _charMap.Keys.Sum(character => character.CurrentLevel);
 
                 _cached = true;
@@ -72,7 +72,7 @@ namespace ProjectR.Model
         {
             Experience += amount;
 
-            foreach (ICharacter character in _charMap.Keys)
+            foreach (var character in _charMap.Keys)
             {
                 character.LvlUp(Experience);
             }
@@ -89,13 +89,13 @@ namespace ProjectR.Model
                 return;
             }
 
-            IList<ICharacter> originList = _charMap[char1];
-            IList<ICharacter> targetList = _charMap[char2];
+            var originList = _charMap[char1];
+            var targetList = _charMap[char2];
             _charMap[char1] = targetList;
             _charMap[char2] = originList;
 
-            int char1Pos = originList.IndexOf(char1);
-            int char2Pos = targetList.IndexOf(char2);
+            var char1Pos = originList.IndexOf(char1);
+            var char2Pos = targetList.IndexOf(char2);
 
             originList[char1Pos] = char2;
             targetList[char2Pos] = char1;
@@ -103,10 +103,10 @@ namespace ProjectR.Model
 
         public void AddCharacter(ICharacter character, PartySlot slot)
         {
-            IList<ICharacter> relevantList = slot == PartySlot.FrontRow
+            var relevantList = slot == PartySlot.FrontRow
                 ? FrontRow
                 : slot == PartySlot.BackSeat ? BackSeat : Reserve;
-            int limit = slot == PartySlot.FrontRow ? FrontRowLimit : slot == PartySlot.BackSeat ? BackSeatLimit : -1;
+            var limit = slot == PartySlot.FrontRow ? FrontRowLimit : slot == PartySlot.BackSeat ? BackSeatLimit : -1;
 
             if (relevantList.Count == limit)
             {
@@ -122,7 +122,7 @@ namespace ProjectR.Model
             relevantList.Add(character);
             _charMap[character] = relevantList;
 
-            ulong currentHighestPartyCount = _model.Statistics[Statistic.HighestPartyCount];
+            var currentHighestPartyCount = _model.Statistics[Statistic.HighestPartyCount];
             var currentPartyCount = (ulong) _charMap.Count;
 
             if (currentPartyCount > currentHighestPartyCount)
@@ -152,7 +152,7 @@ namespace ProjectR.Model
 
         public void RemoveCharacter(ICharacter character)
         {
-            IList<ICharacter> list = _charMap[character];
+            var list = _charMap[character];
             list.Remove(character);
 
             _charMap.Remove(character);

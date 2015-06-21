@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ProjectR.Interfaces.Model;
+﻿using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Scripting
 {

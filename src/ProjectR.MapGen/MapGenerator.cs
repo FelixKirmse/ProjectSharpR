@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
@@ -68,9 +67,9 @@ namespace ProjectR.MapGen
 
         public void PrepareMap()
         {
-            for (int row = 0; row < _rows; ++row)
+            for (var row = 0; row < _rows; ++row)
             {
-                for (int col = 0; col < _cols; col++)
+                for (var col = 0; col < _cols; col++)
                 {
                     if (row == 0 || col == 0 || row == _rows - 1 || col == _cols - 1)
                     {
@@ -88,7 +87,7 @@ namespace ProjectR.MapGen
 
         private bool ValidCell(int row, int col, ref Direction direction)
         {
-            RCell cell = _map[row, col];
+            var cell = _map[row, col];
 
             if (!cell.Is(RCell.Wall))
             {
@@ -97,15 +96,15 @@ namespace ProjectR.MapGen
 
             _directions.ShuffleList();
 
-            foreach (Direction dir in _directions)
+            foreach (var dir in _directions)
             {
                 direction = dir;
-                int checkRow = row;
-                int checkCol = col;
+                var checkRow = row;
+                var checkCol = col;
                 RHelper.MoveInDirection(ref checkRow, ref checkCol, dir);
 
-                int checkRowOpp = row;
-                int checkColOpp = col;
+                var checkRowOpp = row;
+                var checkColOpp = col;
                 RHelper.MoveInDirection(ref checkRowOpp, ref checkColOpp, _oppositeDirections[dir]);
 
                 if (_map[checkRow, checkCol].Is(RCell.Diggable) &&
@@ -120,7 +119,7 @@ namespace ProjectR.MapGen
 
         private void GenerateFeatures()
         {
-            for (int i = 0; i < _featureTarget; i++)
+            for (var i = 0; i < _featureTarget; i++)
             {
                 int row;
                 int col;
@@ -155,9 +154,9 @@ namespace ProjectR.MapGen
 
         private void EnsureEnemies()
         {
-            int packCount = _mobPackManager.PackCount;
+            var packCount = _mobPackManager.PackCount;
 
-            for (int i = packCount; i < 5; ++i)
+            for (var i = packCount; i < 5; ++i)
             {
                 int row;
                 int col;
@@ -170,7 +169,7 @@ namespace ProjectR.MapGen
 
         private void FindSuitableSpot(out int row, out int col, Func<int, int, bool> predicate)
         {
-            Rectangle heatZone = _map.HeatZone;
+            var heatZone = _map.HeatZone;
 
             do
             {

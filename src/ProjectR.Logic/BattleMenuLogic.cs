@@ -20,7 +20,7 @@ namespace ProjectR.Logic
             AddState(new SpellSelect());
             AddState(new SwitchLogic());
             AddState(new ConvinceLogic());
-            AddState(/*Execute*/null);
+            AddState( /*Execute*/null);
             AddState(new SetFormationLogic());
             SetCurrentState((int) BattleMenuState.SelectAction);
         }
@@ -48,9 +48,8 @@ namespace ProjectR.Logic
         }
 
         #region IStateMachine Delegation
-        public IState CurrentState
-        {
-            get { return _stateMachine.CurrentState; } }
+
+        public IState CurrentState { get { return _stateMachine.CurrentState; } }
 
         public void Next()
         {
@@ -113,6 +112,7 @@ namespace ProjectR.Logic
         {
             _stateMachine.SetSynchronizer(syncer);
         }
+
         #endregion
     }
 }

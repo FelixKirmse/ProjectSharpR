@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
@@ -23,7 +22,8 @@ namespace ProjectR.Model
             Model.LoadResourcesModel.OverarchingAction = "Loading Skillsets";
             foreach (var skillSet in RHelper.ScriptLoader.LoadSkillsets(UpdateModel))
             {
-                _nameMap[skillSet.Name] = skillSet;
+                SkillSets.Add(skillSet);
+                _nameMap.Add(skillSet.Name, skillSet);
             }
         }
 

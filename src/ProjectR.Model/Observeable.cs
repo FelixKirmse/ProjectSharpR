@@ -14,7 +14,7 @@ namespace ProjectR.Model
 
         public void NotifyObservers()
         {
-            foreach (IObserver observer in _observers)
+            foreach (var observer in _observers)
             {
                 observer.Notify();
             }

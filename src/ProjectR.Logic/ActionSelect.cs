@@ -8,33 +8,18 @@ namespace ProjectR.Logic
     public class ActionSelect : LogicState, IMenu
     {
         private readonly IMenu _menu;
-        private IMenuController _controller;
-        private IBattleModel _battleModel;
         private IMenuItem _attack;
+        private IBattleModel _battleModel;
+        private IMenuController _controller;
+        private IMenuItem _convince;
         private IMenuItem _defend;
+        private IMenuItem _formation;
         private IMenuItem _spell;
         private IMenuItem _switch;
-        private IMenuItem _convince;
-        private IMenuItem _formation;
 
         public ActionSelect()
         {
             _menu = Factories.RFactory.CreateMenu();
-        }
-
-        public override void InitializeImpl()
-        {
-            _battleModel = Model.BattleModel;
-            _spell = Factories.RFactory.CreateMenuItem("Spell",
-                () => Master.SetCurrentState((int) BattleMenuState.SelectSpell));
-            _switch = Factories.RFactory.CreateMenuItem("Switch",
-                () => Master.SetCurrentState((int) BattleMenuState.Switch));
-            _convince = Factories.RFactory.CreateMenuItem("Convert",
-                () => Master.SetCurrentState((int) BattleMenuState.Convince));
-            _formation = Factories.RFactory.CreateMenuItem("Set Formation",
-                () => Master.SetCurrentState((int) BattleMenuState.SetFormation));
-            _controller = new MenuController();
-            Model.MenuModel.BattleMenu = this;
         }
 
         public override void Activate()
@@ -60,22 +45,6 @@ namespace ProjectR.Logic
             Model.CommitChanges();
         }
 
-        private void SetDefend()
-        {
-            var targetInfo = _battleModel.TargetInfo;
-            targetInfo.Spell = _battleModel.CurrentAttacker.Spells[1];
-            _battleModel.TargetInfo = targetInfo;
-            Master.SetCurrentState((int)BattleMenuState.SelectTarget);
-        }
-
-        private void SetAttack()
-        {
-            var targetInfo = _battleModel.TargetInfo;
-            targetInfo.Spell = _battleModel.CurrentAttacker.Spells[0];
-            _battleModel.TargetInfo = targetInfo;
-            Master.SetCurrentState((int) BattleMenuState.SelectTarget);
-        }
-
         public override void Run()
         {
             _attack.Label = _battleModel.CurrentAttacker.Spells[0].Name;
@@ -85,9 +54,8 @@ namespace ProjectR.Logic
         }
 
         #region IMenu Implementation
-        public IState CurrentState
-        {
-            get { return _menu.CurrentState; } }
+
+        public IState CurrentState { get { return _menu.CurrentState; } }
 
         public void Next()
         {
@@ -163,6 +131,38 @@ namespace ProjectR.Logic
         {
             _menu.SetSynchronizer(syncer);
         }
+
         #endregion
+
+        public override void InitializeImpl()
+        {
+            _battleModel = Model.BattleModel;
+            _spell = Factories.RFactory.CreateMenuItem("Spell",
+                () => Master.SetCurrentState((int) BattleMenuState.SelectSpell));
+            _switch = Factories.RFactory.CreateMenuItem("Switch",
+                () => Master.SetCurrentState((int) BattleMenuState.Switch));
+            _convince = Factories.RFactory.CreateMenuItem("Convert",
+                () => Master.SetCurrentState((int) BattleMenuState.Convince));
+            _formation = Factories.RFactory.CreateMenuItem("Set Formation",
+                () => Master.SetCurrentState((int) BattleMenuState.SetFormation));
+            _controller = new MenuController();
+            Model.MenuModel.BattleMenu = this;
+        }
+
+        private void SetDefend()
+        {
+            var targetInfo = _battleModel.TargetInfo;
+            targetInfo.Spell = _battleModel.CurrentAttacker.Spells[1];
+            _battleModel.TargetInfo = targetInfo;
+            Master.SetCurrentState((int) BattleMenuState.SelectTarget);
+        }
+
+        private void SetAttack()
+        {
+            var targetInfo = _battleModel.TargetInfo;
+            targetInfo.Spell = _battleModel.CurrentAttacker.Spells[0];
+            _battleModel.TargetInfo = targetInfo;
+            Master.SetCurrentState((int) BattleMenuState.SelectTarget);
+        }
     }
 }

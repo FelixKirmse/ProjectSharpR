@@ -1,4 +1,3 @@
-using System;
 using libtcod;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
@@ -7,11 +6,11 @@ namespace ProjectR.View
 {
     public class TargetSelectView : ModelState
     {
-        private readonly ICharDescriptionDrawer _descDrawer;
-        private readonly IStatScreenDrawer _statDrawer;
         private readonly IAfflictionLister _afflictionLister;
+        private readonly ICharDescriptionDrawer _descDrawer;
 
         private readonly IRConsole _root;
+        private readonly IStatScreenDrawer _statDrawer;
 
         public TargetSelectView()
         {

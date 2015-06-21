@@ -9,6 +9,6 @@ namespace ProjectR.Interfaces.Model
         string Name { get; }
 
         IList<string> Passives { get; }
-        IRaceDictionary Stats { get; } 
+        IRaceDictionary Stats { get; }
     }
 }

@@ -7,6 +7,8 @@ namespace ProjectR.Scripting
 {
     public abstract class SpellBase : ISpell
     {
+        protected ICharacter Caster { get; private set; }
+        protected ICharacter Target { get; set; }
         public abstract TargetType TargetType { get; }
         public abstract string Description { get; }
         public abstract bool IsSupportSpell { get; }
@@ -15,9 +17,6 @@ namespace ProjectR.Scripting
         public abstract SpellType SpellType { get; }
         public abstract double MPCost { get; }
         public abstract string Name { get; }
-
-        protected ICharacter Caster { get; private set; }
-        protected ICharacter Target { get; set; }
 
         public void Cast(ICharacter caster, IList<ICharacter> allies, IList<ICharacter> enemies)
         {

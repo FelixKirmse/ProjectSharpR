@@ -115,10 +115,10 @@ namespace ProjectR.Model
                 return;
             }
 
-            double evaChance = _stats.GetEVAChance(CurrentLevel);
+            var evaChance = _stats.GetEVAChance(CurrentLevel);
             RollingEvasion(this, ref evaChance);
 
-            bool attackEvaded = RHelper.RollPercentage((int) evaChance);
+            var attackEvaded = RHelper.RollPercentage((int) evaChance);
             if (attackEvaded && _stats.EVAType == EVAType.Dodge)
             {
                 AttackDodged(this, value);
@@ -127,7 +127,7 @@ namespace ProjectR.Model
             }
             BlockedDamage = attackEvaded;
 
-            double reduction = attackEvaded ? 2d : 1d;
+            var reduction = attackEvaded ? 2d : 1d;
             if (attackEvaded)
             {
                 AttackBlocked(this, ref value, ref reduction);
@@ -199,7 +199,7 @@ namespace ProjectR.Model
                 return;
             }
 
-            int newLevel = GetLevelFromExperience(experience);
+            var newLevel = GetLevelFromExperience(experience);
             SetLvl(newLevel);
             ResetDamageTaken();
         }
@@ -211,7 +211,7 @@ namespace ProjectR.Model
                 return false;
             }
 
-            double timeStep = _stats.GetTotalStat(Stat.SPD);
+            var timeStep = _stats.GetTotalStat(Stat.SPD);
             if (invokeEvents)
             {
                 var eventResult = new BoolConsolidator();
@@ -222,7 +222,7 @@ namespace ProjectR.Model
                 }
             }
 
-            bool result = false;
+            var result = false;
             TurnCounter += timeStep;
 
             if (TurnCounter >= TimeToAction)
@@ -273,7 +273,7 @@ namespace ProjectR.Model
             BuffingStat(this, ref stat, ref value);
 
             const string format = "{0} {1}";
-            string add = string.Format(format, (value * 100d).ToString("P0"), stat.GetString());
+            var add = string.Format(format, (value * 100d).ToString("P0"), stat.GetString());
             AddAffliction(add);
             _stats.BuffStat(stat, value);
         }

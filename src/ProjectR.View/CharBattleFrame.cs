@@ -80,9 +80,9 @@ namespace ProjectR.View
         private void DrawTurn()
         {
             CharConsole.PrintString(6, 4, "    ");
-            double percentage = CurrentChar.TurnCounter / CurrentChar.TimeToAction;
+            var percentage = CurrentChar.TurnCounter / CurrentChar.TimeToAction;
             var colour = new TCODColor(CurrentChar.TakesTurn ? 0f : 30f, 1f, 1f);
-            string colourControl = CharConsole.GetColorControlString(colour);
+            var colourControl = CharConsole.GetColorControlString(colour);
             CharConsole.PrintString(14, 4,
                 string.Format("{0}{1}%{2}", colourControl,
                     CurrentChar.TakesTurn ? 100d.ToString("F2") : (percentage * 100d).ToString("F2"),

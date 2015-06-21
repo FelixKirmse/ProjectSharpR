@@ -9,7 +9,7 @@ using ProjectR.Interfaces.Model;
 namespace ProjectR.Scripting
 {
     public abstract class ScriptLoaderBase<T>
-        where T : class 
+        where T : class
     {
         protected string BaseScriptPath { get { return "content/scripts"; } }
 
@@ -38,7 +38,11 @@ namespace ProjectR.Scripting
             }
 
             var resultList = new List<T>();
-            foreach (var file in Directory.EnumerateFiles(CompletePath, "*.cs", SearchOption.AllDirectories).Select(x => new FileInfo(x)).Where(x => x.Extension == ".cs"))
+            foreach (
+                var file in
+                    Directory.EnumerateFiles(CompletePath, "*.cs", SearchOption.AllDirectories)
+                             .Select(x => new FileInfo(x))
+                             .Where(x => x.Extension == ".cs"))
             {
                 resultList.AddRange(LoadScript(file, updateAction, totalCount, ++currentCount));
             }
@@ -46,7 +50,8 @@ namespace ProjectR.Scripting
             return resultList;
         }
 
-        protected virtual IEnumerable<T> LoadScript(FileSystemInfo file, UpdateLoadResourcesDelegate updateAction, int totalCount, int currentCount)
+        protected virtual IEnumerable<T> LoadScript(FileSystemInfo file, UpdateLoadResourcesDelegate updateAction,
+                                                    int totalCount, int currentCount)
         {
             var assemblyPath = Path.Combine(CompleteCompiledScriptPath, Path.ChangeExtension(file.Name, ".dll"));
             var md5Path = Path.Combine(CompleteCompiledScriptPath, Path.ChangeExtension(file.Name, ".md5"));
@@ -59,15 +64,16 @@ namespace ProjectR.Scripting
             }
             else
             {
-                updateAction(string.Format("Loading: {0}", Path.GetFileName(Path.ChangeExtension(file.Name, ".dll"))), currentCount, totalCount);
+                updateAction(string.Format("Loading: {0}", Path.GetFileName(Path.ChangeExtension(file.Name, ".dll"))),
+                    currentCount, totalCount);
                 assembly = Assembly.LoadFrom(assemblyPath);
             }
 
             var helper = new AsmHelper(assembly);
 
             return assembly.ExportedTypes
-                           .Where(x => x.GetInterfaces().Contains(typeof(T)))
-                           .Select(source => (T)helper.CreateObject(source.FullName));
+                           .Where(x => x.GetInterfaces().Contains(typeof (T)))
+                           .Select(source => (T) helper.CreateObject(source.FullName));
         }
 
         private static bool ScriptNeedsCompilation(FileSystemInfo script, string assemblyPath, string md5Path)
@@ -101,9 +107,11 @@ namespace ProjectR.Scripting
         public static byte[] ComputeHash(string fileName)
         {
             using (var md5 = MD5.Create())
-            using (var stream = File.OpenRead(fileName))
             {
-                return md5.ComputeHash(stream);
+                using (var stream = File.OpenRead(fileName))
+                {
+                    return md5.ComputeHash(stream);
+                }
             }
         }
     }

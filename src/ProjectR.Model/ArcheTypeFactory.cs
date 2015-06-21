@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
@@ -23,6 +22,7 @@ namespace ProjectR.Model
             Model.LoadResourcesModel.OverarchingAction = "Loading Archetypes";
             foreach (var archeType in RHelper.ScriptLoader.LoadArcheTypes(UpdateModel))
             {
+                ArcheTypes.Add(archeType);
                 _nameMap.Add(archeType.Name, archeType);
             }
         }

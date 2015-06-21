@@ -6,9 +6,9 @@ namespace ProjectR.Logic
 {
     public class FrontRowSelector : LogicState
     {
+        private const int FrontRowSize = 4;
         private IList<ICharacter> _frontRow;
         private int _selectedIndex;
-        private const int FrontRowSize = 4;
 
         public override void InitializeImpl()
         {
@@ -55,7 +55,7 @@ namespace ProjectR.Logic
 
                 _selectedIndex = _selectedIndex == FrontRowSize - 1 ? 0 : _selectedIndex + 1;
             }
-            else if(Input.Action(Actions.Cancel))
+            else if (Input.Action(Actions.Cancel))
             {
                 if (_selectedIndex < actualSize)
                 {

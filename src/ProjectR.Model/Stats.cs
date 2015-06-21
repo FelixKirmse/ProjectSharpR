@@ -13,6 +13,10 @@ namespace ProjectR.Model
         {
             XPMultiplier = 1d;
             _currentLevel = 0;
+            for (var i = Stat.HP; i <= Stat.SIL; ++i)
+            {
+                this[i] = new SingleStat();
+            }
         }
 
         public double XPMultiplier { get; set; }
@@ -29,7 +33,7 @@ namespace ProjectR.Model
 
         public double GetTotalStat(BaseStat stat)
         {
-            SingleStat s = this[stat];
+            var s = this[stat];
             switch (stat)
             {
                 case BaseStat.HP:
@@ -41,7 +45,7 @@ namespace ProjectR.Model
 
                 case BaseStat.EVA:
                 {
-                    double multiplier = s.Multiplier() + 0.02d * _currentLevel;
+                    var multiplier = s.Multiplier() + 0.02d * _currentLevel;
 
                     return ((s.BasePlusGrowth() * _currentLevel) * (Math.Min(multiplier, 3d) + s.ItemModifiers())) *
                            s.BattleMod();
@@ -58,13 +62,13 @@ namespace ProjectR.Model
 
         public double GetTotalStat(EleMastery stat)
         {
-            SingleStat s = this[stat];
+            var s = this[stat];
             return (s.Base() + s.ItemModifiers()) * s.BattleMod();
         }
 
         public double GetTotalStat(DebuffResistance stat)
         {
-            SingleStat s = this[stat];
+            var s = this[stat];
             return (s.Base() + s.ItemModifiers()) * s.BattleMod();
         }
 
@@ -82,19 +86,19 @@ namespace ProjectR.Model
 
         public void BuffStat(Stat stat, double amount)
         {
-            SingleStat s = this[stat];
+            var s = this[stat];
             s[StatType.BattleMod] += amount;
-            double current = s.BattleMod();
+            var current = s.BattleMod();
             s[StatType.BattleMod] = current.Clamp(.5d, 2d);
         }
 
         public void ReduceBuffEffectiveness(int times = 1)
         {
-            for (int k = 0; k < times; ++k)
+            for (var k = 0; k < times; ++k)
             {
-                foreach (SingleStat singleStat in _stats)
+                foreach (var singleStat in _stats)
                 {
-                    double stat = singleStat.BattleMod();
+                    var stat = singleStat.BattleMod();
                     if (stat < 1d)
                     {
                         stat += .1d;
@@ -112,31 +116,31 @@ namespace ProjectR.Model
 
         public void RemoveBuffs()
         {
-            foreach (SingleStat singleStat in _stats)
+            foreach (var singleStat in _stats)
             {
-                double stat = singleStat.BattleMod();
+                var stat = singleStat.BattleMod();
                 singleStat[StatType.BattleMod] = Math.Min(1d, stat);
             }
         }
 
         public void RemoveDebuffs()
         {
-            foreach (SingleStat singleStat in _stats)
+            foreach (var singleStat in _stats)
             {
-                double stat = singleStat.BattleMod();
+                var stat = singleStat.BattleMod();
                 singleStat[StatType.BattleMod] = Math.Max(1d, stat);
             }
         }
 
         public bool TryToApplyDebuf(DebuffResistance type, int successChance)
         {
-            double resistance = GetTotalStat(type) * 3;
+            var resistance = GetTotalStat(type) * 3;
             return RHelper.RollPercentage((int) (successChance - resistance));
         }
 
         public double GetEVAChance(int level)
         {
-            double stat = GetTotalStat(BaseStat.EVA);
+            var stat = GetTotalStat(BaseStat.EVA);
             return EVAType == EVAType.Block ? stat : stat / level;
         }
 
@@ -160,7 +164,7 @@ namespace ProjectR.Model
         public static IStats GetRandomBaseStats()
         {
             var stats = new Stats();
-            SingleStat hp = stats[Stat.HP];
+            var hp = stats[Stat.HP];
             hp[StatType.Base] = RHelper.Roll(75, 200);
             hp[StatType.Growth] = RHelper.Roll(5, 25);
 
@@ -168,7 +172,7 @@ namespace ProjectR.Model
 
             for (var stat = Stat.AD; stat <= Stat.CHA; ++stat)
             {
-                SingleStat s = stats[stat];
+                var s = stats[stat];
                 s[StatType.Base] = RHelper.Roll(20, 80);
                 s[StatType.Growth] = RHelper.Roll(1, 20);
             }
@@ -186,7 +190,7 @@ namespace ProjectR.Model
                 stats[BaseStat.EVA][StatType.Growth] = RHelper.Roll(0, 1);
             }
 
-            SingleStat spd = stats[BaseStat.SPD];
+            var spd = stats[BaseStat.SPD];
             spd[StatType.Base] = 100d;
             spd[StatType.Growth] = RHelper.Roll(5, 10);
             spd[StatType.Multiplier] = 0.0255d;

@@ -31,9 +31,7 @@ namespace ProjectR.Logic
 
         #region IStateMachine Delegation
 
-        public IState CurrentState
-        {
-            get { return _stateMachine.CurrentState; } }
+        public IState CurrentState { get { return _stateMachine.CurrentState; } }
 
         public void Next()
         {

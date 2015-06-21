@@ -60,9 +60,9 @@ namespace ProjectR.Model
 
         private void Move(int rows, int cols)
         {
-            Rectangle heatZone = _map.HeatZone;
+            var heatZone = _map.HeatZone;
 
-            for (int i = 0; i < Speed; ++i)
+            for (var i = 0; i < Speed; ++i)
             {
                 _viewPort.X += cols;
                 _viewPort.Y += rows;

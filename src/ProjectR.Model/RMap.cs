@@ -18,15 +18,15 @@ namespace ProjectR.Model
 
         public void RecalculateHeatZone()
         {
-            int lowestX = Columns;
-            int lowestY = Rows;
-            int highestX = 0;
-            int highestY = 0;
+            var lowestX = Columns;
+            var lowestY = Rows;
+            var highestX = 0;
+            var highestY = 0;
 
             // HeatZone may not be bigger than map + Boundary
-            for (int row = 1; row < Rows - 2; ++row)
+            for (var row = 1; row < Rows - 2; ++row)
             {
-                for (int col = 1; col < Columns - 2; ++col)
+                for (var col = 1; col < Columns - 2; ++col)
                 {
                     if (!this[row, col].Is(RCell.Wall))
                     {
@@ -66,11 +66,11 @@ namespace ProjectR.Model
 
         public void CreateFoVMap()
         {
-            for (int row = 0; row < Rows; ++row)
+            for (var row = 0; row < Rows; ++row)
             {
-                for (int col = 0; col < Columns; ++col)
+                for (var col = 0; col < Columns; ++col)
                 {
-                    RCell cell = this[row, col];
+                    var cell = this[row, col];
                     _fovMap.setProperties(col, row, cell.IsTransparent(), cell.IsWalkable());
                 }
             }

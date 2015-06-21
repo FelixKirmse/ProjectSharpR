@@ -11,7 +11,7 @@ namespace ProjectR.Scripting
         public override string Description { get { return ""; } }
 
         public override TargetType TargetType { get { return TargetType.Single; } }
-        public override IList<EleMastery> Masteries { get { return new EleMastery[]{  }; } }
+        public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }
         public override SpellType SpellType { get { return SpellType.Physical; } }
         public override bool IsSupportSpell { get { return false; } }
 

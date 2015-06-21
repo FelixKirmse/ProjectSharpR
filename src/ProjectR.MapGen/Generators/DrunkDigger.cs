@@ -14,12 +14,12 @@ namespace ProjectR.MapGen.Generators
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            int topRow = row;
-            int leftCol = col;
+            var topRow = row;
+            var leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            int goalRow = row;
-            int goalCol = col;
+            var goalRow = row;
+            var goalCol = col;
             RHelper.MoveInDirection(ref goalRow, ref goalCol, dir);
 
             var digArea = new Rectangle(leftCol + 1, topRow + 1, Width - 2, Height - 2);
@@ -63,7 +63,7 @@ namespace ProjectR.MapGen.Generators
 
             public void DigCell(int row, int col)
             {
-                RCell cell = _map[row, col];
+                var cell = _map[row, col];
                 if (cell.Is(RCell.Important))
                 {
                     return;
@@ -90,9 +90,9 @@ namespace ProjectR.MapGen.Generators
 
                 do
                 {
-                    Direction dir = RHelper.GetRandomDirection();
-                    int nextRow = _row;
-                    int nextCol = _col;
+                    var dir = RHelper.GetRandomDirection();
+                    var nextRow = _row;
+                    var nextCol = _col;
                     RHelper.MoveInDirection(ref nextRow, ref nextCol, dir);
 
                     if (!CanMove(nextRow, nextCol))
@@ -125,7 +125,7 @@ namespace ProjectR.MapGen.Generators
 
             private void DigOut()
             {
-                RCell cell = _darkDigger ? RCell.Floor | RCell.Dark : RCell.Floor;
+                var cell = _darkDigger ? RCell.Floor | RCell.Dark : RCell.Floor;
                 cell = cell.InsertCombatBonus(_combatBonus);
 
                 if (_doubleCombatBonus)

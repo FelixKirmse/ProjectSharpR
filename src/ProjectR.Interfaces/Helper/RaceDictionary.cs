@@ -56,13 +56,9 @@ namespace ProjectR.Interfaces.Helper
             return _stats.Remove(item);
         }
 
-        public int Count
-        {
-            get { return _stats.Count; } }
+        public int Count { get { return _stats.Count; } }
 
-        public bool IsReadOnly
-        {
-            get { return _stats.IsReadOnly; } }
+        public bool IsReadOnly { get { return _stats.IsReadOnly; } }
 
         public bool ContainsKey(Stat key)
         {
@@ -81,12 +77,8 @@ namespace ProjectR.Interfaces.Helper
 
         public double this[Stat key] { get { return _stats[key]; } set { _stats[key] = value; } }
 
-        public ICollection<Stat> Keys
-        {
-            get { return _stats.Keys; } }
+        public ICollection<Stat> Keys { get { return _stats.Keys; } }
 
-        public ICollection<double> Values
-        {
-            get { return _stats.Values; } }
+        public ICollection<double> Values { get { return _stats.Values; } }
     }
 }

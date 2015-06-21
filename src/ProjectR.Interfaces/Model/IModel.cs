@@ -1,5 +1,3 @@
-using System;
-
 namespace ProjectR.Interfaces.Model
 {
     public interface IModel

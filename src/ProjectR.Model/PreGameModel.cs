@@ -14,6 +14,7 @@ namespace ProjectR.Model
         {
             _model = model;
             _masteryMap = new Dictionary<EleMastery, int>();
+            PlayerName = "";
         }
 
         public int AvailableMasteryPoints { get; set; }
@@ -39,7 +40,7 @@ namespace ProjectR.Model
 
             for (var stat = Stat.HP; stat <= Stat.CHA; ++stat)
             {
-                SingleStat singleStat = newStats[stat];
+                var singleStat = newStats[stat];
                 singleStat[StatType.Base] = ArcheType.GetBase(stat);
                 singleStat[StatType.Growth] = ArcheType.GetGrowth(stat);
             }

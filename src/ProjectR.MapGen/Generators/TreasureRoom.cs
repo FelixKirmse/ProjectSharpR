@@ -31,16 +31,16 @@ namespace ProjectR.MapGen.Generators
 
         public override void GenerateImpl(int row, int col, Direction dir)
         {
-            int topRow = row;
-            int leftCol = col;
+            var topRow = row;
+            var leftCol = col;
             GetTopLeftCorner(ref topRow, ref leftCol, dir);
 
-            int maxRow = topRow + Height;
-            int maxCol = leftCol + Width;
+            var maxRow = topRow + Height;
+            var maxCol = leftCol + Width;
 
-            for (int r = topRow; r < maxRow; ++r)
+            for (var r = topRow; r < maxRow; ++r)
             {
-                for (int c = leftCol; c < maxCol; ++c)
+                for (var c = leftCol; c < maxCol; ++c)
                 {
                     if (r == topRow || c == leftCol || r == maxRow - 1 || c == maxCol - 1)
                     {
@@ -55,7 +55,7 @@ namespace ProjectR.MapGen.Generators
 
             var treasureCount = (int) Math.Sqrt(Width * Height);
 
-            for (int i = 0; i < treasureCount; ++i)
+            for (var i = 0; i < treasureCount; ++i)
             {
                 int chestRow;
                 int chestCol;

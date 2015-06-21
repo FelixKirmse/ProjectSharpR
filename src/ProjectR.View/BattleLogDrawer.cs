@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using libtcod;
@@ -40,23 +39,23 @@ namespace ProjectR.View
 
         public override void Run()
         {
-            int fetchCount = 5;
-            int printedLines = 0;
+            var fetchCount = 5;
+            var printedLines = 0;
 
             do
             {
                 _logConsole.Clear();
-                string redControl = _logConsole.GetColorControlString(TCODColor.red);
-                string greenControl = _logConsole.GetColorControlString(TCODColor.green);
-                string stopControl = _logConsole.GetStopControl();
+                var redControl = _logConsole.GetColorControlString(TCODColor.red);
+                var greenControl = _logConsole.GetColorControlString(TCODColor.green);
+                var stopControl = _logConsole.GetStopControl();
 
                 _logConsole.PrintString(1, 1, "{0}Battlelog:{1}", redControl, stopControl);
                 _logConsole.DrawBorder();
 
-                IList<LogEntry> log = _log.GetLastEntries(fetchCount);
+                var log = _log.GetLastEntries(fetchCount);
                 printedLines = 0;
 
-                foreach (LogEntry logEntry in log)
+                foreach (var logEntry in log)
                 {
                     _logBuilder.Clear();
                     var printArea = new Rectangle(_logArea.X, _logArea.Y + printedLines, _logArea.Width,

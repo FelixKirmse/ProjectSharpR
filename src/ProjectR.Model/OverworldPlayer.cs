@@ -68,7 +68,7 @@ namespace ProjectR.Model
                 _statistics.AddToStatistic(Statistic.StepsTaken, 1);
             }
 
-            RCell cell = _map[_position.Y, _position.X];
+            var cell = _map[_position.Y, _position.X];
             if (cell.Is(RCell.Door) && cell.Is(RCell.Closed))
             {
                 cell &= ~RCell.Closed;

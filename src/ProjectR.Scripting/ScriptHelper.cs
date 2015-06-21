@@ -10,11 +10,10 @@ namespace ProjectR.Scripting
 {
     public class ScriptHelper : IScriptHelper
     {
-        public IModel Model { get; set; }
-
-        private readonly Dictionary<ICharacter, double> _damageTakenDictionary;
+        private readonly Dictionary<ICharacter, List<IAffliction>> _charAfflDictionary;
         private readonly Dictionary<ICharacter, Dictionary<string, double>> _characterVariables;
-        private readonly Dictionary<ICharacter, List<IAffliction>> _charAfflDictionary; 
+        private readonly Dictionary<ICharacter, double> _damageTakenDictionary;
+        public IModel Model { get; set; }
 
         public ScriptHelper()
         {
@@ -33,7 +32,7 @@ namespace ProjectR.Scripting
         {
             if (!_charAfflDictionary.ContainsKey(character))
             {
-                return new IAffliction[0]; 
+                return new IAffliction[0];
             }
 
             return _charAfflDictionary[character];
@@ -107,7 +106,7 @@ namespace ProjectR.Scripting
             }
 
             affl.AttachTo(target);
-            _charAfflDictionary.GetOrCreate(target).Add(affl);   
+            _charAfflDictionary.GetOrCreate(target).Add(affl);
         }
 
         public double GetDamageTaken(ICharacter character)
@@ -129,7 +128,7 @@ namespace ProjectR.Scripting
         {
             if (!_characterVariables.ContainsKey(target))
             {
-                _characterVariables.Add(target, new Dictionary<string, double> { { varName, 0d }});
+                _characterVariables.Add(target, new Dictionary<string, double> { { varName, 0d } });
             }
 
             var vars = _characterVariables[target];
