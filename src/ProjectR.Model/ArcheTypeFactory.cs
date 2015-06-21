@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class ArcheTypeFactory : IArcheTypeFactory
+    public class ArcheTypeFactory : FactoryBase, IArcheTypeFactory
     {
-        private readonly IModel _model;
         private readonly Dictionary<string, IArcheType> _nameMap;
 
         public ArcheTypeFactory(IModel model)
         {
-            _model = model;
+            Model = model;
             ArcheTypes = new List<IArcheType>();
             _nameMap = new Dictionary<string, IArcheType>();
         }
@@ -20,7 +20,11 @@ namespace ProjectR.Model
 
         public void LoadArcheTypes()
         {
-            throw new NotImplementedException();
+            Model.LoadResourcesModel.OverarchingAction = "Loading Archetypes";
+            foreach (var archeType in RHelper.ScriptLoader.LoadArcheTypes(UpdateModel))
+            {
+                _nameMap.Add(archeType.Name, archeType);
+            }
         }
 
         public IArcheType GetArcheType(string name)

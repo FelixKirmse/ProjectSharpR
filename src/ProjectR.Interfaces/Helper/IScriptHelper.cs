@@ -27,5 +27,6 @@ namespace ProjectR.Interfaces.Helper
         void RemoveAffliction(ICharacter character, IAffliction affliction);
         ICharacter GetCurrentAttacker();
         ISpell GetCurrentSpell();
+        ISpell GetSpell(string name);
     }
 }

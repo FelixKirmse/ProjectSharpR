@@ -11,6 +11,8 @@ namespace ProjectR.Scripting
         private readonly RaceScriptLoader _raceScriptLoader = new RaceScriptLoader();
         private readonly SpellScriptLoader _spellScriptLoader = new SpellScriptLoader();
         private readonly AfflictionScriptLoader _afflictionScriptLoader = new AfflictionScriptLoader();
+        private readonly ArcheTypeScriptLoader _archeTypeScriptLoader = new ArcheTypeScriptLoader();
+        private readonly SkillsetScriptLoader _skillsetScriptLoader = new SkillsetScriptLoader();
 
         public int RaceTemplateCount { get { return _raceScriptLoader.ScriptCount; } }
         public int SpellCount { get { return _spellScriptLoader.ScriptCount; } }
@@ -28,6 +30,16 @@ namespace ProjectR.Scripting
         public IEnumerable<IAffliction> LoadAfflictions(UpdateLoadResourcesDelegate updateAction)
         {
             return _afflictionScriptLoader.LoadScripts(updateAction);
+        }
+
+        public IEnumerable<IArcheType> LoadArcheTypes(UpdateLoadResourcesDelegate updateModel)
+        {
+            return _archeTypeScriptLoader.LoadScripts(updateModel);
+        }
+
+        public IEnumerable<ISkillset> LoadSkillsets(UpdateLoadResourcesDelegate updateAction)
+        {
+            return _skillsetScriptLoader.LoadScripts(updateAction);
         }
     }
 }

@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
+using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
 namespace ProjectR.Model
 {
-    public class SkillsetFactory : ISkillsetFactory
+    public class SkillsetFactory : FactoryBase, ISkillsetFactory
     {
-        private readonly IModel _model;
         private readonly Dictionary<string, ISkillset> _nameMap;
 
         public SkillsetFactory(IModel model)
         {
-            _model = model;
+            Model = model;
             SkillSets = new List<ISkillset>();
             _nameMap = new Dictionary<string, ISkillset>();
         }
@@ -20,7 +20,11 @@ namespace ProjectR.Model
 
         public void LoadSkillsets()
         {
-            throw new NotImplementedException();
+            Model.LoadResourcesModel.OverarchingAction = "Loading Skillsets";
+            foreach (var skillSet in RHelper.ScriptLoader.LoadSkillsets(UpdateModel))
+            {
+                _nameMap[skillSet.Name] = skillSet;
+            }
         }
 
         public ISkillset GetSkillset(string name)

@@ -31,7 +31,7 @@ namespace ProjectR.Model
 
         public void LoadCharacters()
         {
-            throw new NotImplementedException();
+            // TODO: Implement
         }
 
         public ICharacter CreateRandomCharacter(int level = 1, IRaceTemplate race = null)

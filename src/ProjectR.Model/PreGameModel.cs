@@ -46,7 +46,7 @@ namespace ProjectR.Model
 
             for (var stat = Stat.PSN; stat <= Stat.DTH; ++stat)
             {
-                newStats[stat][StatType.Base] = ArcheType.GetBase(stat);
+                newStats[stat][StatType.Base] = ArcheType.GetResistance(stat);
             }
 
             newStats.EVAType = ArcheType.Block ? EVAType.Block : EVAType.Dodge;

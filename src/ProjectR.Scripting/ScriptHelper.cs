@@ -260,5 +260,10 @@ namespace ProjectR.Scripting
         {
             return Model.BattleModel.TargetInfo.Spell;
         }
+
+        public ISpell GetSpell(string name)
+        {
+            return Model.SpellFactory.GetSpell(name);
+        }
     }
 }

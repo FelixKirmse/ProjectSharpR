@@ -722,7 +722,17 @@
     <None Include="content\scripts\Afflictions\Passives\WindFury.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="ArcheType.cs" />
+    <None Include="content\scripts\Archetypes\ArcheTypes.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="ArcheTypeScriptLoader.cs" />
+    <None Include="content\scripts\Skillsets\Skillsets.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="ScriptExtensions.cs" />
+    <Compile Include="SkillSet.cs" />
+    <Compile Include="SkillsetScriptLoader.cs" />
     <Compile Include="SpellBase.cs" />
     <Compile Include="SpellScriptBase.cs" />
     <Compile Include="SpellScriptLoader.cs" />
@@ -809,19 +819,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\scripts\archetypes\archetypes.cfg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\characters\characters.cfg">
+    <None Include="content\scripts\Characters\characters.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="content\scripts\normalattacks\normalattacks.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="content\scripts\signaturespells\signaturespells.cfg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="content\scripts\skillsets\skillsets.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
