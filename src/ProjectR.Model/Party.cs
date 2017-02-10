@@ -70,6 +70,7 @@ namespace ProjectR.Model
 
         public void AddExperience(int amount)
         {
+            ResetCache();
             Experience += amount;
 
             foreach (var character in _charMap.Keys)
@@ -132,6 +133,7 @@ namespace ProjectR.Model
             }
 
             character.LvlUp(Experience);
+            ResetCache();
         }
 
         public void AddCharacter(ICharacter character)
@@ -156,6 +158,7 @@ namespace ProjectR.Model
             list.Remove(character);
 
             _charMap.Remove(character);
+            ResetCache();
         }
     }
 }

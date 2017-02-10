@@ -73,7 +73,8 @@ namespace ProjectR.View
 
         public string GetStopControl()
         {
-            return TCODConsole.getColorControlString(8);
+            return GetColorControlString(TCODColor.white);
+            //return TCODConsole.getColorControlString(8);
         }
 
         public void DrawBorder()

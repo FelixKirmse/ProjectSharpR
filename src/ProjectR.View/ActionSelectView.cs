@@ -26,6 +26,8 @@ namespace ProjectR.View
 
         public override void Run()
         {
+            Initialize();
+
             var battleMenu = _menuModel.BattleMenu;
             if (battleMenu != null)
             {

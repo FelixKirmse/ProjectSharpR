@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.MapGen;
@@ -36,9 +37,9 @@ namespace ProjectR.MapGen
             };
 
             var roomGen = new RoomGenerator(5, 5, 10, 10, _map);
-            var corridorGen = new HallwayGenerator(5, 5, 10, 10, _map);
-            var drunkDrigger = new DrunkDigger(5, 5, 10, 10, _map);
-            var treasureRoomGen = new TreasureRoom(5, 5, 10, 10, _map);
+            var corridorGen = new HallwayGenerator(20, 20, 50, 50, _map);
+            var drunkDrigger = new DrunkDigger(50, 50, 100, 100, _map);
+            var treasureRoomGen = new TreasureRoom(5, 5, 13, 13, _map);
 
             _generators = new RandomContainer<IGenerator>
             {
@@ -124,11 +125,19 @@ namespace ProjectR.MapGen
                 int row;
                 int col;
                 var dir = Direction.Center;
+                var sanity = 0;
 
                 do
                 {
                     FindSuitableSpot(out row, out col, (y, x) => !ValidCell(y, x, ref dir));
+                    ++sanity;
+                    if (sanity == 1000)
+                    {
+                        Debug.WriteLine("Sanity Check reached... Target: {0} Generated: {1}", _featureTarget, i);
+                        return;
+                    }
                 } while (!_generators.Get().Generate(row, col, dir));
+                _map.RecalculateHeatZone();
             }
         }
 

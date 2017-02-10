@@ -33,7 +33,7 @@ namespace ProjectR.View
 
             var colour = new TCODColor((float) (120d * percentage), 1f, 1f);
             var colourControl = CharConsole.GetColorControlString(colour);
-            CharConsole.PrintString(14, 6, "{0}{1}%{2}", colourControl, (percentage * 100d).ToString("F2"),
+            CharConsole.PrintString(14, 6, "{0}{1}%%{2}", colourControl, (percentage * 100d).ToString("F2"),
                 CharConsole.GetStopControl());
         }
 

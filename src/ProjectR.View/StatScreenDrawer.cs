@@ -46,20 +46,21 @@ namespace ProjectR.View
             var hpPercentage = (float) (character.CurrentHP / stats.GetTotalStat(BaseStat.HP));
             var mpPercentage = (float) (character.CurrentMP / 200d);
 
-            var stopControl = TCODConsole.getColorControlString(8);
+            var stopControl = GetColorControlString(TCODColor.white);
+            //var stopControl = TCODConsole.getColorControlString(8);
 
-            statStrengthFormat.AppendFormat("{0}{1}%{2}\n",
+            statStrengthFormat.AppendFormat("{0}{1}%%{2}\n",
                 GetColorControlString(new TCODColor(120f * hpPercentage, 1f, 1f)),
                 (hpPercentage * 100d).ToString("F0"), stopControl);
 
-            statStrengthFormat.AppendFormat("{0}{1}%{2}\n",
+            statStrengthFormat.AppendFormat("{0}{1}%%{2}\n",
                 GetColorControlString(new TCODColor(205f * mpPercentage, 1f, 1f)),
                 (mpPercentage * 100d).ToString("F0"), stopControl);
 
             for (var stat = Stat.AD; stat <= Stat.CHA; ++stat)
             {
                 statFormat.AppendFormat("{0}\n", RHelper.SanitizeNumber(stats.GetTotalStat(stat)));
-                statStrengthFormat.AppendFormat("{0}{1}%{2}\n", GetColor(stats, stat),
+                statStrengthFormat.AppendFormat("{0}{1}%%{2}\n", GetColor(stats, stat),
                     (stats[stat][StatType.BattleMod] * 100d).ToString("F0"), stopControl);
             }
 
@@ -72,7 +73,7 @@ namespace ProjectR.View
             for (var stat = Stat.FIR; stat <= Stat.LGT; ++stat)
             {
                 masteryFormat.AppendFormat("{0}\n", (int) stats.GetTotalStat(stat));
-                masteryStrengthFormat.AppendFormat("{0}{1}%{2}\n",
+                masteryStrengthFormat.AppendFormat("{0}{1}%%{2}\n",
                     GetColor(stats, stat), (int) (stats[stat][StatType.BattleMod] * 100d), stopControl);
             }
 
@@ -90,7 +91,7 @@ namespace ProjectR.View
                 }
 
                 resiFormat.AppendFormat("{0}\n", (int) stats.GetTotalStat(stat));
-                resiStrengthFormat.AppendFormat("{0}{1}%{2}\n", GetColor(stats, stat),
+                resiStrengthFormat.AppendFormat("{0}{1}%%{2}\n", GetColor(stats, stat),
                     (int) (stats[stat][StatType.BattleMod] * 100d), stopControl);
             }
 
@@ -110,7 +111,7 @@ namespace ProjectR.View
         {
             var value = stats[stat][StatType.BattleMod] * 100d;
             return Math.Abs(value - 100d) < 0.001d
-                ? TCODConsole.getColorControlString(8)
+                ? GetColorControlString(TCODColor.white)
                 : value > 100 ? GetColorControlString(TCODColor.green) : GetColorControlString(TCODColor.red);
         }
 

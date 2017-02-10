@@ -110,7 +110,7 @@ namespace ProjectR.View
                         }
 
                         visitedMod = 1f;
-                        cell |= RCell.Visited;
+                        map[mapRow, mapCol] |= RCell.Visited;
                     }
 
                     if (cell.Is(RCell.Dark))

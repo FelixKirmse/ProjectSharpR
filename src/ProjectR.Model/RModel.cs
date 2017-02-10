@@ -15,8 +15,8 @@ namespace ProjectR.Model
             OverworldModel = new OverworldModel(this);
             BattleModel = new BattleModel(this);
             RaceFactory = new RaceFactory(this);
-            CharacterFactory = new CharacterFactory(this);
             SpellFactory = new Spellfactory(this);
+            CharacterFactory = new CharacterFactory(this);
             Party = new Party(this);
             AfflictionFactory = new AfflictionFactory(this);
             ArcheTypeFactory = new ArcheTypeFactory(this);

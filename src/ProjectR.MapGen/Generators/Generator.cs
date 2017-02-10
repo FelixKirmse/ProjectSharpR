@@ -1,4 +1,5 @@
-﻿using ProjectR.Interfaces;
+﻿using System.Diagnostics;
+using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 
@@ -81,7 +82,7 @@ namespace ProjectR.MapGen.Generators
             {
                 spawnRow = RHelper.Roll(topRow, maxRow);
                 spawnCol = RHelper.Roll(leftCol, maxCol);
-            } while (!Map[row, col].Is(RCell.Walkable));
+            } while (!Map[spawnRow, spawnCol].Is(RCell.Walkable));
 
             _packManager.GeneratePack(spawnCol, spawnRow);
 

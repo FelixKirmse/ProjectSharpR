@@ -49,6 +49,11 @@ namespace ProjectR.Model
 
         public IList<LogEntry> GetLastEntries(int count)
         {
+            if (_log.Count <= count)
+            {
+                return _log;
+            }
+
             var result = new List<LogEntry>(_log.GetRange(0, count));
             return result;
         }

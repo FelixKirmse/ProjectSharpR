@@ -57,7 +57,7 @@ namespace ProjectR.Model
 
         public bool PathAvailable()
         {
-            return _currentMap != null && !_currentPath.isEmpty();
+            return _currentPath != null && !_currentPath.isEmpty();
         }
 
         public void OnUpdate(TCODMap currentMap)

@@ -23,7 +23,7 @@ namespace ProjectR.MapGen.Generators
             RHelper.MoveInDirection(ref goalRow, ref goalCol, dir);
 
             var digArea = new Rectangle(leftCol + 1, topRow + 1, Width - 2, Height - 2);
-            var digger = new Digger(goalRow, goalCol, (digArea.Width * digArea.Height) / 25d, digArea, Map);
+            var digger = new Digger(goalRow, goalCol, (int) ((digArea.Width * digArea.Height) / 25d), Map);
             Map[row, col] = Map[row, col].Is(RCell.Important)
                 ? RCell.Door | RCell.Important | RCell.Closed
                 : RCell.Floor;
@@ -39,20 +39,18 @@ namespace ProjectR.MapGen.Generators
         {
             private readonly ulong _combatBonus;
             private readonly bool _darkDigger;
-            private readonly Rectangle _digArea;
-            private readonly double _digGoal;
+            private readonly int _digGoal;
             private readonly bool _doubleCombatBonus;
             private readonly IRMap _map;
             private int _col;
             private int _digged;
             private int _row;
 
-            public Digger(int row, int col, double digGoal, Rectangle digArea, IRMap map)
+            public Digger(int row, int col, int digGoal, IRMap map)
             {
                 _row = row;
                 _col = col;
                 _digGoal = digGoal;
-                _digArea = digArea;
                 _map = map;
                 _digged = 0;
                 _darkDigger = RHelper.RollPercentage(25);

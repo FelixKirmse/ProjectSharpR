@@ -1,4 +1,5 @@
-﻿using ProjectR.Factory;
+﻿using libtcod;
+using ProjectR.Factory;
 using ProjectR.Interfaces.Factories;
 
 namespace ProjectR

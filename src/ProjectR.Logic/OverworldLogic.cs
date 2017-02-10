@@ -17,8 +17,10 @@ namespace ProjectR.Logic
 
             if (Input.Action(Actions.Confirm) && Model.Map[player.Position.Y, player.Position.X].Is(RCell.Portal))
             {
-                Model.OverworldModel.GenerateNewMap(Model.Party.AveragePartyLvl);
+                Model.OverworldModel.GenerateNewMap(1000);
+                //Model.OverworldModel.GenerateNewMap(Model.Party.AveragePartyLvl);
                 Model.Party.AddExperience(1000);
+                player.MoveRight();
             }
 
             if (Input.Action(Actions.Back))

@@ -48,7 +48,7 @@ namespace ProjectR.Interfaces.Model
     {
         public static bool Is(this RCell cell, RCell attribute)
         {
-            return (cell & RCell.Wall) == attribute;
+            return (cell & attribute) > 0;
         }
 
         public static bool IsWalkable(this RCell cell)
