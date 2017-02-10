@@ -15,7 +15,7 @@ namespace ProjectR.Scripting.Spells
         public override SpellType SpellType { get { return SpellType.Physical; } }
         public override bool IsSupportSpell { get { return false; } }
 
-        public override double MPCost { get { return .32; } }
+        public override double MPCost { get { return 64; } }
         public override double Delay { get { return .65; } }
 
         public override void SpellEffect(ICharacter caster, ICharacter target)

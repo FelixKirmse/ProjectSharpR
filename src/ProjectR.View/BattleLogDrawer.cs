@@ -1,6 +1,7 @@
 using System.Drawing;
 using System.Text;
 using libtcod;
+using ProjectR.Interfaces.Extensions;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
@@ -62,7 +63,7 @@ namespace ProjectR.View
                         _logArea.Height - printedLines);
                     if (logEntry.IsCustomMessage)
                     {
-                        _logBuilder.AppendLine(logEntry.CustomMessage).AppendLine();
+                        _logBuilder.Append(logEntry.CustomMessage).AppendNewLine().AppendNewLine();
                         printedLines += _logConsole.PrintString(printArea, _logBuilder.ToString());
                         continue;
                     }
@@ -100,12 +101,13 @@ namespace ProjectR.View
 
                     if (logEntry.Fatal)
                     {
-                        _logBuilder.AppendLine()
-                                   .AppendLine()
+                        _logBuilder.AppendNewLine()
+                                   .AppendNewLine()
                                    .Append(logEntry.ReceiverName)
-                                   .AppendLine(" dies!");
+                                   .AppendNewLine(" dies!");
                     }
 
+                    _logBuilder.AppendNewLine();
                     printedLines += _logConsole.PrintString(printArea, _logBuilder.ToString());
                 }
                 --fetchCount;

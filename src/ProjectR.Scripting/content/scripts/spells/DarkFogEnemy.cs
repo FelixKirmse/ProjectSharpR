@@ -7,7 +7,7 @@ namespace ProjectR.Scripting.Spells
 {
     public class DarkFogEnemy : SpellScriptBase
     {
-        public override string Name { get { return "Dark Fog (Enemies)"; } }
+        public override string Name { get { return "Dark Fog (Enemy)"; } }
         public override string Description { get { return "Summon a fog that deals unresistable DRK damage."; } }
 
         public override TargetType TargetType { get { return TargetType.Enemies; } }

@@ -25,6 +25,7 @@ namespace ProjectR.Logic
             AddState(_gameOverLogic);
             AddState(_battleWonLogic);
             SetCurrentState((int) BattleState.Idle);
+            Model.BattleModel.TargetInfo = new TargetInfo();
         }
 
         public override void Run()

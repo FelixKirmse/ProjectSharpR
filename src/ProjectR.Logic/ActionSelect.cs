@@ -49,7 +49,7 @@ namespace ProjectR.Logic
         {
             _attack.Label = _battleModel.CurrentAttacker.Spells[0].Name;
             _defend.Label = _battleModel.CurrentAttacker.Spells[1].Name;
-            _controller.ControlMenu(this, Input, () => { });
+            _controller.ControlMenu(_menu, Input, () => { });
             Model.CommitChanges();
         }
 
@@ -153,14 +153,16 @@ namespace ProjectR.Logic
         {
             var targetInfo = _battleModel.TargetInfo;
             targetInfo.Spell = _battleModel.CurrentAttacker.Spells[1];
+
             _battleModel.TargetInfo = targetInfo;
-            Master.SetCurrentState((int) BattleMenuState.SelectTarget);
+            Master.SetCurrentState((int) BattleMenuState.Execute);
         }
 
         private void SetAttack()
         {
             var targetInfo = _battleModel.TargetInfo;
             targetInfo.Spell = _battleModel.CurrentAttacker.Spells[0];
+
             _battleModel.TargetInfo = targetInfo;
             Master.SetCurrentState((int) BattleMenuState.SelectTarget);
         }

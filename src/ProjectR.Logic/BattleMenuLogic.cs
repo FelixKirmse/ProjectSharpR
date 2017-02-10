@@ -64,6 +64,7 @@ namespace ProjectR.Logic
         public void AddState(IState state)
         {
             _stateMachine.AddState(state);
+            state?.SetStateMachine(this);
         }
 
         public void RunCurrentState()

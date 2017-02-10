@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text;
 using libtcod;
+using ProjectR.Interfaces.Extensions;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
 using ProjectR.Interfaces.View;
@@ -37,7 +38,7 @@ namespace ProjectR.View
             int[] count = { 0 };
             foreach (var passive in passives.Where(passive => count[0] != 4))
             {
-                passiveBuilder.AppendLine(passive.Name).AppendLine();
+                passiveBuilder.Append(passive.Name).AppendNewLine().AppendNewLine();
                 ++count[0];
             }
 

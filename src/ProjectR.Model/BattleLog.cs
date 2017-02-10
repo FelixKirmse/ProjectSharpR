@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Model;
 
@@ -54,7 +56,7 @@ namespace ProjectR.Model
                 return _log;
             }
 
-            var result = new List<LogEntry>(_log.GetRange(0, count));
+            var result = new List<LogEntry>(_log.Skip(Math.Max(0, _log.Count - count)));
             return result;
         }
 

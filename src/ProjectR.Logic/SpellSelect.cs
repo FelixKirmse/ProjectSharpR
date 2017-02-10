@@ -71,7 +71,7 @@ namespace ProjectR.Logic
 
         public override void Run()
         {
-            _controller.ControlMenu(this, Input, () => Master.SetCurrentState((int) BattleMenuState.SelectAction));
+            _controller.ControlMenu(_menu, Input, () => Master.SetCurrentState((int) BattleMenuState.SelectAction));
         }
 
         #region IMenu Delegation
