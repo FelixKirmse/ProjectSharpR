@@ -273,8 +273,8 @@ namespace ProjectR.Model
         {
             BuffingStat(this, ref stat, ref value);
 
-            const string format = "{0} {1}";
-            var add = string.Format(format, (value * 100d).ToString("P0"), stat.GetString());
+            const string format = "{0}%% {1}";
+            var add = string.Format(format, (value * 100d).ToString("F0"), stat.GetString());
             AddAffliction(add);
             _stats.BuffStat(stat, value);
         }
