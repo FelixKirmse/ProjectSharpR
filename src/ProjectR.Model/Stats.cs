@@ -12,7 +12,7 @@ namespace ProjectR.Model
         public Stats()
         {
             XPMultiplier = 1d;
-            _currentLevel = 0;
+            _currentLevel = 1;
             for (var i = Stat.HP; i <= Stat.SIL; ++i)
             {
                 this[i] = new SingleStat();

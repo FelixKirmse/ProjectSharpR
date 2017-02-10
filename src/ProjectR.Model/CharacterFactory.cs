@@ -76,8 +76,8 @@ namespace ProjectR.Model
             var randomStats = Stats.GetRandomBaseStats();
             newChar.Race = rTemplate.Name;
             newChar.Lore = rTemplate.Description;
-            ApplyRaceTemplate(rTemplate, randomStats);
             newChar.Stats = randomStats;
+            ApplyRaceTemplate(rTemplate, randomStats);
             newChar.LvlUp(_model.Party.Experience);
             var spells = new List<ISpell> { _spellFactory.GetSpell("Attack"), _spellFactory.GetSpell("Defend") };
             var spellCount = RHelper.Roll(2, 5);
