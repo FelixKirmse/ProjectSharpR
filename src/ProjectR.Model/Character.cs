@@ -190,7 +190,7 @@ namespace ProjectR.Model
 
             Stats.SetLvl(CurrentLevel);
             CurrentHP = _stats.GetTotalStat(Stat.HP);
-            CurrentHP = _stats.GetTotalStat(Stat.MP);
+            CurrentMP = _stats.GetTotalStat(Stat.MP);
         }
 
         public void LvlUp(int experience)

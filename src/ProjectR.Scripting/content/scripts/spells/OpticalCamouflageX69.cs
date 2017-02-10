@@ -16,7 +16,7 @@ namespace ProjectR.Scripting.Spells
         public override bool IsSupportSpell { get { return false; } }
 
         public override double MPCost { get { return 64; } }
-        public override double Delay { get { return 36; } }
+        public override double Delay { get { return .36; } }
 
         public override void SpellEffect(ICharacter caster)
         {
