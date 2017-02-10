@@ -46,8 +46,9 @@ namespace ProjectR.View
             var hpPercentage = (float) (character.CurrentHP / stats.GetTotalStat(BaseStat.HP));
             var mpPercentage = (float) (character.CurrentMP / 200d);
 
-            var stopControl = GetColorControlString(TCODColor.white);
-            //var stopControl = TCODConsole.getColorControlString(8);
+            //var stopControl2 = GetColorControlString(TCODColor.white);
+            //var stopControl = TCODConsole.getColorControlString(8); // \b
+            var stopControl = GetStopControl();
 
             statStrengthFormat.AppendFormat("{0}{1}%%{2}\n",
                 GetColorControlString(new TCODColor(120f * hpPercentage, 1f, 1f)),
@@ -111,7 +112,7 @@ namespace ProjectR.View
         {
             var value = stats[stat][StatType.BattleMod] * 100d;
             return Math.Abs(value - 100d) < 0.001d
-                ? GetColorControlString(TCODColor.white)
+                ? GetStopControl()
                 : value > 100 ? GetColorControlString(TCODColor.green) : GetColorControlString(TCODColor.red);
         }
 

@@ -73,7 +73,8 @@ namespace ProjectR.View
 
         public string GetStopControl()
         {
-            return GetColorControlString(TCODColor.white);
+            return "\b";
+            //return GetColorControlString(TCODColor.white);
             //return TCODConsole.getColorControlString(8);
         }
 

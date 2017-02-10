@@ -7,7 +7,7 @@ namespace ProjectR.Scripting.Spells
 {
     public class DarkFogAlly : SpellScriptBase
     {
-        public override string Name { get { return "Dark Fog (Allies)"; } }
+        public override string Name { get { return "Dark Fog (Ally)"; } }
         public override string Description { get { return "Summon a fog that removes all debuffs and heals a little."; } }
 
         public override TargetType TargetType { get { return TargetType.Allies; } }
