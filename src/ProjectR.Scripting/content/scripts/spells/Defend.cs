@@ -8,7 +8,7 @@ namespace ProjectR.Scripting.Spells
     public class Defend : SpellScriptBase
     {
         public override string Name { get { return "Defend"; } }
-        public override string Description { get { return "Aquire a defensive stance, increasing DEF & MR by 20% and recovering 20% of MP"; } }
+        public override string Description { get { return "Aquire a defensive stance, increasing DEF & MR by 20%% and recovering 20%% of MP"; } }
 
         public override TargetType TargetType { get { return TargetType.Myself; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }

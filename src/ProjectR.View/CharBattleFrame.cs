@@ -84,7 +84,7 @@ namespace ProjectR.View
             var colour = new TCODColor(CurrentChar.TakesTurn ? 0f : 30f, 1f, 1f);
             var colourControl = CharConsole.GetColorControlString(colour);
             CharConsole.PrintString(14, 4,
-                string.Format("{0}{1}%{2}", colourControl,
+                string.Format("{0}{1}%%{2}", colourControl,
                     CurrentChar.TakesTurn ? 100d.ToString("F2") : (percentage * 100d).ToString("F2"),
                     CharConsole.GetStopControl()), TCODAlignment.RightAlignment);
         }

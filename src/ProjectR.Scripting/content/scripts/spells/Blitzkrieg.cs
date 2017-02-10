@@ -8,7 +8,7 @@ namespace ProjectR.Scripting.Spells
     public class Blitzkrieg : SpellScriptBase
     {
         public override string Name { get { return "Blitzkrieg"; } }
-        public override string Description { get { return "Use the moment of surprise and increase SPD of all allies by 40%."; } }
+        public override string Description { get { return "Use the moment of surprise and increase SPD of all allies by 40%%."; } }
 
         public override TargetType TargetType { get { return TargetType.Allies; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }

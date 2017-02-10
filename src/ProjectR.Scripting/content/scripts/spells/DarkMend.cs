@@ -8,7 +8,7 @@ namespace ProjectR.Scripting.Spells
     public class DarkMend : SpellScriptBase
     {
         public override string Name { get { return "Dark Mend"; } }
-        public override string Description { get { return "Dark energy fills the air.\nDeals damage to enemies.\nHeals allies by 10% of their max HP."; } }
+        public override string Description { get { return "Dark energy fills the air.\nDeals damage to enemies.\nHeals allies by 10%% of their max HP."; } }
 
         public override TargetType TargetType { get { return TargetType.Everyone; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { EleMastery.DRK, }; } }

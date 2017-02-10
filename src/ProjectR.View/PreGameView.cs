@@ -13,9 +13,9 @@ namespace ProjectR.View
                                                  "  with a certain element.\n\n" +
                                                  "  In general these three scenarios\n" +
                                                  "  are easy to remember:\n\n" +
-                                                 "    50 Mastery = Take 200%, Deal  50%\n" +
-                                                 "   100 Mastery = Take 100%, Deal 100%\n" +
-                                                 "   150 Mastery = Take  66%, Deal 150%\n\n" +
+                                                 "    50 Mastery = Take 200%%, Deal  50%%\n" +
+                                                 "   100 Mastery = Take 100%%, Deal 100%%\n" +
+                                                 "   150 Mastery = Take  66%%, Deal 150%%\n\n" +
                                                  "  Remember that one point spend here\n" +
                                                  "  does not neccessarily equal one\n" +
                                                  "  point gained in the stats, since\n" +

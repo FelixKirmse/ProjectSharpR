@@ -8,7 +8,7 @@ namespace ProjectR.Scripting.Spells
     public class EmbraceOfTheDemon : SpellScriptBase
     {
         public override string Name { get { return "Embrace of the Demon"; } }
-        public override string Description { get { return "The targets heart is embraced by demonic energy. Has a chance to instantly kill the target.\nTargets under 25% health receive triple damage."; } }
+        public override string Description { get { return "The targets heart is embraced by demonic energy. Has a chance to instantly kill the target.\nTargets under 25%% health receive triple damage."; } }
 
         public override TargetType TargetType { get { return TargetType.Single; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { EleMastery.DRK, }; } }

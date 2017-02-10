@@ -8,7 +8,7 @@ namespace ProjectR.Scripting.Spells
     public class BlessingOfTheGods : SpellScriptBase
     {
         public override string Name { get { return "Blessing of the Gods"; } }
-        public override string Description { get { return "Bless the target, increasing all their stats.\nAlso sets their speed bar to 100%."; } }
+        public override string Description { get { return "Bless the target, increasing all their stats.\nAlso sets their speed bar to 100%%."; } }
 
         public override TargetType TargetType { get { return TargetType.Single; } }
         public override IList<EleMastery> Masteries { get { return new EleMastery[] { }; } }

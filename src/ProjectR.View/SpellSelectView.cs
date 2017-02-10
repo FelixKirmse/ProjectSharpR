@@ -12,7 +12,7 @@ namespace ProjectR.View
         private const int StartY = 2;
         private const int OffSetY = 2;
         private const string CostFormat = "{0}{1} MP{2}";
-        private const string DelayFormat = "{0}{1}%{2}";
+        private const string DelayFormat = "{0}{1}%%{2}";
         private readonly IMenuDrawer _drawer;
         private readonly ISpellDescriptionDrawer _spellDrawer;
 
