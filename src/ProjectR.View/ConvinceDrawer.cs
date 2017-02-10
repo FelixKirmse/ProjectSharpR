@@ -5,7 +5,7 @@ namespace ProjectR.View
 {
     public class ConvinceDrawer : InitializeableModelStateWithConsole
     {
-        private const string FormatString = "Your attempt to convert\n\n{0}\n\n{1}{2}{3}\n\n{0}{4}";
+        private const string FormatString = "Your attempt to convert\n\n{0}\n\n{1}{2}{3}\n\n{0} {4}";
         private const string Success = "was successful!";
         private const string Failed = "failed...";
         private const string Joined = "joined the party";

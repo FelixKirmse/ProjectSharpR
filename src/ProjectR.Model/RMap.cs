@@ -14,6 +14,11 @@ namespace ProjectR.Model
             _fovMap = new TCODMap(Columns, Rows);
         }
 
+        ~RMap()
+        {
+            _fovMap?.Dispose();
+        }
+
         public Rectangle HeatZone { get; private set; }
 
         public void RecalculateHeatZone()

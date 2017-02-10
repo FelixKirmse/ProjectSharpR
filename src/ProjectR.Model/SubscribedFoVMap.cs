@@ -19,6 +19,12 @@ namespace ProjectR.Model
             OnUpdate(fovMap);
         }
 
+        ~SubscribedFoVMap()
+        {
+            _currentMap?.Dispose();
+            _currentPath?.Dispose();
+        }
+
         public bool IsWalkable(int x, int y)
         {
             return _currentMap.isWalkable(x, y);
@@ -69,6 +75,7 @@ namespace ProjectR.Model
                 return;
             }
 
+            _currentPath.Dispose();
             _currentPath = new TCODPath(_currentMap, 1.14f);
             ComputePath(_currentX, _currentY, _destX, _destY);
         }
@@ -82,6 +89,7 @@ namespace ProjectR.Model
                 return;
             }
 
+            _currentPath.Dispose();
             _currentPath = new TCODPath(_currentMap, 1.14f);
             ComputePath(_currentX, _currentY, _destX, _destY);
         }

@@ -42,7 +42,7 @@ namespace ProjectR.View
             var colour = Strength.GetAssociatedColour();
             var colourControl = CharConsole.GetColorControlString(colour);
 
-            CachedName = CurrentChar.Name;
+            CachedName = CurrentChar.Race;
             CharConsole.PrintString(new Rectangle(8, 1, 13, 2), "                          ",
                 TCODAlignment.CenterAlignment);
             CharConsole.PrintString(new Rectangle(8, 1, 13, 2), "{0}{1}{2}", TCODAlignment.CenterAlignment,
