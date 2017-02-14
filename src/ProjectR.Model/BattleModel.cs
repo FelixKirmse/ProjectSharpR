@@ -9,7 +9,6 @@ namespace ProjectR.Model
     public class BattleModel : IBattleModel
     {
         private readonly IModel _model;
-        private BattleState _currentBattleState;
 
         public BattleModel(IModel model)
         {
@@ -49,19 +48,7 @@ namespace ProjectR.Model
             get { return Enemies.Any(x => x == CurrentAttacker) || EnemyMinions.Any(x => x == CurrentAttacker); }
         }
 
-        public BattleState CurrentBattleState
-        {
-            get { return _currentBattleState; }
-            set
-            {
-                if (value == BattleState.GameOver)
-                {
-                    value = BattleState.BattleWon;
-                }
-
-                _currentBattleState = value;
-            }
-        }
+        public BattleState CurrentBattleState { get; set; }
 
         public ICharacter CreateMinion(ICharacter template)
         {
@@ -81,11 +68,6 @@ namespace ProjectR.Model
         public void EndBattle()
         {
             RHelper.ScriptHelper.ResetAllAfflictions();
-
-            foreach (var character in Enemies)
-            {
-                _model.AfflictionFactory.GetAffliction(IsBossFight ? "Boss" : "Enemy").RemoveFrom(character);
-            }
         }
 
         public void EnemyDied()

@@ -11,7 +11,7 @@ namespace ProjectR.Scripting.Races
         {
             get
             {
-                return "Berserkers rely on pure melee strength to completely annihilate their enemies. In return they are completely countered by any kind of magic and are unable to effectively cast spells themselves. There are some Berserkers that still try themselves in the ways of magic, but those individuals often don't last long in this World. Sometimes they lose themselves to their rage and rain down extra attacks on an enemy.";
+                return "Berserkers rely on pure melee strength to completely annihilate their enemies. In return they are completely countered by any kind of magic and are unable to effectively cast spells themselves. There are some Berserkers that still try themselves in the ways of magic, but those individuals often don't last long in this world. Sometimes they lose themselves to their rage and rain down extra attacks on an enemy.";
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectR.Interfaces;
 using ProjectR.Interfaces.Helper;
 using ProjectR.Interfaces.Model;
@@ -54,14 +55,16 @@ namespace ProjectR.Scripting
             DetachEvents(character);
             ScriptHelper.RemoveAffliction(character, this);
             OnRemoval(character);
+            _afflictedChars.Remove(character);
         }
 
         public void RemoveFromEveryone()
         {
-            foreach (var afflictedChar in _afflictedChars.Keys)
+            foreach (var afflictedChar in _afflictedChars.Keys.ToArray())
             {
                 RemoveFrom(afflictedChar);
             }
+            _afflictedChars.Clear();
         }
 
         #region Attachment / Detachment

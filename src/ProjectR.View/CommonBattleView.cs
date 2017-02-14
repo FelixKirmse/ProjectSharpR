@@ -71,16 +71,19 @@ namespace ProjectR.View
                 _partyMinionFrames[i].Draw();
             }
 
-            for (var i = 0; i < _enemies.Count; ++i)
+            if (_battleModel.CurrentBattleState != BattleState.BattleWon)
             {
-                _enemyFrames[i].AssignCharacter(_enemies[i], _battleModel.CurrentMobPack.GetStrength(_enemies[i]));
-                _enemyFrames[i].Draw();
-            }
+                for (var i = 0; i < _enemies.Count; ++i)
+                {
+                    _enemyFrames[i].AssignCharacter(_enemies[i], _battleModel.CurrentMobPack.GetStrength(_enemies[i]));
+                    _enemyFrames[i].Draw();
+                }
 
-            for (var i = 0; i < _enemyMinions.Count; ++i)
-            {
-                _enemyMinionFrames[i].AssignCharacter(_enemyMinions[i]);
-                _enemyMinionFrames[i].Draw();
+                for (var i = 0; i < _enemyMinions.Count; ++i)
+                {
+                    _enemyMinionFrames[i].AssignCharacter(_enemyMinions[i]);
+                    _enemyMinionFrames[i].Draw();
+                }
             }
 
             _logDrawer.Run();

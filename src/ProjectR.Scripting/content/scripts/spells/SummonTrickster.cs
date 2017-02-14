@@ -18,7 +18,7 @@ namespace ProjectR.Scripting.Spells
         public override double MPCost { get { return 100; } }
         public override double Delay { get { return .5; } }
 
-        public override void SpellEffect(ICharacter caster, ICharacter target)
+        public override void SpellEffect(ICharacter caster)
         {
             var minion = SummonMinionCopy(caster, "Trickster");
             minion.Spells.Clear();
