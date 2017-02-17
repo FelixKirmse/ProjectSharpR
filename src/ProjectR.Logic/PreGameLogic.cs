@@ -136,6 +136,7 @@ namespace ProjectR.Logic
             _GRNValue = 50;
             _LGTValue = 50;
             _availableMasteryPoints = 550;
+            Model.PreGameModel.AvailableMasteryPoints = _availableMasteryPoints;
 
             _race.SetLeftAction(() => SwitchRace(-1));
             _race.SetRightAction(() => SwitchRace(1));
@@ -158,7 +159,7 @@ namespace ProjectR.Logic
             Model.PreGameModel.ArcheType = archeTypes[_archeTypeIndex];
             Model.PreGameModel.Skillset = skillSets[_skillSetIndex];
             Model.PreGameModel.SignatureSpell = signatureSpells[_signatureSpellIndex];
-            Model.PreGameModel.NormalAttack = signatureSpells[_normalAttackIndex];
+            Model.PreGameModel.NormalAttack = normalAttacks[_normalAttackIndex];
 
             SwitchList(() => _archeTypeIndex, x => _archeTypeIndex = x, 0, archeTypes, _archeType, ArcheType);
             SwitchList(() => _skillSetIndex, x => _skillSetIndex = x, 0, skillSets, _skillSet, SkillSet);
@@ -285,7 +286,12 @@ namespace ProjectR.Logic
                 loops = 10;
             }
 
-            if (Input.CheckAlt() || Input.CheckShift())
+            if (Input.CheckShift())
+            {
+                loops = 50;
+            }
+
+            if (Input.CheckAlt())
             {
                 loops = 100;
             }
