@@ -730,6 +730,12 @@
     <None Include="content\scripts\Skillsets\Skillsets.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="content\scripts\Races\Vampire.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content\scripts\Afflictions\Passives\Lifesteal.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="SkillSet.cs" />
     <Compile Include="SkillsetScriptLoader.cs" />
